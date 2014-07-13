@@ -1,0 +1,36 @@
+### define _topdir	 	/home/rpmbuild/rpms/ncl
+%define name		ncl
+%define release		cl1
+%define version 	2.1.18
+%define buildroot %{_topdir}/%{name}-%{version}-root
+
+BuildRoot:	%{buildroot}
+Summary: 		NEXUS Class Library (NCL)
+License: 		GPL2
+Name: 			%{name}
+Version: 		%{version}
+Release: 		%{release}
+Source: 		%{name}-%{version}.tar.gz
+#Patch:			%{name}.%{version}.patch
+Prefix: 		/opt/bio
+Group: 			Development/Tools
+AutoReq:		yes
+
+%description
+The Nexus Class Library (NCL) is a C++ library for interpreting data files
+created according to the NEXUS file format used in phylogenetic systematics and
+molecular evolution.
+
+%prep
+%setup -q
+
+%build
+./configure --disable-shared
+make
+
+%install
+make install DESTDIR=$RPM_BUILD_ROOT
+
+%files
+%defattr(755,root,root)
+/usr/local
