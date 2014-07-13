@@ -1,0 +1,9 @@
+--- numgrep	2012-11-26 16:31:04.776857612 -0500
++++ numgrep	2012-11-26 16:40:36.201591080 -0500
+@@ -1,4 +1,5 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
++use warnings;
+ 
+ # numgrep:  This program is the numeric equivilent of the grep
+ # utility.  It searches for numbers, sets of numbers and so on.

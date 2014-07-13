@@ -1,0 +1,9 @@
+--- range	2012-11-26 16:31:04.807821104 -0500
++++ range	2012-11-26 16:34:32.327230535 -0500
+@@ -1,4 +1,5 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
++use warnings;
+ 
+ # range: Print out a range of numbers for use in for loops and such.
+ #   

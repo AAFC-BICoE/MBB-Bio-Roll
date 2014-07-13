@@ -1,0 +1,9 @@
+--- bound	2012-11-26 16:31:04.760877793 -0500
++++ bound	2012-11-26 16:34:23.457416419 -0500
+@@ -1,4 +1,5 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
++use warnings;
+ 
+ # bound: Find boundary numbers in files or STDIN.
+ #   

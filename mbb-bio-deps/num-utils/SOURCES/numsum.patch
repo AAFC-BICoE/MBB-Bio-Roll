@@ -1,0 +1,9 @@
+--- numsum	2012-11-26 16:31:04.796888073 -0500
++++ numsum	2012-11-26 16:34:30.031413851 -0500
+@@ -1,4 +1,5 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
++use warnings;
+ 
+ # numsum:  This program adds up all numbers it encounters and prints out
+ #          the total at the end on STDOUT. 
