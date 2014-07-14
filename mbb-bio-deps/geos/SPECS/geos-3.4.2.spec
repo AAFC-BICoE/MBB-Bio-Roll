@@ -19,6 +19,7 @@ Prefix: 		/opt/bio
 Group: 			Development/Libraries/GIS
 URL:			sdaf
 AutoReq:		yes
+Packager:   Glen Newton <glen.newton@agr.gc.ca>
 
 %description
 GEOS (Geometry Engine - Open Source) is a C++ port of the  Java Topology Suite (JTS). As such, it aims to contain the complete functionality of JTS in C++. This includes all the  OpenGIS Simple Features for SQL spatial predicate functions and spatial operators, as well as specific JTS enhanced topology functions.

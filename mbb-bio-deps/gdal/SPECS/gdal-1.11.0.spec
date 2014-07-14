@@ -15,6 +15,7 @@ Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
 Source: 		%{src_name}-%{version}.tar.gz
+Packager:   Glen Newton <glen.newton@agr.gc.ca>
 Prefix: 		/opt/bio
 Group: 			Development/Libraries/GIS
 URL:			http://www.gdal.org/
