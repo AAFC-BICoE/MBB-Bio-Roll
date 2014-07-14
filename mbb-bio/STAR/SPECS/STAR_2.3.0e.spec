@@ -18,7 +18,7 @@ Release: 		%{release}
 Source: 		%{src_name}-%{version}.tgz
 Patch0:         %{name}_%{version}.patch
 Prefix: 		/opt/bio
-Group: 			Development/Libraries/GIS
+Group: 			Applications/BioInformatics/Alignment
 URL:			https://code.google.com/p/rna-star/
 AutoReq:		yes
 
