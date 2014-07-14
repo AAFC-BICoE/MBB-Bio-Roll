@@ -1,0 +1,29 @@
+--- IMAGE_version2/nucmer	2013-01-10 16:23:13.365950646 -0500
++++ IMAGE_version2/nucmer2	2013-01-10 16:40:52.937210306 -0500
+@@ -1,4 +1,5 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl 
++use warnings;
+ 
+ #-------------------------------------------------------------------------------
+ #   Programmer: Adam M Phillippy, The Institute for Genomic Research
+@@ -15,14 +16,14 @@
+ #
+ #-------------------------------------------------------------------------------
+ 
+-use lib "/software/pathogen/external/applications/MUMmer/MUMmer3.20/scripts";
+-use Foundation;
++use lib "/opt/bio/MUMmer/scripts";
++use foundation;
+ use File::Spec::Functions;
+ use strict;
+ 
+-my $AUX_BIN_DIR = "/software/pathogen/external/applications/MUMmer/MUMmer3.20/aux_bin";
+-my $BIN_DIR = "/software/pathogen/external/applications/MUMmer/MUMmer3.20";
+-my $SCRIPT_DIR = "/software/pathogen/external/applications/MUMmer/MUMmer3.20/scripts";
++my $AUX_BIN_DIR = "/opt/bio/MUMmer/aux_bin";
++my $BIN_DIR = "/opt/bio/MUMmer/bin";
++my $SCRIPT_DIR = "/opt/bio/MUMmer/scripts";
+ 
+ 
+ my $VERSION_INFO = q~

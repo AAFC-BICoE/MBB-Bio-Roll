@@ -1,0 +1,11 @@
+--- glimmer3.02/src/ICM/icm.cc	2012-10-25 17:06:40.096599806 -0400
++++ glimmer3.02/src/ICM/icm2.cc	2012-10-25 17:07:52.350940238 -0400
+@@ -1983,7 +1983,7 @@
+   {
+    char  * p;
+ 
+-   p = strchr (ALPHA_STRING, tolower (Filter (ch)));
++   p = (char*) strchr (ALPHA_STRING, tolower (Filter (ch)));
+    if  (p == NULL)
+        {
+         fprintf (stderr, "ERROR:  Bad character %c in subscript conversion",

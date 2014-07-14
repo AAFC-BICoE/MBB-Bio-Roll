@@ -1,0 +1,98 @@
+--- IMAGE_version2/restartIMAGE.pl	2013-01-10 16:23:13.365950646 -0500
++++ IMAGE_version2/restartIMAGE2.pl	2013-01-15 10:46:50.692580859 -0500
+@@ -1,5 +1,5 @@
+-#!/usr/bin/perl
+-#
++#!/usr/bin/env perl
++use warnings;
+ 
+ #	author: jit
+ #
+@@ -19,35 +19,31 @@
+ 
+ 
+ 
+-if (@ARGV != 4 ) {
++if (@ARGV != 5 ) {
+ 	print "\n\nIMAGE: restart image with different kmer\n" ;
+ 	print "Author: jit\@sanger.ac.uk\n\n" ;
+ 
+-	print "\tUsage: $0 last_iteration_folder kmer number_of_iterations Illumina_lane_prefix\n" ;
++	print "\tUsage: $0 last_iteration_folder kmer number_of_iterations Illumina_lane_prefix velvet_ins_len\n" ;
+ 	print "\t\tHas to be at the top directory\n" ;
+ 
+-	print "\n\tExample: $0 Ite_10 41 5 partitioned\n" ; 
+-	print "\t\tThis will run IMAGE by creating new iteration folder starting from Ite_11, for another five iterations of kmer 41, using partitioned_1.fastq and partitioned_2.fastq \n" ; 
++	print "\n\tExample: $0 Ite_10 41 5 partitioned 500\n" ; 
++	print "\t\tThis will run IMAGE by creating new iteration folder starting from Ite_11, for another five iterations of kmer 41, using partitioned_1.fastq and partitioned_2.fastq, and with velvet insertion length 500\n" ; 
+ 	
+-	print "\tAdvanced usage: $0 -smalt_minscore 30 Ite_10 41 5 partitioned\n" ; 
++	print "\tAdvanced usage: $0 -smalt_minscore 30 Ite_10 41 5 partitioned velvet_ins_len\n" ; 
+ 	
+ 	exit ;
+ }
+ 
+ my $SMALT_minScore = 0 ;
+ 
+-GetOptions (	                'smalt_minscore=i' => \$SMALT_minScore, 
+-) or die "Incorrect usage!\n";
+-
++GetOptions ('smalt_minscore=i' => \$SMALT_minScore, ) or die "Incorrect usage!\n";
+ 
+ 
+ my $dir_prefix = shift ;
+ my $kmer = shift ;
+ my $iteration_all = shift ;
+ my $illumina_prefix = shift ; 
+-
+-
+-
++my $vel_ins_len = shift ;
+ 
+ 
+ if ( -d "$dir_prefix") {
+@@ -59,14 +55,12 @@
+ }
+ 
+ 
+-
+-
+ my $new = '' ;
+ my $old =  $dir_prefix;
+ my $prefix = '' ;
+ my $iteration = '' ;
+ 
+-if ( $dir_prefix =~ /(\S+)(\d+)/ ) {
++if ( $dir_prefix =~ /(\D+)(\d+)/ ) {
+ 	$prefix = $1 ; 
+ 	$new = "$1" . ($2 + 1) ; 
+ 	$iteration = $2 + 1 ;
+@@ -82,17 +76,15 @@
+ mkdir "$new" or die "can not create new iteration dir $new !\n" ;
+ chdir "$new" ;
+ 
+-
+-system("ln -s ../$old/new.read.placed read.placed") ;
+-system("ln -s ../$old/new.insert_size insert_size") ;
+-system("ln -s ../$old/new.fa contigs.fa") ;
+-
++system("ln -s ../$old/new.read.placed image.read.placed") ;
++system("ln -s ../$old/new.insert_size image.insert_size") ;
++system("ln -s ../$old/new.fa image.contigs.fa") ;
+ 
+ 
+ print "all done! starting the new iteration at dir: $new\n" ;
+ 
+-print "commands to execute:\n $path/image.pl -dir_prefix $prefix -prefix $illumina_prefix -iteration $iteration -all_iteration $iteration_all -toignore $toignore -overhang $overhang -kmer $kmer -smalt_minscore $SMALT_minScore\n\n" ;
+-system("$path/image.pl -dir_prefix $prefix -prefix $illumina_prefix -iteration $iteration -all_iteration $iteration_all -toignore $toignore -overhang $overhang -kmer $kmer -smalt_minscore $SMALT_minScore") ;
++print "commands to execute:\n $path/image.pl -dir_prefix $prefix -prefix $illumina_prefix -iteration $iteration -all_iteration $iteration_all -toignore $toignore -overhang $overhang -kmer $kmer -vel_ins_len $vel_ins_len -smalt_minscore $SMALT_minScore\n\n" ;
++system("$path/image.pl -dir_prefix $prefix -prefix $illumina_prefix -iteration $iteration -all_iteration $iteration_all -toignore $toignore -overhang $overhang -kmer $kmer -vel_ins_len $vel_ins_len -smalt_minscore $SMALT_minScore") ;
+ 
+ 
+ 
+@@ -101,5 +93,3 @@
+     print "\n\nall iteration have finished!\n\n" ;
+ 
+ }
+-
+-

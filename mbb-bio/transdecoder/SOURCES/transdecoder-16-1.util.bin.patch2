@@ -1,0 +1,312 @@
+diff -Naur util1/cd-hit-2d-para.pl util2/cd-hit-2d-para.pl
+--- transdecoder_rel16JAN2014/util/bin/cd-hit-2d-para.pl	2014-02-12 17:49:06.528378257 -0500
++++ transdecoder_rel16JAN2014/util/bin/cd-hit-2d-para.pl	2014-02-12 17:57:49.916898469 -0500
+@@ -1,4 +1,5 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
++
+ # =============================================================================
+ # CD-HIT
+ # http://cd-hit.org/
+@@ -11,6 +12,7 @@
+ #                                      Email liwz@sdsc.edu
+ # =============================================================================
+ 
++use warnings;
+ use strict;
+ no strict "refs";
+ 
+diff -Naur util1/cd-hit-div.pl util2/cd-hit-div.pl
+--- transdecoder_rel16JAN2014/util/bin/cd-hit-div.pl	2014-02-12 17:49:06.626390712 -0500
++++ transdecoder_rel16JAN2014/util/bin/cd-hit-div.pl	2014-02-12 17:57:49.916898469 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #not like cd-hit-div, this script do not sort input
+ #or throw away seq
+diff -Naur util1/cd-hit-para.pl util2/cd-hit-para.pl
+--- transdecoder_rel16JAN2014/util/bin/cd-hit-para.pl	2014-02-12 17:49:06.604387918 -0500
++++ transdecoder_rel16JAN2014/util/bin/cd-hit-para.pl	2014-02-12 17:57:49.917898597 -0500
+@@ -1,4 +1,5 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
++
+ # =============================================================================
+ # CD-HIT
+ # http://cd-hit.org/
+@@ -11,6 +12,7 @@
+ #                                      Email liwz@sdsc.edu
+ # =============================================================================
+ 
++use warnings;
+ use strict;
+ no strict "refs";
+ 
+diff -Naur util1/clstr2tree.pl util2/clstr2tree.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr2tree.pl	2014-02-12 17:49:06.572383850 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr2tree.pl	2014-02-12 17:57:49.917898597 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ $clstr = shift;
+ $fr = shift; # for nr80.clstr $fr = 0.8
+diff -Naur util1/clstr2txt.pl util2/clstr2txt.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr2txt.pl	2014-02-12 17:49:06.621390077 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr2txt.pl	2014-02-12 17:57:49.917898597 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $no = 0;
+ my $clstr_no = "";
+diff -Naur util1/clstr2xml.pl util2/clstr2xml.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr2xml.pl	2014-02-12 17:49:06.531378638 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr2xml.pl	2014-02-12 17:57:49.917898597 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #usage: clstr_xml.pl [-len|-size] level1.clstr [level2.clstr level3.clstr ...]
+ #purpose: to create xml file from cd-hit or hierarchical cd-hit(h-cd-hit) results
+diff -Naur util1/clstr_cut.pl util2/clstr_cut.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_cut.pl	2014-02-12 17:49:06.647393382 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_cut.pl	2014-02-12 17:57:49.917898597 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #keep only top $no proteins in cluster
+ 
+diff -Naur util1/clstr_merge_noorder.pl util2/clstr_merge_noorder.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_merge_noorder.pl	2014-02-12 17:49:06.616389442 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_merge_noorder.pl	2014-02-12 17:57:49.917898597 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ # order of clusters don't need to be the same
+ # but then I have to read everything into memory
+diff -Naur util1/clstr_merge.pl util2/clstr_merge.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_merge.pl	2014-02-12 17:49:06.659394907 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_merge.pl	2014-02-12 17:57:49.917898597 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ # the order of clusters need to be identical
+ my ($master_clstr, @clstr) = @ARGV;
+diff -Naur util1/clstr_quality_eval_by_link.pl util2/clstr_quality_eval_by_link.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_quality_eval_by_link.pl	2014-02-12 17:49:06.657394653 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_quality_eval_by_link.pl	2014-02-12 17:57:49.917898597 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ ## calculate the sensitivity and specificity of clusters
+ ## if the input fasta file has pre-defined classification term
+diff -Naur util1/clstr_quality_eval.pl util2/clstr_quality_eval.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_quality_eval.pl	2014-02-12 17:49:06.635391857 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_quality_eval.pl	2014-02-12 17:57:49.917898597 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ ## calculate the sensitivity and specificity of clusters
+ ## if the input fasta file has pre-defined classification term
+diff -Naur util1/clstr_reduce.pl util2/clstr_reduce.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_reduce.pl	2014-02-12 17:49:06.604387918 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_reduce.pl	2014-02-12 17:57:49.917898597 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ 
+ $file90 = shift;
+diff -Naur util1/clstr_renumber.pl util2/clstr_renumber.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_renumber.pl	2014-02-12 17:49:06.586385628 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_renumber.pl	2014-02-12 17:57:49.918898724 -0500
+@@ -1,4 +1,5 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
++
+ $no = 0;
+ while($ll=<>){
+   if ($ll =~ /^>Cluster (\d+)/) {
+diff -Naur util1/clstr_rep.pl util2/clstr_rep.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_rep.pl	2014-02-12 17:49:06.633391603 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_rep.pl	2014-02-12 17:57:49.918898724 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ $rep = "";
+ $no = 0;
+diff -Naur util1/clstr_reps_faa_rev.pl util2/clstr_reps_faa_rev.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_reps_faa_rev.pl	2014-02-12 17:49:06.633391603 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_reps_faa_rev.pl	2014-02-12 17:57:49.918898724 -0500
+@@ -1,4 +1,5 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
++
+ # output single fasta file
+ # for each cluster output at least $cutoff seqs
+ 
+diff -Naur util1/clstr_rev.pl util2/clstr_rev.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_rev.pl	2014-02-12 17:49:06.667395924 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_rev.pl	2014-02-12 17:57:49.918898724 -0500
+@@ -1,4 +1,5 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
++
+ # if nr90 from nr100 and
+ #    nr80 from nr90, so I have nr90.clstr and nr80.clstr
+ # but, in nr80.clstr, some gi numbers whose from nr100 are there
+diff -Naur util1/clstr_select.pl util2/clstr_select.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_select.pl	2014-02-12 17:49:06.594386644 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_select.pl	2014-02-12 17:57:49.918898724 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #my $by = shift;
+ my $min;
+diff -Naur util1/clstr_select_rep.pl util2/clstr_select_rep.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_select_rep.pl	2014-02-12 17:49:06.540379781 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_select_rep.pl	2014-02-12 17:57:49.918898724 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #my $by = shift;
+ my $min;
+diff -Naur util1/clstr_size_histogram.pl util2/clstr_size_histogram.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_size_histogram.pl	2014-02-12 17:49:06.523377620 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_size_histogram.pl	2014-02-12 17:57:49.918898724 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if(@ARGV==0){
+    print "Usage:\n\tclstr_size_histogram.pl [-bin N] clstr_file\n";
+diff -Naur util1/clstr_size_stat.pl util2/clstr_size_stat.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_size_stat.pl	2014-02-12 17:49:06.549380926 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_size_stat.pl	2014-02-12 17:57:49.918898724 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if(@ARGV==0){
+    print "Usage:\n\tclstr_size_stat.pl clstr_file\n";
+diff -Naur util1/clstr_sort_by.pl util2/clstr_sort_by.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_sort_by.pl	2014-02-12 17:49:06.647393382 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_sort_by.pl	2014-02-12 17:57:49.918898724 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $sort_by_what = shift;
+    $sort_by_what = "no" unless $sort_by_what;
+diff -Naur util1/clstr_sort_prot_by.pl util2/clstr_sort_prot_by.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_sort_prot_by.pl	2014-02-12 17:49:06.634391730 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_sort_prot_by.pl	2014-02-12 17:57:49.918898724 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $sort_by = shift;
+    $sort_by = "len" unless ($sort_by);
+diff -Naur util1/clstr_sql_tbl.pl util2/clstr_sql_tbl.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_sql_tbl.pl	2014-02-12 17:49:06.605388045 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_sql_tbl.pl	2014-02-12 17:57:49.918898724 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if(@ARGV==0){
+   print "Usage:\n\tclstr_sql_tbl.pl clstr_file tbl_file\n";
+diff -Naur util1/clstr_sql_tbl_sort.pl util2/clstr_sql_tbl_sort.pl
+--- transdecoder_rel16JAN2014/util/bin/clstr_sql_tbl_sort.pl	2014-02-12 17:49:06.566383087 -0500
++++ transdecoder_rel16JAN2014/util/bin/clstr_sql_tbl_sort.pl	2014-02-12 17:57:49.918898724 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if(@ARGV==0){
+    print "Usage:\n\tclstr_sql_tbl_sort.pl table_file level\n";
+diff -Naur util1/make_multi_seq.pl util2/make_multi_seq.pl
+--- transdecoder_rel16JAN2014/util/bin/make_multi_seq.pl	2014-02-12 17:49:06.619389823 -0500
++++ transdecoder_rel16JAN2014/util/bin/make_multi_seq.pl	2014-02-12 17:57:49.919898851 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #note you have to use "-d 0" in the cd-hit run
+ #note you better to use "-g 1" in the cd-hit run
+diff -Naur util1/plot_2d.pl util2/plot_2d.pl
+--- transdecoder_rel16JAN2014/util/bin/plot_2d.pl	2014-02-12 17:49:06.536379273 -0500
++++ transdecoder_rel16JAN2014/util/bin/plot_2d.pl	2014-02-12 17:57:49.921899106 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use Image::Magick;
+ 
+diff -Naur util1/plot_len1.pl util2/plot_len1.pl
+--- transdecoder_rel16JAN2014/util/bin/plot_len1.pl	2014-02-12 17:49:06.620389950 -0500
++++ transdecoder_rel16JAN2014/util/bin/plot_len1.pl	2014-02-12 17:57:49.921899106 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ $file90 = shift;
+ $segs = shift;
+diff -Naur util1/psi-cd-hit-2d-g1.pl util2/psi-cd-hit-2d-g1.pl
+--- transdecoder_rel16JAN2014/util/bin/psi-cd-hit-2d-g1.pl	2014-02-12 17:49:06.532378765 -0500
++++ transdecoder_rel16JAN2014/util/bin/psi-cd-hit-2d-g1.pl	2014-02-12 17:57:49.921899106 -0500
+@@ -1,4 +1,6 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
++
++use warnings;
+ no warnings qw(once);
+ 
+ our $script_name = $0;
+diff -Naur util1/psi-cd-hit-2d.pl util2/psi-cd-hit-2d.pl
+--- transdecoder_rel16JAN2014/util/bin/psi-cd-hit-2d.pl	2014-02-12 17:49:06.606388172 -0500
++++ transdecoder_rel16JAN2014/util/bin/psi-cd-hit-2d.pl	2014-02-12 17:57:49.921899106 -0500
+@@ -1,7 +1,8 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ 
+ package PSI_CDHIT;
+ 
++use warnings;
+ use strict;
+ no warnings qw(once);
+ 
+diff -Naur util1/psi-cd-hit-local.pl util2/psi-cd-hit-local.pl
+--- transdecoder_rel16JAN2014/util/bin/psi-cd-hit-local.pl	2014-02-12 17:49:06.617389569 -0500
++++ transdecoder_rel16JAN2014/util/bin/psi-cd-hit-local.pl	2014-02-12 17:57:49.921899106 -0500
+@@ -1,5 +1,6 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ 
++use warnings;
+ no warnings qw(once);
+ 
+ package PSI_CDHIT_LOCAL;
+diff -Naur util1/psi-cd-hit.pl util2/psi-cd-hit.pl
+--- transdecoder_rel16JAN2014/util/bin/psi-cd-hit.pl	2014-02-12 17:49:06.616389442 -0500
++++ transdecoder_rel16JAN2014/util/bin/psi-cd-hit.pl	2014-02-12 17:57:49.921899106 -0500
+@@ -1,7 +1,8 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ 
+ package PSI_CDHIT;
+ 
++use warnings;
+ use strict;
+ no warnings qw(once);
+ 

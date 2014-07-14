@@ -1,0 +1,17 @@
+diff -Naur show_repeats/show_repeats.pl show_repeats2/show_repeats.pl
+--- velvet/contrib/show_repeats/show_repeats.pl	2013-04-22 15:43:08.595302453 -0400
++++ velvet/contrib/show_repeats/show_repeats.pl	2013-04-22 15:56:18.874043712 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ 
+ #    show_repeats.pl             
+ #
+@@ -20,6 +20,7 @@
+ #    You should have received a copy of the GNU General Public License
+ #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
++use warnings;
+ use strict;
+ use List::Util qw(max);
+ 

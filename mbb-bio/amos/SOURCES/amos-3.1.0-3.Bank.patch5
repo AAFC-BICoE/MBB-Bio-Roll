@@ -1,0 +1,39 @@
+diff -Naur Bank_dir1/bank-unlock.pl Bank_dir2/bank-unlock.pl
+--- amos-3.1.0/src/Bank/bank-unlock.pl	2013-02-18 17:16:58.868613837 -0500
++++ amos-3.1.0/src/Bank/bank-unlock.pl	2013-02-18 18:32:48.361371238 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use File::Basename;
+diff -Naur Bank_dir1/Makefile.in Bank_dir2/Makefile.in
+--- amos-3.1.0/src/Bank/Makefile.in	2013-02-26 18:04:20.382213075 -0500
++++ amos-3.1.0/src/Bank/Makefile.in	2013-02-27 18:35:08.044547687 -0500
+@@ -1219,7 +1219,7 @@
+               *.pl) \
+                 echo " configuring perl '$$b'"; \
+                 echo '#!$(PERL)' > "$(DESTDIR)$(bindir)/$$b"; \
+-                echo 'use lib "$(libdir)";' >> "$(DESTDIR)$(bindir)/$$b"; \
++                echo 'use lib "/opt/bio/amos/lib";' >> "$(DESTDIR)$(bindir)/$$b"; \
+                 sed -e '1 {s|^#!.*$$||;}' \
+                     "$(DESTDIR)$(bindir)/$$f" >> "$(DESTDIR)$(bindir)/$$b" \
+                 || exit 1; \
+@@ -1228,14 +1228,14 @@
+                 echo " configuring python '$$b'"; \
+                 echo '#!$(PYTHON)' > "$(DESTDIR)$(bindir)/$$b"; \
+                 sed -e '1 {s|^#!.*$$||;}' \
+-                    -e 's|^AMOSDIR[     ]*=.*$$|AMOSDIR=\"$(bindir)/\"|' \
++                    -e 's|^AMOSDIR[     ]*=.*$$|AMOSDIR=\"/opt/bio/amos/bin/\"|' \
+                     "$(DESTDIR)$(bindir)/$$f" >> "$(DESTDIR)$(bindir)/$$b" \
+                 || exit 1; \
+                 ;; \
+               *.acf) \
+                 echo " configuring acf '$$b'"; \
+-                echo '#!$(bindir)/runAmos -C' > "$(DESTDIR)$(bindir)/$$b"; \
+-                sed -e 's|^BINDIR[ 	]*=.*$$|BINDIR=$(bindir)|' \
++                echo '#!/opt/bio/amos/bin/runAmos -C' > "$(DESTDIR)$(bindir)/$$b"; \
++                sed -e 's|^BINDIR[ 	]*=.*$$|BINDIR=/opt/bio/amos/bin|' \
+                     -e 's|^NUCMER[ 	]*=.*$$|NUCMER=$(NUCMER)|' \
+                     -e 's|^DELTAFILTER[        ]*=.*$$|DELTAFILTER=$(DELTAFILTER)|' \
+                     "$(DESTDIR)$(bindir)/$$f" >> "$(DESTDIR)$(bindir)/$$b" \

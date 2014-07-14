@@ -1,0 +1,9 @@
+--- IMAGE_version2/image_run_summary.pl		2013-01-10 16:23:13.365950646 -0500
++++ IMAGE_version2/image_run_summary2.pl	2013-01-10 16:40:52.937210306 -0500
+@@ -1,4 +1,5 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl 
++use warnings;
+ #
+ #	to incorporate the information from velvet contig (in .afg)
+ #		to original ace file (which has been converted in .afg)

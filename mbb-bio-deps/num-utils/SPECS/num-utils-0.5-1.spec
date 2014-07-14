@@ -25,7 +25,7 @@ patch9:		round.patch
 patch10:	template.patch
 Prefix: 	/opt/bio
 Group: 		Development/Tools
-License:        Unknown
+License:        GPL
 AutoReq:	yes
 #Provides:	perl(the) 
 

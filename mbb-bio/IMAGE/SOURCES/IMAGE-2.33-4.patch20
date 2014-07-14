@@ -1,0 +1,184 @@
+--- IMAGE_version2/image.pl~	2013-01-10 16:23:13.365950646 -0500
++++ IMAGE_version2/image2.pl~	2013-01-10 16:40:52.937210306 -0500
+@@ -1,5 +1,4 @@
+-#! /usr/bin/perl -w
+-#
++#!/usr/bin/env perl 
+ #
+ # Copyright (C) 2009 by Pathogene Group, Sanger Center
+ #
+@@ -77,7 +76,7 @@
+ #		'ssaharam=i' => \$ram, 		
+ 		'iteration=i'    => \$iteration,
+ 		'all_iteration=i'     => \$iteration_all,
+-#    	'rm_tmp=s' => \$tmp_file,
++#    	         'rm_tmp=s' => \$tmp_file,
+ 		'kmer=i' => \$kmer,
+ #		'expcov=i' => \$expcov,
+ #		'covcut=i' => \$covcut,
+@@ -223,18 +222,15 @@
+ print "WHAT DID I JUST DO (compulsory parameters) :\n" ;
+ 
+ 
+-
+ ######################################
+ # checking all the paths
+ print "checking all the paths..\n" ;
+ #checkpath("ssaha2Build") ;
+ 
+-
+ checkpath("$path/ssaha2") ;
+ checkpath("$path/smalt_x86_64") ; 
+ #checkpath("bwa") ;
+ 
+-
+ checkpath("$path/velveth") ;
+ checkpath("$path/velvetg") ;
+ checkpath("$path/image.pl") ;
+@@ -251,21 +247,15 @@
+ print "path checking successfully.. next!\n\n" ;
+ 
+ 
+-####                                                                                                                                                                                                                                                                          
+-
+ #######################################
+ # some initial processing
+ 
+ if ($start eq 'yes') {
+ 
+-
+-    system("$path/01_prepare_new_read_placed.pl read.placed.original") ;
+-    system("$path/02_prepare_new_contigs_fa.pl read.placed.new contigs.fa.original") ;
+-    system("ln -s read.placed.new read.placed") ;
+-    system("ln -s contigs.fa.new contigs.fa") ;
+-    
+-
+-	
++    	system("$path/01_prepare_new_read_placed.pl read.placed.original") ;
++        system("$path/02_prepare_new_contigs_fa.pl read.placed.new contigs.fa.original") ;
++    	system("ln -s read.placed.new read.placed") ;
++    	system("ln -s contigs.fa.new contigs.fa") ;
+ 
+ 	my $initial_dir = "$dir_prefix$iteration" ;
+ 	mkdir $initial_dir || die "can not create inital directory $initial_dir" ;
+@@ -281,13 +271,10 @@
+ 	system("ln -s ../insert_size") ;
+ }
+ 
+-
+-
+ system("$path/contig_length_fasta.pl contigs.fa > contigs.fa.len.txt") ;
+ system("mkdir bridge") ;
+ 
+ 
+-
+ ##########################################################################################################
+ #stage 1 and 2
+ 
+@@ -304,11 +291,19 @@
+ #index
+ system("$path/smalt_x86_64 index -k 13 -s 2 ref.fa ../$ref") ; 
+ 
+-
+ # start gene models
+-system("$path/10_20_smalt_and_gather.pl 0 ../../$solexa_prefix\_1.fastq ../../$solexa_prefix\_2.fastq $insertsize final.sam $SMALT_minScore")  ;
++if ($iteration <= 1){
++	# apply the command on the two original raw reads files
++	system("$path/10_20_smalt_and_gather.pl 0 $solexa_prefix\_1.fastq $solexa_prefix\_2.fastq $insertsize final.sam $SMALT_minScore")  ;
++}
++else{
++	# apply the command on the tow partition files
++	system("$path/10_20_smalt_and_gather.pl 0 ../../$solexa_prefix\_1.fastq ../../$solexa_prefix\_2.fastq $insertsize final.sam $SMALT_minScore")  ;
++}
++
+ chdir("../") ;
+ 
++
+ # all obsolete, using only smalt now...
+ #if ($aligner eq 'ssaha') {
+ #	print "ssahaBuild on reference!\n" ;
+@@ -332,14 +327,9 @@
+ # stage 3
+ # the actual walking...
+ 
+-
+-
+ 	# merge the list file!
+ 	system("cat bridge/*.list > final.list") ;
+ 	
+-
+-
+-
+ 	if (-e "Illumina_concensus.fa") {
+ 		system("rm Illumina_concensus.fa") ;
+ 	}
+@@ -347,12 +337,10 @@
+ 	mkdir "tmp" or die "can not create tmp\n" ;
+ 	mkdir "velvet_$kmer.auto" or die "can not create velvet_$kmer.auto\n" ;
+ 	mkdir "walks" or die "can not create walks\n" ;
+-
+ 	
+ 	# walk 1
+ 	system("$path/30_walk_stage1_v2.pl kmer$kmer $insertsize $toignore $overhang $velvet_insert_size") ;
+ 
+-
+ 	# walk2 stage																	         
+ 	system("$path/40_walk_stage2_v2.pl $insertsize $toignore $overhang > walk2.auto") ;
+ 
+@@ -360,16 +348,12 @@
+ 	system("$path/50_walk_stage3_v2.pl > walk3.auto") ;
+ 
+ 
+-
+-
+-
+ ##########################################################################################################
+ # start next iteration
+ # if there are still some iterations left
+ $iteration_all-- ;
+ 
+ if ($iteration_all != 0 ) {
+-
+ 	
+ 	chdir("../") ;
+ 
+@@ -377,39 +361,17 @@
+ 	    my $path_partition = "$dir_prefix" . "1" ; 
+ 	    system("ln -s $path_partition\/partitioned_1.fastq") ; 
+             system("ln -s $path_partition\/partitioned_2.fastq") ;
+-
+ 	}
+ 	    
+ 	system("$path/60_new_iteration_raw.pl $dir_prefix $dir_prefix" . ($iteration+1) . " $dir_prefix" . "$iteration partitioned ". ($iteration+1) .  " $iteration_all $kmer $toignore $overhang $velvet_insert_size");
+ 
+-	
+-
+-
+-	
+ }
+ 
+ close($out) ;
+ 
+-
+-
+-
+ print "all done! all done!\n" ;
+ 
+ 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+ sub checkpath {
+ my $program = shift ;
+ 

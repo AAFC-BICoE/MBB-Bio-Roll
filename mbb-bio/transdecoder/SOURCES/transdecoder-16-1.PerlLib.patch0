@@ -1,0 +1,50 @@
+diff -Naur PerlLib1/Fasta_reader.pm PerlLib2/Fasta_reader.pm
+--- transdecoder_rel16JAN2014/PerlLib/Fasta_reader.pm	2014-02-12 17:35:31.106742010 -0500
++++ transdecoder_rel16JAN2014/PerlLib/Fasta_reader.pm	2014-02-12 17:46:46.260550876 -0500
+@@ -1,8 +1,9 @@
+-#!/usr/local/bin/perl -w
++#!/usr/bin/env perl
+ 
+ # lightweight fasta reader capabilities:
+ package Fasta_reader;
+ 
++use warnings;
+ use strict;
+ 
+ sub new {
+diff -Naur PerlLib1/Gene_obj_indexer.pm PerlLib2/Gene_obj_indexer.pm
+--- transdecoder_rel16JAN2014/PerlLib/Gene_obj_indexer.pm	2014-02-12 17:35:31.114743029 -0500
++++ transdecoder_rel16JAN2014/PerlLib/Gene_obj_indexer.pm	2014-02-12 17:46:46.260550876 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ package Gene_obj_indexer;
+ use strict;
+diff -Naur PerlLib1/GFF3_utils.pm PerlLib2/GFF3_utils.pm
+--- transdecoder_rel16JAN2014/PerlLib/GFF3_utils.pm	2014-02-12 17:35:31.125744428 -0500
++++ transdecoder_rel16JAN2014/PerlLib/GFF3_utils.pm	2014-02-12 17:46:46.261551004 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ package main;
+ our $SEE;
+diff -Naur PerlLib1/Longest_orf.pm PerlLib2/Longest_orf.pm
+--- transdecoder_rel16JAN2014/PerlLib/Longest_orf.pm	2014-02-12 17:35:31.125744428 -0500
++++ transdecoder_rel16JAN2014/PerlLib/Longest_orf.pm	2014-02-12 17:46:46.261551004 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ package main;
+ our $SEE; 
+diff -Naur PerlLib1/TiedHash.pm PerlLib2/TiedHash.pm
+--- transdecoder_rel16JAN2014/PerlLib/TiedHash.pm	2014-02-12 17:35:31.127744682 -0500
++++ transdecoder_rel16JAN2014/PerlLib/TiedHash.pm	2014-02-12 17:46:46.261551004 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ package TiedHash;
+ use strict;

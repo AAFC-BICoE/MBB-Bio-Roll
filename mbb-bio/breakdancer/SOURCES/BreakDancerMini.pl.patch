@@ -1,0 +1,17 @@
+--- breakdancer/perl/BreakDancerMini.pl.orig	2012-10-15 09:55:19.768879843 -0400
++++ breakdancer/perl/BreakDancerMini.pl	2012-10-15 09:55:51.375565776 -0400
+@@ -1,4 +1,4 @@
+-#!/gsc/bin/perl
++#!/usr/bin/env perl
+ # This is the BreakDancer script that focuses on small indel detection
+ # Indels as short as 1 std and as long as (maximum insert size - mean insert size) can be detected
+ # Copyright (C) 2009 Washington University in St. Louis
+@@ -8,7 +8,7 @@
+ use Getopt::Std;
+ use Statistics::Descriptive;
+ use Math::CDF;
+-use lib '/gscuser/kchen/1000genomes/analysis/scripts/';
++use lib '/opt/bio/breakdancer/perl';
+ use AlnParser;
+ 
+ my $version="BreakDancerMini-0.0.1r57";

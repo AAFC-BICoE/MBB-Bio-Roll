@@ -1,0 +1,41 @@
+--- IMAGE_version2/retrieve_Illumina_contigs_v2.pl	2013-01-10 16:23:13.365950646 -0500
++++ IMAGE_version2/retrieve_Illumina_contigs_v2.2.pl	2013-01-10 16:40:52.937210306 -0500
+@@ -1,26 +1,19 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
++use warnings;
++use strict;
++
+ #
+ #	to incorporate the information from velvet contig (in .afg)
+-#		to original ace file (which has been converted in .afg)
++#	to original ace file (which has been converted in .afg)
+ #
+ #	author: jit
+ #
+-#
+-#
+-#
+-
+-
+-use strict;
+-
+-
+ 
+ if (@ARGV != 2) {
+ 	print "xxx.pl walk2 folder fastas outprefix\n\n" ;
+ 	exit ;
+ }
+ 
+-
+-
+ my $folder = shift @ARGV ;
+ my $prefix = shift @ARGV ;
+ 
+@@ -80,6 +73,5 @@
+ }
+ 
+ 
+-
+ print "all done!\n" ;
+ 

@@ -1,0 +1,11 @@
+--- transdecoder_rel16JAN2014/Makefile	2014-02-13 16:44:40.797222403 -0500
++++ transdecoder_rel16JAN2014/Makefile2	2014-02-13 16:45:29.667433576 -0500
+@@ -4,6 +4,8 @@
+ 
+ nopfam: ffindex parafly cdhit
+ 
++nopfam_nocdhit: ffindex parafly
++
+ parafly:
+ 	cd 3rd_party/parafly && ./configure --prefix=`pwd`/../../util && $(MAKE) install
+ 

@@ -1,0 +1,30 @@
+diff -Naur Graph_dir1/Makefile.in Graph_dir2/Makefile.in
+--- amos-3.1.0/src/Graph/Makefile.in	2013-02-26 17:36:50.035818994 -0500
++++ amos-3.1.0/src/Graph/Makefile.in	2013-02-27 18:42:27.258571163 -0500
+@@ -601,7 +601,7 @@
+               *.pl) \
+                 echo " configuring perl '$$b'"; \
+                 echo '#!$(PERL)' > "$(DESTDIR)$(bindir)/$$b"; \
+-                echo 'use lib "$(libdir)";' >> "$(DESTDIR)$(bindir)/$$b"; \
++                echo 'use lib "/opt/bio/amos/lib";' >> "$(DESTDIR)$(bindir)/$$b"; \
+                 sed -e '1 {s|^#!.*$$||;}' \
+                     "$(DESTDIR)$(bindir)/$$f" >> "$(DESTDIR)$(bindir)/$$b" \
+                 || exit 1; \
+@@ -610,14 +610,14 @@
+                 echo " configuring python '$$b'"; \
+                 echo '#!$(PYTHON)' > "$(DESTDIR)$(bindir)/$$b"; \
+                 sed -e '1 {s|^#!.*$$||;}' \
+-                    -e 's|^AMOSDIR[     ]*=.*$$|AMOSDIR=\"$(bindir)/\"|' \
++                    -e 's|^AMOSDIR[     ]*=.*$$|AMOSDIR=\"/opt/bio/amos/bin/\"|' \
+                     "$(DESTDIR)$(bindir)/$$f" >> "$(DESTDIR)$(bindir)/$$b" \
+                 || exit 1; \
+                 ;; \
+               *.acf) \
+                 echo " configuring acf '$$b'"; \
+-                echo '#!$(bindir)/runAmos -C' > "$(DESTDIR)$(bindir)/$$b"; \
+-                sed -e 's|^BINDIR[ 	]*=.*$$|BINDIR=$(bindir)|' \
++                echo '#!/opt/bio/amos/bin/runAmos -C' > "$(DESTDIR)$(bindir)/$$b"; \
++                sed -e 's|^BINDIR[ 	]*=.*$$|BINDIR=/opt/bio/amos/bin|' \
+                     -e 's|^NUCMER[ 	]*=.*$$|NUCMER=$(NUCMER)|' \
+                     -e 's|^DELTAFILTER[        ]*=.*$$|DELTAFILTER=$(DELTAFILTER)|' \
+                     "$(DESTDIR)$(bindir)/$$f" >> "$(DESTDIR)$(bindir)/$$b" \

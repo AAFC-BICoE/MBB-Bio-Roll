@@ -1,0 +1,39 @@
+--- IMAGE_version2/30_walk_stage1_v2.pl	2013-01-10 16:23:13.342929192 -0500
++++ IMAGE_version2/30_walk_stage1_v2.2.pl	2013-01-10 16:40:52.937210306 -0500
+@@ -1,4 +1,6 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl 
++use warnings;
++
+ #
+ #	30_walk_stage1.pl
+ #	Local assemblies of velvet
+@@ -16,8 +18,8 @@
+     $path = $1 ;
+ }
+ 
+-my $velvetg = "$path/velvetg ";
+-my $velveth = "$path/velveth ";
++my $velvetg = "/opt/bio/velvet/velvetg_127";
++my $velveth = "/opt/bio/velvet/velveth_127";
+ my $ssaha = "$path/ssaha2 " ;
+ my $checkvelvet = "$path/check_velvet_contig.pl " ;
+ 
+@@ -250,17 +252,8 @@
+ ####################################################################################
+ 
+ 
+-
+-
+-
+-
+-
+-
+-
+ print "starting to walk...\n" ;
+ 
+-
+-
+ #my $tmp_SC = 0 ;
+ 
+ 

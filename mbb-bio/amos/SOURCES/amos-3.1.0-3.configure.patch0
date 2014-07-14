@@ -1,0 +1,11 @@
+--- amos-3.1.0/configure	2013-02-26 17:22:11.201344810 -0500
++++ amos-3.1.0/configure2	2013-02-26 16:23:45.219658471 -0500
+@@ -831,7 +831,7 @@
+ dvidir='${docdir}'
+ pdfdir='${docdir}'
+ psdir='${docdir}'
+-libdir='${exec_prefix}/lib'
++libdir='${prefix}/lib'
+ localedir='${datarootdir}/locale'
+ mandir='${datarootdir}/man'
+ 

@@ -1,0 +1,11 @@
+--- critica105/scripts/iterate-critica	2012-11-14 11:53:48.325545993 -0500
++++ critica105/scripts/iterate-critica2	2012-11-14 11:50:50.863692865 -0500
+@@ -1,6 +1,8 @@
+ #!/usr/bin/perl 
+ # Script to automate iterative runs of CRITICA
+ 
++use lib "/home/AAFC-AAC/adamz/critica/scripts";
++
+ use Critica;
+ 
+ $scriptname=getScriptName();

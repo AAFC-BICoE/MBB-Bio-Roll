@@ -1,0 +1,10 @@
+--- critica105/scripts/annotation-compare	2012-11-15 13:34:59.154408253 -0500
++++ critica105/scripts/annotation-compare2	2012-11-15 13:38:07.289355023 -0500
+@@ -1,5 +1,7 @@
+ #!/usr/bin/perl -w
+ 
++use lib "/opt/bio/critica/scripts";
++
+ use Critica;
+ 
+ @files=realArguments(@ARGV);

@@ -1,0 +1,28 @@
+--- IMAGE_version2/contig_length_fastq.pl	2013-01-10 16:23:13.350703247 -0500
++++ IMAGE_version2/contig_length_fastq2.pl	2013-01-10 16:40:52.937210306 -0500
+@@ -1,8 +1,9 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl 
++use warnings;
+ use strict;
+-use lib qw(/nfs/team81/jit/repository/pathogen/user/jit );
+-use strict;
+-use AssemblyTools;
++#use lib qw(/nfs/team81/jit/repository/pathogen/user/jit );
++#use strict;
++#use AssemblyTools;
+ 
+ 
+ my $largest = 0;
+@@ -39,11 +40,8 @@
+     }
+ 	my $skip = <IN> ;
+ 	$skip = <IN> ;
+-
+     
+     #last;
+-
+-
+ }
+ 
+ print "\#\#the largest length is: $contig with $largest bp \n" ;

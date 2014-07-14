@@ -1,0 +1,9 @@
+--- BEASTv1.7.5/bin/logcombiner	2013-09-25 16:04:24.909873410 -0400
++++ BEASTv1.7.5/bin/logcombiner.new	2013-09-25 16:04:29.876500250 -0400
+@@ -23,5 +23,5 @@
+ fi
+ 
+ BEAST_LIB="$BEAST/lib"
+-java -Xms64m -Xmx1024m -Djava.library.path="$BEAST_LIB" -cp "$BEAST_LIB/beast.jar" dr.app.tools.LogCombiner $*
++java -Xms64m -Xmx4096m -Djava.library.path="$BEAST_LIB::/opt/bio/beagle-lib/lib" -cp "$BEAST_LIB/beast.jar" dr.app.tools.LogCombiner $*
+ 

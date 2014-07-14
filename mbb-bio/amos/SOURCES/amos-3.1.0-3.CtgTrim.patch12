@@ -1,0 +1,149 @@
+diff -Naur CtgTrim_dir1/excl_seqs.pl CtgTrim_dir2/excl_seqs.pl
+--- amos-3.1.0/src/CtgTrim/excl_seqs.pl	2013-02-18 17:17:35.343088562 -0500
++++ amos-3.1.0/src/CtgTrim/excl_seqs.pl	2013-02-19 10:29:45.767072775 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ $infile = $ARGV[0];
+ $exclfile = $ARGV[1];
+diff -Naur CtgTrim_dir1/findChimeras.pl CtgTrim_dir2/findChimeras.pl
+--- amos-3.1.0/src/CtgTrim/findChimeras.pl	2013-02-18 17:17:35.344549775 -0500
++++ amos-3.1.0/src/CtgTrim/findChimeras.pl	2013-02-21 14:51:06.020097761 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use TIGR::Foundation;
+@@ -171,7 +171,7 @@
+ 	my @ex = split(' ', $exts{"$b $end"});
+ 	for ($j = 0; $j <= $#ex; $j++){
+ 	    # check all reads extending $b
+-q	    $other = $ex[$j];
++	    $other = $ex[$j];
+ 	    print "beginning looking at $other\n";
+ 	    if ($insert{$other} eq $insert{$a}) {
+ 		# skip same insert reads
+diff -Naur CtgTrim_dir1/find_ends.pl CtgTrim_dir2/find_ends.pl
+--- amos-3.1.0/src/CtgTrim/find_ends.pl	2013-02-18 17:17:35.344549775 -0500
++++ amos-3.1.0/src/CtgTrim/find_ends.pl	2013-02-19 10:36:35.800235471 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ $infile = $ARGV[0];
+ $ovlpfile = $ARGV[1];
+diff -Naur CtgTrim_dir1/fixfrg.pl CtgTrim_dir2/fixfrg.pl
+--- amos-3.1.0/src/CtgTrim/fixfrg.pl	2013-02-18 17:17:35.344549775 -0500
++++ amos-3.1.0/src/CtgTrim/fixfrg.pl	2013-02-19 10:38:19.888069849 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use AMOS::AmosLib;
+ 
+diff -Naur CtgTrim_dir1/iterate.pl CtgTrim_dir2/iterate.pl
+--- amos-3.1.0/src/CtgTrim/iterate.pl	2013-02-18 18:01:01.259220870 -0500
++++ amos-3.1.0/src/CtgTrim/iterate.pl	2013-02-19 10:52:33.228297047 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ my $BASEDIR = "/local/asmg/work/mpop/WGA/";
+ my $BINDIR  = $BASEDIR . "bin/";
+diff -Naur CtgTrim_dir1/kmers.pl CtgTrim_dir2/kmers.pl
+--- amos-3.1.0/src/CtgTrim/kmers.pl	2013-02-18 18:01:01.263275781 -0500
++++ amos-3.1.0/src/CtgTrim/kmers.pl	2013-02-19 10:53:07.132234304 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use AMOS::AmosLib;
+ 
+diff -Naur CtgTrim_dir1/Makefile.in CtgTrim_dir2/Makefile.in
+--- amos-3.1.0/src/CtgTrim/Makefile.in	2013-02-26 18:15:47.528412479 -0500
++++ amos-3.1.0/src/CtgTrim/Makefile.in	2013-02-26 18:16:25.808373673 -0500
+@@ -450,7 +450,7 @@
+               *.pl) \
+                 echo " configuring perl '$$b'"; \
+                 echo '#!$(PERL)' > "$(DESTDIR)$(bindir)/$$b"; \
+-                echo 'use lib "$(libdir)";' >> "$(DESTDIR)$(bindir)/$$b"; \
++                echo 'use lib "/opt/bio/amos/lib";' >> "$(DESTDIR)$(bindir)/$$b"; \
+                 sed -e '1 {s|^#!.*$$||;}' \
+                     "$(DESTDIR)$(bindir)/$$f" >> "$(DESTDIR)$(bindir)/$$b" \
+                 || exit 1; \
+diff -Naur CtgTrim_dir1/singles.pl CtgTrim_dir2/singles.pl
+--- amos-3.1.0/src/CtgTrim/singles.pl	2013-02-18 18:01:01.281545133 -0500
++++ amos-3.1.0/src/CtgTrim/singles.pl	2013-02-19 11:06:25.719250190 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ $ctg = $ARGV[0];
+ $seq = $ARGV[1];
+diff -Naur CtgTrim_dir1/tab2ovls.pl CtgTrim_dir2/tab2ovls.pl
+--- amos-3.1.0/src/CtgTrim/tab2ovls.pl	2013-02-18 18:01:01.284243899 -0500
++++ amos-3.1.0/src/CtgTrim/tab2ovls.pl	2013-02-19 11:18:03.129511271 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ $MARGIN = 20;
+ 
+diff -Naur CtgTrim_dir1/trimends.pl CtgTrim_dir2/trimends.pl
+--- amos-3.1.0/src/CtgTrim/trimends.pl	2013-02-18 18:01:01.291273638 -0500
++++ amos-3.1.0/src/CtgTrim/trimends.pl	2013-02-21 18:22:52.409210948 -0500
+@@ -1,6 +1,6 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+-my $BASEDIR  = "/local/asmg/work/mpop/WGA/";
++my $BASEDIR  = "/opt/bio/amos/";
+ my $BINDIR   = $BASEDIR . "bin/";
+ 
+ $findends    = $BINDIR . "find_ends";
+@@ -10,16 +10,16 @@
+ $ovlps       = $BINDIR  . "tab2ovls";
+ $findsingles = $BINDIR . "singles";
+ 
+-$tasm        = "/usr/local/bin/run_TA";
+-$casm        = "/local/asmg/bin/run_CA";
+-$lucy        = "/usr/local/bin/lucy";
++$tasm        = "/opt/bio/tigr/bin/run_TA";
++$casm        = "/opt/bio/wgs/bin/runCA";
++$lucy        = "/opt/bio/lucy/lucy";
+ $lucyparms   = "-error 0.025 0.02 -window 50 0.03 5 0.01 -bracket 10 0.02";
+-$nucmum      = "/usr/local/bin/nucmer";
+-$show        = "/usr/local/bin/show-coords";
+-$blast       = "/usr/local/bin/blastall";
+-$format      = "/usr/local/bin/formatdb";
+-$getlens     = "/local/asmg/bin/getlengths";
+-$qc          = "/local/asmg/bin/caqc";
++$nucmum      = "/opt/bio/MUMmer/bin/nucmer";
++$show        = "/opt/bio/MUMmer/bin/show-coords";
++$blast       = "/opt/bio/ncbi/bin/blastall";
++$format      = "/opt/bio/ncbi/bin/formatdb";
++$getlens     = "/opt/bio/amos/bin/getlengths";
++$qc          = "/opt/bio/wgs/bin/caqc";
+ $grep        = "/bin/grep";
+ $cat         = "/bin/cat";
+ 
+diff -Naur CtgTrim_dir1/trimfrg.pl CtgTrim_dir2/trimfrg.pl
+--- amos-3.1.0/src/CtgTrim/trimfrg.pl	2013-02-18 18:01:01.291273638 -0500
++++ amos-3.1.0/src/CtgTrim/trimfrg.pl	2013-02-19 11:20:44.305055415 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ $MAXSEQ = 2048;
+ $MINSEQ = 64;
+diff -Naur CtgTrim_dir1/vecfix.pl CtgTrim_dir2/vecfix.pl
+--- amos-3.1.0/src/CtgTrim/vecfix.pl	2013-02-18 18:01:01.292177307 -0500
++++ amos-3.1.0/src/CtgTrim/vecfix.pl	2013-02-19 11:21:38.234062608 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ $seqfile = $ARGV[0];
+ $initfile = $ARGV[1];

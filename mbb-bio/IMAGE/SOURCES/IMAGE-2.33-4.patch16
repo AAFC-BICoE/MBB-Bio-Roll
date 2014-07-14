@@ -1,0 +1,8 @@
+--- IMAGE_version2/fasta2singleLine.pl	2013-01-10 16:23:13.365950646 -0500
++++ IMAGE_version2/fasta2singleLine2.pl	2013-01-10 16:40:52.937210306 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ # Martin Hunt 02/10/08
+ # mh12@sanger.ac.uk

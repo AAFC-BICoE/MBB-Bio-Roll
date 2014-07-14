@@ -1,0 +1,334 @@
+diff -Naur Converters_dir1/ace2contig.pl Converters_dir2/ace2contig.pl
+--- amos-3.1.0/src/Converters/ace2contig.pl	2013-02-18 17:16:36.805953200 -0500
++++ amos-3.1.0/src/Converters/ace2contig.pl	2013-02-18 18:23:06.529219380 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ # $Id$
+ #
+diff -Naur Converters_dir1/agp2amos.pl Converters_dir2/agp2amos.pl
+--- amos-3.1.0/src/Converters/agp2amos.pl	2013-02-18 17:16:36.805953200 -0500
++++ amos-3.1.0/src/Converters/agp2amos.pl	2013-02-18 18:23:59.240066333 -0500
+@@ -1,4 +1,6 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
++
++use warnings;
+ use strict;
+ 
+ ## Load agp scaffold information into a bank
+diff -Naur Converters_dir1/amos2ace.pl Converters_dir2/amos2ace.pl
+--- amos-3.1.0/src/Converters/amos2ace.pl	2013-02-18 17:16:36.805953200 -0500
++++ amos-3.1.0/src/Converters/amos2ace.pl	2013-02-18 18:29:14.746110488 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ # $Id$
+ #
+diff -Naur Converters_dir1/amos2frg.pl Converters_dir2/amos2frg.pl
+--- amos-3.1.0/src/Converters/amos2frg.pl	2013-02-18 17:16:36.805953200 -0500
++++ amos-3.1.0/src/Converters/amos2frg.pl	2013-02-18 18:29:50.920417002 -0500
+@@ -1,5 +1,6 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ 
++use warnings;
+ use AMOS::AmosLib;
+ use TIGR::Foundation;
+ 
+diff -Naur Converters_dir1/amos2mates.pl Converters_dir2/amos2mates.pl
+--- amos-3.1.0/src/Converters/amos2mates.pl	2013-02-18 17:16:36.805953200 -0500
++++ amos-3.1.0/src/Converters/amos2mates.pl	2013-02-18 18:30:47.967068726 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use AMOS::AmosLib;
+ use TIGR::Foundation;
+diff -Naur Converters_dir1/amos2sq.pl Converters_dir2/amos2sq.pl
+--- amos-3.1.0/src/Converters/amos2sq.pl	2013-02-18 17:16:36.805953200 -0500
++++ amos-3.1.0/src/Converters/amos2sq.pl	2013-02-18 18:31:06.296065114 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use AMOS::AmosLib;
+ use TIGR::Foundation;
+diff -Naur Converters_dir1/arachne2ctg.pl Converters_dir2/arachne2ctg.pl
+--- amos-3.1.0/src/Converters/arachne2ctg.pl	2013-02-18 17:16:36.805953200 -0500
++++ amos-3.1.0/src/Converters/arachne2ctg.pl	2013-02-18 18:31:32.738113137 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use TIGR::Foundation;
+ 
+diff -Naur Converters_dir1/arachne2scaff.pl Converters_dir2/arachne2scaff.pl
+--- amos-3.1.0/src/Converters/arachne2scaff.pl	2013-02-18 17:16:36.805953200 -0500
++++ amos-3.1.0/src/Converters/arachne2scaff.pl	2013-02-18 18:32:00.401272203 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use TIGR::Foundation;
+ 
+diff -Naur Converters_dir1/benchmark2arachne.pl Converters_dir2/benchmark2arachne.pl
+--- amos-3.1.0/src/Converters/benchmark2arachne.pl	2013-02-18 17:16:36.805953200 -0500
++++ amos-3.1.0/src/Converters/benchmark2arachne.pl	2013-02-18 18:33:19.080228885 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ # Copyright (c) 2003, The Institute for Genomic Research (TIGR), Rockville,
+ # Maryland, U.S.A.  All rights reserved.
+diff -Naur Converters_dir1/benchmark2ca.pl Converters_dir2/benchmark2ca.pl
+--- amos-3.1.0/src/Converters/benchmark2ca.pl	2013-02-18 17:16:36.805953200 -0500
++++ amos-3.1.0/src/Converters/benchmark2ca.pl	2013-02-18 18:35:09.675077192 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -Naur Converters_dir1/benchmark2mates.pl Converters_dir2/benchmark2mates.pl
+--- amos-3.1.0/src/Converters/benchmark2mates.pl	2013-02-18 17:16:36.818117061 -0500
++++ amos-3.1.0/src/Converters/benchmark2mates.pl	2013-02-18 18:34:06.632107679 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -Naur Converters_dir1/benchmark2ta.pl Converters_dir2/benchmark2ta.pl
+--- amos-3.1.0/src/Converters/benchmark2ta.pl	2013-02-18 17:16:36.818117061 -0500
++++ amos-3.1.0/src/Converters/benchmark2ta.pl	2013-02-18 18:35:31.744071531 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ # Copyright (c) 2003, The Institute for Genomic Research (TIGR), Rockville,
+ # Maryland, U.S.A.  All rights reserved.
+diff -Naur Converters_dir1/blasr2coords.pl Converters_dir2/blasr2coords.pl
+--- amos-3.1.0/src/Converters/blasr2coords.pl	2013-02-18 17:16:36.818117061 -0500
++++ amos-3.1.0/src/Converters/blasr2coords.pl	2013-02-18 18:36:39.540081799 -0500
+@@ -1,4 +1,6 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
++
++use warnings;
+ use strict;
+ 
+ while (<>)
+diff -Naur Converters_dir1/ca2ctg.pl Converters_dir2/ca2ctg.pl
+--- amos-3.1.0/src/Converters/ca2ctg.pl	2013-02-18 17:16:36.818117061 -0500
++++ amos-3.1.0/src/Converters/ca2ctg.pl	2013-02-18 18:42:44.582080222 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ # $Id$
+ #
+diff -Naur Converters_dir1/ca2mates.pl Converters_dir2/ca2mates.pl
+--- amos-3.1.0/src/Converters/ca2mates.pl	2013-02-18 17:16:36.818117061 -0500
++++ amos-3.1.0/src/Converters/ca2mates.pl	2013-02-18 18:43:02.540339259 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use AMOS::AmosLib;
+diff -Naur Converters_dir1/ca2scaff.pl Converters_dir2/ca2scaff.pl
+--- amos-3.1.0/src/Converters/ca2scaff.pl	2013-02-18 17:16:36.818117061 -0500
++++ amos-3.1.0/src/Converters/ca2scaff.pl	2013-02-18 18:43:34.697071657 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ # $Id$
+ #
+diff -Naur Converters_dir1/ca2singletons.pl Converters_dir2/ca2singletons.pl
+--- amos-3.1.0/src/Converters/ca2singletons.pl	2013-02-18 17:16:36.818117061 -0500
++++ amos-3.1.0/src/Converters/ca2singletons.pl	2013-02-18 18:43:54.202089998 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #
+ # This program outputs the set of singleton reads in an assembly in one of
+diff -Naur Converters_dir1/ca2ta.pl Converters_dir2/ca2ta.pl
+--- amos-3.1.0/src/Converters/ca2ta.pl	2013-02-18 17:16:36.820391788 -0500
++++ amos-3.1.0/src/Converters/ca2ta.pl	2013-02-18 18:44:43.115079359 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use Fcntl;
+diff -Naur Converters_dir1/castats.pl Converters_dir2/castats.pl
+--- amos-3.1.0/src/Converters/castats.pl	2013-02-18 17:16:36.820391788 -0500
++++ amos-3.1.0/src/Converters/castats.pl	2013-02-18 18:45:05.097060453 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ # This program reads a Celera .asm file and produces aggregate information
+ # about the assembly
+diff -Naur Converters_dir1/cgb2ctg.pl Converters_dir2/cgb2ctg.pl
+--- amos-3.1.0/src/Converters/cgb2ctg.pl	2013-02-18 17:16:36.820391788 -0500
++++ amos-3.1.0/src/Converters/cgb2ctg.pl	2013-02-18 18:45:58.563472738 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use AMOS::AmosLib;
+ use TIGR::Foundation;
+diff -Naur Converters_dir1/contig2contig.pl Converters_dir2/contig2contig.pl
+--- amos-3.1.0/src/Converters/contig2contig.pl	2013-02-18 17:16:36.820391788 -0500
++++ amos-3.1.0/src/Converters/contig2contig.pl	2013-02-18 18:47:08.932161917 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use File::Spec;
+diff -Naur Converters_dir1/ctg2fasta.pl Converters_dir2/ctg2fasta.pl
+--- amos-3.1.0/src/Converters/ctg2fasta.pl	2013-02-18 17:16:36.820391788 -0500
++++ amos-3.1.0/src/Converters/ctg2fasta.pl	2013-02-19 10:23:44.905061238 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use AMOS::AmosLib;
+diff -Naur Converters_dir1/ctg2umdcontig.pl Converters_dir2/ctg2umdcontig.pl
+--- amos-3.1.0/src/Converters/ctg2umdcontig.pl	2013-02-18 17:16:36.820391788 -0500
++++ amos-3.1.0/src/Converters/ctg2umdcontig.pl	2013-02-19 10:25:55.311030503 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ my $idmap = $ARGV[1];
+ my $ctg = $ARGV[0];
+diff -Naur Converters_dir1/frg2fasta.pl Converters_dir2/frg2fasta.pl
+--- amos-3.1.0/src/Converters/frg2fasta.pl	2013-02-18 17:16:36.820391788 -0500
++++ amos-3.1.0/src/Converters/frg2fasta.pl	2013-02-19 10:49:06.533266779 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use AMOS::AmosLib;
+ 
+diff -Naur Converters_dir1/frg2fastq.pl Converters_dir2/frg2fastq.pl
+--- amos-3.1.0/src/Converters/frg2fastq.pl	2013-02-18 17:16:36.820391788 -0500
++++ amos-3.1.0/src/Converters/frg2fastq.pl	2013-02-19 10:49:29.676268772 -0500
+@@ -1,4 +1,5 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
++
+ use AMOS::AmosLib;
+ # converts frg (phred 48) to fastq (phred 33)
+ 
+diff -Naur Converters_dir1/frg2ta.pl Converters_dir2/frg2ta.pl
+--- amos-3.1.0/src/Converters/frg2ta.pl	2013-02-18 17:16:36.820391788 -0500
++++ amos-3.1.0/src/Converters/frg2ta.pl	2013-02-19 10:51:11.301487990 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use lib "/local/asmg/lib";
+ 
+diff -Naur Converters_dir1/Makefile.in Converters_dir2/Makefile.in
+--- amos-3.1.0/src/Converters/Makefile.in	2013-02-26 18:14:16.875256373 -0500
++++ amos-3.1.0/src/Converters/Makefile.in	2013-02-27 18:40:14.460747143 -0500
+@@ -642,7 +642,7 @@
+               *.pl) \
+                 echo " configuring perl '$$b'"; \
+                 echo '#!$(PERL)' > "$(DESTDIR)$(bindir)/$$b"; \
+-                echo 'use lib "$(libdir)";' >> "$(DESTDIR)$(bindir)/$$b"; \
++                echo 'use lib "/opt/bio/amos/lib";' >> "$(DESTDIR)$(bindir)/$$b"; \
+                 sed -e '1 {s|^#!.*$$||;}' \
+                     "$(DESTDIR)$(bindir)/$$f" >> "$(DESTDIR)$(bindir)/$$b" \
+                 || exit 1; \
+@@ -651,14 +651,14 @@
+                 echo " configuring python '$$b'"; \
+                 echo '#!$(PYTHON)' > "$(DESTDIR)$(bindir)/$$b"; \
+                 sed -e '1 {s|^#!.*$$||;}' \
+-                    -e 's|^AMOSDIR[     ]*=.*$$|AMOSDIR=\"$(bindir)/\"|' \
++                    -e 's|^AMOSDIR[     ]*=.*$$|AMOSDIR=\"/opt/bio/amos/bin/\"|' \
+                     "$(DESTDIR)$(bindir)/$$f" >> "$(DESTDIR)$(bindir)/$$b" \
+                 || exit 1; \
+                 ;; \
+               *.acf) \
+                 echo " configuring acf '$$b'"; \
+-                echo '#!$(bindir)/runAmos -C' > "$(DESTDIR)$(bindir)/$$b"; \
+-                sed -e 's|^BINDIR[ 	]*=.*$$|BINDIR=$(bindir)|' \
++                echo '#!/opt/bio/amos/bin/runAmos -C' > "$(DESTDIR)$(bindir)/$$b"; \
++                sed -e 's|^BINDIR[ 	]*=.*$$|BINDIR=/opt/bio/amos/bin|' \
+                     -e 's|^NUCMER[ 	]*=.*$$|NUCMER=$(NUCMER)|' \
+                     -e 's|^DELTAFILTER[        ]*=.*$$|DELTAFILTER=$(DELTAFILTER)|' \
+                     "$(DESTDIR)$(bindir)/$$f" >> "$(DESTDIR)$(bindir)/$$b" \
+diff -Naur Converters_dir1/parsecasm.pl Converters_dir2/parsecasm.pl
+--- amos-3.1.0/src/Converters/parsecasm.pl	2013-02-18 18:01:01.265253813 -0500
++++ amos-3.1.0/src/Converters/parsecasm.pl	2013-02-19 10:55:43.526080314 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #$Id$
+ 
+diff -Naur Converters_dir1/phd2afg.pl Converters_dir2/phd2afg.pl
+--- amos-3.1.0/src/Converters/phd2afg.pl	2013-02-18 18:01:01.274162533 -0500
++++ amos-3.1.0/src/Converters/phd2afg.pl	2013-02-19 10:57:55.035069700 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use AMOS::AmosFoundation;
+ 
+diff -Naur Converters_dir1/scaff2fasta.pl Converters_dir2/scaff2fasta.pl
+--- amos-3.1.0/src/Converters/scaff2fasta.pl	2013-02-18 18:01:01.280083361 -0500
++++ amos-3.1.0/src/Converters/scaff2fasta.pl	2013-02-19 11:06:06.279076759 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #$Id$
+ 
+diff -Naur Converters_dir1/ta2ace.pl Converters_dir2/ta2ace.pl
+--- amos-3.1.0/src/Converters/ta2ace.pl	2013-02-18 18:01:01.284243899 -0500
++++ amos-3.1.0/src/Converters/ta2ace.pl	2013-02-19 11:10:20.935092582 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ # $Id$
+ #
+diff -Naur Converters_dir1/tarchive2amos.pl Converters_dir2/tarchive2amos.pl
+--- amos-3.1.0/src/Converters/tarchive2amos.pl	2013-02-18 18:01:01.284243899 -0500
++++ amos-3.1.0/src/Converters/tarchive2amos.pl	2013-02-19 11:18:18.400081090 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -Naur Converters_dir1/tarchive2ca.pl Converters_dir2/tarchive2ca.pl
+--- amos-3.1.0/src/Converters/tarchive2ca.pl	2013-02-18 18:01:01.286134954 -0500
++++ amos-3.1.0/src/Converters/tarchive2ca.pl	2013-02-19 11:18:36.160160129 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -Naur Converters_dir1/toArachne.pl Converters_dir2/toArachne.pl
+--- amos-3.1.0/src/Converters/toArachne.pl	2013-02-18 18:01:01.290190073 -0500
++++ amos-3.1.0/src/Converters/toArachne.pl	2013-02-19 11:19:35.318071502 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ # $Id$
+ 

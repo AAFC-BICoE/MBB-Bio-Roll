@@ -1,0 +1,9 @@
+--- IMAGE_version2/get_fasta_containNs_toIMAGE_format.pl	2013-01-10 16:23:13.365950646 -0500
++++ IMAGE_version2/get_fasta_containNs_toIMAGE_format2.pl	2013-01-10 16:40:52.937210306 -0500
+@@ -1,4 +1,5 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl 
++use warnings;
+ use strict;
+ 
+ 

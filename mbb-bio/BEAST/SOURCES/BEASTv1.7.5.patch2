@@ -1,0 +1,9 @@
+--- BEASTv1.7.5/bin/beauti	2013-02-15 13:29:33.000000000 -0500
++++ BEASTv1.7.5/bin/beauti.new	2013-09-25 16:02:04.603101644 -0400
+@@ -23,5 +23,5 @@
+ fi
+ 
+ BEAST_LIB="$BEAST/lib"
+-java -Xms64m -Xmx1024m -Djava.library.path="$BEAST_LIB" -jar "$BEAST_LIB/beauti.jar" $*
++java -Xms64m -Xmx4096m -Djava.library.path="$BEAST_LIB:/opt/bio/beagle-lib/lib" -jar "$BEAST_LIB/beauti.jar" $*
+ 

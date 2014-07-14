@@ -1,0 +1,8 @@
+--- maq-0.7.1/scripts/maq.pl	2013-01-21 15:48:19.540161829 -0500
++++ maq-0.7.1/scripts/maq2.pl	2013-01-21 15:52:35.261020421 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ 
+ # Author: lh3
+ 

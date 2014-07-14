@@ -1,0 +1,21 @@
+diff -Naur AMOS_dir1/Makefile.in AMOS_dir2/Makefile.in
+--- amos-3.1.0/src/AMOS/Makefile.in	2013-02-26 17:32:29.429236461 -0500
++++ amos-3.1.0/src/AMOS/Makefile.in	2013-02-27 18:13:27.065588793 -0500
+@@ -1146,7 +1146,7 @@
+               *.pl) \
+                 echo " configuring perl '$$b'"; \
+                 echo '#!$(PERL)' > "$(DESTDIR)$(bindir)/$$b"; \
+-                echo 'use lib "$(libdir)";' >> "$(DESTDIR)$(bindir)/$$b"; \
++                echo 'use lib "/opt/bio/amos/lib";' >> "$(DESTDIR)$(bindir)/$$b"; \
+                 sed -e '1 {s|^#!.*$$||;}' \
+                     "$(DESTDIR)$(bindir)/$$f" >> "$(DESTDIR)$(bindir)/$$b" \
+                 || exit 1; \
+@@ -1161,7 +1161,7 @@
+                 ;; \
+               *.acf) \
+                 echo " configuring acf '$$b'"; \
+-                echo '#!$(bindir)/runAmos -C' > "$(DESTDIR)$(bindir)/$$b"; \
++                echo '#!/opt/bio/amos/bin/runAmos -C' > "$(DESTDIR)$(bindir)/$$b"; \
+                 sed -e 's|^BINDIR[ 	]*=.*$$|BINDIR=$(bindir)|' \
+                     -e 's|^NUCMER[ 	]*=.*$$|NUCMER=$(NUCMER)|' \
+                     -e 's|^DELTAFILTER[        ]*=.*$$|DELTAFILTER=$(DELTAFILTER)|' \

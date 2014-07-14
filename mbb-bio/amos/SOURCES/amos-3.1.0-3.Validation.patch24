@@ -1,0 +1,143 @@
+diff -Naur Validation_dir1/clusterSnps.pl Validation_dir2/clusterSnps.pl
+--- amos-3.1.0/src/Validation/clusterSnps.pl	2013-02-18 17:17:46.944196326 -0500
++++ amos-3.1.0/src/Validation/clusterSnps.pl	2013-02-18 18:46:46.251265460 -0500
+@@ -1,4 +1,6 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
++
++use warnings;
+ use strict;
+ 
+ ## Scan the snp report and cluster the snps. A cluster is based on the SNPs
+diff -Naur Validation_dir1/coords2cam.pl Validation_dir2/coords2cam.pl
+--- amos-3.1.0/src/Validation/coords2cam.pl	2013-02-18 17:17:46.944196326 -0500
++++ amos-3.1.0/src/Validation/coords2cam.pl	2013-02-18 18:47:36.834065109 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ # coords2cam.pl - creates a celamy file from NUCmer .coords output
+ 
+ use strict;
+diff -Naur Validation_dir1/find-query-breaks.pl Validation_dir2/find-query-breaks.pl
+--- amos-3.1.0/src/Validation/find-query-breaks.pl	2013-02-18 17:17:46.944196326 -0500
++++ amos-3.1.0/src/Validation/find-query-breaks.pl	2013-02-19 10:37:00.784182439 -0500
+@@ -1,4 +1,6 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
++
++use warnings;
+ use strict;
+ 
+ use AMOS::AmosFoundation;
+diff -Naur Validation_dir1/findTcovSnp.pl Validation_dir2/findTcovSnp.pl
+--- amos-3.1.0/src/Validation/findTcovSnp.pl	2013-02-18 17:17:46.944196326 -0500
++++ amos-3.1.0/src/Validation/findTcovSnp.pl	2013-02-19 10:37:33.608486958 -0500
+@@ -1,5 +1,6 @@
+-#!/usr/local/bin/perl -w
++#!/usr/bin/env perl
+ 
++use warnings;
+ use strict;
+ use TIGR::Foundation;
+ 
+diff -Naur Validation_dir1/fixlib.pl Validation_dir2/fixlib.pl
+--- amos-3.1.0/src/Validation/fixlib.pl	2013-02-18 17:17:46.944196326 -0500
++++ amos-3.1.0/src/Validation/fixlib.pl	2013-02-19 10:43:01.394124769 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ # fixlib.pl     - recomputes library sizes based on reads within contigs
+ 
+diff -Naur Validation_dir1/listSurrogates.pl Validation_dir2/listSurrogates.pl
+--- amos-3.1.0/src/Validation/listSurrogates.pl	2013-02-18 18:01:01.264098502 -0500
++++ amos-3.1.0/src/Validation/listSurrogates.pl	2013-02-19 10:54:23.435071526 -0500
+@@ -1,4 +1,6 @@
+-#!/usr/local/bin/perl -w
++#!/usr/bin/env perl
++
++use warnings;
+ use strict;
+ use TIGR::AsmLib;
+ use TIGR::Foundation;
+diff -Naur Validation_dir1/Makefile.in Validation_dir2/Makefile.in
+--- amos-3.1.0/src/Validation/Makefile.in	2013-03-01 13:42:50.757962954 -0500
++++ amos-3.1.0/src/Validation/Makefile.in	2013-03-01 13:33:54.262774074 -0500
+@@ -861,23 +861,23 @@
+               *.pl) \
+                 echo " configuring perl '$$b'"; \
+                 echo '#!$(PERL)' > "$(DESTDIR)$(bindir)/$$b"; \
+-                echo 'use lib "$(libdir)";' >> "$(DESTDIR)$(bindir)/$$b"; \
++                echo 'use lib "/opt/bio/amos/lib";' >> "$(DESTDIR)$(bindir)/$$b"; \
+                 sed -e '1 {s|^#!.*$$||;}' \
+                     "$(DESTDIR)$(bindir)/$$f" >> "$(DESTDIR)$(bindir)/$$b" \
+                 || exit 1; \
+                 ;; \
+               *.py) \
+                 echo " configuring python '$$b'"; \
+-                echo '#!$(PYTHON)' > "$(DESTDIR)$(bindir)/$$b"; \
++                echo '#!/usr/bin/env python' > "$(DESTDIR)$(bindir)/$$b"; \
+                 sed -e '1 {s|^#!.*$$||;}' \
+-                    -e 's|^AMOSDIR[     ]*=.*$$|AMOSDIR=\"$(bindir)/\"|' \
++                    -e 's|^AMOSDIR[     ]*=.*$$|AMOSDIR=\"/opt/bio/amos/bin/\"|' \
+                     "$(DESTDIR)$(bindir)/$$f" >> "$(DESTDIR)$(bindir)/$$b" \
+                 || exit 1; \
+                 ;; \
+               *.acf) \
+                 echo " configuring acf '$$b'"; \
+-                echo '#!$(bindir)/runAmos -C' > "$(DESTDIR)$(bindir)/$$b"; \
+-                sed -e 's|^BINDIR[ 	]*=.*$$|BINDIR=$(bindir)|' \
++                echo '#!/opt/bio/amos/bin/runAmos -C' > "$(DESTDIR)$(bindir)/$$b"; \
++                sed -e 's|^BINDIR[ 	]*=.*$$|BINDIR=/opt/bio/amos/bin|' \
+                     -e 's|^NUCMER[ 	]*=.*$$|NUCMER=$(NUCMER)|' \
+                     -e 's|^DELTAFILTER[        ]*=.*$$|DELTAFILTER=$(DELTAFILTER)|' \
+                     "$(DESTDIR)$(bindir)/$$f" >> "$(DESTDIR)$(bindir)/$$b" \
+diff -Naur Validation_dir1/postCAqc.pl Validation_dir2/postCAqc.pl
+--- amos-3.1.0/src/Validation/postCAqc.pl	2013-02-18 18:01:01.275080917 -0500
++++ amos-3.1.0/src/Validation/postCAqc.pl	2013-02-21 17:27:32.827405575 -0500
+@@ -1,7 +1,7 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ # postCAqc.pl   - runs caqc, fixlib and uses an optional reference file to
+-#              compute new library sizes
++#                 compute new library sizes
+ 
+ use TIGR::Foundation;
+ use AMOS::AmosLib;
+@@ -10,11 +10,11 @@
+ 
+ use strict;
+ 
+-my $ca2ctg     = "/local/asmg/work/mpop/Tools/CA/ca2ctg.pl";
+-my $caqc       = "/usr/local/common/caqc";
+-my $fixlib     = "/local/asmg/work/mpop/Tools/asmQC/fixlib.pl";
+-my $nucmer     = "/usr/local/common/nucmer";
+-my $showtiling = "/usr/local/common/show-tiling";
++my $caqc       = "/opt/bio/wgs/bin/caqc.pl";
++my $ca2ctg     = "/opt/bio/amos/bin/ca2ctg";
++my $fixlib     = "/opt/bio/amos/bin/fixlib";
++my $nucmer     = "/opt/bio/MUMmer/bin/nucmer";
++my $showtiling = "/opt/bio/MUMmer/bin//show-tiling";
+ 
+ my $VERSION = '$Revision$ ';
+ my $HELP = q~
+diff -Naur Validation_dir1/suspiciousfeat2region.pl Validation_dir2/suspiciousfeat2region.pl
+--- amos-3.1.0/src/Validation/suspiciousfeat2region.pl	2013-02-18 18:01:01.284243899 -0500
++++ amos-3.1.0/src/Validation/suspiciousfeat2region.pl	2013-02-21 16:53:30.737213162 -0500
+@@ -1,5 +1,4 @@
+-#!/usr/bin/perl
+-use lib "/fs/szdevel/amp/AMOS/Linux-x86_64/lib";
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -Naur Validation_dir1/tiling2cam.pl Validation_dir2/tiling2cam.pl
+--- amos-3.1.0/src/Validation/tiling2cam.pl	2013-02-18 18:01:01.286134954 -0500
++++ amos-3.1.0/src/Validation/tiling2cam.pl	2013-02-19 11:18:58.562098415 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ # tiling2cam.pl - creates a celamy file from show-tiling output
+ 

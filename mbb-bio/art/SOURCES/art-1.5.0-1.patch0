@@ -1,0 +1,14 @@
+--- Linux64/aln2bed.pl	2013-01-23 15:51:57.110347626 -0500
++++ Linux64/aln2bed2.pl	2013-01-23 15:52:35.633022489 -0500
+@@ -1,7 +1,10 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
++
+ #convert Aln format to the UCSC BED format
+ #weichun huang at whduke@gmail.com
++
+ use strict;
++
+ my @alnFile=@ARGV;
+ if(@ARGV<2){
+ 	print "aln2bed converts ALN files to a BED file\n\n";

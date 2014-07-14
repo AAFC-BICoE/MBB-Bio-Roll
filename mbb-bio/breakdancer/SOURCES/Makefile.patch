@@ -1,0 +1,7 @@
+--- breakdancer/cpp/Makefile.orig	2012-10-04 11:57:39.495816975 -0400
++++ breakdancer/cpp/Makefile	2012-10-04 11:59:29.439650653 -0400
+@@ -1,3 +1,3 @@
+ all:
+-	g++ -g -Wall -O2 -I/gsc/pkg/bio/samtools/samtools-0.1.6/ BreakDancerMax.cpp AlnParser.cpp Poisson.cpp -o breakdancer_max -lm -lz -L/gsc/pkg/bio/samtools/samtools-0.1.6/ -lbam
++	g++ -g -Wall -O2 -I/opt/bio/samtools/include/bam  BreakDancerMax.cpp AlnParser.cpp Poisson.cpp -o breakdancer_max -lm -lz -L/opt/bio/samtools/lib -lbam
+ 

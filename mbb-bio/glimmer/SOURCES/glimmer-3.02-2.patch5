@@ -1,0 +1,15 @@
+--- glimmer3.02/scripts/g3-iterated.csh		2012-11-01 17:45:26.336258582 -0400
++++ glimmer3.02/scripts/g3-iterated2.csh	2012-11-01 17:53:35.764898665 -0400
+@@ -31,9 +31,9 @@
+ set step = $3
+ set onestep = $4
+ 
+-set awkpath = /fs/szgenefinding/Glimmer3/scripts
+-set glimmerpath = /fs/szgenefinding/Glimmer3/bin
+-set elphbin = /nfshomes/adelcher/bin/elph
++set awkpath = /opt/bio/glimmer/scripts
++set glimmerpath = /opt/bio/glimmer/bin
++set elphbin = /opt/bio/ELPH/elph
+ 
+ # add/change glimmer options here
+ set glimmeropts = "-o50 -g110 -t30"
