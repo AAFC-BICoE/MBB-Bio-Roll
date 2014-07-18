@@ -10,6 +10,9 @@ clean:
 paths: all
 	bin/rpmpaths */*/RPMS/x86_64/*.rpm
 
+rpmlint:
+	find . -name \*.spec -exec rpmlint {} \;
+
 
 
 
