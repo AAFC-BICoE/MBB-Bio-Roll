@@ -1,4 +1,4 @@
-
+  %define debug_package %{nil}
 
 %define name			geneid
 %define src_name		geneid
