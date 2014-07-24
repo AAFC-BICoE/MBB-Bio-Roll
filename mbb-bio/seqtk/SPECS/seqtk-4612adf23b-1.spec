@@ -1,4 +1,5 @@
-### define _topdir         /home/rpmbuild/rpms/seqtk
+%define debug_package %{nil}
+
 %define name            seqtk
 %define release         1
 %define version         4612adf23b

@@ -3,7 +3,8 @@
 # zlib-static-1.2.3-27.el6.x86_64.rpm
 # glibc-static
 
-### define _topdir	 	/home/rpmbuild/rpms/mosaik
+%define debug_package %{nil}
+
 %define name		MOSAIK
 %define release		1
 %define version 	2.1.33

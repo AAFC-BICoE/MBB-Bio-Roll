@@ -1,5 +1,5 @@
-# 
-### define _topdir	 	/home/rpmbuild/rpms/sigoli 
+%define debug_package %{nil}
+
 %define name		sigoli 
 %define release		1
 %define version 	1.1

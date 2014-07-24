@@ -1,4 +1,4 @@
-
+  %define debug_package %{nil}
 
 %define name			subread
 %define src_name		subread
