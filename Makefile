@@ -1,4 +1,5 @@
 
+
 all: 
 	cd mbb-bio-deps; make
 	cd mbb-bio; make
@@ -12,6 +13,11 @@ paths: all
 
 rpmlint:
 	find . -name \*.spec -exec rpmlint {} \;
+
+paths:
+	find . -name \*.rpm -print | bin/rpmpaths -c
+
+
 
 
 
