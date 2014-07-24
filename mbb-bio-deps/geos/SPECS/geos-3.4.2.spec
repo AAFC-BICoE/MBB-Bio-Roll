@@ -1,5 +1,4 @@
-# This is a sample spec file for wget
-
+%define debug_package %{nil}
 ### define _topdir	 	/home/rpmbuild/rpms/%{name}
 %define name			geos
 %define src_name		geos
