@@ -1,4 +1,4 @@
-  %define debug_package %{nil}
+%define debug_package %{nil}
 
 %define name			geneid
 %define src_name		geneid
@@ -27,12 +27,15 @@ geneid is a program to predict genes in anonymous genomic sequences designed wit
 %setup -q -n geneid
 
 %build
-make prefix=%{installroot}
+make --jobs=`nproc` prefix=%{installroot}
 
 %install
 mkdir -p $RPM_BUILD_ROOT%{installroot}
 cp -r bin include param GNU_PL $RPM_BUILD_ROOT%{installroot}
 
 %files
-%defattr(755,root,root,755)
+%defattr(644,root,root,755)
 %{installroot}
+%defattr(755,root,root,755) 
+%{installroot}/bin/*
+
