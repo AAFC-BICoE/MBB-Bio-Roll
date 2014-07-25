@@ -37,6 +37,7 @@ Patch21:         %{name}-%{version}-%{release}.Slice.patch21
 Patch22:         %{name}-%{version}-%{release}.Tigger.patch22
 Patch23:         %{name}-%{version}-%{release}.Utils.patch23
 Patch24:         %{name}-%{version}-%{release}.Validation.patch24
+Patch25:         %{name}-%{version}-%{release}.getopt.patch25
 Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
 URL:            http://sourceforge.net/apps/mediawiki/amos/index.php?title=AMOS
 Prefix: 	/opt/bio
@@ -87,6 +88,7 @@ comprehensive documentation.
 %patch -P 22 -p1
 %patch -P 23 -p1
 %patch -P 24 -p1
+%patch -P 25 -p1
 
 %build
 ./configure  --prefix=%{installroot} --with-Boost-dir=/opt/bio/boost --enable-all --with-x --with-qmake-qt4=/usr/bin/qmake-qt4  PERL="/usr/bin/env perl" PYTHON="/usr/bin/env python" NUCMER=/opt/bio/MUMmer/bin/nucmer DELTAFILTER=/opt/bio/MUMmer/bin/delta-filter SHOWCOORDS=/opt/bio/MUMmer/bin/show-coords BLAT=/opt/bio/blat/bin/blat
