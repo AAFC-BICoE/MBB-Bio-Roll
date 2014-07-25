@@ -15,7 +15,7 @@ Release: 		%{release}
 Source: 		BEAST.v2.1.3.tar.bz2
 Packager:	Glen Newton <glen.newton@agr.gc.ca>
 Prefix: 		/opt/bio
-Group: 			Applications/BioInformatics
+Group: 			Applications/BioInformatics/Phylogenetics
 AutoReq:		yes
 URL:                    http://beast2.org/
 

@@ -1,5 +1,5 @@
 #
-### define _topdir	 	/home/rpmbuild/rpms/num-utils 
+
 %define name		num-utils 
 %define release		1
 %define version 	0.5
