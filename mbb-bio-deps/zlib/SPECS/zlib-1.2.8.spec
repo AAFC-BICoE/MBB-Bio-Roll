@@ -1,6 +1,6 @@
-# This is a sample spec file for wget
 
-### define _topdir	 	/home/rpmbuild/rpms/%{name}
+%define debug_package %{nil}
+
 %define name			zlib
 %define src_name		zlib
 %define release		1
@@ -31,11 +31,11 @@ zlib was written by Jean-loup Gailly (compression) and Mark Adler (decompression
 
 %build
 ./configure --prefix=/opt/bio/gdal
-make prefix=%{installroot}
+make --jobs=`nproc` prefix=%{installroot}
 
 %install
 make install prefix=$RPM_BUILD_ROOT%{installroot}
 
 %files
-%defattr(755,root,root,755)
+%defattr(644,root,root,755)
 %{installroot}
