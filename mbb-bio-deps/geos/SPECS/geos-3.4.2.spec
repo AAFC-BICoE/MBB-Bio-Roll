@@ -38,11 +38,13 @@ Capabilities Include:
 
 %build
 ./configure --prefix=/opt/bio/gdal
-make prefix=%{installroot}
+make  --jobs=`nproc` prefix=%{installroot}
 
 %install
 make install prefix=$RPM_BUILD_ROOT%{installroot}
 
 %files
-%defattr(755,root,root,755)
+%defattr(644,root,root,755)
 %{installroot}
+%defattr(755,root,root,755)
+%{installroot}/bin
