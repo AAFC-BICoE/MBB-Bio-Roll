@@ -41,7 +41,7 @@ Patch25:         %{name}-%{version}-%{release}.getopt.patch25
 Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
 URL:            http://sourceforge.net/apps/mediawiki/amos/index.php?title=AMOS
 Prefix: 	/opt/bio
-Group: 		Development/Tools
+Group: 		Applications/BioInformatics/Assembler
 License:        Artistic License
 AutoReq:	yes
 
@@ -98,7 +98,7 @@ comprehensive documentation.
 # LIBDBI_PERL
 # --libdir=%{installroot}/lib
 
-make 
+make -pipe --jobs=`nproc`
 make check
 
 %install
@@ -108,7 +108,7 @@ chmod -x %{buildroot}%{installroot}/bin/*
 rm -r %{buildroot}%{installroot}/include
 rm %{buildroot}%{installroot}/lib/AMOS/*.a
 rm -r %{buildroot}%{installroot}/share
-
+cd %{buildroot}%{installroot}/bin; file * | grep "not stripped"|grep -Eo '^[^ ]+'|sed "s/://"|xargs strip
 %files
 %defattr(755,root,root)
 %{installroot}
