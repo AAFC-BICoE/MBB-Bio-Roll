@@ -1,6 +1,6 @@
-# This is a sample spec file for wget
 
-### define _topdir	 	/home/rpmbuild/rpms/%{name}
+%define debug_package %{nil}
+
 %define name			hmmer3
 %define src_name		hmmer
 %define release		1
@@ -16,7 +16,7 @@ Version: 		%{version}
 Release: 		%{release}
 Source: 		%{src_name}-%{version}-linux-intel-x86_64.tar.gz
 Prefix: 		/opt/bio
-Group: 			Development/Tools
+Group: 		Applications/BioInformatics/Alignment
 URL:			http://hmmer.janelia.org/
 AutoReq:		yes
 
@@ -32,7 +32,7 @@ As part of this evolution in the HMMER software, we are committed to making the 
 
 %build
 ./configure
-make prefix=%{installroot}
+make prefix=%{installroot}  -pipe --jobs=`nproc` 
 
 %install
 make install prefix=$RPM_BUILD_ROOT%{installroot}
