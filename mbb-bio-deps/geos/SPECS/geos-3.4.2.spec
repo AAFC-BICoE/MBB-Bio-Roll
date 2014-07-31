@@ -16,7 +16,7 @@ Release: 		%{release}
 Source: 		%{src_name}-%{version}.tar.bz2
 Prefix: 		/opt/bio
 Group: 			Development/Libraries/GIS
-URL:			sdaf
+URL:			http://trac.osgeo.org/geos/
 AutoReq:		yes
 Packager:   Glen Newton <glen.newton@agr.gc.ca>
 
