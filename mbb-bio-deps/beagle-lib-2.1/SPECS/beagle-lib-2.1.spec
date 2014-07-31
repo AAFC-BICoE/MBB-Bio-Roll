@@ -1,3 +1,5 @@
+%define debug_package %{nil}
+
 # you need the following packages installed to build:
 # libtool 
 # automake 
@@ -31,7 +33,7 @@ BEAGLE is a high-performance library that can perform the core calculations at t
 %build
 ./autogen.sh 
 ./configure  --prefix=%{installroot} --with-jdk=$JAVA_HOME
-make 
+make -pipe --jobs=`nproc` 
 
 %install
 mkdir -p $RPM_BUILD_ROOT%{installroot}
