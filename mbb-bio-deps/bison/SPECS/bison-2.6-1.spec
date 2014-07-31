@@ -1,7 +1,5 @@
-# This is a sample spec file for wget
-# TODO: Add documentation 
-#
-### define _topdir	 	/home/rpmbuild/rpms/bison
+%define debug_package %{nil}
+
 %define name		bison
 %define release		1
 %define version 	2.6
@@ -34,13 +32,16 @@ used in simple desk calculators to complex programming languages.
 
 %build
 ./configure  --prefix=%{installroot}
-make 
+make -pipe --jobs=`nproc` 
 
 %install
 mkdir -p $RPM_BUILD_ROOT%{installroot}
 make install prefix=$RPM_BUILD_ROOT%{installroot}
+strip $RPM_BUILD_ROOT%{installroot}/bin/bison
 
 
 %files
 %defattr(644,root,root,755)
 %{installroot}
+%defattr(755,root,root,755)
+%{installroot}/bin
