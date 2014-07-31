@@ -1,5 +1,5 @@
-# This is a  spec file for bamtools, which version is unknown
-
+# This is a  spec file for bamtools
+%define debug_package %{nil}
 ### define _topdir	 	/home/rpmbuild/rpms/bamtools
 %define name		bamtools
 %define release		1
@@ -28,14 +28,21 @@ BamTools is a project that provides both a C++ API and a command-line toolkit fo
 mkdir build 
 cd build
 cmake ..
-make 
+make -pipe --jobs=`nproc` 
 
 %install
 mkdir -p %{buildroot}%{installroot}
 cp -R bin %{buildroot}%{installroot}
+strip bin/bamtools-2.1.1
 cp -R lib %{buildroot}%{installroot}
 cp -R include %{buildroot}%{installroot}
 
+
+
 %files
-%defattr(755,root,root)
+%defattr(644,root,root,755)
 %{installroot}
+%defattr(755,root,root,755)
+%{installroot}/bin
+
+
