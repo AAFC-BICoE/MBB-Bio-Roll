@@ -1,6 +1,6 @@
 # This is a  spec file for IDBA
+%define debug_package %{nil}
 
-### define _topdir	 	/home/rpmbuild/rpms/idba
 %define name		idba
 %define release		1
 %define version 	1.1.1
@@ -16,7 +16,7 @@ Patch0:         %{name}-%{version}-%{release}.patch0
 Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
 URL:            http://i.cs.hku.hk/~alse/hkubrg/projects/idba_tran/
 Prefix: 	/opt/bio
-Group: 		Development/Tools
+Group: 		Applications/BioInformatics/Assembler
 License:        GPL-2|https://code.google.com/p/hku-idba/
 AutoReq:	yes
 
@@ -40,12 +40,13 @@ pair-end reads is then used to find the isoforms.
 
 %build
 ./configure
-make
+make   -pipe --jobs=`nproc` 
 
 %install
 mkdir -p %{buildroot}%{installroot}/bin
 mkdir -p %{buildroot}%{installroot}/script
 cp bin/* %{buildroot}%{installroot}/bin
+cd bin;  file * | grep "not stripped"|grep -Eo '^[^ ]+'|sed "s/://"|xargs strip; cd ..
 rm %{buildroot}%{installroot}/bin/*.*
 rm %{buildroot}%{installroot}/bin/Makefile
 cd script
