@@ -1,0 +1,9 @@
+--- ClonalFrame/ClonalFrame.pro	2014-08-07 17:07:18.976679932 -0400
++++ ClonalFrame.new/ClonalFrame.pro	2014-08-07 17:07:08.590693831 -0400
+@@ -1,5 +1,5 @@
+ TEMPLATE = app
+-QMAKE_CXXFLAGS+=-W -Wall -O3 -static -DHAVE_INLINE -DGSL_RANGE_CHECK_OFF -Isrc
++QMAKE_CXXFLAGS+=-W -Wall -O3 -static -DHAVE_INLINE -DGSL_RANGE_CHECK_OFF -Isrc  -fpermissive
+ SOURCES += src/alignment_xmfa.cpp \
+  src/alignment_structure.cpp \
+  src/alignment.cpp \
