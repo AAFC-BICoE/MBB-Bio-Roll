@@ -53,7 +53,7 @@ precision of the STAR mapping strategy.
 %patch -P 0 -p1
 
 %build
-make prefix=%{installroot}
+make  -pipe --jobs=`nproc` prefix=%{installroot}
 
 %install
 mkdir -p $RPM_BUILD_ROOT%{installroot}
