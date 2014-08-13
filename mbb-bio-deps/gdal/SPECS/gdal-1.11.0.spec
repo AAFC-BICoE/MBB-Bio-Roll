@@ -38,10 +38,10 @@ release.
 %build
 ./configure --prefix=/opt/bio/gdal
 make -pipe --jobs=`nproc` prefix=%{installroot}
-#make  --jobs=`nproc` prefix=%{installroot}
 
 %install
 make install prefix=$RPM_BUILD_ROOT%{installroot}
+strip --strip-unneeded $RPM_BUILD_ROOT%{installroot}/lib/libgdal.so.1.18.0
 
 %files
 %defattr(644,root,root,755)
