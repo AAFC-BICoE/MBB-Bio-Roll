@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=mafft-6.864.spec
+SPEC=mafft-7.164.spec
 
 .PHONY: clean
 
