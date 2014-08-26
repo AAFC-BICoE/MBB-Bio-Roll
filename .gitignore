@@ -4,5 +4,6 @@ RPMS
 SRPMS
 BUILD
 BUILDROOT
+*.rpm
 
 
