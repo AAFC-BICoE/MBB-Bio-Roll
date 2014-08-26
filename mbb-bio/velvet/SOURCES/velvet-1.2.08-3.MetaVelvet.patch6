@@ -1,0 +1,36 @@
+diff -Naur MetaVelvet/scriptEstimatedCovMulti.py MetaVelvet2/scriptEstimatedCovMulti.py
+--- velvet/contrib/MetaVelvet-v0.3.1/scriptEstimatedCovMulti.py	2013-04-22 15:40:45.111081801 -0400
++++ velvet/contrib/MetaVelvet-v0.3.1/scriptEstimatedCovMulti.py	2013-04-22 16:13:16.481041854 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python2.5
++#!/usr/bin/env python
+ # -*- coding: utf-8 -*-
+ 
+ import sys
+diff -Naur MetaVelvet/shuffleAndConvertSequences_fastq2fasta.py MetaVelvet2/shuffleAndConvertSequences_fastq2fasta.py
+--- velvet/contrib/MetaVelvet-v0.3.1/shuffleAndConvertSequences_fastq2fasta.py	2013-04-22 15:40:45.111081801 -0400
++++ velvet/contrib/MetaVelvet-v0.3.1/shuffleAndConvertSequences_fastq2fasta.py	2013-04-22 16:13:33.552042791 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python2.5
++#!/usr/bin/env python
+ # -*- coding: utf-8 -*-
+ 
+ import sys
+diff -Naur MetaVelvet/shuffleSequences_fasta.pl MetaVelvet2/shuffleSequences_fasta.pl
+--- velvet/contrib/MetaVelvet-v0.3.1/shuffleSequences_fasta.pl	2013-04-24 18:23:52.326507204 -0400
++++ velvet/contrib/MetaVelvet-v0.3.1/shuffleSequences_fasta.pl	2013-04-24 18:24:26.105502874 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if (!@ARGV) {
+ 	print "Usage: $0 forward_reads.fa reverse_reaads.fa outfile.fa\n";
+diff -Naur MetaVelvet/shuffleSequences_fastq.pl MetaVelvet2/shuffleSequences_fastq.pl
+--- velvet/contrib/MetaVelvet-v0.3.1/shuffleSequences_fastq.pl	2013-04-22 15:40:24.464409171 -0400
++++ velvet/contrib/MetaVelvet-v0.3.1/shuffleSequences_fastq.pl	2013-04-22 16:13:52.625041748 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ $filenameA = $ARGV[0];
+ $filenameB = $ARGV[1];

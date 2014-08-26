@@ -1,0 +1,16 @@
+FOLDERS=BUILD SRPMS
+SPEC=velvet-1.2.08-3.spec
+
+.PHONY: clean
+
+package: $(FOLDERS) RPMS
+
+$(FOLDERS):
+	mkdir $@
+
+RPMS:
+	mkdir $@
+	rpmbuild --define '_topdir $(shell pwd)' -bb --clean SPECS/${SPEC}
+
+clean:
+	rm -rf RPMS SRPMS BUILD BUILDROOT
