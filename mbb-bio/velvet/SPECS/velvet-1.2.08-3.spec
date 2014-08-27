@@ -1,6 +1,5 @@
 # This is a  spec file for velvet
 
-%define _topdir	 	/home/rpmbuild/rpms/velvet
 %define name		velvet
 %define release		3
 %define version 	1.2.08
