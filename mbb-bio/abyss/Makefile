@@ -9,9 +9,9 @@ $(FOLDERS):
 	mkdir $@
 
 RPMS:
-
 	mkdir $@
-	export CPLUS_INCLUDE_PATH=/opt/bio/boost/include; rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC}
+	rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC}
+	rpm -qplv ./RPMS/x86_64/*.rpm 
 
 clean:
 	rm -rf RPMS SRPMS BUILD BUILDROOT

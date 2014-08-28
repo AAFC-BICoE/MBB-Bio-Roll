@@ -59,27 +59,27 @@ repeated areas between contigs.
 %patch -P 11 -p1
 
 %build
-make 'MAXKMERLENGTH=31' 'CATEGORIES=5'
+make --jobs=`nproc` 'MAXKMERLENGTH=31' 'CATEGORIES=5'
 cp velvetg Velvetg_31 
 cp velveth Velveth_31 
 make clean
-make 'MAXKMERLENGTH=63' 'CATEGORIES=5'
+make --jobs=`nproc` 'MAXKMERLENGTH=63' 'CATEGORIES=5'
 cp velvetg Velvetg_63 
 cp velveth Velveth_63 
 make clean
-make 'MAXKMERLENGTH=127' 'CATEGORIES=5'
+make --jobs=`nproc` 'MAXKMERLENGTH=127' 'CATEGORIES=5'
 cp velvetg Velvetg_127
 cp velveth Velveth_127
 make clean
-make 'MAXKMERLENGTH=145' 'CATEGORIES=5'
+make --jobs=`nproc` 'MAXKMERLENGTH=145' 'CATEGORIES=5'
 cp velvetg Velvetg_145
 cp velveth Velveth_145
 make clean
-make 'MAXKMERLENGTH=195' 'CATEGORIES=5'
+make --jobs=`nproc` 'MAXKMERLENGTH=195' 'CATEGORIES=5'
 cp velvetg Velvetg_195
 cp velveth Velveth_195
 make clean
-make 'MAXKMERLENGTH=245' 'CATEGORIES=5'
+make --jobs=`nproc` 'MAXKMERLENGTH=245' 'CATEGORIES=5'
 cp velvetg Velvetg_245
 cp velveth Velveth_245
 make clean
@@ -91,6 +91,7 @@ make
 
 %install
 mkdir -p %{buildroot}%{installroot}
+strip velvet*
 cp velveth_* velvetg_* update_velvet.sh %{buildroot}%{installroot}
 cp -r contrib %{buildroot}%{installroot}
 rm %{buildroot}%{installroot}/contrib/shuffleSequences_fasta/kseq.h
@@ -108,13 +109,15 @@ rm -r %{buildroot}%{installroot}/contrib/MetaVelvet-1.2.01/Velvet-1.1.06
 rm -r %{buildroot}%{installroot}/contrib/MetaVelvet-1.2.01/VelvetAPI
 
 %files
-%defattr(755,root,root)
+%defattr(755,root,root,755)
 %{installroot}
-%defattr(644,root,root)
+%defattr(644,root,root,755)
 %{installroot}/contrib/README.txt
 %{installroot}/contrib/AssemblyAssembler1.3/README.txt
 %{installroot}/contrib/VelvetOptimiser-2.2.4/CHANGELOG
 %{installroot}/contrib/VelvetOptimiser-2.2.4/INSTALL
+%{installroot}/contrib/VelvetOptimiser-2.2.4/LICENSE
 %{installroot}/contrib/VelvetOptimiser-2.2.4/README
 %{installroot}/contrib/MetaVelvet-v0.3.1/LICENSE.txt
 %{installroot}/contrib/MetaVelvet-v0.3.1/README.txt
+

@@ -1,6 +1,5 @@
 # This is a  spec file for abyss
 
-#%define _topdir	 	/home/rpmbuild/rpms/abyss
 %define name		abyss
 %define release		1
 %define version 	1.5.2
@@ -33,24 +32,29 @@ of assembling larger genomes.
 %build
 #./configure --disable-popcnt --enable-maxk=256 --with-boost=/usr/include/boost
 ./configure --disable-popcnt --enable-maxk=256 --with-boost=/opt/bio/boost/include
-make
+make --jobs=`nproc`
 
 %install
 mkdir -p %{buildroot}%{installroot}
-mkdir -p %{buildroot}/usr/share/man/man1
+#mkdir -p %{buildroot}/usr/share/man/man1
+
 make install prefix=%{buildroot}%{installroot}
-rm -r %{buildroot}%{installroot}/share
+#rm -r %{buildroot}%{installroot}/share
+#mkdir -p %{buildroot}%{installroot}/../share/man/man1
 cd doc
-cp ABYSS.1 abyss-pe.1 abyss-tofastq.1 %{buildroot}/usr/share/man/man1
+cp ABYSS.1 abyss-pe.1 abyss-tofastq.1 %{buildroot}%{installroot}/share/man/man1
+gzip %{buildroot}%{installroot}/share/man/man1/*
 
 %files
-%defattr(755,root,root,755)
-%{installroot}
-%doc
-/usr/share/man/man1/ABYSS.1.gz
-/usr/share/man/man1/abyss-pe.1.gz
-/usr/share/man/man1/abyss-tofastq.1.gz
 %defattr(644,root,root,755)
-/usr/share/man/man1/ABYSS.1.gz
-/usr/share/man/man1/abyss-pe.1.gz
-/usr/share/man/man1/abyss-tofastq.1.gz
+%{installroot}
+%defattr(755,root,root,755)
+%{installroot}/bin
+%doc
+%{installroot}/share/man/man1/ABYSS.1.gz
+%{installroot}/share/man/man1/abyss-pe.1.gz
+%{installroot}/share/man/man1/abyss-tofastq.1.gz
+%defattr(644,root,root,755)
+%{installroot}/share/man/man1/ABYSS.1.gz
+%{installroot}/share/man/man1/abyss-pe.1.gz
+%{installroot}/share/man/man1/abyss-tofastq.1.gz
