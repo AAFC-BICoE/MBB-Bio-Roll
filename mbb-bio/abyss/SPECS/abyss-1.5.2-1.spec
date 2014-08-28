@@ -41,8 +41,9 @@ mkdir -p %{buildroot}%{installroot}
 make install prefix=%{buildroot}%{installroot}
 #rm -r %{buildroot}%{installroot}/share
 #mkdir -p %{buildroot}%{installroot}/../share/man/man1
-cd doc
-cp ABYSS.1 abyss-pe.1 abyss-tofastq.1 %{buildroot}%{installroot}/share/man/man1
+cd doc; cp ABYSS.1 abyss-pe.1 abyss-tofastq.1 %{buildroot}%{installroot}/share/man/man1; cd ..
+cd %{buildroot}%{installroot}/bin; file * | grep "not stripped"|grep -Eo '^[^ ]+'|sed "s/://"|xargs strip; cd ..
+
 gzip %{buildroot}%{installroot}/share/man/man1/*
 
 %files
