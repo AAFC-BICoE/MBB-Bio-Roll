@@ -1,5 +1,8 @@
 # This is a  spec file for velvet
 
+%global debug_package %{nil}
+
+%define __os_install_post %{nil}
 %define name		velvet
 %define release		3
 %define version 	1.2.08
