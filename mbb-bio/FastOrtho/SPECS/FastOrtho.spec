@@ -26,7 +26,10 @@ AutoReq:	yes
 
 
 %build
-cd src;make --jobs=`nproc`; strip FastOrtho
+cd src
+sed -i s/enable-auto-import/-enable-auto-import/g Makefile
+make --jobs=`nproc`
+strip FastOrtho
 
 
 %install
