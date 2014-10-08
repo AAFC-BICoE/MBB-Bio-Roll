@@ -29,3 +29,4 @@ test: RPMS
 	RPMS/x86_64/opt/bio/velvet/velveth_195
 	RPMS/x86_64/opt/bio/velvet/velveth_245
 	RPMS/x86_64/opt/bio/velvet/velveth_31
+	rm -rf RPMS/x86_64/opt

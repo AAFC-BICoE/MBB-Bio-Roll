@@ -33,7 +33,7 @@ The methods used in ClonalFrame are presented in the paper "Inference of bacteri
 
 %build
 qmake-qt4 
-make
+make -pipe
 
 %install
 strip bin/*
