@@ -1,0 +1,65 @@
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.16761
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.16761
+cd /root/rpms/mummer/BUILD/MUMmer-3.23/src/kurtz; make mummer
+make[1]: Entering directory `/root/rpms/mummer/BUILD/MUMmer-3.23/src/kurtz'
+cd libbasedir; make libbase.a
+make[2]: Entering directory `/root/rpms/mummer/BUILD/MUMmer-3.23/src/kurtz/libbasedir'
+/usr/bin/gcc -O3   -c -o cleanMUMcand.o cleanMUMcand.c
+/usr/bin/gcc -O3   -c -o clock.o clock.c
+/usr/bin/gcc -O3   -c -o mapfile.o mapfile.c
+/usr/bin/gcc -O3   -c -o multiseq.o multiseq.c
+/usr/bin/gcc -O3   -c -o procopt.o procopt.c
+/usr/bin/gcc -O3   -c -o safescpy.o safescpy.c
+/usr/bin/gcc -O3   -c -o seterror.o seterror.c
+/usr/bin/gcc -O3   -c -o space.o space.c
+ar sruv libbase.a cleanMUMcand.o clock.o mapfile.o multiseq.o procopt.o safescpy.o seterror.o space.o
+a - cleanMUMcand.o
+a - clock.o
+a - mapfile.o
+a - multiseq.o
+a - procopt.o
+a - safescpy.o
+a - seterror.o
+a - space.o
+make[2]: Leaving directory `/root/rpms/mummer/BUILD/MUMmer-3.23/src/kurtz/libbasedir'
+cd streesrc; make libstree.a
+make[2]: Entering directory `/root/rpms/mummer/BUILD/MUMmer-3.23/src/kurtz/streesrc'
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o construct.o construct.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o access.o access.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o scanpref.o scanpref.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o linkloc.o linkloc.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o depthtab.o depthtab.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o ex2leav.o ex2leav.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o dfs.o dfs.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o overmax.o overmax.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o oversucc.o oversucc.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o addleafcount.o addleafcount.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o iterator.o iterator.c
+ar sruv libstree.a construct.o access.o scanpref.o linkloc.o depthtab.o ex2leav.o dfs.o overmax.o oversucc.o addleafcount.o iterator.o
+a - construct.o
+a - access.o
+a - scanpref.o
+a - linkloc.o
+a - depthtab.o
+a - ex2leav.o
+a - dfs.o
+a - overmax.o
+a - oversucc.o
+a - addleafcount.o
+a - iterator.o
+make[2]: Leaving directory `/root/rpms/mummer/BUILD/MUMmer-3.23/src/kurtz/streesrc'
+cd mm3src; make mummer
+make[2]: Entering directory `/root/rpms/mummer/BUILD/MUMmer-3.23/src/kurtz/mm3src'
+/usr/bin/gcc -O3 -I../libbasedir -I../streesrc   -c -o maxmat3.o maxmat3.c
+/usr/bin/gcc -O3 -I../libbasedir -I../streesrc   -c -o maxmatopt.o maxmatopt.c
+/usr/bin/gcc -O3 -I../libbasedir -I../streesrc   -c -o maxmatinp.o maxmatinp.c
+/usr/bin/gcc -O3 -I../libbasedir -I../streesrc   -c -o findmumcand.o findmumcand.c
+/usr/bin/gcc -O3 -I../libbasedir -I../streesrc   -c -o findmaxmat.o findmaxmat.c
+/usr/bin/gcc -O3 -I../libbasedir -I../streesrc   -c -o procmaxmat.o procmaxmat.c
+/usr/bin/gcc  maxmat3.o maxmatopt.o maxmatinp.o findmumcand.o findmaxmat.o procmaxmat.o ../streesrc/libstree.a ../libbasedir/libbase.a \
+	-o /root/rpms/mummer/MUMmer-3.23-root/opt/bio/MUMmer/bin SCRIPT_DIR=/root/rpms/mummer/MUMmer-3.23-root/opt/bio/MUMmer/scripts/mummer; chmod 755 /root/rpms/mummer/MUMmer-3.23-root/opt/bio/MUMmer/bin SCRIPT_DIR=/root/rpms/mummer/MUMmer-3.23-root/opt/bio/MUMmer/scripts/mummer
+make[2]: Leaving directory `/root/rpms/mummer/BUILD/MUMmer-3.23/src/kurtz/mm3src'
+make[1]: Leaving directory `/root/rpms/mummer/BUILD/MUMmer-3.23/src/kurtz'
+
+
+RPM build errors:
