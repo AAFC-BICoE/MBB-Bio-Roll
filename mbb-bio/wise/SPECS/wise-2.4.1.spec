@@ -23,7 +23,7 @@ AutoReq:		yes
 %description
 Wise2 is a package focused on comparisons of bio polymers, commonly DNA sequence and protein sequence. There are many other packages which do this, probably the best known being BLAST package (from NCBI) and the Fasta package (from Bill Pearson). 
 
-Wise2's is now a collection of algorithms which generally differ from
+Wise2 is now a collection of algorithms which generally differ from
 the usualy, ``standard'' bioinformatics comparison methods. Probably
 the most used algorithm in Wise2 is genewise, which is the
 comparison of DNA sequence at the level of its protein
@@ -45,11 +45,12 @@ sed -i 's/getline/getline_new/' HMMer2/sqio.c
 find . -name makefile -exec sed -i 's/glib-config --libs/pkg-config --libs glib-2.0/' {} \;
 sed -i 's/isnumber/isdigit/' models/phasemodel.c
 make clean
-make all
+make -pipe --jobs=`nproc` all
 
 %install
 mkdir -p $RPM_BUILD_ROOT%{installroot}/bin
 cp src/bin/* $RPM_BUILD_ROOT%{installroot}/bin
+strip $RPM_BUILD_ROOT%{installroot}/bin/*
 
 %files
 %defattr(755,root,root,755)

@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=bwa.0.6.1.spec.cl1
+SPEC=bwa.spec
 
 .PHONY: clean
 
@@ -11,6 +11,7 @@ $(FOLDERS):
 RPMS:
 	mkdir $@
 	rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC}
+	rpm -qplv ./RPMS/x86_64/*.rpm 
 
 clean:
 	rm -rf RPMS SRPMS BUILD BUILDROOT

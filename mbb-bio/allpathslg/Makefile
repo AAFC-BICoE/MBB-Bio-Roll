@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=wise-2.4.1.spec
+SPEC=allpathslg.spec
 
 .PHONY: clean
 
@@ -11,7 +11,7 @@ $(FOLDERS):
 RPMS:
 	mkdir $@
 	rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC}
-	rpm -qplv ./RPMS/x86_64/*.rpm 
+	-cd RPMS/x86_64; rpm2cpio  allpathslg-50960-1.x86_64.rpm | cpio -idmv
 
 clean:
 	rm -rf RPMS SRPMS BUILD BUILDROOT

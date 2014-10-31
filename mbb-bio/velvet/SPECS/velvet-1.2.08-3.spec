@@ -86,8 +86,8 @@ make clean
 
 rename Velvet velvet Velvet*_*
 
-cd contrib/MetaVelvet-1.2.01
-make
+#cd contrib/MetaVelvet-1.2.01
+#make
 
 %install
 mkdir -p %{buildroot}%{installroot}
@@ -107,17 +107,11 @@ rm -r %{buildroot}%{installroot}/contrib/MetaVelvet-1.2.01/Peak
 rm -r %{buildroot}%{installroot}/contrib/MetaVelvet-1.2.01/Utils
 rm -r %{buildroot}%{installroot}/contrib/MetaVelvet-1.2.01/Velvet-1.1.06
 rm -r %{buildroot}%{installroot}/contrib/MetaVelvet-1.2.01/VelvetAPI
+rm -r %{buildroot}%{installroot}/contrib
 
 %files
 %defattr(755,root,root,755)
 %{installroot}
 %defattr(644,root,root,755)
-%{installroot}/contrib/README.txt
-%{installroot}/contrib/AssemblyAssembler1.3/README.txt
-%{installroot}/contrib/VelvetOptimiser-2.2.4/CHANGELOG
-%{installroot}/contrib/VelvetOptimiser-2.2.4/INSTALL
-%{installroot}/contrib/VelvetOptimiser-2.2.4/LICENSE
-%{installroot}/contrib/VelvetOptimiser-2.2.4/README
-%{installroot}/contrib/MetaVelvet-v0.3.1/LICENSE.txt
-%{installroot}/contrib/MetaVelvet-v0.3.1/README.txt
+
 
