@@ -1,5 +1,4 @@
 # This is a  spec file for gmap-gsnap
-rwaerq
 
 %define name		gmap-gsnap
 %define release		1
