@@ -15,3 +15,5 @@ RPMS:
 
 clean:
 	rm -rf RPMS SRPMS BUILD BUILDROOT
+	rm build.log
+
