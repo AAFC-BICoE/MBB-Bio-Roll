@@ -32,9 +32,9 @@ make
 %install
 mkdir -p %{buildroot}%{installroot}
 cp COPYING NOTICE %{buildroot}%{installroot}
-find ./util -executable -type f -exec cp '{}' %{buildroot}%{installroot} \;
-find ./src -executable -type f -exec cp '{}' %{buildroot}%{installroot} \;
-rm %{buildroot}%{installroot}/*.in
+cd src; cp atoiindex cmetindex fastlog.h get-genome gmap gmapindex gmapl gsnap gsnapl iit_dump iit_get iit_store sam_sort snpindex uniqscan uniqscanl %{buildroot}%{installroot}
+cd ../util; cp dbsnp_iit ensembl_genes fa_coords gff3_genes gff3_introns gff3_splicesites gmap_build gmap_compress gmap_process gmap_reassemble gmap_uncompress gtf_genes gtf_introns gtf_splicesites gvf_iit md_coords psl_genes psl_introns psl_splicesites vcf_iit %{buildroot}%{installroot}
+
 
 %files
 %defattr(755,root,root,755)
