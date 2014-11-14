@@ -15,7 +15,7 @@ Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
 URL:            http://research-pub.gene.com/gmap
 Prefix: 	/opt/bio
 Group: 		Development/Tools
-License:        Free for non-commercial use
+License:        Free for non-commercial use. Copyright (c) 2005-2011 Genentech, Inc. Distribution of unmodified package allowed. See COPYING file.
 AutoReq:	yes
 
 %description
@@ -27,7 +27,7 @@ GSNAP: Genomic Short-read Nucleotide Alignment Program.
 
 %build
 ./configure --prefix=%{installroot} --with-gmapdb=%{installroot}/share/gmapdb MAX_READLENGTH=500 PERL="/usr/bin/env perl"
-make
+make 
 
 %install
 mkdir -p %{buildroot}%{installroot}
