@@ -1,6 +1,5 @@
-# This is a  spec file for trans-abyss
+# This is a  spec file for Trans-ABySS
 
-%define _topdir	 	/home/rpmbuild/rpms/transabyss
 %define name		transabyss
 %define release		1
 %define version 	1.5.2
