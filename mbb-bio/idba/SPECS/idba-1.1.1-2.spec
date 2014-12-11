@@ -1,6 +1,6 @@
 # This is a  spec file for IDBA
+%define debug_package %{nil}
 
-%define _topdir	 	/home/rpmbuild/rpms/idba
 %define name		idba
 %define release		2
 %define version 	1.1.1
