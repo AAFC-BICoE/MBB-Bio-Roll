@@ -1,0 +1,11 @@
+--- idba-1.1.1/src/basic/kmer.h	2014-12-15 12:07:30.293453281 -0500
++++ idba-1.1.1/src/basic/kmer2.h	2014-12-15 12:18:17.350815500 -0500
+@@ -197,7 +197,7 @@
+     { return kMaxSize; }
+ 
+ 
+-    static const uint32_t kNumUint64 = 4;
++    static const uint32_t kNumUint64 = 10;
+     static const uint32_t kBitsForSize = ((kNumUint64 <= 2) ? 6 : ((kNumUint64 <= 8) ? 8 : 16));
+     static const uint32_t kBitsForKmer = (kNumUint64 * 64 - kBitsForSize);
+     static const uint32_t kMaxSize = kBitsForKmer / 2;
