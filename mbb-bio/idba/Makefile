@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=idba-1.1.1-2.spec
+SPEC=idba-1.1.1-3.spec
 
 .PHONY: clean
 
