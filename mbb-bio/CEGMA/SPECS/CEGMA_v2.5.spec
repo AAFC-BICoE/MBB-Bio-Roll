@@ -15,6 +15,7 @@ Version: 		%{version}
 Packager:   Glen Newton <glen.newton@agr.gc.ca>
 Release: 		%{release}
 Source: 		CEGMA_v2.5.tar.gz
+Patch0:			CEGMA_v2.5.patch0
 Prefix: 		/opt/bio
 Group: 			Applications/BioInformatics
 URL:			http://genome.crg.es/software/geneid/
@@ -28,7 +29,6 @@ essentially all eukaryotic genomes. We use the KOGs database to build a set of
 these highly conserved ubiquitous proteins. We define a set of 458 core
 proteins, and the protocol, CEGMA, to find orthologs of the core proteins in new
 genomes and to determine their exon-intron structures.
-
 Environment:
 	export CEGMA=%{installroot}
 	export CEGMATMP=%{installroot}
@@ -37,8 +37,10 @@ Environment:
 
 %prep
 %setup -qn CEGMA_v2.5
+%patch -P 0 -p1  
 
 %build
+# Replaces the second line of Perl scripts which for some reason 
 cd src; for f in `ls *.pl`; do sed -i 's/#!\/usr\/bin\/perl//' $f; done; cd ..
 make prefix=%{installroot}
 

@@ -11,6 +11,7 @@ $(FOLDERS):
 RPMS:
 	mkdir $@
 	rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC}
+	-cd RPMS/x86_64; rpm2cpio *.rpm | cpio -idmv
 
 clean:
 	rm -rf RPMS SRPMS BUILD BUILDROOT
