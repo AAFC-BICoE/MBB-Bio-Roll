@@ -57,11 +57,6 @@ sed -i  's@#!/usr/local/bin/perl@#!/bin/env perl@' ./PerlLib/GFF3_utils.pm
 sed -i  's@#!/usr/local/bin/perl@#!/bin/env perl@' ./PerlLib/overlapping_nucs.ph
 make -pipe --jobs=`nproc`
 make -pipe --jobs=`nproc` plugins
-#make -pipe --jobs=`nproc` testall
-#make -pipe --jobs=`nproc` testclean
-#rm trinity-plugins/rsem-1.2.19/sam/misc/._*.py
-
-rm -rf trinity-plugins
 
 %install
 mkdir -p %{buildroot}%{installroot}
