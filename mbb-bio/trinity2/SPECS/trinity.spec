@@ -67,5 +67,7 @@ cp -r * %{buildroot}%{installroot}
 %{installroot}
 
 # make all files in the bin directory executable in post section
+# ensure text file are not executable
 %post 
 chmod +x %{installroot}/Trinity %{installroot}/util/support_scripts %{installroot}/util/misc
+chmod -x %{installroot}/LICENSE %{installroot}/LICENSE.txt %{installroot}/Makefile %{installroot}/notes %{installroot}/README %{installroot}/README.md %{installroot}/Release.Notes
