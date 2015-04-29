@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 %define name		trinity2
 %define release		1
-%define version 	2.0.2
+%define version 	2.0.6
 %define installroot 	/opt/bio/%{name}
 
 BuildRoot:	%{buildroot}
@@ -10,7 +10,7 @@ Summary: 	RNA-Seq De novo Assembly
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source: 	trinityrnaseq-%{version}.tar.bz2
+Source: 	trinityrnaseq-%{version}.tar.gz
 Packager:	Glen Newton <glen.newton@grc.gc.ca>
 URL:            http://trinityrnaseq.github.io/
 Prefix: 	/opt/bio
@@ -39,9 +39,7 @@ Provides: perl(Bio::TreeIO)
 Trinity, developed at the Broad Institute and the Hebrew University of Jerusalem, represents a novel method for the efficient and robust de novo reconstruction of transcriptomes from RNA-seq data. Trinity combines three independent software modules: Inchworm, Chrysalis, and Butterfly, applied sequentially to process large volumes of RNA-seq reads. Trinity partitions the sequence data into many individual de Bruijn graphs, each representing the transcriptional complexity at at a given gene or locus, and then processes each graph independently to extract full-length splicing isoforms and to tease apart transcripts derived from paralogous genes.
 
 %prep
-cat ../SOURCES/trinityrnaseq-2.0.2.tar.bz2.xa? > ../SOURCES/trinityrnaseq-2.0.2.tar.bz2
-
-%setup -qn trinityrnaseq-2.0.2
+%setup -qn trinityrnaseq-2.0.6
 
 %build
 sed -i  's@#!/usr/local/bin/perl@#!/bin/env perl@' ./PerlLib/GFF_maker.pm
@@ -64,7 +62,6 @@ make -pipe --jobs=`nproc` plugins
 #rm trinity-plugins/rsem-1.2.19/sam/misc/._*.py
 
 rm -rf trinity-plugins
-
 
 %install
 mkdir -p %{buildroot}%{installroot}
