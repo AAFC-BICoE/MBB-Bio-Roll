@@ -68,6 +68,14 @@ cp -r * %{buildroot}%{installroot}
 
 # make all files in the bin directory executable in post section
 # ensure text file are not executable
+# create /bin/Trinity2 workaround
 %post 
 chmod +x %{installroot}/Trinity %{installroot}/util/support_scripts %{installroot}/util/misc
 chmod -x %{installroot}/LICENSE %{installroot}/LICENSE.txt %{installroot}/Makefile %{installroot}/notes %{installroot}/README %{installroot}/README.md %{installroot}/Release.Notes
+mkdir -p %{installroot}/bin
+echo '#/bin/bash' > %{installroot}/bin/Trinity2
+echo 'pushd `dirname $0` > /dev/null' >> %{installroot}/bin/Trinity2
+echo 'SCRIPTPATH=`pwd -P`' >> %{installroot}/bin/Trinity2
+echo 'popd > /dev/null' >> %{installroot}/bin/Trinity2
+echo '$SCRIPTPATH/../Trinity $@' >> %{installroot}/bin/Trinity2
+chmod +x %{installroot}/bin/Trinity2
