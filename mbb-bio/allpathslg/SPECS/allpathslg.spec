@@ -2,7 +2,7 @@
 
 %define name		allpathslg
 %define release		1
-%define version 	50960
+%define version 	52488
 %define installroot /opt/bio/%{name}
 
 BuildRoot:	%{buildroot}
@@ -11,7 +11,7 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Packager:	Glen Newton glen.newton@agr.gc.ca
-Source: 	allpathslg-50960.tar.bz2
+Source: 	allpathslg-52488.tar.gz
 URL:            ftp://ftp.broadinstitute.org/pub/crd/ALLPATHS/Release-LG/
 Prefix: 	/opt/bio
 Group: 		Applications/BioInformatics/Assembler
