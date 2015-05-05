@@ -1,4 +1,3 @@
-# This is a  spec file for velvet
 %define debug_package %{nil}
 
 %define name		allpathslg
