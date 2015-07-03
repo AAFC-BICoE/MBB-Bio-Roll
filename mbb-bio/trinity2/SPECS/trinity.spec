@@ -39,6 +39,7 @@ Provides: perl(Bio::TreeIO)
 Trinity, developed at the Broad Institute and the Hebrew University of Jerusalem, represents a novel method for the efficient and robust de novo reconstruction of transcriptomes from RNA-seq data. Trinity combines three independent software modules: Inchworm, Chrysalis, and Butterfly, applied sequentially to process large volumes of RNA-seq reads. Trinity partitions the sequence data into many individual de Bruijn graphs, each representing the transcriptional complexity at at a given gene or locus, and then processes each graph independently to extract full-length splicing isoforms and to tease apart transcripts derived from paralogous genes.
 
 %prep
+cat ../SOURCES/trinityrnaseq-2.0.6.tar.gz.xa? > ../SOURCES/trinityrnaseq-2.0.6.tar.gz
 %setup -qn trinityrnaseq-2.0.6
 
 %build
