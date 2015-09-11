@@ -2,19 +2,19 @@
 %define name              Cython
 %define release           1
 %define version           0.23
-# %define buildroot         %{_topdir}/%{name}-%{version}-root
+%define buildroot         %{_topdir}/%{name}-%{version}-root
 %define installroot       /opt/bio/%{name}
+%define python            /opt/python/bin/python2.7
 
 Summary:   The Cython compiler for writing C extensions for the Python language.
 Name:      %{name}
 Version:   %{version}
 Release:   %{release}
 Source0:   %{name}-%{version}.tar.gz
-License:   Apache
+License:   Apache 2.0
 Packager:  Alex MacLean <alex.maclean@agr.gc.ca>
 Group:     Development/Librairies
 BuildRoot: %{buildroot}
-#BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Prefix:    /opt/bio
 Vendor:    Robert Bradshaw, Stefan Behnel, Dag Seljebotn, Greg Ewing, et al. <cython-devel@python.org>
 Url:       http://cython.org/
@@ -40,14 +40,15 @@ code.
 %setup -n %{name}-%{version}
 
 %build
-env CFLAGS="$RPM_OPT_FLAGS" python setup.py build
+env CFLAGS="$RPM_OPT_FLAGS" %{python} setup.py build
 
 %install
-python setup.py install -O1 --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
-#mkdir -p %{buildroot}%{installroot}
+mkdir -p $RPM_BUILD_ROOT%{installroot}
+%{python} setup.py install --home=$RPM_BUILD_ROOT%{installroot}
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-%files -f INSTALLED_FILES
-%defattr(-,root,root)
+%files
+%defattr(644,root,root,755)
+%{installroot}
+%defattr(755,root,root,755)
+%{installroot}/bin
+%{installroot}/lib
