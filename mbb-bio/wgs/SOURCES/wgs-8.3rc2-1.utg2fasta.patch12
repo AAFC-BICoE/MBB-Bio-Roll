@@ -1,0 +1,8 @@
+--- wgs-8.3rc2/Linux-amd64/bin/utg2fasta	2015-05-21 09:58:30.000000000 -0400
++++ wgs-8.3rc2/Linux-amd64/bin/utg2fasta	2015-09-15 08:37:35.057189598 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ my %i2u = ();
+ 

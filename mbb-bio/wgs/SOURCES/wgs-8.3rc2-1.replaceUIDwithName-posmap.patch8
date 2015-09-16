@@ -1,0 +1,8 @@
+--- wgs-8.3rc2/Linux-amd64/bin/replaceUIDwithName-posmap	2015-05-21 09:58:25.000000000 -0400
++++ wgs-8.3rc2/Linux-amd64/bin/replaceUIDwithName-posmap	2015-09-15 08:28:56.911058994 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
