@@ -1,0 +1,9 @@
+o
+1
+/home/rpmbuild/work/MBB-Bio-Roll/mbb-bio/MEGAN5/BUILD
+y
+1,2
+n
+5
+2000
+n
