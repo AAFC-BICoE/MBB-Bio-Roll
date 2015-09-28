@@ -1,8 +1,0 @@
---- wgs-8.3rc2/Linux-amd64/bin/asmToAGP.pl	2015-09-14 15:23:02.840135890 -0400
-+++ wgs-8.3rc2/Linux-amd64/bin/asmToAGP.pl	2015-09-14 15:26:40.464871647 -0400
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/env perl
- 
- use strict;
- use FindBin;

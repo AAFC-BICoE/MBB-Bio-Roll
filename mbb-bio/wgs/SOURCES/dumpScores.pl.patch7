@@ -1,0 +1,8 @@
+--- kmer/seagen/analysis/dumpScores.pl	2015-09-24 14:33:42.835726939 -0400
++++ kmer/seagen/analysis/dumpScores.pl	2015-09-24 14:33:55.754537974 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ #
+ #

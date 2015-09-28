@@ -1,0 +1,8 @@
+--- kmer/ESTmapper/scheduler.pm	2015-09-24 14:23:22.680392103 -0400
++++ kmer/ESTmapper/scheduler.pm	2015-09-24 14:23:48.043614279 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ #
+ #  Functions for running multiple processes at the same time.
+ #

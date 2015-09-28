@@ -1,8 +1,0 @@
---- wgs-8.3rc2/Linux-amd64/bin/greedy_layout_to_IUM	2015-05-21 09:58:30.000000000 -0400
-+++ wgs-8.3rc2/Linux-amd64/bin/greedy_layout_to_IUM	2015-09-14 15:51:53.163244579 -0400
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/env perl
- 
- my @imps;
- 

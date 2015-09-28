@@ -1,0 +1,8 @@
+--- src/AS_RUN/asmQC/asmToFasta.pl	2015-09-24 14:37:20.986305339 -0400
++++ src/AS_RUN/asmQC/asmToFasta.pl	2015-09-24 14:37:33.613660308 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use XML::Parser;
