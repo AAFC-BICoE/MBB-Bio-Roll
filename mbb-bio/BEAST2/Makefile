@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=BEASTv2.1.3.spec
+SPEC=BEAST2.spec
 
 .PHONY: clean
 
