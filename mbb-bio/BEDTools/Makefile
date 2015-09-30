@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=BEDtools-2.16.2-1.spec
+SPEC=BEDtools.spec
 
 .PHONY: clean
 
