@@ -2,7 +2,7 @@
 
 %define name		abyss
 %define release		1
-%define version 	1.5.2
+%define version 	1.9.0
 %define installroot /opt/bio/%{name}
 
 BuildRoot:	%{buildroot}
@@ -10,8 +10,7 @@ Summary:        ABySS is a de novo, parallel, paired-end sequence assembler that
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source: 	%{name}-%{version}.tar.gz
-Patch0:         %{name}-%{version}-%{release}.bin.patch0
+Source: 	%{name}-%{version}.tar.bz2
 Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
 URL:            http://www.bcgsc.ca/platform/bioinfo/software/abyss
 Prefix: 	/opt/bio
@@ -27,7 +26,6 @@ of assembling larger genomes.
 
 %prep
 %setup -q
-%patch -P 0 -p1
 
 %build
 #./configure --disable-popcnt --enable-maxk=256 --with-boost=/usr/include/boost
