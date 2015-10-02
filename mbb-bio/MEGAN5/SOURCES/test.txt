@@ -1,0 +1,2 @@
+You need to load the license located at %{installroot}/AAFC_license.txt by running MEGAN with option -L
+. To run the command-line mode on a server, run the command 'xvfb-run --auto-servernum --server-num=1 MEGAN -g' (Note this is different from the manual which contains a typo)  

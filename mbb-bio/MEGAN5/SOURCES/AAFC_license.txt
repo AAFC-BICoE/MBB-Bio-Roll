@@ -1,0 +1,11 @@
+License certificate:
+User: Iyad kandalaft
+Email: MBB@AGR.GC.CA
+Organization: Agricultre and Agri-Food Canada
+Address: 960 Carling Ave
+City: Ottawa
+Country: Canada
+LicenseType: Academic - academic research, publication and teaching only.
+ExpireDate: 2017-Sep-29
+Signature:
+302C02142FC76C304EBB644A8262363C4EC0AAC738A4587F0214797C1C2481C9502936B2F99DFAAC0E2E8B8C894E
