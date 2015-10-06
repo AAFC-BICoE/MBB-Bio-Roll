@@ -1,0 +1,8 @@
+--- ITSx	2015-10-06 09:29:35.529848759 -0400
++++ ITSx	2015-10-06 09:31:29.057946753 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ # ITSx ITS Extractor
+ $app_title     = "ITSx -- Identifies ITS sequences and extracts the ITS region";
+ $app_author    = "Johan Bengtsson-Palme et al., University of Gothenburg";
