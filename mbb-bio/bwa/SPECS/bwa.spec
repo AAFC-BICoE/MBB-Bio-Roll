@@ -3,7 +3,7 @@
 ### define _topdir	 	/home/rpmbuild/rpms/bwa
 %define name			bwa
 %define release		1
-%define version 	0.7.10
+%define version 	0.7.12
 %define buildroot %{_topdir}/%{name}-%{version}-root
 %define installroot /opt/bio/%{name}
 
