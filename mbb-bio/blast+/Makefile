@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=blast.2.2.26+.spec
+SPEC=blast.spec
 
 .PHONY: clean
 
