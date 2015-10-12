@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=bowtie2-2.0.0b7-1.spec
+SPEC=bowtie2.spec
 
 .PHONY: clean
 
