@@ -8,7 +8,7 @@
 BuildRoot:	%{buildroot}
 Summary: 		GARLI - Genetic Algorithm for Rapid Likelihood Inference
 License: 		GNU GPL
-URL:			https://www.nescent.org/wg_garli/Main_Page
+URL:			http://www.bio.utexas.edu/faculty/antisense/garli/garli.html
 Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
