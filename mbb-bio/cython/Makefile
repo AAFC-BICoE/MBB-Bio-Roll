@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=cython-0.23-1.spec
+SPEC=cython.spec
 
 .PHONY: clean
 
