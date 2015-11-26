@@ -1,0 +1,36 @@
+diff -ru nextclip-NextClip_v1.3.1-orig/scripts/nextclip_index_reference.pl nextclip-NextClip_v1.3.1/scripts/nextclip_index_reference.pl
+--- nextclip-NextClip_v1.3.1-orig/scripts/nextclip_index_reference.pl	2014-09-16 05:47:44.000000000 -0400
++++ nextclip-NextClip_v1.3.1/scripts/nextclip_index_reference.pl	2015-11-26 12:50:03.548717992 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/opt/perl/bin/perl -w
+ 
+ # Script:  nextclip_index_reference.pl
+ # Purpose: Produce simple index file of a reference
+diff -ru nextclip-NextClip_v1.3.1-orig/scripts/nextclip_lmp_analysis.pl nextclip-NextClip_v1.3.1/scripts/nextclip_lmp_analysis.pl
+--- nextclip-NextClip_v1.3.1-orig/scripts/nextclip_lmp_analysis.pl	2014-09-16 05:47:44.000000000 -0400
++++ nextclip-NextClip_v1.3.1/scripts/nextclip_lmp_analysis.pl	2015-11-26 12:50:03.548717992 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/opt/perl/bin/perl -w
+ 
+ # Script:  nextclip_lmp_analysis.pl
+ # Purpose: NextClip Long Mate Pair analysis pipeline
+diff -ru nextclip-NextClip_v1.3.1-orig/scripts/nextclip_make_report.pl nextclip-NextClip_v1.3.1/scripts/nextclip_make_report.pl
+--- nextclip-NextClip_v1.3.1-orig/scripts/nextclip_make_report.pl	2014-09-16 05:47:44.000000000 -0400
++++ nextclip-NextClip_v1.3.1/scripts/nextclip_make_report.pl	2015-11-26 12:50:03.548717992 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/opt/perl/bin/perl -w
+ 
+ # Script:  nextclip_make_report.pl
+ # Purpose: Produce PDF report of NextClip analysis
+diff -ru nextclip-NextClip_v1.3.1-orig/scripts/nextclip_sam_parse.pl nextclip-NextClip_v1.3.1/scripts/nextclip_sam_parse.pl
+--- nextclip-NextClip_v1.3.1-orig/scripts/nextclip_sam_parse.pl	2014-09-16 05:47:44.000000000 -0400
++++ nextclip-NextClip_v1.3.1/scripts/nextclip_sam_parse.pl	2015-11-26 12:50:03.549717993 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/opt/perl/bin/perl -w
+ 
+ # Script:  nextclip_sam_parse.pl
+ # Purpose: Parse SAM files for NextClip
