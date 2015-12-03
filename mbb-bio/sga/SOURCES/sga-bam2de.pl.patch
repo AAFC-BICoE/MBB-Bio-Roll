@@ -1,0 +1,8 @@
+--- bin/sga-bam2de.pl	2015-10-29 15:04:13.364286589 -0400
++++ bin/sga-bam2de.pl	2015-10-29 15:05:10.129911362 -0400
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use Getopt::Long;

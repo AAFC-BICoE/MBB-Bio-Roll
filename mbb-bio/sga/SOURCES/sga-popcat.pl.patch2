@@ -1,0 +1,8 @@
+--- bin/sga-popcat.pl	2015-10-29 15:31:22.367478741 -0400
++++ bin/sga-popcat.pl	2015-10-29 15:31:42.196825987 -0400
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/opt/perl/bin/perl
+ # Cat a set of fasta/fastq files together and build an index of read index -> original file
+ 
+ use strict;

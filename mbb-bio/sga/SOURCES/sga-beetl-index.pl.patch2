@@ -1,0 +1,8 @@
+--- bin/sga-beetl-index.pl	2015-10-29 15:12:37.581938987 -0400
++++ bin/sga-beetl-index.pl	2015-10-29 15:13:06.981743053 -0400
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/opt/perl/bin/perl
+ # Run Illumina's BEETL BWT builder on a set of sequence reads
+ # and convert the output to sga's index format.
+ use strict;

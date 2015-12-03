@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=sga-0.9.20.spec
+SPEC=sga.spec
 
 .PHONY: clean
 
@@ -11,6 +11,5 @@ $(FOLDERS):
 RPMS:
 	mkdir $@
 	rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC}
-
 clean:
 	rm -rf RPMS SRPMS BUILD BUILDROOT
