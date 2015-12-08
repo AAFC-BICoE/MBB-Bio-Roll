@@ -1,0 +1,8 @@
+--- bin/sga-call-variants.pl	2015-12-07 15:09:42.456268690 -0500
++++ bin/sga-call-variants.pl	2015-12-07 15:10:14.303665145 -0500
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use Getopt::Long;

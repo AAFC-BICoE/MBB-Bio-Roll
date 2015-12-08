@@ -27,7 +27,8 @@ Patch5:    sga-diffCalls.pl.patch
 Patch6:    sga-mergeDriver.pl.patch
 Patch7:    sga-popcat.pl.patch
 Patch8:    sga-rename.pl.patch
-
+Patch9:	   sga-call-variants.pl.patch
+Patch10:   sga-vcf-dedup.pl.patch
 
 %description
 SGA - String Graph Assembler is a de novo genome assembler based on the concept
@@ -46,6 +47,8 @@ is achieved by using a compressed representation of DNA sequence reads.
 %patch -P 6
 %patch -P 7
 %patch -P 8
+%patch -P 9
+%patch -P 10
 
 %build
 ./autogen.sh

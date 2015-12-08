@@ -1,11 +1,14 @@
---- bin/Makefile.am	2015-10-29 14:15:19.924387929 -0400
-+++ bin/Makefile.am	2015-10-29 14:15:57.225749038 -0400
-@@ -1,6 +1,14 @@
- dist_bin_SCRIPTS = \
- 	sga-astat.py \
- 	sga-bam2de.pl \
+--- bin/Makefile.am	2015-12-07 14:31:10.473366707 -0500
++++ bin/Makefile.am	2015-12-07 14:31:27.037537959 -0500
+@@ -1,6 +1,17 @@
+-dist_bin_SCRIPTS = \
+-	sga-astat.py \
+-	sga-bam2de.pl \
 -    sga-mergeDriver.pl 
 -dist_noinst_SCRIPTS=sga-align sga-deinterleave.pl sga-joinedpe
++dist_bin_SCRIPTS = \
++        sga-astat.py \
++        sga-bam2de.pl \
 +        sga-mergeDriver.pl \
 +        sga-asqg2dot.pl \
 +        sga-beetl-index.pl \
@@ -14,6 +17,9 @@
 +        sga-rename.pl \
 +        sga-align \
 +        sga-deinterleave.pl \
-+        sga-joinedpe
++        sga-joinedpe \
++        sga-call-variants.pl \
++        sga-preqc-report.py \
++        sga-vcf-dedup.pl
 +dist_noinst_SCRIPTS=
  

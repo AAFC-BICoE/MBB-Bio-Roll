@@ -1,0 +1,8 @@
+--- bin/sga-vcf-dedup.pl	2015-12-07 15:11:46.906383171 -0500
++++ bin/sga-vcf-dedup.pl	2015-12-07 15:12:10.055524617 -0500
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/usr/bin/env perl
+ use strict;
+ # Remove duplicated entries from a VCF file
+ 
