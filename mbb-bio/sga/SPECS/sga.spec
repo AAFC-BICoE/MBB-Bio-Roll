@@ -17,7 +17,7 @@ Prefix:    /opt/bio
 Vendor:    Jared Simpson (js18@sanger.ac.uk)
 Url:       https://github.com/jts/sga/
 AutoReq:   no
-Requires:  sparsehash, bamtools, zlib
+Requires:  sparsehash, bamtools, zlib, opt-perl-BioPerl
 Patch0:    Makefile.am.patch
 Patch1:    sga-asqg2dot.pl.patch
 Patch2:    sga-bam2de.pl.patch
