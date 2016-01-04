@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=STAR_2.3.0e.spec
+SPEC=STAR.spec
 
 .PHONY: clean
 

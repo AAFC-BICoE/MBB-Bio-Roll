@@ -1,25 +1,26 @@
 # This is a sample spec file for wget
 
 ### define _topdir	 	/home/rpmbuild/rpms/%{name}
-%define name			STAR
-%define src_name		STAR
+%define name		STAR
 %define release		1
-%define version 	2.3.0e
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/%{name}
+%define version 	2.5.0b
+%define buildroot 	%{_topdir}/%{name}-%{version}-root
+%define installroot 	/opt/bio/%{name}
+%define gcc_491_path	/opt/bio/gcc491/bin
+%define ld_library_path	/opt/bio/gcc491/lib64
 
 BuildRoot:	%{buildroot}
 Summary: 	STAR aligns RNA-seq reads to a reference genome using uncompressed suffix arrays
 License: 		GPL3
 Name: 			%{name}
 Version: 		%{version}
-Packager:   Glen Newton <glen.newton@agr.gc.ca>
+Packager:  	Iyad Kandalaft <Iyad.Kandalaft@agr.gc.ca>
 Release: 		%{release}
-Source: 		%{src_name}-%{version}.tgz
-Patch0:         %{name}_%{version}.patch
+Source0: 		%{name}-%{version}.tar.gz
+Source1: 		STAR-Fusion-0.1.1.tar.gz
 Prefix: 		/opt/bio
 Group: 			Applications/BioInformatics/Alignment
-URL:			https://code.google.com/p/rna-star/
+URL:			https://github.com/alexdobin/STAR
 AutoReq:		yes
 
 %description
@@ -49,15 +50,23 @@ junctions with an 80–90% success rate, corroborating the high
 precision of the STAR mapping strategy.  
 
 %prep
-%setup -q -n STAR_2.3.0e
-%patch -P 0 -p1
+%setup -q
+%setup -T -D -a 1
 
 %build
-make  -pipe --jobs=`nproc` prefix=%{installroot}
+export PATH=%{gcc_491_path}:$PATH
+export LD_LIBRARY_PATH=%{ld_library_path}
+cd source
+make -pie --jobs=`nproc` prefix=%{installroot} STARlong
+make -pie --jobs=`nproc` prefix=%{installroot} STAR
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}
-cp STAR $RPM_BUILD_ROOT%{installroot}
+mkdir -p $RPM_BUILD_ROOT%{installroot}/bin
+cp source/STAR source/STARlong $RPM_BUILD_ROOT%{installroot}/bin
+cp -r extras doc $RPM_BUILD_ROOT%{installroot}/
+cp -r STAR-Fusion-0.1.1/STAR-Fusion STAR-Fusion-0.1.1/lib  $RPM_BUILD_ROOT%{installroot}/bin
+cp -r STAR-Fusion-0.1.1/{resources,test}  $RPM_BUILD_ROOT%{installroot}/
+
 
 %files
 %defattr(755,root,root,755)
