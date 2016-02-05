@@ -1,0 +1,8 @@
+--- ./scripts/load_sequences.pl	2016-02-05 11:16:17.536894618 -0500
++++ ./scripts/load_sequences.pl	2016-02-05 11:17:01.649988774 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #
+ # Copyright 2011, Julian Catchen <jcatchen@uoregon.edu>
+ #
