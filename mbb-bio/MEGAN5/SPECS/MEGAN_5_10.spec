@@ -44,12 +44,17 @@ cp manual.pdf  $RPM_BUILD_ROOT%{installroot}/
 cp AAFC_license.txt $RPM_BUILD_ROOT%{installroot}/
 cp -r .install4j $RPM_BUILD_ROOT%{installroot}/
 echo -e "MEGAN can take many options. Here I will only list a few essential ones to make it run. Please refer to the manual for any advanced usage.\nYou need to load the license on first run. You can do this by {MEGAN -L %{installroot}/AAFC_license.txt}.\nYou can run the command-line mode on a server by typing {xvfb-run --auto-servernum --server-num=1 MEGAN -g} (Note this is different from the manual which contains a typo).\nI've noticed that when running the above command MEGAN seems to forget about previously loaded licenses sometimes. To guarantee that it will work you can load the license again with the command you want to run. For example {xvfb-run --auto-servernum --server-num=1 MEGAN -L %{installroot}/AAFC_license.txt -g}.\nThe default mamimum memory allowed for MEGAN is set to be 8G. You can allow for more memory to make MEGAN run faster. You need to change the settings in MEGAN.vmoptions to do so. Please refer to the manual for more details.\n " > $RPM_BUILD_ROOT%{installroot}/00README.MBB
+cd $RPM_BUILD_ROOT%{installroot}/
+mkdir bin
+mv MEGAN bin
+mv .install4j bin
+mv class bin
+mv jars bin
+mv tools bin
 
 %files
 %defattr(644,root,root,755)
 %{installroot}
 %defattr(755,root,root,755)
-%{installroot}/tools
-%{installroot}/jars/
-%{installroot}/MEGAN
+%{installroot}/bin
 %attr(757,root,root) %{installroot}/MEGAN.vmoptions
