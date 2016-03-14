@@ -1,0 +1,16 @@
+diff -ru FastQC-orig/fastqc FastQC/fastqc
+--- FastQC-orig/fastqc	2016-03-11 12:13:39.272654320 -0500
++++ FastQC/fastqc	2016-03-11 12:13:55.396944069 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/bin/env perl
+ use warnings;
+ use strict;
+ use FindBin qw($RealBin);
+@@ -273,4 +273,4 @@
+     Any bugs in fastqc should be reported either to simon.andrews@babraham.ac.uk
+     or in www.bioinformatics.babraham.ac.uk/bugzilla/
+                    
+-    
+\ No newline at end of file
++    

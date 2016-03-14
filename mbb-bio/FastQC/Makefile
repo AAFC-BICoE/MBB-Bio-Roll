@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=FastQC-0.10.1-1.spec
+SPEC=FastQC.spec
 
 .PHONY: clean
 
