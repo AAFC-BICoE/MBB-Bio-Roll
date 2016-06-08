@@ -1,8 +1,0 @@
---- bin/sga-rename.pl	2015-10-29 15:32:20.464377969 -0400
-+++ bin/sga-rename.pl	2015-10-29 15:32:33.151311310 -0400
-@@ -1,4 +1,4 @@
--#! /usr/bin/perl
-+#!/opt/perl/bin/perl
- #
- # Rename the sga index files for the given set of reads
- #

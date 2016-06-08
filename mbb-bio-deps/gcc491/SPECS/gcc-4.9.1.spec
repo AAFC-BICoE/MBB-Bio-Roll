@@ -42,7 +42,7 @@ mv mpfr-3.1.2 mpfr
 mkdir gcc-build
 
 # See https://gcc.gnu.org/wiki/FAQ#configure
-unset LIBRARY_PATH CPATH C_INCLUDE_PATH PKG_CONFIG_PATH CPLUS_INCLUDE_PATH INCLUDE;cd gcc-build; export LD_LIBRARY_PATH=;%{_topdir}/BUILD/gcc-4.9.1/configure --disable-multilib --prefix=/opt/bio/gcc; make prefix=%{installroot} -pipe --jobs=`nproc`
+unset LIBRARY_PATH CPATH C_INCLUDE_PATH PKG_CONFIG_PATH CPLUS_INCLUDE_PATH INCLUDE;cd gcc-build; export LD_LIBRARY_PATH=;%{_topdir}/BUILD/gcc-4.9.1/configure --disable-multilib --enable-static --prefix=/opt/bio/gcc; make prefix=%{installroot} -pipe --jobs=`nproc`
 
 %install
 unset LIBRARY_PATH CPATH C_INCLUDE_PATH PKG_CONFIG_PATH CPLUS_INCLUDE_PATH INCLUDE;cd gcc-build;export LD_LIBRARY_PATH=;make install prefix=$RPM_BUILD_ROOT%{installroot}

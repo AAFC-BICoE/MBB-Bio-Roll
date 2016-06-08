@@ -1,8 +1,0 @@
---- bin/sga-deinterleave.pl.bak	2015-10-29 15:21:13.625562572 -0400
-+++ bin/sga-deinterleave.pl	2015-10-29 15:21:36.977644587 -0400
-@@ -1,4 +1,4 @@
--#! /usr/bin/perl
-+#!/opt/perl/bin/perl
- #
- # sga-deinterleave.pl READS OUT1 OUT2
- #

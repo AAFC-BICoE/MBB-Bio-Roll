@@ -1,8 +1,0 @@
---- bin/sga-mergeDriver.pl	2015-10-29 15:29:54.742213354 -0400
-+++ bin/sga-mergeDriver.pl	2015-10-29 15:30:21.892491521 -0400
-@@ -1,4 +1,4 @@
--#! /usr/bin/perl
-+#!/opt/perl/bin/perl
- 
- # Merge driver - make commands for merging BWTs together
- 
