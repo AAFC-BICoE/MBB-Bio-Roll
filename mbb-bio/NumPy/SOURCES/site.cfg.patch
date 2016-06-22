@@ -1,0 +1,12 @@
+127,131c127,131
+< # [openblas]
+< # libraries = openblas
+< # library_dirs = /opt/OpenBLAS/lib
+< # include_dirs = /opt/OpenBLAS/include
+< # runtime_library_dirs = /opt/OpenBLAS/lib
+---
+> [openblas]
+> libraries = openblas
+> library_dirs = /opt/bio/OpenBLAS/lib
+> include_dirs = /opt/bio/OpenBLAS/include
+> runtime_library_dirs = /opt/bio/OpenBLAS/lib
