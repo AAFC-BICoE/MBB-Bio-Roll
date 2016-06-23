@@ -1,0 +1,4 @@
+15c15
+< 	-cp $(EXECUTABLE) $(HOME)/bin
+---
+> 	-cp $(EXECUTABLE) $(PREFIX)/SeqPrep
