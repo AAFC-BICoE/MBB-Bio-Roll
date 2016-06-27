@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=prinseq-lite-0.19.4-1.spec
+SPEC=prinseq-lite-0.20.4-1.spec
 
 .PHONY: clean
 

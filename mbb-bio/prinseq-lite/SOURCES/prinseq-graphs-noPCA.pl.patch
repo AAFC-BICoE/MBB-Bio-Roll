@@ -1,0 +1,8 @@
+--- prinseq-graphs-noPCA.pl	2016-06-27 14:30:25.352547823 -0400
++++ prinseq-graphs-noPCA.pl	2016-06-27 14:31:05.976631053 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #===============================================================================
+ #   Author: Robert SCHMIEDER, Computational Science Research Center @ SDSU, CA
