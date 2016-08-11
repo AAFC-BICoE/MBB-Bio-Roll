@@ -8,8 +8,8 @@
 #### TODO CHANGE THE TOPDIR
 ### define _topdir         /home/rpmbuild/rpms/R3
 %define name		R3
-%define version		3.1.0
-%define release		2
+%define version		3.1.3
+%define release		1
 %define installroot     /opt/R/%{name}/%{version}
 
 Name: %{name} 
