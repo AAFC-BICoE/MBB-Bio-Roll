@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=boost-1.47.0-2.spec
+SPEC=boost.spec
 
 .PHONY: clean
 
