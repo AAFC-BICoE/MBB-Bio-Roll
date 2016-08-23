@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=mothur.1.30.2.spec
+SPEC=mothur.spec
 
 .PHONY: clean
 
