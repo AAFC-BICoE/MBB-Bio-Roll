@@ -1,0 +1,324 @@
+diff -ru cd-hit-v4.6.6-2016-0711-orig/cd-hit-2d-para.pl cd-hit-v4.6.6-2016-0711/cd-hit-2d-para.pl
+--- cd-hit-v4.6.6-2016-0711-orig/cd-hit-2d-para.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/cd-hit-2d-para.pl	2016-08-29 09:56:04.693002232 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ # =============================================================================
+ # CD-HIT
+ # http://cd-hit.org/
+diff -ru cd-hit-v4.6.6-2016-0711-orig/cd-hit-div.pl cd-hit-v4.6.6-2016-0711/cd-hit-div.pl
+--- cd-hit-v4.6.6-2016-0711-orig/cd-hit-div.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/cd-hit-div.pl	2016-08-29 09:56:04.695002266 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #not like cd-hit-div, this script do not sort input
+ #or throw away seq
+diff -ru cd-hit-v4.6.6-2016-0711-orig/cd-hit-para.pl cd-hit-v4.6.6-2016-0711/cd-hit-para.pl
+--- cd-hit-v4.6.6-2016-0711-orig/cd-hit-para.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/cd-hit-para.pl	2016-08-29 09:56:04.697002302 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ # =============================================================================
+ # CD-HIT
+ # http://cd-hit.org/
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr2tree.pl cd-hit-v4.6.6-2016-0711/clstr2tree.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr2tree.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr2tree.pl	2016-08-29 09:56:04.699002338 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ $clstr = shift;
+ $fr = shift; # for nr80.clstr $fr = 0.8
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr2txt.pl cd-hit-v4.6.6-2016-0711/clstr2txt.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr2txt.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr2txt.pl	2016-08-29 09:56:04.701002372 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $no = 0;
+ my $clstr_no = "";
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr2xml.pl cd-hit-v4.6.6-2016-0711/clstr2xml.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr2xml.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr2xml.pl	2016-08-29 09:56:04.703002408 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #usage: clstr_xml.pl [-len|-size] level1.clstr [level2.clstr level3.clstr ...]
+ #purpose: to create xml file from cd-hit or hierarchical cd-hit(h-cd-hit) results
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_cut.pl cd-hit-v4.6.6-2016-0711/clstr_cut.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_cut.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_cut.pl	2016-08-29 09:56:04.705002443 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #keep only top $no proteins in cluster
+ 
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_merge_noorder.pl cd-hit-v4.6.6-2016-0711/clstr_merge_noorder.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_merge_noorder.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_merge_noorder.pl	2016-08-29 09:56:04.707002477 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ # order of clusters don't need to be the same
+ # but then I have to read everything into memory
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_merge.pl cd-hit-v4.6.6-2016-0711/clstr_merge.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_merge.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_merge.pl	2016-08-29 09:56:04.707002477 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ # the order of clusters need to be identical
+ my ($master_clstr, @clstr) = @ARGV;
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_quality_eval_by_link.pl cd-hit-v4.6.6-2016-0711/clstr_quality_eval_by_link.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_quality_eval_by_link.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_quality_eval_by_link.pl	2016-08-29 09:56:04.710002530 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ ## calculate the sensitivity and specificity of clusters
+ ## if the input fasta file has pre-defined classification term
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_quality_eval.pl cd-hit-v4.6.6-2016-0711/clstr_quality_eval.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_quality_eval.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_quality_eval.pl	2016-08-29 09:56:04.712002566 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ ## calculate the sensitivity and specificity of clusters
+ ## if the input fasta file has pre-defined classification term
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_reduce.pl cd-hit-v4.6.6-2016-0711/clstr_reduce.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_reduce.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_reduce.pl	2016-08-29 09:56:04.714002602 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ 
+ $file90 = shift;
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_renumber.pl cd-hit-v4.6.6-2016-0711/clstr_renumber.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_renumber.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_renumber.pl	2016-08-29 09:56:04.716002636 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ $no = 0;
+ while($ll=<>){
+   if ($ll =~ /^>Cluster (\d+)/) {
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_rep.pl cd-hit-v4.6.6-2016-0711/clstr_rep.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_rep.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_rep.pl	2016-08-29 09:56:04.718002672 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ $rep = "";
+ $no = 0;
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_reps_faa_rev.pl cd-hit-v4.6.6-2016-0711/clstr_reps_faa_rev.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_reps_faa_rev.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_reps_faa_rev.pl	2016-08-29 09:56:04.720002707 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ # output single fasta file
+ # for each cluster output at least $cutoff seqs
+ 
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_rev.pl cd-hit-v4.6.6-2016-0711/clstr_rev.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_rev.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_rev.pl	2016-08-29 09:56:04.722002742 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ # if nr90 from nr100 and
+ #    nr80 from nr90, so I have nr90.clstr and nr80.clstr
+ # but, in nr80.clstr, some gi numbers whose from nr100 are there
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_select.pl cd-hit-v4.6.6-2016-0711/clstr_select.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_select.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_select.pl	2016-08-29 09:56:04.723002761 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #my $by = shift;
+ my $min;
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_select_rep.pl cd-hit-v4.6.6-2016-0711/clstr_select_rep.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_select_rep.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_select_rep.pl	2016-08-29 09:56:04.725002795 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #my $by = shift;
+ my $min;
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_size_histogram.pl cd-hit-v4.6.6-2016-0711/clstr_size_histogram.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_size_histogram.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_size_histogram.pl	2016-08-29 09:56:04.727002829 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if(@ARGV==0){
+    print "Usage:\n\tclstr_size_histogram.pl [-bin N] clstr_file\n";
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_size_stat.pl cd-hit-v4.6.6-2016-0711/clstr_size_stat.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_size_stat.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_size_stat.pl	2016-08-29 09:56:04.728002846 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if(@ARGV==0){
+    print "Usage:\n\tclstr_size_stat.pl clstr_file\n";
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_sort_by.pl cd-hit-v4.6.6-2016-0711/clstr_sort_by.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_sort_by.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_sort_by.pl	2016-08-29 09:56:04.730002883 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $sort_by_what = shift;
+    $sort_by_what = "no" unless $sort_by_what;
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_sort_prot_by.pl cd-hit-v4.6.6-2016-0711/clstr_sort_prot_by.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_sort_prot_by.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_sort_prot_by.pl	2016-08-29 09:56:04.732002919 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $sort_by = shift;
+    $sort_by = "len" unless ($sort_by);
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_sql_tbl.pl cd-hit-v4.6.6-2016-0711/clstr_sql_tbl.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_sql_tbl.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_sql_tbl.pl	2016-08-29 09:56:04.734002954 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if(@ARGV==0){
+   print "Usage:\n\tclstr_sql_tbl.pl clstr_file tbl_file\n";
+diff -ru cd-hit-v4.6.6-2016-0711-orig/clstr_sql_tbl_sort.pl cd-hit-v4.6.6-2016-0711/clstr_sql_tbl_sort.pl
+--- cd-hit-v4.6.6-2016-0711-orig/clstr_sql_tbl_sort.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/clstr_sql_tbl_sort.pl	2016-08-29 09:56:04.736002988 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if(@ARGV==0){
+    print "Usage:\n\tclstr_sql_tbl_sort.pl table_file level\n";
+diff -ru cd-hit-v4.6.6-2016-0711-orig/make_multi_seq.pl cd-hit-v4.6.6-2016-0711/make_multi_seq.pl
+--- cd-hit-v4.6.6-2016-0711-orig/make_multi_seq.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/make_multi_seq.pl	2016-08-29 09:56:04.738003022 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #note you have to use "-d 0" in the cd-hit run
+ #note you better to use "-g 1" in the cd-hit run
+diff -ru cd-hit-v4.6.6-2016-0711-orig/plot_2d.pl cd-hit-v4.6.6-2016-0711/plot_2d.pl
+--- cd-hit-v4.6.6-2016-0711-orig/plot_2d.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/plot_2d.pl	2016-08-29 09:56:04.740003059 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use Image::Magick;
+ 
+diff -ru cd-hit-v4.6.6-2016-0711-orig/plot_len1.pl cd-hit-v4.6.6-2016-0711/plot_len1.pl
+--- cd-hit-v4.6.6-2016-0711-orig/plot_len1.pl	2015-05-05 01:44:19.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/plot_len1.pl	2016-08-29 09:56:04.742003095 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ $file90 = shift;
+ $segs = shift;
+diff -ru cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/cd-hit-div.pl cd-hit-v4.6.6-2016-0711/psi-cd-hit/cd-hit-div.pl
+--- cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/cd-hit-div.pl	2011-11-08 12:06:31.000000000 -0500
++++ cd-hit-v4.6.6-2016-0711/psi-cd-hit/cd-hit-div.pl	2016-08-29 09:57:32.203542945 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #not like cd-hit-div, this script do not sort input
+ #or throw away seq
+diff -ru cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/clstr_select_rep.pl cd-hit-v4.6.6-2016-0711/psi-cd-hit/clstr_select_rep.pl
+--- cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/clstr_select_rep.pl	2007-11-19 13:02:02.000000000 -0500
++++ cd-hit-v4.6.6-2016-0711/psi-cd-hit/clstr_select_rep.pl	2016-08-29 09:57:32.205542985 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $by = shift;
+ my $min;
+diff -ru cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/clstr_select_seq.pl cd-hit-v4.6.6-2016-0711/psi-cd-hit/clstr_select_seq.pl
+--- cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/clstr_select_seq.pl	2011-11-04 02:51:52.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/psi-cd-hit/clstr_select_seq.pl	2016-08-29 09:57:32.207543019 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $by = shift;
+ my $min;
+diff -ru cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/fetch_fasta_by_ids.pl cd-hit-v4.6.6-2016-0711/psi-cd-hit/fetch_fasta_by_ids.pl
+--- cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/fetch_fasta_by_ids.pl	2006-10-30 18:38:34.000000000 -0500
++++ cd-hit-v4.6.6-2016-0711/psi-cd-hit/fetch_fasta_by_ids.pl	2016-08-29 09:57:32.209543052 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my ($gi_file, $seq_file) = @ARGV;
+ 
+diff -ru cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/fetch_fasta_exclude_ids.pl cd-hit-v4.6.6-2016-0711/psi-cd-hit/fetch_fasta_exclude_ids.pl
+--- cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/fetch_fasta_exclude_ids.pl	2006-10-30 18:24:57.000000000 -0500
++++ cd-hit-v4.6.6-2016-0711/psi-cd-hit/fetch_fasta_exclude_ids.pl	2016-08-29 09:57:32.211543087 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my ($gi_file, $seq_file) = @ARGV;
+ 
+diff -ru cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/psi-2d.pl cd-hit-v4.6.6-2016-0711/psi-cd-hit/psi-2d.pl
+--- cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/psi-2d.pl	2013-08-18 17:03:29.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/psi-cd-hit/psi-2d.pl	2016-08-29 09:57:32.213543123 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ 
+ my $script_name = $0;
+diff -ru cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/psi-cd-hit-local.pl cd-hit-v4.6.6-2016-0711/psi-cd-hit/psi-cd-hit-local.pl
+--- cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/psi-cd-hit-local.pl	2015-03-10 03:34:05.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/psi-cd-hit/psi-cd-hit-local.pl	2016-08-29 09:57:32.215543159 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ ################################################################################
+ ######### PSI-cd-hit written by Weizhong Li at http://cd-hit.org
+ ################################################################################
+@@ -1035,7 +1035,7 @@
+ 
+   open(REPERL, "> $remote_perl_script") || die;
+   print REPERL <<EOD;
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ \$host = shift;
+ \$arg = shift;
+ 
+diff -ru cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/psi-cd-hit.pl cd-hit-v4.6.6-2016-0711/psi-cd-hit/psi-cd-hit.pl
+--- cd-hit-v4.6.6-2016-0711-orig/psi-cd-hit/psi-cd-hit.pl	2013-08-12 14:25:20.000000000 -0400
++++ cd-hit-v4.6.6-2016-0711/psi-cd-hit/psi-cd-hit.pl	2016-08-29 09:57:32.217543193 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ ################################################################################
+ ######### PSI-cd-hit written by Weizhong Li at http://cd-hit.org
+ ################################################################################
