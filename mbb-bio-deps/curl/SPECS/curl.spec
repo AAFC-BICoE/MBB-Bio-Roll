@@ -5,13 +5,13 @@
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/lib/%{src_name}
 
+%define _defaultdocdir	%{installroot}/usr/share/docs
 BuildRoot:	%{buildroot}
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	%{src_name}-%{version}.tar.gz
 Prefix: 	%{installroot}
-
 
 Summary: A utility for getting files from remote servers (FTP, HTTP, and others)
 License: MIT
@@ -48,7 +48,6 @@ resume, proxy tunneling and a busload of other useful tricks.
 %package -n opt-libcurl
 Summary: A library for getting files from web servers
 Group: Development/Libraries
-#Requires: libssh2%{?_isa} >= %{libssh2_version}
 
 %description -n opt-libcurl
 libcurl is a free and easy-to-use client-side URL transfer library, supporting
@@ -111,10 +110,9 @@ rm -f ${RPM_BUILD_ROOT}%{installroot}%{_mandir}/man1/mk-ca-bundle.1
 %else
 %define _curlbuild_h curlbuild-32.h
 %endif
-mv $RPM_BUILD_ROOT%{installroot}%{_includedir}/curl/curlbuild.h \
+cp $RPM_BUILD_ROOT%{installroot}%{_includedir}/curl/curlbuild.h \
    $RPM_BUILD_ROOT%{installroot}%{_includedir}/curl/%{_curlbuild_h}
 
-#install -m 644 %{SOURCE2} $RPM_BUILD_ROOT%{_includedir}/curl/curlbuild.h
 
 %files
 %defattr(-,root,root,-)
