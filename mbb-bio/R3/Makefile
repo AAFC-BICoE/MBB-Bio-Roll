@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=R-3.spec
+SPEC=R3.spec
 
 .PHONY: clean
 
