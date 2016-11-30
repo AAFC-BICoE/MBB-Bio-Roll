@@ -10,8 +10,10 @@
 %define name		opt-R
 %define srcname		R
 %define version		3.2.5
-%define release		1
+%define release		2
 %define installroot     /opt/R/
+%define _prefix		%{installroot}
+
 
 Name: %{name}
 Version: %{version} 
@@ -113,7 +115,8 @@ export LD_RUN_PATH=$(dirname $(rpm -ql opt-libcurl | grep "libcurl.so.4.3.0")):$
     --with-system-zlib --with-system-bzlib --with-system-pcre \
     --with-lapack \
     --enable-static \
-    --enable-R-shlib
+    --enable-R-shlib \
+    --disable-nls
 
 make -j`nproc`
 # make docs
