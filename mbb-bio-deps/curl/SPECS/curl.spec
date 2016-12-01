@@ -1,11 +1,13 @@
 %define name		opt-curl
 %define src_name	curl
-%define release		1
+%define release		2
 %define version		7.29.0
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/lib/%{src_name}
+%define _prefix		%{installroot}
+%define _mandir		%{installroot}/share/man
+%define _defaultdocdir	%{installroot}/share/docs
 
-%define _defaultdocdir	%{installroot}/usr/share/docs
 BuildRoot:	%{buildroot}
 Name: 		%{name}
 Version: 	%{version}
@@ -69,12 +71,16 @@ developing programs which use the libcurl library. It contains the API
 documentation of the library, too.
 
 %prep
+#echo %{_prefix}
+#echo %{_mandir}
+#echo %{_libdir}
+#exit 1
 %setup -q -n %{src_name}-%{version}
 
 %build
 [ -x /usr/kerberos/bin/krb5-config ] && KRB5_PREFIX="=/usr/kerberos"
 
-%configure --prefix=%{installroot} \
+%configure \
     --enable-hidden-symbols \
     --enable-ipv6 \
     --enable-ldaps \
@@ -94,12 +100,12 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make DESTDIR=$RPM_BUILD_ROOT%{installroot} INSTALL="install -p" install
+make DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p" install
 
-rm -f %$RPM_BUILD_ROOT%{installroot}{_libdir}/libcurl.la
+rm -f %{_libdir}/libcurl.la
 
-install -d $RPM_BUILD_ROOT%{installroot}%{_datadir}/aclocal
-install -m 644 docs/libcurl/libcurl.m4 $RPM_BUILD_ROOT%{installroot}%{_datadir}/aclocal
+install -d ${RPM_BUILD_ROOT}%{_datadir}/aclocal
+install -m 644 docs/libcurl/libcurl.m4 ${RPM_BUILD_ROOT}%{_datadir}/aclocal
 
 # drop man page for a script we do not distribute
 rm -f ${RPM_BUILD_ROOT}%{installroot}%{_mandir}/man1/mk-ca-bundle.1
@@ -110,8 +116,8 @@ rm -f ${RPM_BUILD_ROOT}%{installroot}%{_mandir}/man1/mk-ca-bundle.1
 %else
 %define _curlbuild_h curlbuild-32.h
 %endif
-cp $RPM_BUILD_ROOT%{installroot}%{_includedir}/curl/curlbuild.h \
-   $RPM_BUILD_ROOT%{installroot}%{_includedir}/curl/%{_curlbuild_h}
+cp ${RPM_BUILD_ROOT}%{_includedir}/curl/curlbuild.h \
+   ${RPM_BUILD_ROOT}%{_includedir}/curl/%{_curlbuild_h}
 
 
 %files
@@ -126,12 +132,12 @@ cp $RPM_BUILD_ROOT%{installroot}%{_includedir}/curl/curlbuild.h \
 %doc docs/RESOURCES
 %doc docs/TheArtOfHttpScripting 
 %doc docs/TODO
-%{installroot}/%{_bindir}/curl
-%{installroot}/%{_mandir}/man1/curl.1*
+%{_bindir}/curl
+%{_mandir}/man1/curl.1*
 
 %files -n opt-libcurl
 %defattr(-,root,root,-)
-%{installroot}%{_libdir}/libcurl.so.*
+%{_libdir}/libcurl.so.*
 
 %files -n opt-libcurl-devel
 %defattr(-,root,root,-)
@@ -140,10 +146,10 @@ cp $RPM_BUILD_ROOT%{installroot}%{_includedir}/curl/curlbuild.h \
 %doc docs/INTERNALS
 %doc docs/CONTRIBUTE 
 %doc docs/libcurl/ABI
-%{installroot}/%{_bindir}/curl-config*
-%{installroot}/%{_includedir}/curl
-%{installroot}/%{_libdir}/*.so
-%{installroot}/%{_libdir}/pkgconfig/*.pc
-%{installroot}/%{_mandir}/man1/curl-config.1*
-%{installroot}/%{_libdir}/libcurl.*
-%{installroot}/usr/share/aclocal/libcurl.m4
+%{_bindir}/curl-config*
+%{_includedir}/curl
+%{_libdir}/*.so
+%{_libdir}/pkgconfig/*.pc
+%{_mandir}/man1/curl-config.1*
+%{_libdir}/libcurl.*
+%{_datadir}/aclocal/libcurl.m4
