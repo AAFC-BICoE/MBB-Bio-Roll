@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=argtable2-13.spec
+SPEC=argtable2.spec
 
 .PHONY: clean
 
