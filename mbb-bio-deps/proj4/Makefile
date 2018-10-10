@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=proj-4.9.0.spec
+SPEC=proj4.spec
 
 .PHONY: clean
 
