@@ -3,7 +3,7 @@
 %define name		allpathslg
 %define release		1
 %define version 	52488
-%define installroot /opt/bio/%{name}
+%define installroot	/opt/bio/%{name}
 
 BuildRoot:	%{buildroot}
 Summary: 	Short read whole‐genome shotgun assembler
@@ -12,11 +12,27 @@ Version: 	%{version}
 Release: 	%{release}
 Packager:	Glen Newton glen.newton@agr.gc.ca
 Source: 	allpathslg-52488.tar.gz
+Patch0:		env-perl.patch
 URL:            ftp://ftp.broadinstitute.org/pub/crd/ALLPATHS/Release-LG/
-Prefix: 	/opt/bio
+Prefix: 	%{installroot}
 Group: 		Applications/BioInformatics/Assembler
 License:        MIT
 AutoReq:	yes
+Requires:	opt-perl
+Requires:	opt-perl(Carp)
+Requires:	opt-perl(Config)
+Requires:	opt-perl(Exporter)
+Requires:	opt-perl(File::Basename)
+Requires:	opt-perl(File::Path)
+Requires:	opt-perl(FindBin)
+Requires:	opt-perl(IO::File)
+Requires:	opt-perl(POSIX)
+Requires:	opt-perl(Term::ANSIColor)
+Requires:	opt-perl(lib)
+Requires:	opt-perl(strict)
+Requires:	opt-perl(vars)
+
+%global __requires_exclude ^perl
 
 %description
 "ALLPATHS‐LG is a whole‐genome shotgun assembler that can generate high‐quality genome assemblies using short reads (~100bp) such as those produced by the new generation of sequencers. The significant difference between ALLPATHS and traditional assemblers such as Arachne is that ALLPATHS assemblies are not necessarily linear, but instead are presented in the form of a graph. This graph representation retains ambiguities, such as those arising from polymorphism, uncorrected read errors, and unresolved repeats, thereby providing information that has been absent from previous genome assemblies."
@@ -25,23 +41,18 @@ NB: In order to run on AAFC cluster, must set 'export LD_LIBRARY_PATH=/opt/bio/g
 
 %prep
 %setup -q 
-
+%patch0 -p1
 
 %build
-export PATH=/opt/bio/gcc491/bin:$PATH
 ./configure  --prefix=%{installroot}
 make --jobs=`nproc`
 
-
 %install
 mkdir -p $RPM_BUILD_ROOT%{installroot}
-make install prefix=$RPM_BUILD_ROOT%{installroot}
-cd $RPM_BUILD_ROOT%{installroot}/bin; file * | grep "not stripped"|grep -Eo '^[^ ]+'|sed "s/://"|xargs strip
-
+make install DESTDIR=$RPM_BUILD_ROOT
 
 %files
 %defattr(755,root,root,755)
 %{installroot}
 %defattr(644,root,root,755)
-
 
