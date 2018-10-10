@@ -11,7 +11,7 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	pkg-config-%{version}.tar.gz
-Prefix: 	/opt/bio
+Prefix: 	%{installroot}
 Group: 		Development/Tools
 URL:		http://pkgconfig.freedesktop.org
 AutoReqProv:	yes
@@ -36,4 +36,8 @@ make -j`nproc` PREFIX=%{installroot}
 make install DESTDIR=%{buildroot}
 
 %files
-%{installroot}/*
+%{installroot}/share/aclocal/pkg.m4
+%{installroot}/share/doc/pkg-config/
+%{installroot}/share/man/man1/pkg-config.1
+%defattr(755,root,root,755)
+%{installroot}/bin/*
