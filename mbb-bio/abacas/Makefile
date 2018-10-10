@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=abacas-1.3.1-1.spec
+SPEC=abacas.spec
 
 .PHONY: clean
 

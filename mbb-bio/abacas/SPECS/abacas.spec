@@ -18,7 +18,10 @@ URL:            http://abacas.sourceforge.net/
 Prefix: 	/opt/bio
 Group: 		Development/Tools
 License:        GPLv2
-AutoReq:	yes
+Requires: 	opt-perl(Getopt::Std)
+Requires:	opt-opt-perl(POSIX) 
+Requires:	opt-perl(strict) 
+Requires:	opt-perl(warnings)
 
 %description
 ABACAS is intended to rapidly contiguate (align, order, orientate), visualize
