@@ -3,7 +3,7 @@
 %define name		abyss
 %define release		1
 %define version 	1.9.0
-%define installroot /opt/bio/%{name}
+%define installroot 	/opt/bio/%{name}
 
 BuildRoot:	%{buildroot}
 Summary:        ABySS is a de novo, parallel, paired-end sequence assembler that is designed for short reads.
@@ -11,12 +11,16 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	%{name}-%{version}.tar.bz2
-Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
+Packager:	Iyad Kandalaft <iyad.kandalaft@canada.ca>
 URL:            http://www.bcgsc.ca/platform/bioinfo/software/abyss
-Prefix: 	/opt/bio
+Prefix: 	%{installroot}
 Group: 		Development/Tools
 License:        GPLv3 for non-commercial usage
 AutoReq:	yes
+
+BuildRequires:	rocks-openmpi >= 2.1
+BuildRequires:	opt-sparsehash >= 1.0
+
 
 %description 
 ABySS is a de novo, parallel, paired-end sequence assembler that is designed for
@@ -28,15 +32,18 @@ of assembling larger genomes.
 %setup -q
 
 %build
-#./configure --disable-popcnt --enable-maxk=256 --with-boost=/usr/include/boost
-./configure --disable-popcnt --enable-maxk=256 --with-boost=/opt/bio/boost/include
+SPARSEHASH=$(rpm -ql opt-sparsehash | grep 'include/sparsehash/sparsetable$' | sed 's#/include/sparsehash/sparsetable$##')
+OPENMPI=$(rpm -ql rocks-openmpi | grep 'include/mpi.h$' | sed 's#/include/mpi.h$##')
+./configure --prefix=%{installroot} --disable-popcnt --enable-maxk=256 --with-sparsehash=$SPARSEHASH --with-mpi=$OPENMPI
+
+export LD_RUN_PATH=$(dirname $(rpm -ql rocks-openmpi | grep 'lib/libmpi.so$'))
 make --jobs=`nproc`
 
 %install
 mkdir -p %{buildroot}%{installroot}
-#mkdir -p %{buildroot}/usr/share/man/man1
 
-make install prefix=%{buildroot}%{installroot}
+
+make install DESTDIR=%{buildroot}
 #rm -r %{buildroot}%{installroot}/share
 #mkdir -p %{buildroot}%{installroot}/../share/man/man1
 cd doc; cp ABYSS.1 abyss-pe.1 abyss-tofastq.1 %{buildroot}%{installroot}/share/man/man1; cd ..
