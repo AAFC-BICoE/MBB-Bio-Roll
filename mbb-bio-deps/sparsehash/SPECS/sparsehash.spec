@@ -1,18 +1,18 @@
-%define name			sparsehash
-%define src_name		sparsehash
+%define name		opt-sparsehash
+%define src_name	sparsehash
 %define release		1
 %define version 	2.0.2
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/%{name}
+%define buildroot 	%{_topdir}/%{name}-%{version}-root
+%define installroot 	/opt/bio/lib/%{src_name}
 
-BuildRoot:	%{buildroot}
-Summary: 	An extremely memory-efficient hash_map implementation
+BuildRoot:		%{buildroot}
+Summary: 		An extremely memory-efficient hash_map implementation
 License: 		Open Source
 Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
 Source: 		%{src_name}-%{version}.tar.gz
-Prefix: 		/opt/bio
+Prefix: 		/opt/bio/lib
 Group: 			Development/Libraries
 URL:			sdaf
 AutoReq:		yes
@@ -23,11 +23,11 @@ These hashtable implementations are similar in API to SGI's hash_map class and t
 They also contain code to serialize and unserialize from disk. 
 
 %prep
-%setup -q
+%setup -q -n %{src_name}-%{version}
 
 %build
 #./configure --prefix=%{Prefix}/gdal
-./configure --prefix=/opt/bio/gdal
+./configure --prefix=%{installroot}
 make prefix=%{installroot}
 
 %install

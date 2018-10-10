@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=sparsehash-2.0.2.spec
+SPEC=sparsehash.spec
 
 .PHONY: clean
 
