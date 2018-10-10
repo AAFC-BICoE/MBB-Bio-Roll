@@ -1,9 +1,7 @@
-# This is a  spec file for bamtools
-%define debug_package %{nil}
 ### define _topdir	 	/home/rpmbuild/rpms/bamtools
 %define name		bamtools
 %define release		1
-%define version 	2.1.1
+%define version 	2.4.1
 %define installroot /opt/bio/%{name}
 
 BuildRoot:	%{buildroot}
@@ -33,7 +31,7 @@ make -pipe --jobs=`nproc`
 %install
 mkdir -p %{buildroot}%{installroot}
 cp -R bin %{buildroot}%{installroot}
-strip bin/bamtools-2.1.1
+strip bin/*
 cp -R lib %{buildroot}%{installroot}
 cp -R include %{buildroot}%{installroot}
 

@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=bamtools-2.1.1-1.spec
+SPEC=bamtools.spec
 
 .PHONY: clean
 
