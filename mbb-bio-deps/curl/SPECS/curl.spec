@@ -1,7 +1,7 @@
 %define name		opt-curl
 %define src_name	curl
-%define release		2
-%define version		7.29.0
+%define release		1
+%define version		7.61.1
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/lib/%{src_name}
 %define _prefix		%{installroot}
@@ -14,6 +14,7 @@ Version: 	%{version}
 Release: 	%{release}
 Source: 	%{src_name}-%{version}.tar.gz
 Prefix: 	%{installroot}
+Packager:	Iyad Kandalaft <iyad.kandalaft@canada.ca>
 
 Summary: A utility for getting files from remote servers (FTP, HTTP, and others)
 License: MIT
@@ -109,16 +110,6 @@ install -m 644 docs/libcurl/libcurl.m4 ${RPM_BUILD_ROOT}%{_datadir}/aclocal
 
 # drop man page for a script we do not distribute
 rm -f ${RPM_BUILD_ROOT}%{installroot}%{_mandir}/man1/mk-ca-bundle.1
-
-# Make libcurl-devel multilib-ready (bug #488922)
-%if 0%{?__isa_bits} == 64
-%define _curlbuild_h curlbuild-64.h
-%else
-%define _curlbuild_h curlbuild-32.h
-%endif
-cp ${RPM_BUILD_ROOT}%{_includedir}/curl/curlbuild.h \
-   ${RPM_BUILD_ROOT}%{_includedir}/curl/%{_curlbuild_h}
-
 
 %files
 %defattr(-,root,root,-)
