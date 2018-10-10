@@ -11,7 +11,7 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	libtool-%{version}.tar.gz
-Prefix: 	/opt/bio
+Prefix: 	%{installroot}
 Group: 		Development/Tools
 URL:		http://www.gnu.org/software/m4
 AutoReqProv:	yes
@@ -19,7 +19,7 @@ Packager:	Iyad Kandalaft <iyad.kandalaft@canada.ca>
 Provides:	libtool
 
 BuildRequires: autoconf, automake, texinfo
-Requires: autoconf, automake, sed, tar
+Requires: opt-autoconf, opt-automake, sed, tar
 
 BuildRequires: libstdc++-devel, gcc-gfortran
 Requires: gcc
@@ -89,7 +89,7 @@ make install DESTDIR=%{buildroot}
 %files ltdl
 %defattr(-,root,root)
 %doc libltdl/COPYING.LIB
-%{installroot}/lib
+%{installroot}/lib/*
 
 %files ltdl-devel
 %defattr(-,root,root)
