@@ -1,21 +1,23 @@
 # This is a  spec file for The Hoard Memory Allocator
 
 ### define _topdir	 	/home/rpmbuild/rpms/hoard
-%define name		hoard
+%define name		opt-hoard
+%define src_name	hoard
 %define release		1
-%define version 	3.8
-%define installroot /opt/bio/%{name}
+%define version 	3.12
+%define installroot	/opt/bio/lib/%{src_name}
 
 BuildRoot:	%{buildroot}
 Summary:	hoard is The Hoard memory allocator
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source: 	%{name}-%{version}.tar.gz
+Source0: 	%{src_name}-%{version}.tar.gz
+Source1: 	heap-layers.tar.gz
 URL:            http://www.hoard.org/
 Prefix: 	/opt/bio
 Group: 		Development/Tools
-License:        GPL-2|http://www.hoard.org	
+License:        GPLv2	
 AutoReq:	yes
 
 %description
@@ -26,11 +28,13 @@ especially for multithreaded programs running on multiprocessors and multicore
 CPUs.
 
 %prep
-%setup -q
+%setup -q -a 0 -n Hoard-%{version}
+%setup -q -T -D -a 1 -n Hoard-%{version}
+mv Heap-Layers/ src/
 
 %build
 cd src
-make linux-gcc-x86-64
+make -j 4 Linux-gcc-x86_64
 
 %install
 mkdir -p    %{buildroot}%{installroot}

@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=hoard-3.8-1.spec
+SPEC=hoard.spec
 
 .PHONY: clean
 
