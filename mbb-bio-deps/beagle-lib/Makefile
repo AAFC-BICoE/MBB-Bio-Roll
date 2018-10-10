@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=beagle-lib-1.0-1.spec
+SPEC=beagle-lib.spec
 
 .PHONY: clean
 
