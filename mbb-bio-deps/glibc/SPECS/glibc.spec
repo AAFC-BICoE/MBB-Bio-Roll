@@ -1,15 +1,15 @@
 %define name	    	opt-glibc
-%define srcname		glibc
-%define release     	2
-%define version     	2.18
-%define installroot 	/opt/bio/lib/%{srcname}
+%define src_name	glibc
+%define release     	1
+%define version     	2.24
+%define installroot 	/opt/bio/lib/%{src_name}
 
 Summary:        The GNU C Library is the standard system C library for all GNU systems, and is an important part of what makes up a GNU system.  
 License: 	GPLv2
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source: 	%{srcname}-%{version}.tar.bz2
+Source: 	%{src_name}-%{version}.tar.bz2
 Prefix: 	/opt/bio/lib
 Group:          Development/Libraries	
 AutoReq:	yes
@@ -41,7 +41,7 @@ library and the standard math library. Without these two libraries, a
 Linux system will not function.
 
 %prep
-%setup -q -n %{srcname}-%{version}
+%setup -q -n %{src_name}-%{version}
 
 %build
 BUILDDIR=%{name}-build
