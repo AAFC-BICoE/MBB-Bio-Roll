@@ -19,6 +19,8 @@ $(CLEANDIRS):
 install-rpms: 
 	rpm -fi */RPMS/x86_64/*.rpm
 
+remove-rpms: 
+	rpm -fe */RPMS/x86_64/*.rpm
 
 roll: 
 	mkdir -p /export/src/roll
