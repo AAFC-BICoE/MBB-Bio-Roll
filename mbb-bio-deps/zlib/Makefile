@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=zlib-1.2.8.spec
+SPEC=zlib.spec
 
 .PHONY: clean
 
