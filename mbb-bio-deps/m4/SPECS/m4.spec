@@ -44,6 +44,7 @@ make -j`nproc` PREFIX=%{installroot}
 make install DESTDIR=%{buildroot}
 
 %files
-%exclude %{installroot}/share/info/dir
-%{installroot}/*
-
+%{installroot}/share/info/m4*
+%{installroot}/share/man/man1/m4*
+%defattr(755,root,root,755)
+%{installroot}/bin/m4
