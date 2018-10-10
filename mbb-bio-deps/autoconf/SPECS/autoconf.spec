@@ -1,4 +1,5 @@
 %define name		opt-autoconf
+%define src_name	autoconf
 %define release		1
 %define version 	2.69
 %define buildroot %{_topdir}/%{name}-%{version}-root
@@ -11,10 +12,10 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	autoconf-%{version}.tar.gz
-Prefix: 	/opt/bio
+Prefix: 	%{installroot}
 Group: 		Development/Tools
 URL:		http://www.gnu.org/software/autoconf/autoconf.html	
-AutoReq:	yes
+AutoReq:	no
 Packager:	Iyad Kandalaft <iyad.kandalaft@canada.ca>
 
 # m4 >= 1.4.6 is required, >= 1.4.14 is recommended.
@@ -24,9 +25,37 @@ Requires:           m4 >= 1.4.13
 # the filtering macros are currently in /etc/rpm/macros.perl:
 BuildRequires:      perl(Data::Dumper)
 # from f19, Text::ParseWords is not the part of 'perl' package
-BuildRequires:      perl(Text::ParseWords)
+BuildRequires:      opt-perl(Text::ParseWords)
 
-Provides:	autoconf
+Provides:	%{src_name} = %{version}
+Requires:	opt-perl >= 0:5.006
+Requires:	opt-perl(Carp)
+Requires:	opt-perl(Class::Struct)
+Requires:	opt-perl(Cwd)
+Requires:	opt-perl(Data::Dumper)
+Requires:	opt-perl(DynaLoader)
+Requires:	opt-perl(Errno)
+Requires:	opt-perl(Exporter)
+Requires:	opt-perl(File::Basename)
+Requires:	opt-perl(File::Compare)
+Requires:	opt-perl(File::Copy)
+Requires:	opt-perl(File::Find)
+Requires:	opt-perl(File::Path)
+Requires:	opt-perl(File::Spec)
+Requires:	opt-perl(File::stat)
+Requires:	opt-perl(Getopt::Long)
+Requires:	opt-perl(IO::File)
+Requires:	opt-perl(POSIX)
+Requires:	opt-perl(Text::ParseWords)
+Requires:	opt-perl(constant)
+Requires:	opt-perl(strict)
+Requires:	opt-perl(vars)
+Requires:	opt-perl(warnings)
+Requires:	rpmlib(CompressedFileNames) <= 3.0.4-1
+Requires:	rpmlib(FileDigests) <= 4.6.0-1
+Requires:	rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires:	rpmlib(PayloadIsXz) <= 5.2-1
+
 
 
 # filter out bogus perl(Autom4te*) dependencies
@@ -50,7 +79,7 @@ Autoconf is only required for the generation of the scripts, not
 their use.
 
 %prep
-%setup -q -n autoconf-%{version}
+%setup -q -n autoconf-%{version} PERL=/opt/perl/bin/perl
 
 %build
 ./configure --prefix=%{installroot}
@@ -62,5 +91,10 @@ make install DESTDIR=%{buildroot}
 mkdir -p %{buildroot}/share
 
 %files
-%{installroot}/*
-
+%{installroot}/share/autoconf
+%{installroot}/share/emacs/site-lisp/autoconf*
+%{installroot}/share/info/autoconf.info
+%{installroot}/share/info/standards.info
+%{installroot}/share/man/man1/*
+%defattr(755,root,root,755)
+%{installroot}/bin/*
