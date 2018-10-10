@@ -42,6 +42,9 @@ make -j`nproc` PREFIX=%{installroot}
 make install DESTDIR=%{buildroot}
 
 %files
-%exclude %{installroot}/share/info/dir
-%{installroot}/*
-
+%{installroot}/include/*
+%{installroot}/share/info/make*
+%{installroot}/share/locale/*/*/make.mo
+%{installroot}/share/man/man1/make.1
+%defattr(755,root,root,755)
+%{installroot}/bin/make
