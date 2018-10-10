@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=gdal-1.11.0.spec
+SPEC=gdal.spec
 
 .PHONY: clean
 

@@ -1,23 +1,22 @@
 # This is a sample spec file for wget
 %define debug_package %{nil}
 
-### define _topdir	 	/home/rpmbuild/rpms/%{name}
-%define name			gdal
-%define src_name		gdal
+%define name		opt-gdal
+%define src_name	gdal
 %define release		1
-%define version 	1.11.0
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/%{name}
+%define version 	1.11.5
+%define buildroot	%{_topdir}/%{name}-%{version}-root
+%define installroot	/opt/bio/lib/%{src_name}
 
-BuildRoot:	%{buildroot}
-Summary: 	GDAL - Geospatial Data Abstraction Library 
-License: 		{"licenses": [{"name": "MIT", "url": "https://svn.osgeo.org/gdal/tags/1.11.0/gdal/LICENSE.TXT"},{"name": "Others", "url": "https://svn.osgeo.org/gdal/tags/1.11.0/gdal/LICENSE.TXT"}]}
+BuildRoot:		%{buildroot}
+Summary: 		GDAL - Geospatial Data Abstraction Library 
+License: 		MIT
 Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
 Source: 		%{src_name}-%{version}.tar.gz
-Packager:   Glen Newton <glen.newton@agr.gc.ca>
-Prefix: 		/opt/bio
+Packager:		Glen Newton <glen.newton@agr.gc.ca>
+Prefix: 		%{installroot}
 Group: 			Development/Libraries/GIS
 URL:			http://www.gdal.org/
 AutoReq:		yes
@@ -33,18 +32,20 @@ processing. The NEWS page describes the April 2014 GDAL/OGR 1.11.0
 release.  
 
 %prep
-%setup -q
+%setup -q -n %{src_name}-%{version}
 
 %build
-./configure --prefix=/opt/bio/gdal
+./configure --prefix=%{installroot}
 make -pipe --jobs=`nproc` prefix=%{installroot}
 
 %install
 make install prefix=$RPM_BUILD_ROOT%{installroot}
-strip --strip-unneeded $RPM_BUILD_ROOT%{installroot}/lib/libgdal.so.1.18.0
 
 %files
 %defattr(644,root,root,755)
-%{installroot}
+%dir %{installroot}
+%{installroot}/include
+%{installroot}/lib
+%{installroot}/share
 %defattr(755,root,root,755)
 %{installroot}/bin
