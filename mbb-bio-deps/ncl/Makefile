@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=ncl.2.1.18.spec
+SPEC=ncl.spec
 
 .PHONY: clean
 
