@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=bison-2.6-1.spec
+SPEC=bison.spec
 
 .PHONY: clean
 
