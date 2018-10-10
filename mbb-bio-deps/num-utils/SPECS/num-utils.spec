@@ -1,9 +1,10 @@
 #
 
-%define name		num-utils 
+%define name		opt-num-utils 
+%define src_name	num-utils
 %define release		1
 %define version 	0.5
-%define installroot 	/opt/compute/%{name}
+%define installroot 	/opt/bio/%{src_name}
 %define buildroot       %{_topdir}/%{name}-%{version}-root
 
 BuildRoot:	%{buildroot}
@@ -11,7 +12,7 @@ Summary: 	num-utils
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source: 	%{name}-%{version}.tar.gz
+Source: 	%{src_name}-%{version}.tar.gz
 patch0:		average.patch
 patch1:		bound.patch
 patch2:		interval.patch
@@ -26,7 +27,13 @@ patch10:	template.patch
 Prefix: 	/opt/bio
 Group: 		Development/Tools
 License:        GPL
-AutoReq:	yes
+AutoReq:	no
+Requires:	perl(Getopt::Std)
+Requires: 	opt-perl(POSIX)
+Requires: 	opt-perl(strict)
+Requires: 	opt-perl(vars)
+Requires: 	opt-perl(warnings)
+
 #Provides:	perl(the) 
 
 %description
@@ -37,7 +44,7 @@ and aim to help complete the unix shell vocabulary.
 
 
 %prep
-%setup -q 
+%setup -q -n %{src_name}-%{version}
 
 %patch -P 0 -p0
 %patch -P 1 -p0
