@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=geos-3.4.2.spec
+SPEC=geos.spec
 
 .PHONY: clean
 

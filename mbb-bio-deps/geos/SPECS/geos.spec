@@ -1,14 +1,14 @@
 %define debug_package %{nil}
 ### define _topdir	 	/home/rpmbuild/rpms/%{name}
-%define name			geos
-%define src_name		geos
+%define name		opt-geos
+%define src_name	geos
 %define release		1
-%define version 	3.4.2
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/%{name}
+%define version 	3.4.3
+%define buildroot	%{_topdir}/%{name}-%{version}-root
+%define installroot	/opt/bio/lib/%{src_name}
 
-BuildRoot:	%{buildroot}
-Summary: 	GEOS (Geometry Engine - Open Source)
+BuildRoot:		%{buildroot}
+Summary: 		GEOS (Geometry Engine - Open Source)
 License: 		LGPL
 Name: 			%{name}
 Version: 		%{version}
@@ -18,7 +18,7 @@ Prefix: 		/opt/bio
 Group: 			Development/Libraries/GIS
 URL:			http://trac.osgeo.org/geos/
 AutoReq:		yes
-Packager:   Glen Newton <glen.newton@agr.gc.ca>
+Packager:		Glen Newton <glen.newton@agr.gc.ca>
 
 %description
 GEOS (Geometry Engine - Open Source) is a C++ port of the  Java Topology Suite (JTS). As such, it aims to contain the complete functionality of JTS in C++. This includes all the  OpenGIS Simple Features for SQL spatial predicate functions and spatial operators, as well as specific JTS enhanced topology functions.
@@ -34,7 +34,7 @@ Capabilities Include:
     Thread safe (using the reentrant API). 
 
 %prep
-%setup -q
+%setup -q -n %{src_name}-%{version}
 
 %build
 ./configure --prefix=/opt/bio/gdal
