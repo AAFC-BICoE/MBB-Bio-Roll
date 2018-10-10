@@ -3,7 +3,8 @@
 ### define _topdir	 	/home/rpmbuild/rpms/art
 %define name		art
 %define release		1
-%define version 	1.5.0
+%define version 	2016.06.05
+%define nameversion	mountrainier
 %define installroot 	/opt/bio/%{name}
 
 BuildRoot:	%{buildroot}
@@ -11,14 +12,20 @@ Summary: 	ART is a set of simulation tools to generate synthetic next-generation
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source: 	%{name}alllinux64bin_gwtargz.gz
-Patch0:         %{name}-%{version}-%{release}.patch0
-Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
+Source: 	%{name}src%{nameversion}%{version}linux.tgz
+Patch0: 	env-perl.patch
+Packager:	Iyad Kandalaft <iyad.kandalaft@agr.gc.ca>
 URL:            http://www.niehs.nih.gov/research/resources/software/biostatistics/art/
-Prefix: 	/opt/bio
-Group: 		Development/Tools
+Prefix: 	%{installroot}
+Group: 		Bioinformatics
 License:        Public Domain
 AutoReq:	yes
+Requires:	opt-perl
+Requires:	opt-perl(FileHandle)
+Requires:	opt-perl(strict)
+
+%global __requires_exclude ^perl
+
 
 %description
 ART is a set of simulation tools to generate synthetic next-generation
@@ -37,47 +44,22 @@ FASTQ format, and alignments in the ALN format. ART can also generate alignments
 in the SAM alignment or UCSC BED file format.
 
 %prep
-%setup -q -n Linux64
-%patch -P 0 -p1
-
+%setup -q -n art_src_MountRainier_Linux
+%patch0 -p1
 %build
-
+./configure --prefix=%{installroot}
+make -j 8
 
 %install
-mkdir -p %{buildroot}%{installroot}
-cp 454_readprofile_art art_454 art_illumina art_SOLiD aln2bed.pl  %{buildroot}%{installroot}
-cp -r examples GS_FLX_profile GS_FLX_Titanium_profile Illumina_GAII_profiles SOLiD_profile %{buildroot}%{installroot}
+make install DESTDIR=%{buildroot}
 
+cp -r 454_profiles Illumina_profiles SOLiD_profiles %{buildroot}%{installroot}
+cp -r examples %{buildroot}%{installroot}
 
 %files
-%defattr(755,root,root)
-%{installroot}
-%defattr(644,root,root)
-%{installroot}/examples/testSeq.fa
-%{installroot}/GS_FLX_profile/indel_error_profile
-%{installroot}/GS_FLX_profile/length_dist
-%{installroot}/GS_FLX_profile/qual_1st_profile
-%{installroot}/GS_FLX_profile/qual_mc_profile
-%{installroot}/GS_FLX_Titanium_profile/indel_error_profile
-%{installroot}/GS_FLX_Titanium_profile/length_dist
-%{installroot}/GS_FLX_Titanium_profile/qual_1st_profile
-%{installroot}/GS_FLX_Titanium_profile/qual_mc_profile
-%{installroot}/SOLiD_profile/profile_default
-%{installroot}/Illumina_GAII_profiles/Emp100R1.txt
-%{installroot}/Illumina_GAII_profiles/Emp100R2.txt
-%{installroot}/Illumina_GAII_profiles/Emp36R1.txt
-%{installroot}/Illumina_GAII_profiles/Emp36R2.txt
-%{installroot}/Illumina_GAII_profiles/Emp44R1.txt
-%{installroot}/Illumina_GAII_profiles/Emp44R2.txt
-%{installroot}/Illumina_GAII_profiles/Emp50R1.txt
-%{installroot}/Illumina_GAII_profiles/Emp50R2.txt
-%{installroot}/Illumina_GAII_profiles/Emp75R1.txt
-%{installroot}/Illumina_GAII_profiles/Emp75R2.txt
-%{installroot}/Illumina_GAII_profiles/EmpR36R1.txt
-%{installroot}/Illumina_GAII_profiles/EmpR36R2.txt
-%{installroot}/Illumina_GAII_profiles/EmpR44R1.txt
-%{installroot}/Illumina_GAII_profiles/EmpR44R2.txt
-%{installroot}/Illumina_GAII_profiles/EmpR50R1.txt
-%{installroot}/Illumina_GAII_profiles/EmpR50R2.txt
-%{installroot}/Illumina_GAII_profiles/EmpR75R1.txt
-%{installroot}/Illumina_GAII_profiles/EmpR75R2.txt
+%defattr(755,root,root,755)
+%{installroot}/bin
+%defattr(644,root,root,755)
+%dir %{installroot}
+%{installroot}/*_profiles
+%{installroot}/examples
