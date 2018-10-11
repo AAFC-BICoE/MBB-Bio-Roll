@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=bcl2fastq.spec
+SPEC=bcl2fastq2.spec
 
 .PHONY: clean
 
@@ -10,6 +10,7 @@ $(FOLDERS):
 
 RPMS:
 	mkdir $@
-	rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC}
+	spectool -C SOURCES -g SPECS/${SPEC}
+	rpmbuild --define '_topdir $(shell pwd)' -bb --clean SPECS/${SPEC}
 clean:
 	rm -rf RPMS SRPMS BUILD BUILDROOT
