@@ -1,9 +1,7 @@
-# This is a sample spec file for wget
-
 %define name		BEDTools
-### define _topdir	 	/home/rpmbuild/rpms/BEDTools
+%define src_name	bedtools2
 %define release		1
-%define version 	2.25.0
+%define version 	2.27.1
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/%{name} 
 
@@ -14,11 +12,12 @@ License: 		GNU GPL
 Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
-Source: 		bedtools-%{version}.tar.gz
-Prefix: 		/opt/bio
-Group: 			Development/Tools
+Source: 		%{src_name}-v%{version}.tar.gz
+Prefix: 		%{installroot}
+Group: 			Bioinformatics/Tools
 AutoReq:		yes
-URL:			http://code.google.com/p/bedtools/
+URL:			https://bedtools.readthedocs.io/en/latest/
+Provides:		%{src_name} = %{version}
 
 
 %description
@@ -34,19 +33,18 @@ The BEDTools utilities allow one to address common genomics tasks such as findin
 
 %prep
 #%setup -qn %{name}-Version-%{version}
-%setup -qn bedtools2
+%setup -qn %{src_name}-%{version}
 
 %build
-make 
-
+make -j`nproc` prefix=%{installroot}
 
 %install
 mkdir -p $RPM_BUILD_ROOT%{installroot}
-cp -r bin $RPM_BUILD_ROOT%{installroot}
+make install DESTDIR=%{buildroot} prefix=%{installroot}
 
 
 %files 
 %defattr(644,root,root,755)
-%{installroot}
+%dir %{installroot}
 %defattr(755,root,root,755)
 %{installroot}/bin 
