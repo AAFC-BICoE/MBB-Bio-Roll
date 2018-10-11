@@ -25,7 +25,7 @@ Prefix: 		/opt/bio
 Group: 			Development/Tools
 AutoReq:		yes
 URL:                    http://beast.bio.ed.ac.uk
-
+Requires:		java >= 1:1.8.0
 %description
 BEAST is a cross-platform program for Bayesian MCMC analysis of molecular sequences. It is entirely orientated towards rooted, time-measured phylogenies inferred using strict or relaxed molecular clock models. It can be used as a method of reconstructing phylogenies but is also a framework for testing evolutionary hypotheses without conditioning on a single tree topology. BEAST uses MCMC to average over tree space, so that each tree is weighted proportional to its posterior probability. We include a simple to use user-interface program for setting up standard analyses and a suit of programs for analysing the results. 
 
@@ -46,5 +46,13 @@ mkdir -p $RPM_BUILD_ROOT%{installroot}/
 cp -r *  $RPM_BUILD_ROOT%{installroot}
 
 %files
-%defattr(0755,root,root) 
-%{installroot}
+%defattr(0644,root,root,0755) 
+%dir %{installroot}
+%{installroot}/native
+%{installroot}/lib
+%{installroot}/examples
+%{installroot}/images
+%{installroot}/doc
+%{installroot}/README.txt
+%defattr(0755,root,root,0755)
+%{installroot}/bin
