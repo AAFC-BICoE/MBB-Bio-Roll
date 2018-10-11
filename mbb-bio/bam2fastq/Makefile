@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=bam2fastq-1.1.0-1.spec
+SPEC=bam2fastq.spec
 
 .PHONY: clean
 

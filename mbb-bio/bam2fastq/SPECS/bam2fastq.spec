@@ -1,7 +1,4 @@
-# This is a sample spec file for wget
-
 %define name		bam2fastq
-### define _topdir	 	/home/rpmbuild/rpms/bam2fastq
 %define release		1
 %define version 	1.1.0
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
@@ -14,8 +11,8 @@ Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
 Source: 		%{name}-%{version}.tgz
-Prefix: 		/opt/bio
-Group: 			Development/Tools
+Prefix: 		%{installroot}
+Group: 			Bioinformatics/Tools
 AutoReq:		yes
 
 %description
@@ -34,5 +31,5 @@ mkdir -p $RPM_BUILD_ROOT%{installroot}/
 cp bam2fastq  $RPM_BUILD_ROOT%{installroot} 
 
 %files
-%defattr(755,root,root)
+%defattr(755,root,root,755)
 %{installroot}
