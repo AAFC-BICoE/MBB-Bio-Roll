@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=artemis-15-1.spec
+SPEC=artemis.spec
 
 .PHONY: clean
 
