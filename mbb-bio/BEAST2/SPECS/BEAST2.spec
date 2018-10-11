@@ -36,6 +36,7 @@ Wiki: http://www.beast2.org/wiki/index.php/Main_Page
 %patch0
 
 %build
+unset JAVA_HOME
 ant linux
 
 %install
