@@ -4,7 +4,7 @@
 
 %define name		bedops
 %define release		1
-%define version 	2.4.2
+%define version 	2.4.35
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/%{name} 
 
@@ -15,13 +15,14 @@ License: 		GPLv2
 Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
-Source: 		%{name}-%{version}.tar.gz
+Source: 		%{name}-v%{version}.tar.gz
 Packager:               Glen Newton <Glen.Newton@agr.gc.ca>
-Prefix: 		/opt/bio
+Prefix: 		%{installroot}
 Group: 			Applications/BioInformatics/Genomics
 AutoReq:		yes
 URL:			http://bedops.readthedocs.org
 
+BuildRequires:		glibc-static
 
 %description
 BEDOPS is an open-source command-line toolkit that performs highly efficient and scalable Boolean and other set operations, statistical calculations, archiving, conversion and other management of genomic data of arbitrary scale. Tasks can be easily split by chromosome for distributing whole-genome analyses across a computational cluster.
@@ -33,12 +34,8 @@ BEDOPS is an open-source command-line toolkit that performs highly efficient and
 %build
 make 
 
-
 %install
-make install
-mkdir -p $RPM_BUILD_ROOT%{installroot}
-cp -r bin $RPM_BUILD_ROOT%{installroot}
-
+make install BINDIR=%{buildroot}%{installroot}/bin
 
 %files 
 %defattr(644,root,root,755)
