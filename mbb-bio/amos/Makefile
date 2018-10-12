@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=amos-3.1.0.spec
+SPEC=amos.spec
 
 .PHONY: clean
 
