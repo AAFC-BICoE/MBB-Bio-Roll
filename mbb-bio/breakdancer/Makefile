@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=breakdancer-1.1-1.spec
+SPEC=breakdancer.spec
 
 .PHONY: clean
 
