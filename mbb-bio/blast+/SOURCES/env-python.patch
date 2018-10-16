@@ -1,0 +1,18 @@
+diff -ruN ncbi-blast-2.7.1+-src-orig/c++/src/app/winmasker/windowmasker_2.2.22_adapter.py ncbi-blast-2.7.1+-src/c++/src/app/winmasker/windowmasker_2.2.22_adapter.py
+--- ncbi-blast-2.7.1+-src-orig/c++/src/app/winmasker/windowmasker_2.2.22_adapter.py	2018-10-16 11:45:38.712934854 -0400
++++ ncbi-blast-2.7.1+-src/c++/src/app/winmasker/windowmasker_2.2.22_adapter.py	2018-10-16 11:45:59.572670425 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/env python
+ 
+ #
+ # Run this script without arguments to obtain usage informatioin.
+diff -ruN ncbi-blast-2.7.1+-src-orig/c++/src/app/winmasker/windowmasker_counts_adapter.py ncbi-blast-2.7.1+-src/c++/src/app/winmasker/windowmasker_counts_adapter.py
+--- ncbi-blast-2.7.1+-src-orig/c++/src/app/winmasker/windowmasker_counts_adapter.py	2018-10-16 11:45:38.712934854 -0400
++++ ncbi-blast-2.7.1+-src/c++/src/app/winmasker/windowmasker_counts_adapter.py	2018-10-16 11:45:59.573670460 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/env python
+ 
+ #
+ # Run this program to convert new style counts files containing version, parameters, and

@@ -1,0 +1,54 @@
+diff -ruN ncbi-blast-2.7.1+-src.orig/c++/scripts/projects/igblast/edit_imgt_file.pl ncbi-blast-2.7.1+-src/c++/scripts/projects/igblast/edit_imgt_file.pl
+--- ncbi-blast-2.7.1+-src.orig/c++/scripts/projects/igblast/edit_imgt_file.pl	2017-10-11 17:30:18.000000000 -0400
++++ ncbi-blast-2.7.1+-src/c++/scripts/projects/igblast/edit_imgt_file.pl	2018-10-16 10:58:20.530512085 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl  -w
++#!/usr/bin/env perl  -w
+ 
+ 
+ use strict;
+diff -ruN ncbi-blast-2.7.1+-src.orig/c++/src/app/blast/legacy_blast.pl ncbi-blast-2.7.1+-src/c++/src/app/blast/legacy_blast.pl
+--- ncbi-blast-2.7.1+-src.orig/c++/src/app/blast/legacy_blast.pl	2010-06-28 16:32:08.000000000 -0400
++++ ncbi-blast-2.7.1+-src/c++/src/app/blast/legacy_blast.pl	2018-10-16 10:58:20.525511906 -0400
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl -w
++#!/usr/bin/env perl -w
+ # $Id: legacy_blast.pl 195935 2010-06-28 20:32:08Z camacho $
+ # ===========================================================================
+ #
+diff -ruN ncbi-blast-2.7.1+-src.orig/c++/src/app/blast/update_blastdb.pl ncbi-blast-2.7.1+-src/c++/src/app/blast/update_blastdb.pl
+--- ncbi-blast-2.7.1+-src.orig/c++/src/app/blast/update_blastdb.pl	2016-06-20 11:45:40.000000000 -0400
++++ ncbi-blast-2.7.1+-src/c++/src/app/blast/update_blastdb.pl	2018-10-16 10:58:20.526511941 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ # $Id: update_blastdb.pl 504861 2016-06-20 15:45:40Z boratyng $
+ # ===========================================================================
+ #
+diff -ruN ncbi-blast-2.7.1+-src.orig/c++/src/objects/seqfeat/adjust_cell_line.pl ncbi-blast-2.7.1+-src/c++/src/objects/seqfeat/adjust_cell_line.pl
+--- ncbi-blast-2.7.1+-src.orig/c++/src/objects/seqfeat/adjust_cell_line.pl	2015-02-10 10:36:36.000000000 -0500
++++ ncbi-blast-2.7.1+-src/c++/src/objects/seqfeat/adjust_cell_line.pl	2018-10-16 10:58:20.528512013 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #
+ #This script is intended to reformat the text exported from the first
+ #and second active worksheets of the Excel table provided by ICLAC 
+diff -ruN ncbi-blast-2.7.1+-src.orig/c++/src/objects/seqtable/samples/make_snp_table.pl ncbi-blast-2.7.1+-src/c++/src/objects/seqtable/samples/make_snp_table.pl
+--- ncbi-blast-2.7.1+-src.orig/c++/src/objects/seqtable/samples/make_snp_table.pl	2007-12-12 11:47:01.000000000 -0500
++++ ncbi-blast-2.7.1+-src/c++/src/objects/seqtable/samples/make_snp_table.pl	2018-10-16 10:58:20.530512085 -0400
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl -w
++#!/usr/bin/env perl -w
+ use strict;
+ 
+ my $allow_common = 1;
+diff -ruN ncbi-blast-2.7.1+-src.orig/c++/src/util/tables/convert_scoremat.pl ncbi-blast-2.7.1+-src/c++/src/util/tables/convert_scoremat.pl
+--- ncbi-blast-2.7.1+-src.orig/c++/src/util/tables/convert_scoremat.pl	2003-08-21 15:48:21.000000000 -0400
++++ ncbi-blast-2.7.1+-src/c++/src/util/tables/convert_scoremat.pl	2018-10-16 10:58:20.527511977 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ # $Id: convert_scoremat.pl 26434 2003-08-21 19:48:21Z ucko $
+ 
+ use strict;
