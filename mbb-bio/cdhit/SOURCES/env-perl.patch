@@ -1,0 +1,486 @@
+diff -ruN cdhit-4.6.8-orig/cd-hit-2d-para.pl cdhit-4.6.8/cd-hit-2d-para.pl
+--- cdhit-4.6.8-orig/cd-hit-2d-para.pl	2018-10-16 11:50:14.984680046 -0400
++++ cdhit-4.6.8/cd-hit-2d-para.pl	2018-10-16 11:51:04.494997620 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ # =============================================================================
+ # CD-HIT
+ # http://cd-hit.org/
+diff -ruN cdhit-4.6.8-orig/cd-hit-auxtools/cd-hit-dup-PE-out.pl cdhit-4.6.8/cd-hit-auxtools/cd-hit-dup-PE-out.pl
+--- cdhit-4.6.8-orig/cd-hit-auxtools/cd-hit-dup-PE-out.pl	2018-10-16 11:50:15.142629326 -0400
++++ cdhit-4.6.8/cd-hit-auxtools/cd-hit-dup-PE-out.pl	2018-10-16 11:51:04.678657466 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $script_name = $0;
+ my $script_dir = $0;
+diff -ruN cdhit-4.6.8-orig/cd-hit-div.pl cdhit-4.6.8/cd-hit-div.pl
+--- cdhit-4.6.8-orig/cd-hit-div.pl	2018-10-16 11:50:15.341304202 -0400
++++ cdhit-4.6.8/cd-hit-div.pl	2018-10-16 11:51:04.703129625 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #not like cd-hit-div, this script do not sort input
+ #or throw away seq
+diff -ruN cdhit-4.6.8-orig/cd-hit-para.pl cdhit-4.6.8/cd-hit-para.pl
+--- cdhit-4.6.8-orig/cd-hit-para.pl	2018-10-16 11:50:15.035113750 -0400
++++ cdhit-4.6.8/cd-hit-para.pl	2018-10-16 11:51:04.573449225 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ # =============================================================================
+ # CD-HIT
+ # http://cd-hit.org/
+diff -ruN cdhit-4.6.8-orig/clstr2tree.pl cdhit-4.6.8/clstr2tree.pl
+--- cdhit-4.6.8-orig/clstr2tree.pl	2018-10-16 11:50:14.431898638 -0400
++++ cdhit-4.6.8/clstr2tree.pl	2018-10-16 11:51:03.971968208 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ $clstr = shift;
+ $fr = shift; # for nr80.clstr $fr = 0.8
+diff -ruN cdhit-4.6.8-orig/clstr2txt.pl cdhit-4.6.8/clstr2txt.pl
+--- cdhit-4.6.8-orig/clstr2txt.pl	2018-10-16 11:50:15.060271061 -0400
++++ cdhit-4.6.8/clstr2txt.pl	2018-10-16 11:51:04.625282236 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $no = 0;
+ my $clstr_no = "";
+diff -ruN cdhit-4.6.8-orig/clstr2xml.pl cdhit-4.6.8/clstr2xml.pl
+--- cdhit-4.6.8-orig/clstr2xml.pl	2018-10-16 11:50:14.419033642 -0400
++++ cdhit-4.6.8/clstr2xml.pl	2018-10-16 11:51:03.947015090 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #usage: clstr_xml.pl [-len|-size] level1.clstr [level2.clstr level3.clstr ...]
+ #purpose: to create xml file from cd-hit or hierarchical cd-hit(h-cd-hit) results
+diff -ruN cdhit-4.6.8-orig/clstr_cut.pl cdhit-4.6.8/clstr_cut.pl
+--- cdhit-4.6.8-orig/clstr_cut.pl	2018-10-16 11:50:14.688781327 -0400
++++ cdhit-4.6.8/clstr_cut.pl	2018-10-16 11:51:04.370280619 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #keep only top $no proteins in cluster
+ 
+diff -ruN cdhit-4.6.8-orig/clstr_list.pl cdhit-4.6.8/clstr_list.pl
+--- cdhit-4.6.8-orig/clstr_list.pl	2018-10-16 11:50:14.406189695 -0400
++++ cdhit-4.6.8/clstr_list.pl	2018-10-16 11:51:03.922129908 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use Storable;
+ use strict;
+diff -ruN cdhit-4.6.8-orig/clstr_list_sort.pl cdhit-4.6.8/clstr_list_sort.pl
+--- cdhit-4.6.8-orig/clstr_list_sort.pl	2018-10-16 11:50:14.342045725 -0400
++++ cdhit-4.6.8/clstr_list_sort.pl	2018-10-16 11:51:03.822823711 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use Storable;
+ use strict;
+diff -ruN cdhit-4.6.8-orig/clstr_merge_noorder.pl cdhit-4.6.8/clstr_merge_noorder.pl
+--- cdhit-4.6.8-orig/clstr_merge_noorder.pl	2018-10-16 11:50:15.047670525 -0400
++++ cdhit-4.6.8/clstr_merge_noorder.pl	2018-10-16 11:51:04.598733211 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ # order of clusters don't need to be the same
+ # but then I have to read everything into memory
+diff -ruN cdhit-4.6.8-orig/clstr_merge.pl cdhit-4.6.8/clstr_merge.pl
+--- cdhit-4.6.8-orig/clstr_merge.pl	2018-10-16 11:50:14.908587950 -0400
++++ cdhit-4.6.8/clstr_merge.pl	2018-10-16 11:51:04.444453691 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ # the order of clusters need to be identical
+ my ($master_clstr, @clstr) = @ARGV;
+diff -ruN cdhit-4.6.8-orig/clstr_quality_eval_by_link.pl cdhit-4.6.8/clstr_quality_eval_by_link.pl
+--- cdhit-4.6.8-orig/clstr_quality_eval_by_link.pl	2018-10-16 11:50:14.303998418 -0400
++++ cdhit-4.6.8/clstr_quality_eval_by_link.pl	2018-10-16 11:51:03.746569481 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ ## calculate the sensitivity and specificity of clusters
+ ## if the input fasta file has pre-defined classification term
+diff -ruN cdhit-4.6.8-orig/clstr_quality_eval.pl cdhit-4.6.8/clstr_quality_eval.pl
+--- cdhit-4.6.8-orig/clstr_quality_eval.pl	2018-10-16 11:50:14.946665023 -0400
++++ cdhit-4.6.8/clstr_quality_eval.pl	2018-10-16 11:51:04.469241638 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ ## calculate the sensitivity and specificity of clusters
+ ## if the input fasta file has pre-defined classification term
+diff -ruN cdhit-4.6.8-orig/clstr_reduce.pl cdhit-4.6.8/clstr_reduce.pl
+--- cdhit-4.6.8-orig/clstr_reduce.pl	2018-10-16 11:50:15.107136090 -0400
++++ cdhit-4.6.8/clstr_reduce.pl	2018-10-16 11:51:04.649735626 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ 
+ $file90 = shift;
+diff -ruN cdhit-4.6.8-orig/clstr_renumber.pl cdhit-4.6.8/clstr_renumber.pl
+--- cdhit-4.6.8-orig/clstr_renumber.pl	2018-10-16 11:50:14.470980666 -0400
++++ cdhit-4.6.8/clstr_renumber.pl	2018-10-16 11:51:04.022203409 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ $no = 0;
+ while($ll=<>){
+   if ($ll =~ /^>Cluster (\d+)/) {
+diff -ruN cdhit-4.6.8-orig/clstr_rep.pl cdhit-4.6.8/clstr_rep.pl
+--- cdhit-4.6.8-orig/clstr_rep.pl	2018-10-16 11:50:15.366764435 -0400
++++ cdhit-4.6.8/clstr_rep.pl	2018-10-16 11:51:04.752593810 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ $rep = "";
+ $no = 0;
+diff -ruN cdhit-4.6.8-orig/clstr_reps_faa_rev.pl cdhit-4.6.8/clstr_reps_faa_rev.pl
+--- cdhit-4.6.8-orig/clstr_reps_faa_rev.pl	2018-10-16 11:50:14.659802674 -0400
++++ cdhit-4.6.8/clstr_reps_faa_rev.pl	2018-10-16 11:51:04.345745915 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ # output single fasta file
+ # for each cluster output at least $cutoff seqs
+ 
+diff -ruN cdhit-4.6.8-orig/clstr_rev.pl cdhit-4.6.8/clstr_rev.pl
+--- cdhit-4.6.8-orig/clstr_rev.pl	2018-10-16 11:50:14.290523202 -0400
++++ cdhit-4.6.8/clstr_rev.pl	2018-10-16 11:51:03.718649268 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ # if nr90 from nr100 and
+ #    nr80 from nr90, so I have nr90.clstr and nr80.clstr
+ # but, in nr80.clstr, some gi numbers whose from nr100 are there
+diff -ruN cdhit-4.6.8-orig/clstr_select.pl cdhit-4.6.8/clstr_select.pl
+--- cdhit-4.6.8-orig/clstr_select.pl	2018-10-16 11:50:14.355318155 -0400
++++ cdhit-4.6.8/clstr_select.pl	2018-10-16 11:51:03.847912639 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #my $by = shift;
+ my $min;
+diff -ruN cdhit-4.6.8-orig/clstr_select_rep.pl cdhit-4.6.8/clstr_select_rep.pl
+--- cdhit-4.6.8-orig/clstr_select_rep.pl	2018-10-16 11:50:15.022393278 -0400
++++ cdhit-4.6.8/clstr_select_rep.pl	2018-10-16 11:51:04.546877937 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #my $by = shift;
+ my $min;
+diff -ruN cdhit-4.6.8-orig/clstr_size_histogram.pl cdhit-4.6.8/clstr_size_histogram.pl
+--- cdhit-4.6.8-orig/clstr_size_histogram.pl	2018-10-16 11:50:14.997242651 -0400
++++ cdhit-4.6.8/clstr_size_histogram.pl	2018-10-16 11:51:04.520852754 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if(@ARGV==0){
+    print "Usage:\n\tclstr_size_histogram.pl [-bin N] clstr_file\n";
+diff -ruN cdhit-4.6.8-orig/clstr_size_stat.pl cdhit-4.6.8/clstr_size_stat.pl
+--- cdhit-4.6.8-orig/clstr_size_stat.pl	2018-10-16 11:50:14.380748955 -0400
++++ cdhit-4.6.8/clstr_size_stat.pl	2018-10-16 11:51:03.897802559 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if(@ARGV==0){
+    print "Usage:\n\tclstr_size_stat.pl clstr_file\n";
+diff -ruN cdhit-4.6.8-orig/clstr_sort_by.pl cdhit-4.6.8/clstr_sort_by.pl
+--- cdhit-4.6.8-orig/clstr_sort_by.pl	2018-10-16 11:50:15.354006204 -0400
++++ cdhit-4.6.8/clstr_sort_by.pl	2018-10-16 11:51:04.727479599 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $sort_by_what = shift;
+    $sort_by_what = "no" unless $sort_by_what;
+diff -ruN cdhit-4.6.8-orig/clstr_sort_prot_by.pl cdhit-4.6.8/clstr_sort_prot_by.pl
+--- cdhit-4.6.8-orig/clstr_sort_prot_by.pl	2018-10-16 11:50:14.727664632 -0400
++++ cdhit-4.6.8/clstr_sort_prot_by.pl	2018-10-16 11:51:04.419749757 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $sort_by = shift;
+    $sort_by = "len" unless ($sort_by);
+diff -ruN cdhit-4.6.8-orig/clstr_sql_tbl.pl cdhit-4.6.8/clstr_sql_tbl.pl
+--- cdhit-4.6.8-orig/clstr_sql_tbl.pl	2018-10-16 11:50:14.316859111 -0400
++++ cdhit-4.6.8/clstr_sql_tbl.pl	2018-10-16 11:51:03.772849433 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if(@ARGV==0){
+   print "Usage:\n\tclstr_sql_tbl.pl clstr_file tbl_file\n";
+diff -ruN cdhit-4.6.8-orig/clstr_sql_tbl_sort.pl cdhit-4.6.8/clstr_sql_tbl_sort.pl
+--- cdhit-4.6.8-orig/clstr_sql_tbl_sort.pl	2018-10-16 11:50:14.368058478 -0400
++++ cdhit-4.6.8/clstr_sql_tbl_sort.pl	2018-10-16 11:51:03.872611731 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if(@ARGV==0){
+    print "Usage:\n\tclstr_sql_tbl_sort.pl table_file level\n";
+diff -ruN cdhit-4.6.8-orig/FET.pl cdhit-4.6.8/FET.pl
+--- cdhit-4.6.8-orig/FET.pl	2018-10-16 11:50:14.444628280 -0400
++++ cdhit-4.6.8/FET.pl	2018-10-16 11:51:03.997079590 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use Storable;
+ use strict;
+diff -ruN cdhit-4.6.8-orig/make_multi_seq.pl cdhit-4.6.8/make_multi_seq.pl
+--- cdhit-4.6.8-orig/make_multi_seq.pl	2018-10-16 11:50:14.329540012 -0400
++++ cdhit-4.6.8/make_multi_seq.pl	2018-10-16 11:51:03.797447345 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #note you have to use "-d 0" in the cd-hit run
+ #note you better to use "-g 1" in the cd-hit run
+diff -ruN cdhit-4.6.8-orig/plot_2d.pl cdhit-4.6.8/plot_2d.pl
+--- cdhit-4.6.8-orig/plot_2d.pl	2018-10-16 11:50:14.701433710 -0400
++++ cdhit-4.6.8/plot_2d.pl	2018-10-16 11:51:04.395184106 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use Image::Magick;
+ 
+diff -ruN cdhit-4.6.8-orig/plot_len1.pl cdhit-4.6.8/plot_len1.pl
+--- cdhit-4.6.8-orig/plot_len1.pl	2018-10-16 11:50:15.379388101 -0400
++++ cdhit-4.6.8/plot_len1.pl	2018-10-16 11:51:04.780135272 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ $file90 = shift;
+ $segs = shift;
+diff -ruN cdhit-4.6.8-orig/psi-cd-hit/cd-hit-div.pl cdhit-4.6.8/psi-cd-hit/cd-hit-div.pl
+--- cdhit-4.6.8-orig/psi-cd-hit/cd-hit-div.pl	2018-10-16 11:50:15.545811017 -0400
++++ cdhit-4.6.8/psi-cd-hit/cd-hit-div.pl	2018-10-16 11:51:05.040416117 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #not like cd-hit-div, this script do not sort input
+ #or throw away seq
+diff -ruN cdhit-4.6.8-orig/psi-cd-hit/clstr_select_rep.pl cdhit-4.6.8/psi-cd-hit/clstr_select_rep.pl
+--- cdhit-4.6.8-orig/psi-cd-hit/clstr_select_rep.pl	2018-10-16 11:50:15.520617533 -0400
++++ cdhit-4.6.8/psi-cd-hit/clstr_select_rep.pl	2018-10-16 11:51:05.015923780 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $by = shift;
+ my $min;
+diff -ruN cdhit-4.6.8-orig/psi-cd-hit/clstr_select_seq.pl cdhit-4.6.8/psi-cd-hit/clstr_select_seq.pl
+--- cdhit-4.6.8-orig/psi-cd-hit/clstr_select_seq.pl	2018-10-16 11:50:15.414758733 -0400
++++ cdhit-4.6.8/psi-cd-hit/clstr_select_seq.pl	2018-10-16 11:51:04.837033835 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $by = shift;
+ my $min;
+diff -ruN cdhit-4.6.8-orig/psi-cd-hit/fetch_fasta_by_ids.pl cdhit-4.6.8/psi-cd-hit/fetch_fasta_by_ids.pl
+--- cdhit-4.6.8-orig/psi-cd-hit/fetch_fasta_by_ids.pl	2018-10-16 11:50:15.466277453 -0400
++++ cdhit-4.6.8/psi-cd-hit/fetch_fasta_by_ids.pl	2018-10-16 11:51:04.940685836 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my ($gi_file, $seq_file) = @ARGV;
+ 
+diff -ruN cdhit-4.6.8-orig/psi-cd-hit/fetch_fasta_exclude_ids.pl cdhit-4.6.8/psi-cd-hit/fetch_fasta_exclude_ids.pl
+--- cdhit-4.6.8-orig/psi-cd-hit/fetch_fasta_exclude_ids.pl	2018-10-16 11:50:15.440132345 -0400
++++ cdhit-4.6.8/psi-cd-hit/fetch_fasta_exclude_ids.pl	2018-10-16 11:51:04.889907364 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my ($gi_file, $seq_file) = @ARGV;
+ 
+diff -ruN cdhit-4.6.8-orig/psi-cd-hit/psi-2d.pl cdhit-4.6.8/psi-cd-hit/psi-2d.pl
+--- cdhit-4.6.8-orig/psi-cd-hit/psi-2d.pl	2018-10-16 11:50:15.453116075 -0400
++++ cdhit-4.6.8/psi-cd-hit/psi-2d.pl	2018-10-16 11:51:04.915798219 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ 
+ my $script_name = $0;
+diff -ruN cdhit-4.6.8-orig/psi-cd-hit/psi-cd-hit-local-old.pl cdhit-4.6.8/psi-cd-hit/psi-cd-hit-local-old.pl
+--- cdhit-4.6.8-orig/psi-cd-hit/psi-cd-hit-local-old.pl	2018-10-16 11:50:15.427342345 -0400
++++ cdhit-4.6.8/psi-cd-hit/psi-cd-hit-local-old.pl	2018-10-16 11:51:04.864496625 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ ################################################################################
+ ######### PSI-cd-hit written by Weizhong Li at http://cd-hit.org
+ ################################################################################
+@@ -1138,7 +1138,7 @@
+ 
+   open(REPERL, "> $remote_perl_script") || die;
+   print REPERL <<EOD;
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ \$host = shift;
+ \$arg = shift;
+ 
+diff -ruN cdhit-4.6.8-orig/psi-cd-hit/psi-cd-hit-local.pl cdhit-4.6.8/psi-cd-hit/psi-cd-hit-local.pl
+--- cdhit-4.6.8-orig/psi-cd-hit/psi-cd-hit-local.pl	2018-10-16 11:50:15.402002015 -0400
++++ cdhit-4.6.8/psi-cd-hit/psi-cd-hit-local.pl	2018-10-16 11:51:04.809955374 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ ################################################################################
+ ######### PSI-cd-hit written by Weizhong Li at http://cd-hit.org
+ ################################################################################
+@@ -1373,7 +1373,7 @@
+ 
+   open(REPERL, "> $remote_perl_script") || die;
+   print REPERL <<EOD;
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ \$host = shift;
+ \$instance = shift;
+ \$arg = shift;
+diff -ruN cdhit-4.6.8-orig/psi-cd-hit/psi-cd-hit-old.pl cdhit-4.6.8/psi-cd-hit/psi-cd-hit-old.pl
+--- cdhit-4.6.8-orig/psi-cd-hit/psi-cd-hit-old.pl	2018-10-16 11:50:15.480836221 -0400
++++ cdhit-4.6.8/psi-cd-hit/psi-cd-hit-old.pl	2018-10-16 11:51:04.965723270 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ ################################################################################
+ ######### PSI-cd-hit written by Weizhong Li at http://cd-hit.org
+ ################################################################################
+diff -ruN cdhit-4.6.8-orig/psi-cd-hit/psi-cd-hit.pl cdhit-4.6.8/psi-cd-hit/psi-cd-hit.pl
+--- cdhit-4.6.8-orig/psi-cd-hit/psi-cd-hit.pl	2018-10-16 11:50:15.495028771 -0400
++++ cdhit-4.6.8/psi-cd-hit/psi-cd-hit.pl	2018-10-16 11:51:04.991078815 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ ################################################################################
+ ######### PSI-cd-hit written by Weizhong Li at http://cd-hit.org
+ ################################################################################
+diff -ruN cdhit-4.6.8-orig/usecases/Miseq-16S/16S-ref-db-PE-splice.pl cdhit-4.6.8/usecases/Miseq-16S/16S-ref-db-PE-splice.pl
+--- cdhit-4.6.8-orig/usecases/Miseq-16S/16S-ref-db-PE-splice.pl	2018-10-16 11:50:14.542171395 -0400
++++ cdhit-4.6.8/usecases/Miseq-16S/16S-ref-db-PE-splice.pl	2018-10-16 11:51:04.132022279 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ ## =========================== NGS tools ==========================================
+ ## NGS tools for metagenomic sequence analysis
+ ## May also be used for other type NGS data analysis
+diff -ruN cdhit-4.6.8-orig/usecases/Miseq-16S/cd-hit-otu-miseq-PE.pl cdhit-4.6.8/usecases/Miseq-16S/cd-hit-otu-miseq-PE.pl
+--- cdhit-4.6.8-orig/usecases/Miseq-16S/cd-hit-otu-miseq-PE.pl	2018-10-16 11:50:14.621107283 -0400
++++ cdhit-4.6.8/usecases/Miseq-16S/cd-hit-otu-miseq-PE.pl	2018-10-16 11:51:04.270254238 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use Getopt::Std;
+ my $script_name = $0;
+diff -ruN cdhit-4.6.8-orig/usecases/Miseq-16S/clstr_2_OTU_table.pl cdhit-4.6.8/usecases/Miseq-16S/clstr_2_OTU_table.pl
+--- cdhit-4.6.8-orig/usecases/Miseq-16S/clstr_2_OTU_table.pl	2018-10-16 11:50:14.647233291 -0400
++++ cdhit-4.6.8/usecases/Miseq-16S/clstr_2_OTU_table.pl	2018-10-16 11:51:04.320817288 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #
+ use Getopt::Std;
+ getopts("i:s:S:o:f:j:",\%opts);
+diff -ruN cdhit-4.6.8-orig/usecases/Miseq-16S/filter-chimeric-and-small.pl cdhit-4.6.8/usecases/Miseq-16S/filter-chimeric-and-small.pl
+--- cdhit-4.6.8-orig/usecases/Miseq-16S/filter-chimeric-and-small.pl	2018-10-16 11:50:14.581714754 -0400
++++ cdhit-4.6.8/usecases/Miseq-16S/filter-chimeric-and-small.pl	2018-10-16 11:51:04.186980683 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use Getopt::Std;
+ my $script_name = $0;
+diff -ruN cdhit-4.6.8-orig/usecases/Miseq-16S/filter-chimeric-by-ref.pl cdhit-4.6.8/usecases/Miseq-16S/filter-chimeric-by-ref.pl
+--- cdhit-4.6.8-orig/usecases/Miseq-16S/filter-chimeric-by-ref.pl	2018-10-16 11:50:14.516604623 -0400
++++ cdhit-4.6.8/usecases/Miseq-16S/filter-chimeric-by-ref.pl	2018-10-16 11:51:04.078344167 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use Getopt::Std;
+ my $script_name = $0;
+diff -ruN cdhit-4.6.8-orig/usecases/Miseq-16S/filter-nontop-ref.pl cdhit-4.6.8/usecases/Miseq-16S/filter-nontop-ref.pl
+--- cdhit-4.6.8-orig/usecases/Miseq-16S/filter-nontop-ref.pl	2018-10-16 11:50:14.634171722 -0400
++++ cdhit-4.6.8/usecases/Miseq-16S/filter-nontop-ref.pl	2018-10-16 11:51:04.295389591 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use Getopt::Std;
+ my $script_name = $0;
+diff -ruN cdhit-4.6.8-orig/usecases/Miseq-16S/filter-refonly-cluster.pl cdhit-4.6.8/usecases/Miseq-16S/filter-refonly-cluster.pl
+--- cdhit-4.6.8-orig/usecases/Miseq-16S/filter-refonly-cluster.pl	2018-10-16 11:50:14.608240282 -0400
++++ cdhit-4.6.8/usecases/Miseq-16S/filter-refonly-cluster.pl	2018-10-16 11:51:04.245061989 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use Getopt::Std;
+ my $script_name = $0;
+diff -ruN cdhit-4.6.8-orig/usecases/Miseq-16S/greengene-ann1.pl cdhit-4.6.8/usecases/Miseq-16S/greengene-ann1.pl
+--- cdhit-4.6.8-orig/usecases/Miseq-16S/greengene-ann1.pl	2018-10-16 11:50:14.529211859 -0400
++++ cdhit-4.6.8/usecases/Miseq-16S/greengene-ann1.pl	2018-10-16 11:51:04.105284493 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ ## =========================== NGS tools ==========================================
+ ## NGS tools for metagenomic sequence analysis
+ ## May also be used for other type NGS data analysis
+diff -ruN cdhit-4.6.8-orig/usecases/Miseq-16S/NG-Omics-Miseq-16S.pl cdhit-4.6.8/usecases/Miseq-16S/NG-Omics-Miseq-16S.pl
+--- cdhit-4.6.8-orig/usecases/Miseq-16S/NG-Omics-Miseq-16S.pl	2018-10-16 11:50:14.503984232 -0400
++++ cdhit-4.6.8/usecases/Miseq-16S/NG-Omics-Miseq-16S.pl	2018-10-16 11:51:04.048322912 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ ################################################################################
+ # NGS workflow by Weizhong Li, http://weizhongli-lab.org
+ ################################################################################
+diff -ruN cdhit-4.6.8-orig/usecases/Miseq-16S/NG-Omics-WF.pl cdhit-4.6.8/usecases/Miseq-16S/NG-Omics-WF.pl
+--- cdhit-4.6.8-orig/usecases/Miseq-16S/NG-Omics-WF.pl	2018-10-16 11:50:14.555272421 -0400
++++ cdhit-4.6.8/usecases/Miseq-16S/NG-Omics-WF.pl	2018-10-16 11:51:04.160775427 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ # =============================== NG-Omics-WF ==================================
+ #  _   _  _____         ____            _              __          ________ 
+ # | \ | |/ ____|       / __ \          (_)             \ \        / /  ____|
+diff -ruN cdhit-4.6.8-orig/usecases/Miseq-16S/pool_samples.pl cdhit-4.6.8/usecases/Miseq-16S/pool_samples.pl
+--- cdhit-4.6.8-orig/usecases/Miseq-16S/pool_samples.pl	2018-10-16 11:50:14.594475079 -0400
++++ cdhit-4.6.8/usecases/Miseq-16S/pool_samples.pl	2018-10-16 11:51:04.219129221 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #
+ use Getopt::Std;
+ getopts("s:S:o:f:j:",\%opts);
