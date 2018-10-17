@@ -1,0 +1,12 @@
+diff -urN ../Test-Fake-HTTPD-0.08-orig/Build.PL ./Build.PL
+--- ../Test-Fake-HTTPD-0.08-orig/Build.PL	2017-03-01 00:47:29.000000000 -0500
++++ ./Build.PL	2018-10-04 13:25:42.794896670 -0400
+@@ -6,7 +6,7 @@
+ use 5.008_001;
+ use strict;
+ 
+-use Module::Build::Tiny 0.035;
++use Module::Build;
+ 
+ Build_PL();
+ 
