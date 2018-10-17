@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=clustal-omega-1.2.1.spec
+SPEC=clustal-omega.spec
 
 .PHONY: clean
 
