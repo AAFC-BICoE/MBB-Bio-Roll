@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=circos-0.62-1-1.spec
+SPEC=circos.spec
 
 .PHONY: clean
 
