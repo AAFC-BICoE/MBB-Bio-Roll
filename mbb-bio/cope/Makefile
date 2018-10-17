@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=cope-1.1.2.spec
+SPEC=cope.spec
 
 .PHONY: clean
 

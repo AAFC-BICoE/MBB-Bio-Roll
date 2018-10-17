@@ -1,23 +1,21 @@
-
-
-
-%define name			cope
-%define src_name		cope
+%define name		cope
+%define src_name	cope
 %define release		1
 %define version 	1.1.2
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/%{name}
+%define buildroot 	%{_topdir}/%{name}-%{version}-root
+%define installroot 	/opt/bio/%{name}
+%define _prefix		%{installroot}
 
-BuildRoot:	%{buildroot}
-Summary: 	COPE (Connecting Overlapped Pair-End reads)
+BuildRoot:		%{buildroot}
+Summary: 		COPE (Connecting Overlapped Pair-End reads)
 License: 		GPL3
 Name: 			%{name}
 Version: 		%{version}
-Packager:   Glen Newton <glen.newton@agr.gc.ca>
+Packager:		Glen Newton <glen.newton@agr.gc.ca>
 Release: 		%{release}
-Source: 		cope-src-v1.1.2.tgz
-Prefix: 		/opt/bio
-Group: 			Applications/BioInformatics
+Source: 		%{src_name}-src-v1.1.2.tgz
+Prefix: 		%{installroot}
+Group: 			Bioinformatics/Alignment
 URL:			http://sourceforge.net/projects/coperead/
 AutoReq:		yes
 
@@ -29,17 +27,24 @@ Binghang Liu; Jianying Yuan; Siu-Ming Yiu; Zhenyu Li; Yinlong Xie; Yanxiang Chen
 Bioinformatics (2012) 28(22): 2870-2874; doi: 10.1093/bioinformatics/bts563
 
 %prep
-%setup -q -n src
+%setup -q -n src/
 
 %build
 chmod +x src/cope/configure
-cd src/cope; ./configure --prefix /opt/bio/cope; cd ../..
-make prefix=%{installroot}
+# Custom build system ontop of GNU build system
+PREFIX=%{installroot} make configure
+make
 
 %install
 mkdir -p $RPM_BUILD_ROOT%{installroot}/bin
-cp src/cope/src/cope src/kmerfreq/kmerfreq $RPM_BUILD_ROOT%{installroot}/bin
+PREFIX=%{buildroot}%{installroot}/bin make install
 
 %files
+%defattr(644,root,root,755)
+%dir %{installroot}
+%doc AUTHORS
+%doc LICENSE
+%doc NEWS
+%doc README
 %defattr(755,root,root,755)
-%{installroot}
+%{installroot}/bin
