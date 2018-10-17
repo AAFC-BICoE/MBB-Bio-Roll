@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=ClonalFrame-1.2.spec
+SPEC=ClonalFrame.spec
 
 .PHONY: clean
 
