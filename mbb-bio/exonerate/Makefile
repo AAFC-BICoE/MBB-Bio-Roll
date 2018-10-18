@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=exonerate-2.2.0-1.spec
+SPEC=exonerate.spec
 
 .PHONY: clean
 
