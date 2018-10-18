@@ -3,7 +3,7 @@ diff -ruN ncbi-blast-2.7.1+-src.orig/c++/scripts/projects/igblast/edit_imgt_file
 +++ ncbi-blast-2.7.1+-src/c++/scripts/projects/igblast/edit_imgt_file.pl	2018-10-16 10:58:20.530512085 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl  -w
-+#!/usr/bin/env perl  -w
++#!/usr/bin/env perl
  
  
  use strict;
@@ -12,7 +12,7 @@ diff -ruN ncbi-blast-2.7.1+-src.orig/c++/src/app/blast/legacy_blast.pl ncbi-blas
 +++ ncbi-blast-2.7.1+-src/c++/src/app/blast/legacy_blast.pl	2018-10-16 10:58:20.525511906 -0400
 @@ -1,4 +1,4 @@
 -#! /usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  # $Id: legacy_blast.pl 195935 2010-06-28 20:32:08Z camacho $
  # ===========================================================================
  #
@@ -39,7 +39,7 @@ diff -ruN ncbi-blast-2.7.1+-src.orig/c++/src/objects/seqtable/samples/make_snp_t
 +++ ncbi-blast-2.7.1+-src/c++/src/objects/seqtable/samples/make_snp_table.pl	2018-10-16 10:58:20.530512085 -0400
 @@ -1,4 +1,4 @@
 -#! /usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  use strict;
  
  my $allow_common = 1;
@@ -48,7 +48,7 @@ diff -ruN ncbi-blast-2.7.1+-src.orig/c++/src/util/tables/convert_scoremat.pl ncb
 +++ ncbi-blast-2.7.1+-src/c++/src/util/tables/convert_scoremat.pl	2018-10-16 10:58:20.527511977 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  # $Id: convert_scoremat.pl 26434 2003-08-21 19:48:21Z ucko $
  
  use strict;

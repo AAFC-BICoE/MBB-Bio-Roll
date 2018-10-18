@@ -3,7 +3,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/convert_quals.pl bowtie2-2.3.4.3/scripts/
 +++ bowtie2-2.3.4.3/scripts/convert_quals.pl	2018-10-12 13:47:10.389768168 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>
@@ -12,7 +12,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/gen_2b_occ_lookup.pl bowtie2-2.3.4.3/scri
 +++ bowtie2-2.3.4.3/scripts/gen_2b_occ_lookup.pl	2018-10-12 13:47:10.418224985 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>
@@ -21,7 +21,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/gen_occ_lookup.pl bowtie2-2.3.4.3/scripts
 +++ bowtie2-2.3.4.3/scripts/gen_occ_lookup.pl	2018-10-12 13:47:10.523583534 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>
@@ -30,7 +30,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/gen_solqual_lookup.pl bowtie2-2.3.4.3/scr
 +++ bowtie2-2.3.4.3/scripts/gen_solqual_lookup.pl	2018-10-12 13:47:10.551019306 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>
@@ -39,7 +39,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/infer_fraglen.pl bowtie2-2.3.4.3/scripts/
 +++ bowtie2-2.3.4.3/scripts/infer_fraglen.pl	2018-10-12 13:47:10.820458364 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>
@@ -48,7 +48,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/sim/AlignmentCheck.pm bowtie2-2.3.4.3/scr
 +++ bowtie2-2.3.4.3/scripts/sim/AlignmentCheck.pm	2018-10-12 13:47:10.579864061 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>
@@ -57,7 +57,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/sim/DNA.pm bowtie2-2.3.4.3/scripts/sim/DN
 +++ bowtie2-2.3.4.3/scripts/sim/DNA.pm	2018-10-12 13:47:10.668077055 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>
@@ -66,7 +66,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/sim/Mutate.pm bowtie2-2.3.4.3/scripts/sim
 +++ bowtie2-2.3.4.3/scripts/sim/Mutate.pm	2018-10-12 13:47:10.609976805 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>
@@ -75,7 +75,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/sim/RandDNA.pm bowtie2-2.3.4.3/scripts/si
 +++ bowtie2-2.3.4.3/scripts/sim/RandDNA.pm	2018-10-12 13:47:10.751534228 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>
@@ -84,7 +84,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/sim/run.pl bowtie2-2.3.4.3/scripts/sim/ru
 +++ bowtie2-2.3.4.3/scripts/sim/run.pl	2018-10-12 13:47:10.695944145 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>
@@ -93,7 +93,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/sim/SampleRead.pm bowtie2-2.3.4.3/scripts
 +++ bowtie2-2.3.4.3/scripts/sim/SampleRead.pm	2018-10-12 13:47:10.792073786 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>
@@ -102,7 +102,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/sim/Sim.pm bowtie2-2.3.4.3/scripts/sim/Si
 +++ bowtie2-2.3.4.3/scripts/sim/Sim.pm	2018-10-12 13:47:10.724137938 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>
@@ -111,7 +111,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/sim/Test.pm bowtie2-2.3.4.3/scripts/sim/T
 +++ bowtie2-2.3.4.3/scripts/sim/Test.pm	2018-10-12 13:47:10.637474293 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>
@@ -120,7 +120,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/test/DNA.pm bowtie2-2.3.4.3/scripts/test/
 +++ bowtie2-2.3.4.3/scripts/test/DNA.pm	2018-10-12 13:47:10.447473364 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>
@@ -129,7 +129,7 @@ diff -ruN bowtie2-2.3.4.3-orig/scripts/test/simple_tests.pl bowtie2-2.3.4.3/scri
 +++ bowtie2-2.3.4.3/scripts/test/simple_tests.pl	2018-10-12 13:47:10.483257603 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  
  #
  # Copyright 2011, Ben Langmead <langmea@cs.jhu.edu>

@@ -3,7 +3,7 @@ diff -urN allpathslg-52488-orig/src/allpaths_cache/CacheGroups.pl allpathslg-524
 +++ allpathslg-52488/src/allpaths_cache/CacheGroups.pl	2018-10-10 13:10:48.062535392 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  ###############################################################################
  #                    SOFTWARE COPYRIGHT NOTICE AGREEMENT                      #
  #        This software and its documentation are copyright (2011) by the      #
@@ -12,7 +12,7 @@ diff -urN allpathslg-52488-orig/src/allpaths_cache/CacheLibs.pl allpathslg-52488
 +++ allpathslg-52488/src/allpaths_cache/CacheLibs.pl	2018-10-10 13:10:48.089112132 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  ###############################################################################
  #                    SOFTWARE COPYRIGHT NOTICE AGREEMENT                      #
  #        This software and its documentation are copyright (2011) by the      #
@@ -21,7 +21,7 @@ diff -urN allpathslg-52488-orig/src/allpaths_cache/CacheToAllPathsInputs.pl allp
 +++ allpathslg-52488/src/allpaths_cache/CacheToAllPathsInputs.pl	2018-10-10 13:10:48.114926288 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  ###############################################################################
  #                    SOFTWARE COPYRIGHT NOTICE AGREEMENT                      #
  #        This software and its documentation are copyright (2011) by the      #
@@ -30,7 +30,7 @@ diff -urN allpathslg-52488-orig/src/allpaths_cache/CacheToReads.pl allpathslg-52
 +++ allpathslg-52488/src/allpaths_cache/CacheToReads.pl	2018-10-10 13:10:48.140754885 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  ###############################################################################
  #                    SOFTWARE COPYRIGHT NOTICE AGREEMENT                      #
  #        This software and its documentation are copyright (2011) by the      #
@@ -39,7 +39,7 @@ diff -urN allpathslg-52488-orig/src/allpaths_cache/ConvertToFastbQualb.pl allpat
 +++ allpathslg-52488/src/allpaths_cache/ConvertToFastbQualb.pl	2018-10-10 13:10:48.173774595 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  ###############################################################################
  #                    SOFTWARE COPYRIGHT NOTICE AGREEMENT                      #
  #        This software and its documentation are copyright (2012) by the      #
@@ -48,7 +48,7 @@ diff -urN allpathslg-52488-orig/src/allpaths_cache/naifdb-test.pl allpathslg-524
 +++ allpathslg-52488/src/allpaths_cache/naifdb-test.pl	2018-10-10 13:10:48.212575537 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w 
-+#!/usr/bin/env perl -w 
++#!/usr/bin/env perl
  
  use strict;
  use NaifDB;
@@ -57,7 +57,7 @@ diff -urN allpathslg-52488-orig/src/allpaths_cache/OldPicardCacheToCache.pl allp
 +++ allpathslg-52488/src/allpaths_cache/OldPicardCacheToCache.pl	2018-10-10 13:10:48.239111099 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  ###########################################################################
  #       This software and its documentation are copyright (2009) by the   #
  #   Broad Institute/Massachusetts Institute of Technology.  All rights    #
@@ -66,7 +66,7 @@ diff -urN allpathslg-52488-orig/src/allpaths_cache/PicardToCache.pl allpathslg-5
 +++ allpathslg-52488/src/allpaths_cache/PicardToCache.pl	2018-10-10 13:10:48.264817312 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  ###########################################################################
  #       This software and its documentation are copyright (2009) by the   #
  #   Broad Institute/Massachusetts Institute of Technology.  All rights    #
@@ -75,7 +75,7 @@ diff -urN allpathslg-52488-orig/src/allpaths_cache/PrepareAllPathsInputs.pl allp
 +++ allpathslg-52488/src/allpaths_cache/PrepareAllPathsInputs.pl	2018-10-10 13:10:48.291746997 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  ###############################################################################
  #                    SOFTWARE COPYRIGHT NOTICE AGREEMENT                      #
  #        This software and its documentation are copyright (2011) by the      #
@@ -84,7 +84,7 @@ diff -urN allpathslg-52488-orig/src/allpaths_cache/QualsStatsAddToCache.pl allpa
 +++ allpathslg-52488/src/allpaths_cache/QualsStatsAddToCache.pl	2018-10-10 13:10:48.317124606 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  ###############################################################################
  #                    SOFTWARE COPYRIGHT NOTICE AGREEMENT                      #
  #        This software and its documentation are copyright (2011) by the      #
@@ -93,7 +93,7 @@ diff -urN allpathslg-52488-orig/src/kmers/KmerSpectrumPlot.pl allpathslg-52488/s
 +++ allpathslg-52488/src/kmers/KmerSpectrumPlot.pl	2018-10-10 13:10:48.343612890 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  ###############################################################################
  #                    SOFTWARE COPYRIGHT NOTICE AGREEMENT                      #
  #        This software and its documentation are copyright (2011) by the      #
@@ -102,7 +102,7 @@ diff -urN allpathslg-52488-orig/src/paths/ErrorCorrectReads.pl allpathslg-52488/
 +++ allpathslg-52488/src/paths/ErrorCorrectReads.pl	2018-10-10 13:10:48.369144993 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  ###############################################################################
  #                    SOFTWARE COPYRIGHT NOTICE AGREEMENT                      #
  #        This software and its documentation are copyright (2012) by the      #
@@ -111,7 +111,7 @@ diff -urN allpathslg-52488-orig/src/paths/HaploidifyStatsPlot.pl allpathslg-5248
 +++ allpathslg-52488/src/paths/HaploidifyStatsPlot.pl	2018-10-10 13:10:48.395250796 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  ###############################################################################
  #                    SOFTWARE COPYRIGHT NOTICE AGREEMENT                      #
  #        This software and its documentation are copyright (2011) by the      #
@@ -138,7 +138,7 @@ diff -urN allpathslg-52488-orig/src/util/HelpMe.pl allpathslg-52488/src/util/Hel
 +++ allpathslg-52488/src/util/HelpMe.pl	2018-10-10 13:10:48.480349993 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  ###############################################################################
  #                    SOFTWARE COPYRIGHT NOTICE AGREEMENT                      #
  #        This software and its documentation are copyright (2012) by the      #
@@ -147,7 +147,7 @@ diff -urN allpathslg-52488-orig/src/util/QualbStatsPlot.pl allpathslg-52488/src/
 +++ allpathslg-52488/src/util/QualbStatsPlot.pl	2018-10-10 13:10:48.506391048 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
++#!/usr/bin/env perl
  ###############################################################################
  #                    SOFTWARE COPYRIGHT NOTICE AGREEMENT                      #
  #        This software and its documentation are copyright (2011) by the      #
