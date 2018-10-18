@@ -1,6 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=samtools-0.1.19.spec
-SPEC1=tabix-0.2.6-1.spec
+SPEC=samtools.spec
 
 .PHONY: clean
 
@@ -12,7 +11,6 @@ $(FOLDERS):
 RPMS:
 	mkdir $@
 	rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC}
-	rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC1}
 
 clean:
 	rm -rf RPMS SRPMS BUILD BUILDROOT

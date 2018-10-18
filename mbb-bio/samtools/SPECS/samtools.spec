@@ -1,23 +1,34 @@
-### define _topdir	 	/home/rpmbuild/rpms/samtools
 %define name		samtools
 %define release		1
-%define version 	0.1.19
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/%{name}
+%define version 	0.1.20
+%define buildroot 	%{_topdir}/%{name}-%{version}-root
+%define installroot 	/opt/bio/%{name}
+%define _prefix		%{installroot}
 
-BuildRoot:	%{buildroot}
+BuildRoot:		%{buildroot}
 Summary: 		SAM (Sequence Alignment/Map) format for storing large nucleotide sequence alignments
 License: 		MIT|http://seqanswers.com/wiki/SAMtools
 Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
 Source: 		%{name}-%{version}.tar.bz2
-Source1: 		%{name}-0.1.19.tar.bz2
-Patch0:			samtools-0.1.19.patch
-Prefix: 		/opt/bio
-Group: 			Development/Tools
+Patch0:			env-perl.patch
+Prefix: 		%{installroot}
+Group: 			Bioinformatics/Alignment
 AutoReq:		yes
-Url:                   http://samtools.sourceforge.net/
+Url:			http://samtools.sourceforge.net/
+
+Requires:	opt-perl(Carp)
+Requires:	opt-perl(Data::Dumper)
+Requires:	opt-perl(File::Spec)
+Requires:	opt-perl(Getopt::Long)
+Requires:	opt-perl(Getopt::Std)
+Requires:	opt-perl(List::Util)
+Requires:	opt-perl(constant)
+Requires:	opt-perl(strict)
+Requires:	opt-perl(warnings)
+
+%global __requires_exclude ^perl
 
 %description
 SAM (Sequence Alignment/Map) format is a generic format for storing large
@@ -30,14 +41,14 @@ Main package comes with perl scripts
 
 %prep
 %setup -q
-%setup -T -a 1 -D -c samtools-0.1.19
 %patch -p1 -P 0 
 
 %build
-make; make razip 
+make -j `nproc`
+make -j `nproc` razip 
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}/
+mkdir -p $RPM_BUILD_ROOT%{installroot}/bin
 mkdir -p $RPM_BUILD_ROOT%{installroot}/include/bam
 mkdir -p $RPM_BUILD_ROOT%{installroot}/lib
 mkdir -p $RPM_BUILD_ROOT%{installroot}/perl
@@ -49,12 +60,11 @@ cp ./misc/*.pl $RPM_BUILD_ROOT%{installroot}/perl
 
 %files
 %defattr(644,root,root,755)
-%dir %attr(755,root,root) %{installroot}
+%dir %{installroot}
 %{installroot}/include
 %{installroot}/lib
-%attr(755,root,root) %{installroot}/samtools
-%attr(755,root,root) %{installroot}/bcftools
-%attr(755,root,root) %{installroot}/razip 
-%attr(755,root,root) %{installroot}/perl 
-
-
+%defattr(755,root,root,755)
+%{installroot}/samtools
+%{installroot}/bcftools
+%{installroot}/razip 
+%{installroot}/perl 

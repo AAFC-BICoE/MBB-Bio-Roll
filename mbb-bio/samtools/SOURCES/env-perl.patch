@@ -1,0 +1,99 @@
+diff -ruN samtools-0.1.20-orig/bcftools/vcfutils.pl samtools-0.1.20/bcftools/vcfutils.pl
+--- samtools-0.1.20-orig/bcftools/vcfutils.pl	2018-10-18 08:55:30.784546718 -0400
++++ samtools-0.1.20/bcftools/vcfutils.pl	2018-10-18 08:56:43.016447328 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ 
+ # Author: lh3
+ 
+diff -ruN samtools-0.1.20-orig/misc/blast2sam.pl samtools-0.1.20/misc/blast2sam.pl
+--- samtools-0.1.20-orig/misc/blast2sam.pl	2018-10-18 08:55:31.946541247 -0400
++++ samtools-0.1.20/misc/blast2sam.pl	2018-10-18 08:56:43.222952463 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ 
+ use strict;
+ use warnings;
+diff -ruN samtools-0.1.20-orig/misc/bowtie2sam.pl samtools-0.1.20/misc/bowtie2sam.pl
+--- samtools-0.1.20-orig/misc/bowtie2sam.pl	2018-10-18 08:55:31.645068005 -0400
++++ samtools-0.1.20/misc/bowtie2sam.pl	2018-10-18 08:56:43.040884722 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ 
+ # Contact: lh3
+ # Version: 0.1.1
+diff -ruN samtools-0.1.20-orig/misc/interpolate_sam.pl samtools-0.1.20/misc/interpolate_sam.pl
+--- samtools-0.1.20-orig/misc/interpolate_sam.pl	2018-10-18 08:55:31.961161996 -0400
++++ samtools-0.1.20/misc/interpolate_sam.pl	2018-10-18 08:56:43.246409884 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ use strict;
+ 
+ ###Builds interpolated pileup from SAM file
+diff -ruN samtools-0.1.20-orig/misc/novo2sam.pl samtools-0.1.20/misc/novo2sam.pl
+--- samtools-0.1.20-orig/misc/novo2sam.pl	2018-10-18 08:55:31.689201037 -0400
++++ samtools-0.1.20/misc/novo2sam.pl	2018-10-18 08:56:43.065776289 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ 
+ # Contact: lh3
+ # Version: 0.1.3
+diff -ruN samtools-0.1.20-orig/misc/psl2sam.pl samtools-0.1.20/misc/psl2sam.pl
+--- samtools-0.1.20-orig/misc/psl2sam.pl	2018-10-18 08:55:31.735495817 -0400
++++ samtools-0.1.20/misc/psl2sam.pl	2018-10-18 08:56:43.125939627 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ 
+ # Author: lh3
+ 
+diff -ruN samtools-0.1.20-orig/misc/sam2vcf.pl samtools-0.1.20/misc/sam2vcf.pl
+--- samtools-0.1.20-orig/misc/sam2vcf.pl	2018-10-18 08:55:31.855837263 -0400
++++ samtools-0.1.20/misc/sam2vcf.pl	2018-10-18 08:56:43.175203450 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ # 
+ # VCF specs: http://www.1000genomes.org/wiki/doku.php?id=1000_genomes:analysis:vcf3.3
+ # 
+diff -ruN samtools-0.1.20-orig/misc/samtools.pl samtools-0.1.20/misc/samtools.pl
+--- samtools-0.1.20-orig/misc/samtools.pl	2018-10-18 08:55:31.703779435 -0400
++++ samtools-0.1.20/misc/samtools.pl	2018-10-18 08:56:43.095083053 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ 
+ # Author: lh3
+ 
+diff -ruN samtools-0.1.20-orig/misc/soap2sam.pl samtools-0.1.20/misc/soap2sam.pl
+--- samtools-0.1.20-orig/misc/soap2sam.pl	2018-10-18 08:55:31.870585368 -0400
++++ samtools-0.1.20/misc/soap2sam.pl	2018-10-18 08:56:43.199285793 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ 
+ # Contact: lh3
+ # Version: 0.1.1
+diff -ruN samtools-0.1.20-orig/misc/wgsim_eval.pl samtools-0.1.20/misc/wgsim_eval.pl
+--- samtools-0.1.20-orig/misc/wgsim_eval.pl	2018-10-18 08:55:32.005395029 -0400
++++ samtools-0.1.20/misc/wgsim_eval.pl	2018-10-18 08:56:43.293311926 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ 
+ # Contact: lh3
+ # Version: 0.1.5
+diff -ruN samtools-0.1.20-orig/misc/zoom2sam.pl samtools-0.1.20/misc/zoom2sam.pl
+--- samtools-0.1.20-orig/misc/zoom2sam.pl	2018-10-18 08:55:31.975744563 -0400
++++ samtools-0.1.20/misc/zoom2sam.pl	2018-10-18 08:56:43.269692972 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ 
+ # Contact: lh3
+ # Version: 0.1.0
