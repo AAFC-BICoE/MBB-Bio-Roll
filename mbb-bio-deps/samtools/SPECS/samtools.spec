@@ -52,10 +52,10 @@ mkdir -p $RPM_BUILD_ROOT%{installroot}/bin
 mkdir -p $RPM_BUILD_ROOT%{installroot}/include/bam
 mkdir -p $RPM_BUILD_ROOT%{installroot}/lib
 mkdir -p $RPM_BUILD_ROOT%{installroot}/perl
-cp samtools razip bcftools/bcftools $RPM_BUILD_ROOT%{installroot}
+cp samtools razip bcftools/bcftools $RPM_BUILD_ROOT%{installroot}/bin
 cp *.h $RPM_BUILD_ROOT%{installroot}/include/bam
 cp *.a $RPM_BUILD_ROOT%{installroot}/lib
-cp ./misc/*.pl $RPM_BUILD_ROOT%{installroot}/perl
+cp ./misc/*.pl $RPM_BUILD_ROOT%{installroot}/bin
 
 
 %files
@@ -64,7 +64,8 @@ cp ./misc/*.pl $RPM_BUILD_ROOT%{installroot}/perl
 %{installroot}/include
 %{installroot}/lib
 %defattr(755,root,root,755)
-%{installroot}/samtools
-%{installroot}/bcftools
-%{installroot}/razip 
-%{installroot}/perl 
+%{installroot}/bin
+#%{installroot}/samtools
+#%{installroot}/bcftools
+#%{installroot}/razip 
+#%{installroot}/perl 
