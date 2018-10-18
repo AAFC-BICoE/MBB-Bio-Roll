@@ -1,0 +1,18 @@
+diff -ruN deconseq-standalone-0.4.3-orig/deconseq.pl deconseq-standalone-0.4.3/deconseq.pl
+--- deconseq-standalone-0.4.3-orig/deconseq.pl	2018-10-18 13:34:36.504027111 -0400
++++ deconseq-standalone-0.4.3/deconseq.pl	2018-10-18 13:34:50.087745349 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #===============================================================================
+ #   Author: Robert SCHMIEDER, Computational Science Research Center @ SDSU, CA
+diff -ruN deconseq-standalone-0.4.3-orig/splitFasta.pl deconseq-standalone-0.4.3/splitFasta.pl
+--- deconseq-standalone-0.4.3-orig/splitFasta.pl	2018-10-18 13:34:36.412950895 -0400
++++ deconseq-standalone-0.4.3/splitFasta.pl	2018-10-18 13:35:01.059773201 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #===============================================================================
+ #   Author: Robert SCHMIEDER, Computational Science Research Center @ SDSU, CA
