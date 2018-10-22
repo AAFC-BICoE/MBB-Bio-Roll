@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=hmmer-3.0-1.spec
+SPEC=hmmer3.spec
 
 .PHONY: clean
 
@@ -11,7 +11,6 @@ $(FOLDERS):
 RPMS:
 	mkdir $@
 	rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC}
-	rpm -qlpv RPMS/x86_64/*.rpm
 
 clean:
 	rm -rf RPMS SRPMS BUILD BUILDROOT
