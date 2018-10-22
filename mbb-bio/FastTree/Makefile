@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=FastTree-2.1.3-1.spec
+SPEC=FastTree.spec
 
 .PHONY: clean
 
