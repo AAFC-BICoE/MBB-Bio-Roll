@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=hmmer-2.3.2.spec
+SPEC=hmmer2.spec
 
 .PHONY: clean
 
