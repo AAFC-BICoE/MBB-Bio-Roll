@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=FigTree-1.3.1-1.spec
+SPEC=FigTree.spec
 
 .PHONY: clean
 
