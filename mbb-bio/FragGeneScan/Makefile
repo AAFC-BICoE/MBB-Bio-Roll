@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=FragGeneScan-1.18.spec
+SPEC=FragGeneScan.spec
 
 .PHONY: clean
 
