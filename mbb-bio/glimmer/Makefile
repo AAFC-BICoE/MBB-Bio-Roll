@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=glimmer-3.02-2.spec
+SPEC=glimmer.spec
 
 .PHONY: clean
 
