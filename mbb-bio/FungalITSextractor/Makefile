@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=FungalITSextractor-1.0-1.spec
+SPEC=FungalITSextractor.spec
 
 .PHONY: clean
 

@@ -1,13 +1,4 @@
-# This is a sample spec file for wget
-#no version was supplied, assumed 1.0 
-#indata must be in the same directory as the perl script due 
-#to hardcoding in the script. A patch can be created to modify 
-#source to allow for customized indata and outdata paths 
-
-#also requires hmmer2 package to be installed and hmmpfam in the path 
-
 %define name		FungalITSextractor
-### define _topdir	 	/home/rpmbuild/rpms/FungalITSextractor
 %define release		1
 %define version 	1.0 
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
@@ -24,8 +15,12 @@ Source: 		%{name}.zip
 Prefix: 		/opt/bio
 Group: 			Development/Tools
 AutoReq:		yes
-requires: 		hmmer2
 URL:			http://www.emerencia.org/FungalITSextractor.html
+
+Requires: 		hmmer2
+Requires:		perl(strict)
+
+%global __requires_exclude ^perl
 
 %description
 Extraction of ITS1/ITS2 from fungal ITS sequences in the FASTA format
