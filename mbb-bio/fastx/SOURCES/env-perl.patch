@@ -1,0 +1,18 @@
+diff -ruN fastx_toolkit-0.0.14-orig/scripts/fasta_clipping_histogram.pl fastx_toolkit-0.0.14/scripts/fasta_clipping_histogram.pl
+--- fastx_toolkit-0.0.14-orig/scripts/fasta_clipping_histogram.pl	2018-10-22 10:41:22.789757426 -0400
++++ fastx_toolkit-0.0.14/scripts/fasta_clipping_histogram.pl	2018-10-22 10:41:59.606891461 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #    FASTX-toolkit - FASTA/FASTQ preprocessing tools.
+ #    Copyright (C) 2009-2013  A. Gordon (assafgordon@gmail.com)
+diff -ruN fastx_toolkit-0.0.14-orig/scripts/fastx_barcode_splitter.pl fastx_toolkit-0.0.14/scripts/fastx_barcode_splitter.pl
+--- fastx_toolkit-0.0.14-orig/scripts/fastx_barcode_splitter.pl	2018-10-22 10:41:22.847963044 -0400
++++ fastx_toolkit-0.0.14/scripts/fastx_barcode_splitter.pl	2018-10-22 10:42:13.685528079 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #    FASTX-toolkit - FASTA/FASTQ preprocessing tools.
+ #    Copyright (C) 2009-2013  A. Gordon (assafgordon@gmail.com)
