@@ -1,0 +1,8 @@
+diff -ru FastQC-orig/fastqc FastQC/fastqc
+--- FastQC-orig/fastqc	2016-03-11 12:13:39.272654320 -0500
++++ FastQC/fastqc	2016-03-11 12:13:55.396944069 -0500
+@@ -1,3 +1,3 @@
+-#!/usr/bin/perl
++#!/bin/env perl
+ use warnings;
+ use strict;
