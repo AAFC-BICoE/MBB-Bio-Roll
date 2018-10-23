@@ -1,22 +1,21 @@
-
-%define name			wise
-%define src_name		wise
+%define name		wise
+%define src_name	wise
 %define release		1
 %define version 	2.4.1
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/%{name}
+%define buildroot 	%{_topdir}/%{name}-%{version}-root
+%define installroot 	/opt/bio/%{name}
+%define _prefix		%{installroot}
 
-BuildRoot:	%{buildroot}
-Summary: 	Wise2 is a package focused on comparisons of biopolymers, commonly DNA sequence and protein sequence. 
-License: 		Open Source, Multiple (BSD, GPL, 
+BuildRoot:		%{buildroot}
+Summary: 		Wise2 is a package focused on comparisons of biopolymers, commonly DNA sequence and protein sequence. 
+License: 		Open Source, Multiple (BSD, GPL) 
 Name: 			%{name}
 Version: 		%{version}
-Packager:   Glen Newton <glen.newton@agr.gc.ca>
+Packager:		Glen Newton <glen.newton@agr.gc.ca>
 Release: 		%{release}
 Source: 		%{src_name}%{version}.tar.gz
-Patch0:         %{name}_%{version}.patch
-Prefix: 		/opt/bio
-Group: 			Applications/BioInformatics/Alignment
+Prefix: 		%{installroot}
+Group: 			BioInformatics/Alignment
 URL:			https://www.ebi.ac.uk/~birney/wise2/
 AutoReq:		yes
 
@@ -35,8 +34,7 @@ tool for combining disparate evidence strands and scanwisep as a
 fast but sensitive search method.
 
 %prep
-%setup -qn wise2.4.1
-
+%setup -qn %{src_name}%{version}
 
 %build
 cd src
@@ -53,5 +51,8 @@ cp src/bin/* $RPM_BUILD_ROOT%{installroot}/bin
 strip $RPM_BUILD_ROOT%{installroot}/bin/*
 
 %files
+%defattr(644,root,root,755)
+%dir %{installroot}
+%doc LICENSE
 %defattr(755,root,root,755)
-%{installroot}
+%{installroot}/bin
