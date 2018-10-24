@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=htslib-1.2.1.spec
+SPEC=htslib.spec
 
 .PHONY: clean
 
