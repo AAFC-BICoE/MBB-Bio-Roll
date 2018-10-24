@@ -1,21 +1,29 @@
-### %define _topdir           /home/rpmbuild/work/MBB-Bio-Roll/mbb-bio/cython
-%define name Cython
-%define version 0.24.0a0
-%define release 1
-%define installroot       /opt/bio/lib/%{name}
+%define name 		opt-cython
+%define src_name	Cython
+%define version		0.29
+%define release		1
+%define installroot     /opt/python
+%define _prefix		%{installroot}
 
-Summary: The Cython compiler for writing C extensions for the Python language.
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: Cython-0.24.0a0.zip
-Group: Development/Libraries
-Prefix: /opt/bio/lib
-License:   Apache 2.0
-Vendor: Robert Bradshaw, Stefan Behnel, Dag Seljebotn, Greg Ewing, et al. <cython-devel@python.org>
-Packager:  Xie Qiu <xie.qiu@agr.gc.ca>
-Url: http://cython.org/
-AutoReq:   yes
+Summary: 		The Cython compiler for writing C extensions for the Python language.
+Name: 			%{name}
+Version: 		%{version}
+Release: 		%{release}
+Source0: 		%{src_name}-%{version}.tar.gz
+Group: 			Development/Libraries
+Prefix: 		%{installroot}
+License:   		Apache 2.0
+Vendor: 		Robert Bradshaw, Stefan Behnel, Dag Seljebotn, Greg Ewing, et al. <cython-devel@python.org>
+Packager:  		Xie Qiu <xie.qiu@agr.gc.ca>
+Url: 			http://cython.org/
+AutoReq:   		yes
+
+BuildRequires:		opt-python-27
+BuildRequires:		opt-python-3
+Requires:		opt-python-27
+Requires:		opt-python-3
+
+%global __requires_exclude ^libpython3.6m.so.1.0
 
 %description
 The Cython language makes writing C extensions for the Python language as
@@ -34,20 +42,26 @@ Python code.
 
 .. _Pyrex: http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/
 
-
 %prep
-%setup -n cython-master
+%setup -n %{src_name}-%{version}
 
 %build
-env CFLAGS="$RPM_OPT_FLAGS" python setup.py build
 
 %install
-python setup.py install --prefix=%{installroot} --root=$RPM_BUILD_ROOT 
+python2 setup.py install --prefix=%{installroot} --root=$RPM_BUILD_ROOT
+make clean
+mkdir python3
+LD_LIBRARY_PATH=/opt/python/lib LD_RUN_PATH=/opt/python/lib python3.6m setup.py install --prefix=%{installroot} --root=$RPM_BUILD_ROOT --install-scripts=./python3
+cd %{buildroot}/python3
+for i in *; do
+	mv $i %{buildroot}%{installroot}/bin/${i}3
+done
+rm -rf %{buildroot}/python3
 
 %files 
 %defattr(644,root,root,755)
-%{installroot}
+%dir %{installroot}
+%{installroot}/lib
 %defattr(755,root,root,755)
 %{installroot}/bin
-%{installroot}/lib
 
