@@ -1,10 +1,8 @@
-# This is a  spec file for IDBA
-%define debug_package %{nil}
-
 %define name		idba
-%define release		3
-%define version 	1.1.1
+%define release		1
+%define version 	1.1.3
 %define installroot 	/opt/bio/%{name}
+%define _prefix		%{installroot}
 
 BuildRoot:	%{buildroot}
 Summary: 	IDBA includes IDBA-UD, IDBA-Hybrid, and IDBA-Tran, which is an iterative De Bruijn Graph De Novo short read assembler for transcriptome.
@@ -12,13 +10,13 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	%{name}-%{version}.tar.gz
-Patch0:         %{name}-%{version}-%{release}.patch0
-Patch1:         %{name}-%{version}-%{release}.patch1
-Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
+Patch0:         maxshortsequence.patch
+Patch1:         numu.patch
+Packager:	Iyad Kandalaft <iyad.kandalaft@canada.ca>
 URL:            http://i.cs.hku.hk/~alse/hkubrg/projects/idba_tran/
-Prefix: 	/opt/bio
-Group: 		Applications/BioInformatics/Assembler
-License:        GPL-2|https://code.google.com/p/hku-idba/
+Prefix: 	%{installroot}
+Group: 		BioInformatics/Assembler
+License:        GPLv2
 AutoReq:	yes
 
 %description
@@ -37,23 +35,27 @@ pair-end reads is then used to find the isoforms.
 
 %prep
 %setup -q
-%patch -P 0 -p1
-%patch -P 1 -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
-./configure
+aclocal
+autoconf
+automake --add-missing
+./configure --prefix=%{installroot}
 make -pipe --jobs=`nproc`
 
 %install
-mkdir -p %{buildroot}%{installroot}/bin
-mkdir -p %{buildroot}%{installroot}/script
-cp bin/* %{buildroot}%{installroot}/bin
-cd bin;  file * | grep "not stripped"|grep -Eo '^[^ ]+'|sed "s/://"|xargs strip; cd ..
-rm %{buildroot}%{installroot}/bin/*.*
-rm %{buildroot}%{installroot}/bin/Makefile
-cd script
-cp *.py validate* %{buildroot}%{installroot}/script
+mkdir -p %{buildroot}%{installroot}
+rm bin/*.o bin/Makefile* bin/test
+rm -rf bin/.deps/
+cp -r bin %{buildroot}%{installroot}
 
 %files
-%defattr(755,root,root)
+%defattr(644,root,root)
 %{installroot}
+%doc AUTHORS
+%doc README.md
+%defattr(755,root,root,755)
+%{installroot}/bin
+
