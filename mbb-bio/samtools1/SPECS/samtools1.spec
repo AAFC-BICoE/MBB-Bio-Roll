@@ -19,6 +19,7 @@ AutoReq:		yes
 Url:			http://samtools.sourceforge.net/
 
 Provides:		libhts.so.1()(64bit) = %{version}
+Provides:		libhts.so.2()(64bit)
 
 Requires:		opt-perl(Carp)
 Requires:		opt-perl(Data::Dumper)
