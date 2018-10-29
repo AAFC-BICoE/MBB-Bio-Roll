@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=samtools-1.2.spec
+SPEC=samtools1.spec
 
 .PHONY: clean
 
