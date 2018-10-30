@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=ima2-8.27.12-1.spec
+SPEC=ima2.spec
 
 .PHONY: clean
 
