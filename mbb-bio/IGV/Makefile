@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=IGV-2.0.34-1.spec
+SPEC=IGV.spec
 
 .PHONY: clean
 
