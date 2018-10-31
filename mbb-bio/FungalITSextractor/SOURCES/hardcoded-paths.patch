@@ -1,0 +1,45 @@
+diff -ruN FungalITSextractor-orig/FungalITSextractor.pl FungalITSextractor/FungalITSextractor.pl
+--- FungalITSextractor-orig/FungalITSextractor.pl	2018-10-31 09:26:01.560608622 -0400
++++ FungalITSextractor/FungalITSextractor.pl	2018-10-31 13:48:21.267204013 -0400
+@@ -1,5 +1,6 @@
+ #!/usr/bin/perl -w
+ use strict;
++use Cwd;
+ 
+ # Program name: ITS1/ITS2 extractor for fungal ITS sequences
+ # Program purpose: Extraction of ITS1/ITS2 from fungal ITS sequences in the FASTA format
+@@ -20,7 +21,7 @@
+ # along with this program (as gpl.txt); if not, write to the Free Software
+ # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ 
+-my $infile="indata/indata.fasta";                                                                   # location of indata file
++my $infile=shift or die "Usage: $0 FASTAFILE\n";                                                    # location of indata file
+ 
+ my $i=0; my $ITS2; my $ITS1; my $n58S;                                 # loop counter and variables to hold the sequence data
+ my $starttime=localtime;                                                                                     # get start time
+@@ -668,16 +669,16 @@
+ 	    mkdir "outdata/$date[101]" or &err;                                            # else create the unique directory
+ 	    last; } }
+ 
+-    $outfile="outdata/$date[101]/outdata.csv";                    # this is the name, location of the comma separated outfile
++    $outfile=getcwd() . "/outdata/$date[101]/outdata.csv";                    # this is the name, location of the comma separated outfile
+ 
+-    open(OUTPUT,">","outdata/$date[101]/outdata.csv") or &err;  # open file for writing. there are many of them but they will
+-    open(ITS1,">","outdata/$date[101]/ITS1.fasta") or &err;       # be needed to cover the needs of the mycological community
+-    open(NoITS1,">","outdata/$date[101]/NoITS1.fasta") or &err;
+-    open(ITS2,">","outdata/$date[101]/ITS2.fasta") or &err;
+-    open(NoITS2,">","outdata/$date[101]/NoITS2.fasta") or &err;
+-    open(None,">","outdata/$date[101]/None.txt") or &err;
+-    open(Both,">","outdata/$date[101]/Both.txt") or &err;
+-    open(BothFASTA,">","outdata/$date[101]/Both.fasta") or &err;
++    open(OUTPUT,">",getcwd() . "/outdata/$date[101]/outdata.csv") or &err;  # open file for writing. there are many of them but they will
++    open(ITS1,">",getcwd() . "/outdata/$date[101]/ITS1.fasta") or &err;       # be needed to cover the needs of the mycological community
++    open(NoITS1,">",getcwd() . "/outdata/$date[101]/NoITS1.fasta") or &err;
++    open(ITS2,">",getcwd() . "/outdata/$date[101]/ITS2.fasta") or &err;
++    open(NoITS2,">",getcwd() . "/outdata/$date[101]/NoITS2.fasta") or &err;
++    open(None,">",getcwd() . "/outdata/$date[101]/None.txt") or &err;
++    open(Both,">",getcwd() . "/outdata/$date[101]/Both.txt") or &err;
++    open(BothFASTA,">",getcwd() . "/outdata/$date[101]/Both.fasta") or &err;
+ 
+                                                                 # below: print information on the file names with the results
+     print "A tab-separated echo of the screen output will be saved as outdata/$date[101]/outdata.csv\n";
