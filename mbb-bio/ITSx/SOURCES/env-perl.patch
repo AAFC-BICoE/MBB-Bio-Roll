@@ -1,0 +1,9 @@
+diff -ruN ITSx_1.1-orig/ITSx ITSx_1.1/ITSx
+--- ITSx_1.1-orig/ITSx	2018-10-31 14:13:32.467359871 -0400
++++ ITSx_1.1/ITSx	2018-10-31 14:13:50.781657622 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ # ITSx ITS Extractor
+ #use Devel::Size qw(size total_size);
+ 
