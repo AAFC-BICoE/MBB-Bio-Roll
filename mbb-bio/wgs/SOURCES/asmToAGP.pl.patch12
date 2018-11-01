@@ -1,8 +1,0 @@
---- src/AS_RUN/asmQC/asmToAGP.pl	2015-09-24 14:40:26.478979059 -0400
-+++ src/AS_RUN/asmQC/asmToAGP.pl	2015-09-24 14:40:39.646890803 -0400
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/env perl
- 
- use strict;
- use FindBin;

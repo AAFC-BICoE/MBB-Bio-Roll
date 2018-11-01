@@ -1,8 +1,0 @@
---- src/AS_ENV/run_greedy.csh	2015-09-24 14:43:57.423517302 -0400
-+++ src/AS_ENV/run_greedy.csh	2015-09-24 14:44:53.695378350 -0400
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/tcsh -efx
-+#!/usr/bin/env tcsh -efx
- 
- # location of assembly bin directory (and extreme assembly helper scripts)
- set asmBin=$1

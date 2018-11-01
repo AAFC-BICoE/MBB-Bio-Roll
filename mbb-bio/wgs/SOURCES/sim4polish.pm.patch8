@@ -1,8 +1,0 @@
---- kmer/libsim4/sim4polish/sim4polish.pm	2015-09-24 14:36:05.214072057 -0400
-+++ kmer/libsim4/sim4polish/sim4polish.pm	2015-09-24 14:36:17.207482885 -0400
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/env perl
- 
- #                    Confidential -- Do Not Distribute
- #   Copyright (c) 2002 PE Corporation (NY) through the Celera Genomics Group

@@ -1,8 +1,0 @@
---- src/AS_ENV/greedy_layout_to_IUM.pl	2015-09-24 14:41:17.941643360 -0400
-+++ src/AS_ENV/greedy_layout_to_IUM.pl	2015-09-24 14:41:33.165334001 -0400
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/env perl
- 
- my @imps;
- 

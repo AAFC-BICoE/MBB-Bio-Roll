@@ -1,8 +1,0 @@
---- src/AS_ENV/utg2fasta.pl	2015-09-24 14:42:25.989686016 -0400
-+++ src/AS_ENV/utg2fasta.pl	2015-09-24 14:42:38.113914867 -0400
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/env perl
- 
- my %i2u = ();
- 

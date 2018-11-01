@@ -1,8 +1,0 @@
---- kmer/sim4dbutils/cleanPolishes-experiments/intronstats.pl	2015-09-24 14:30:20.378017279 -0400
-+++ kmer/sim4dbutils/cleanPolishes-experiments/intronstats.pl	2015-09-24 14:30:36.350399473 -0400
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/env perl
- 
- $| = 1;
- 

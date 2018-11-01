@@ -1,8 +1,0 @@
---- kmer/seatac/summarizeAtacStats.pl	2015-09-24 14:18:15.498746732 -0400
-+++ kmer/seatac/summarizeAtacStats.pl	2015-09-24 14:18:41.533933082 -0400
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/env perl
- 
- 
- 

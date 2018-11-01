@@ -1,8 +1,0 @@
---- kmer/seagen/analysis/plotScoresSingly.pl	2015-09-24 14:32:05.710086019 -0400
-+++ kmer/seagen/analysis/plotScoresSingly.pl	2015-09-24 14:32:20.403574122 -0400
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/env perl
- 
- #
- #  bzip2 -dc /raid/WORK/EMpaper/run1-nofiltering/all-scored-hits.sorted.bz2 | perl dumpScores.pl | perl plotScoresSingly.pl
