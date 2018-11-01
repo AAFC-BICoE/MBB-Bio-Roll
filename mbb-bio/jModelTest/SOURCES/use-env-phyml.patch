@@ -1,0 +1,12 @@
+diff -ruN jmodeltest2-2.1.10r20160303-orig/src/main/resources/conf/jmodeltest.conf jmodeltest2-2.1.10r20160303/src/main/resources/conf/jmodeltest.conf
+--- jmodeltest2-2.1.10r20160303-orig/src/main/resources/conf/jmodeltest.conf	2016-03-03 10:51:22.000000000 -0500
++++ jmodeltest2-2.1.10r20160303/src/main/resources/conf/jmodeltest.conf	2018-11-01 10:29:18.789018462 -0400
+@@ -41,7 +41,7 @@
+ #    e.g., ${HOME} or ${PHYML_HOME}                      #
+ #                                                        #
+ ##########################################################
+-global-phyml-exe    = false
++global-phyml-exe    = true
+ exe-dir             = exe/phyml
+ 
+ ##########################################################

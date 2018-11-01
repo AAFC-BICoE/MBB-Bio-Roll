@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=jmodeltest-2.1.1-1.spec
+SPEC=jmodeltest2.spec
 
 .PHONY: clean
 
