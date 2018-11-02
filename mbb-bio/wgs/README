@@ -1,0 +1,26 @@
+wgs is a Perl-related project and therefore needs particular care for inclusion on the Biocluster.
+
+In summary, the procedure is to extract the wgs source tarball to two distinct directories. Sed commands execute in one of the directories, making changes to perl source files. A patch file is then constructed by comparing the contents of files in the unchanged (orig) directory with the modified files in the other directory. The -orig directory is deleted.
+
+The procedure for patching the source code is (roughly):
+
+cd SOURCES
+tar xf wgs-8.3rc2.tar.bz2
+mv wgs-8.3rc2/ wgs-8.3rc2-orig/
+tar xf wgs-8.3rc2.tar.bz2
+cd wgs-8.3rc2/
+find ./ -type f -name '*.pl' -exec sed -i -e 's/#!\/usr\/bin\/perl/#!\/usr\/bin\/env perl/' {} \;
+find ./ -type f -name '*.pl' -exec sed -i -e 's/#!\/usr\/local\/bin\/perl/#!\/usr\/bin\/env perl/' {} \;
+cd ..
+diff -ruN wgs-8.3rc2-orig/ wgs-8.3rc2/ > env-perl.patch
+rm -fr wgs-8.3rc2*/
+
+cd SOURCES
+tar xf wgs-8.3rc2.tar.bz2
+mv wgs-8.3rc2/ wgs-8.3rc2-orig/
+tar xf wgs-8.3rc2.tar.bz2
+cd wgs-8.3rc2/
+find ./ -type f -name '*.csh' -exec sed -i -e 's/#!\/usr\/local\/bin\/tcsh/#!\/usr\/bin\/tcsh/' {} \;
+cd ..
+diff -ruN wgs-8.3rc2-orig/ wgs-8.3rc2/ > bin-tcsh.patch
+rm -fr wgs-8.3rc2*/

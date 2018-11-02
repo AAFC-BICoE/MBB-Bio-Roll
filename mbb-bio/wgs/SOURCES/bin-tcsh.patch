@@ -1,0 +1,9 @@
+diff -ruN wgs-8.3rc2-orig/src/AS_ENV/run_greedy.csh wgs-8.3rc2/src/AS_ENV/run_greedy.csh
+--- wgs-8.3rc2-orig/src/AS_ENV/run_greedy.csh	2013-08-24 19:10:18.000000000 -0400
++++ wgs-8.3rc2/src/AS_ENV/run_greedy.csh	2018-11-01 16:28:34.114519216 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/tcsh -efx
++#!/usr/bin/tcsh -efx
+ 
+ # location of assembly bin directory (and extreme assembly helper scripts)
+ set asmBin=$1

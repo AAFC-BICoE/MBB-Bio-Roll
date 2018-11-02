@@ -1,0 +1,873 @@
+diff -ruN wgs-8.3rc2-orig/kmer/atac-driver/alignOverlap/findDifferentScaffold.pl wgs-8.3rc2/kmer/atac-driver/alignOverlap/findDifferentScaffold.pl
+--- wgs-8.3rc2-orig/kmer/atac-driver/alignOverlap/findDifferentScaffold.pl	2013-04-30 10:34:19.000000000 -0400
++++ wgs-8.3rc2/kmer/atac-driver/alignOverlap/findDifferentScaffold.pl	2018-11-01 16:27:02.942201982 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/kmer/atac-driver/alignOverlap/summarizeDisagree.pl wgs-8.3rc2/kmer/atac-driver/alignOverlap/summarizeDisagree.pl
+--- wgs-8.3rc2-orig/kmer/atac-driver/alignOverlap/summarizeDisagree.pl	2013-04-30 10:34:19.000000000 -0400
++++ wgs-8.3rc2/kmer/atac-driver/alignOverlap/summarizeDisagree.pl	2018-11-01 16:27:02.972134670 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/kmer/atac-driver/chimera/use-clumps-to-detect-chimera.pl wgs-8.3rc2/kmer/atac-driver/chimera/use-clumps-to-detect-chimera.pl
+--- wgs-8.3rc2-orig/kmer/atac-driver/chimera/use-clumps-to-detect-chimera.pl	2013-04-30 10:34:21.000000000 -0400
++++ wgs-8.3rc2/kmer/atac-driver/chimera/use-clumps-to-detect-chimera.pl	2018-11-01 16:27:03.100549838 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  Takes a path to a properly formatted atac file, uses that file to
+ #  detect potential chimeric scaffolds.
+diff -ruN wgs-8.3rc2-orig/kmer/atac-driver/gapShifter/extractUnmapped-sim4dbFixer.pl wgs-8.3rc2/kmer/atac-driver/gapShifter/extractUnmapped-sim4dbFixer.pl
+--- wgs-8.3rc2-orig/kmer/atac-driver/gapShifter/extractUnmapped-sim4dbFixer.pl	2013-04-30 10:34:20.000000000 -0400
++++ wgs-8.3rc2/kmer/atac-driver/gapShifter/extractUnmapped-sim4dbFixer.pl	2018-11-01 16:27:02.524039883 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  Fixes up the IID's and coords of the sim4db mapped regions from extractUnmapped.
+ #  Reads polishes from stdin, writes fixed polishes to stdout.
+diff -ruN wgs-8.3rc2-orig/kmer/atac-driver/interscaffold-gaps.pl wgs-8.3rc2/kmer/atac-driver/interscaffold-gaps.pl
+--- wgs-8.3rc2-orig/kmer/atac-driver/interscaffold-gaps.pl	2013-04-30 10:34:20.000000000 -0400
++++ wgs-8.3rc2/kmer/atac-driver/interscaffold-gaps.pl	2018-11-01 16:27:03.036882065 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/kmer/atac-driver/relabel.pl wgs-8.3rc2/kmer/atac-driver/relabel.pl
+--- wgs-8.3rc2-orig/kmer/atac-driver/relabel.pl	2013-04-30 10:34:19.000000000 -0400
++++ wgs-8.3rc2/kmer/atac-driver/relabel.pl	2018-11-01 16:27:03.198460187 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  Reads an atac file, relabels the sequence names (e.g., WGSA:4) with
+ #  the defline ID's.
+diff -ruN wgs-8.3rc2-orig/kmer/atac-driver/rewriteUIDs.pl wgs-8.3rc2/kmer/atac-driver/rewriteUIDs.pl
+--- wgs-8.3rc2-orig/kmer/atac-driver/rewriteUIDs.pl	2013-04-30 10:34:19.000000000 -0400
++++ wgs-8.3rc2/kmer/atac-driver/rewriteUIDs.pl	2018-11-01 16:27:03.292591444 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  Reads an atac file with atac-format IDs, writes an atac file with
+ #  UIDs (the first word in the defline).  This is the last step in the
+diff -ruN wgs-8.3rc2-orig/kmer/atac-driver/runatac.pl wgs-8.3rc2/kmer/atac-driver/runatac.pl
+--- wgs-8.3rc2-orig/kmer/atac-driver/runatac.pl	2013-04-30 10:34:21.000000000 -0400
++++ wgs-8.3rc2/kmer/atac-driver/runatac.pl	2018-11-01 16:27:03.380697270 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ my $genomeDir = "/bioinfo/assembly/walenz/GENOMES";
+ my $id1;
+diff -ruN wgs-8.3rc2-orig/kmer/atac-driver/run-comparison.pl wgs-8.3rc2/kmer/atac-driver/run-comparison.pl
+--- wgs-8.3rc2-orig/kmer/atac-driver/run-comparison.pl	2013-04-30 10:34:20.000000000 -0400
++++ wgs-8.3rc2/kmer/atac-driver/run-comparison.pl	2018-11-01 16:27:03.228485197 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  Runs the full assembly-to-assembly mapping comparison.
+ #
+diff -ruN wgs-8.3rc2-orig/kmer/atac-driver/run-length-histogram.pl wgs-8.3rc2/kmer/atac-driver/run-length-histogram.pl
+--- wgs-8.3rc2-orig/kmer/atac-driver/run-length-histogram.pl	2013-04-30 10:34:20.000000000 -0400
++++ wgs-8.3rc2/kmer/atac-driver/run-length-histogram.pl	2018-11-01 16:27:03.165012021 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  Reads a list of numbers on stdin, computes a (blocked) histogram.
+ #
+diff -ruN wgs-8.3rc2-orig/kmer/atac-driver/run-length-n50.pl wgs-8.3rc2/kmer/atac-driver/run-length-n50.pl
+--- wgs-8.3rc2-orig/kmer/atac-driver/run-length-n50.pl	2013-04-30 10:34:21.000000000 -0400
++++ wgs-8.3rc2/kmer/atac-driver/run-length-n50.pl	2018-11-01 16:27:02.638041194 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  Reads a list of numbers on stdin, computes the n50.
+ #
+diff -ruN wgs-8.3rc2-orig/kmer/atac-driver/statsGenerator/stats-to-xls.pl wgs-8.3rc2/kmer/atac-driver/statsGenerator/stats-to-xls.pl
+--- wgs-8.3rc2-orig/kmer/atac-driver/statsGenerator/stats-to-xls.pl	2013-04-30 10:34:21.000000000 -0400
++++ wgs-8.3rc2/kmer/atac-driver/statsGenerator/stats-to-xls.pl	2018-11-01 16:27:02.748882428 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  Convers the output of statsGenerator into a nice Excel spreadsheet.
+ 
+diff -ruN wgs-8.3rc2-orig/kmer/ESTmapper/configureESTmapper.pl wgs-8.3rc2/kmer/ESTmapper/configureESTmapper.pl
+--- wgs-8.3rc2-orig/kmer/ESTmapper/configureESTmapper.pl	2013-04-30 10:34:17.000000000 -0400
++++ wgs-8.3rc2/kmer/ESTmapper/configureESTmapper.pl	2018-11-01 16:27:02.290156430 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use FindBin;
+diff -ruN wgs-8.3rc2-orig/kmer/ESTmapper/ESTmapper.pl wgs-8.3rc2/kmer/ESTmapper/ESTmapper.pl
+--- wgs-8.3rc2-orig/kmer/ESTmapper/ESTmapper.pl	2013-04-30 10:34:17.000000000 -0400
++++ wgs-8.3rc2/kmer/ESTmapper/ESTmapper.pl	2018-11-01 16:27:02.445114663 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  Copyright (c) 2002 PE Corporation (NY) through the Celera Genomics Group
+ #  Copyright (c) 2003, 2004 Applied Biosystems
+diff -ruN wgs-8.3rc2-orig/kmer/ESTmapper/runConcurrently.pl wgs-8.3rc2/kmer/ESTmapper/runConcurrently.pl
+--- wgs-8.3rc2-orig/kmer/ESTmapper/runConcurrently.pl	2013-04-30 10:34:17.000000000 -0400
++++ wgs-8.3rc2/kmer/ESTmapper/runConcurrently.pl	2018-11-01 16:27:02.410411966 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/kmer/libutil/kazlib/blast.pl wgs-8.3rc2/kmer/libutil/kazlib/blast.pl
+--- wgs-8.3rc2-orig/kmer/libutil/kazlib/blast.pl	2013-04-30 10:34:31.000000000 -0400
++++ wgs-8.3rc2/kmer/libutil/kazlib/blast.pl	2018-11-01 16:27:01.959035985 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #
+ # This is a program whose output can be piped to the test drivers for
+diff -ruN wgs-8.3rc2-orig/kmer/seagen/analysis/dumpScores.pl wgs-8.3rc2/kmer/seagen/analysis/dumpScores.pl
+--- wgs-8.3rc2-orig/kmer/seagen/analysis/dumpScores.pl	2013-04-30 10:34:22.000000000 -0400
++++ wgs-8.3rc2/kmer/seagen/analysis/dumpScores.pl	2018-11-01 16:27:03.721286697 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ #
+ #
+diff -ruN wgs-8.3rc2-orig/kmer/seagen/analysis/plotScoresSingly.pl wgs-8.3rc2/kmer/seagen/analysis/plotScoresSingly.pl
+--- wgs-8.3rc2-orig/kmer/seagen/analysis/plotScoresSingly.pl	2013-04-30 10:34:22.000000000 -0400
++++ wgs-8.3rc2/kmer/seagen/analysis/plotScoresSingly.pl	2018-11-01 16:27:03.689531517 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ #
+ #  bzip2 -dc /raid/WORK/EMpaper/run1-nofiltering/all-scored-hits.sorted.bz2 | perl dumpScores.pl | perl plotScoresSingly.pl
+diff -ruN wgs-8.3rc2-orig/kmer/seatac/summarizeAtacStats.pl wgs-8.3rc2/kmer/seatac/summarizeAtacStats.pl
+--- wgs-8.3rc2-orig/kmer/seatac/summarizeAtacStats.pl	2013-04-30 10:34:16.000000000 -0400
++++ wgs-8.3rc2/kmer/seatac/summarizeAtacStats.pl	2018-11-01 16:27:01.879002029 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ 
+ 
+diff -ruN wgs-8.3rc2-orig/kmer/sim4dbutils/cleanPolishes-experiments/intronstats.pl wgs-8.3rc2/kmer/sim4dbutils/cleanPolishes-experiments/intronstats.pl
+--- wgs-8.3rc2-orig/kmer/sim4dbutils/cleanPolishes-experiments/intronstats.pl	2013-04-30 10:34:26.000000000 -0400
++++ wgs-8.3rc2/kmer/sim4dbutils/cleanPolishes-experiments/intronstats.pl	2018-11-01 16:27:03.525533506 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ $| = 1;
+ 
+diff -ruN wgs-8.3rc2-orig/kmer/snapper/snapper2-sge.pl wgs-8.3rc2/kmer/snapper/snapper2-sge.pl
+--- wgs-8.3rc2-orig/kmer/snapper/snapper2-sge.pl	2013-04-30 10:34:32.000000000 -0400
++++ wgs-8.3rc2/kmer/snapper/snapper2-sge.pl	2018-11-01 16:27:02.169186381 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  Runs snapper2 on SGE, splitting both the genome and query sequences.
+ 
+diff -ruN wgs-8.3rc2-orig/kmer/tapper/compare.pl wgs-8.3rc2/kmer/tapper/compare.pl
+--- wgs-8.3rc2-orig/kmer/tapper/compare.pl	2013-04-30 10:34:14.000000000 -0400
++++ wgs-8.3rc2/kmer/tapper/compare.pl	2018-11-01 16:27:02.206808198 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ use strict;
+ 
+ #  Hack to compare tapperconvert to corona output.
+diff -ruN wgs-8.3rc2-orig/src/AS_BAT/analyze-mapped-unitigs-for-joins.pl wgs-8.3rc2/src/AS_BAT/analyze-mapped-unitigs-for-joins.pl
+--- wgs-8.3rc2-orig/src/AS_BAT/analyze-mapped-unitigs-for-joins.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_BAT/analyze-mapped-unitigs-for-joins.pl	2018-11-01 16:27:04.822135946 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  Given
+ #    an assembly (for the frgdeg and frgutg posmap)
+diff -ruN wgs-8.3rc2-orig/src/AS_BAT/analyze-nucmer-gaps.pl wgs-8.3rc2/src/AS_BAT/analyze-nucmer-gaps.pl
+--- wgs-8.3rc2-orig/src/AS_BAT/analyze-nucmer-gaps.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_BAT/analyze-nucmer-gaps.pl	2018-11-01 16:27:04.464731649 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_BAT/bogart-build-fasta.pl wgs-8.3rc2/src/AS_BAT/bogart-build-fasta.pl
+--- wgs-8.3rc2-orig/src/AS_BAT/bogart-build-fasta.pl	2013-08-24 19:10:21.000000000 -0400
++++ wgs-8.3rc2/src/AS_BAT/bogart-build-fasta.pl	2018-11-01 16:27:04.374241158 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_BAT/bogusness-run.pl wgs-8.3rc2/src/AS_BAT/bogusness-run.pl
+--- wgs-8.3rc2-orig/src/AS_BAT/bogusness-run.pl	2013-08-24 19:10:21.000000000 -0400
++++ wgs-8.3rc2/src/AS_BAT/bogusness-run.pl	2018-11-01 16:27:04.674251245 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use FindBin;
+diff -ruN wgs-8.3rc2-orig/src/AS_BAT/count-bubbles.pl wgs-8.3rc2/src/AS_BAT/count-bubbles.pl
+--- wgs-8.3rc2-orig/src/AS_BAT/count-bubbles.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_BAT/count-bubbles.pl	2018-11-01 16:27:04.882515670 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_BAT/erate-estimate-plot-per-base-estimate.pl wgs-8.3rc2/src/AS_BAT/erate-estimate-plot-per-base-estimate.pl
+--- wgs-8.3rc2-orig/src/AS_BAT/erate-estimate-plot-per-base-estimate.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_BAT/erate-estimate-plot-per-base-estimate.pl	2018-11-01 16:27:04.404156372 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  Reads
+ #    overlapStore picture dump
+diff -ruN wgs-8.3rc2-orig/src/AS_BAT/erate-estimate-test-based-on-mapping.pl wgs-8.3rc2/src/AS_BAT/erate-estimate-test-based-on-mapping.pl
+--- wgs-8.3rc2-orig/src/AS_BAT/erate-estimate-test-based-on-mapping.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_BAT/erate-estimate-test-based-on-mapping.pl	2018-11-01 16:27:04.495270897 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_BAT/examine-mapping-ideal.pl wgs-8.3rc2/src/AS_BAT/examine-mapping-ideal.pl
+--- wgs-8.3rc2-orig/src/AS_BAT/examine-mapping-ideal.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_BAT/examine-mapping-ideal.pl	2018-11-01 16:27:04.944389002 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_BAT/examine-mapping.pl wgs-8.3rc2/src/AS_BAT/examine-mapping.pl
+--- wgs-8.3rc2-orig/src/AS_BAT/examine-mapping.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_BAT/examine-mapping.pl	2018-11-01 16:27:04.644509069 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_BAT/locate-read-in-unitig-based-on-olaps.pl wgs-8.3rc2/src/AS_BAT/locate-read-in-unitig-based-on-olaps.pl
+--- wgs-8.3rc2-orig/src/AS_BAT/locate-read-in-unitig-based-on-olaps.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_BAT/locate-read-in-unitig-based-on-olaps.pl	2018-11-01 16:27:04.852419853 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_BAT/plot-break-points.pl wgs-8.3rc2/src/AS_BAT/plot-break-points.pl
+--- wgs-8.3rc2-orig/src/AS_BAT/plot-break-points.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_BAT/plot-break-points.pl	2018-11-01 16:27:05.034332463 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_BAT/show-false-best-edges-from-mapping.pl wgs-8.3rc2/src/AS_BAT/show-false-best-edges-from-mapping.pl
+--- wgs-8.3rc2-orig/src/AS_BAT/show-false-best-edges-from-mapping.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_BAT/show-false-best-edges-from-mapping.pl	2018-11-01 16:27:04.912193072 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_BOG/analyze-unitig-mates-from-tigStore.pl wgs-8.3rc2/src/AS_BOG/analyze-unitig-mates-from-tigStore.pl
+--- wgs-8.3rc2-orig/src/AS_BOG/analyze-unitig-mates-from-tigStore.pl	2013-08-24 19:10:23.000000000 -0400
++++ wgs-8.3rc2/src/AS_BOG/analyze-unitig-mates-from-tigStore.pl	2018-11-01 16:27:08.715835144 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_BOG/find-breaks.pl wgs-8.3rc2/src/AS_BOG/find-breaks.pl
+--- wgs-8.3rc2-orig/src/AS_BOG/find-breaks.pl	2013-08-24 19:10:23.000000000 -0400
++++ wgs-8.3rc2/src/AS_BOG/find-breaks.pl	2018-11-01 16:27:08.805846308 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_BOG/plot-break-points.pl wgs-8.3rc2/src/AS_BOG/plot-break-points.pl
+--- wgs-8.3rc2-orig/src/AS_BOG/plot-break-points.pl	2013-08-24 19:10:23.000000000 -0400
++++ wgs-8.3rc2/src/AS_BOG/plot-break-points.pl	2018-11-01 16:27:08.940509743 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_BOG/plot-log-length.pl wgs-8.3rc2/src/AS_BOG/plot-log-length.pl
+--- wgs-8.3rc2-orig/src/AS_BOG/plot-log-length.pl	2013-08-24 19:10:23.000000000 -0400
++++ wgs-8.3rc2/src/AS_BOG/plot-log-length.pl	2018-11-01 16:27:08.776202830 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_CGW/find-big-gaps-in-cgw.out.pl wgs-8.3rc2/src/AS_CGW/find-big-gaps-in-cgw.out.pl
+--- wgs-8.3rc2-orig/src/AS_CGW/find-big-gaps-in-cgw.out.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_CGW/find-big-gaps-in-cgw.out.pl	2018-11-01 16:27:05.765122694 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #InsertScaffoldContentsIntoScaffold()-- Insert CI    76908   1228bp fwd         0 +- 0                1228 +- 32          was         0 +- 0                1228 +- 32         
+ #InsertScaffoldContentsIntoScaffold()-- Insert CI   320456  10316bp fwd      2699 +- 53691           13015 +- 53959       was      2699 +- 53691           13015 +- 53959      
+diff -ruN wgs-8.3rc2-orig/src/AS_CGW/find-large-gaps-in-cgw-out.pl wgs-8.3rc2/src/AS_CGW/find-large-gaps-in-cgw-out.pl
+--- wgs-8.3rc2-orig/src/AS_CGW/find-large-gaps-in-cgw-out.pl	2014-02-19 10:12:50.000000000 -0500
++++ wgs-8.3rc2/src/AS_CGW/find-large-gaps-in-cgw-out.pl	2018-11-01 16:27:05.856171253 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_CGW/parse-cgw-out-for-merges.pl wgs-8.3rc2/src/AS_CGW/parse-cgw-out-for-merges.pl
+--- wgs-8.3rc2-orig/src/AS_CGW/parse-cgw-out-for-merges.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_CGW/parse-cgw-out-for-merges.pl	2018-11-01 16:27:05.886738895 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_CNS/submit-parallel.pl wgs-8.3rc2/src/AS_CNS/submit-parallel.pl
+--- wgs-8.3rc2-orig/src/AS_CNS/submit-parallel.pl	2013-11-05 13:22:19.000000000 -0500
++++ wgs-8.3rc2/src/AS_CNS/submit-parallel.pl	2018-11-01 16:27:05.165120713 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_CNS/tigStoreDelete.pl wgs-8.3rc2/src/AS_CNS/tigStoreDelete.pl
+--- wgs-8.3rc2-orig/src/AS_CNS/tigStoreDelete.pl	2013-08-24 19:10:17.000000000 -0400
++++ wgs-8.3rc2/src/AS_CNS/tigStoreDelete.pl	2018-11-01 16:27:05.105966137 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_ENV/greedy_layout_to_IUM.pl wgs-8.3rc2/src/AS_ENV/greedy_layout_to_IUM.pl
+--- wgs-8.3rc2-orig/src/AS_ENV/greedy_layout_to_IUM.pl	2013-08-24 19:10:18.000000000 -0400
++++ wgs-8.3rc2/src/AS_ENV/greedy_layout_to_IUM.pl	2018-11-01 16:27:08.619971482 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ my @imps;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_ENV/utg2fasta.pl wgs-8.3rc2/src/AS_ENV/utg2fasta.pl
+--- wgs-8.3rc2-orig/src/AS_ENV/utg2fasta.pl	2013-08-24 19:10:18.000000000 -0400
++++ wgs-8.3rc2/src/AS_ENV/utg2fasta.pl	2018-11-01 16:27:08.678779291 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ my %i2u = ();
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_GKP/fastqSimulate-checkCoverage.pl wgs-8.3rc2/src/AS_GKP/fastqSimulate-checkCoverage.pl
+--- wgs-8.3rc2-orig/src/AS_GKP/fastqSimulate-checkCoverage.pl	2014-04-04 21:41:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_GKP/fastqSimulate-checkCoverage.pl	2018-11-01 16:27:05.695751242 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_GKP/fastqSimulate-perfectSep.pl wgs-8.3rc2/src/AS_GKP/fastqSimulate-perfectSep.pl
+--- wgs-8.3rc2-orig/src/AS_GKP/fastqSimulate-perfectSep.pl	2013-08-24 19:10:26.000000000 -0400
++++ wgs-8.3rc2/src/AS_GKP/fastqSimulate-perfectSep.pl	2018-11-01 16:27:05.575901692 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_GKP/frg-to-fastq.pl wgs-8.3rc2/src/AS_GKP/frg-to-fastq.pl
+--- wgs-8.3rc2-orig/src/AS_GKP/frg-to-fastq.pl	2013-08-24 19:10:26.000000000 -0400
++++ wgs-8.3rc2/src/AS_GKP/frg-to-fastq.pl	2018-11-01 16:27:05.606322612 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_GKP/sffToCA-evaluateLinker.pl wgs-8.3rc2/src/AS_GKP/sffToCA-evaluateLinker.pl
+--- wgs-8.3rc2-orig/src/AS_GKP/sffToCA-evaluateLinker.pl	2013-08-24 19:10:26.000000000 -0400
++++ wgs-8.3rc2/src/AS_GKP/sffToCA-evaluateLinker.pl	2018-11-01 16:27:05.636726418 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #
+ #  Run sffToCA on some sff file, then search the resulting reads for linker.
+ #
+@@ -78,7 +78,7 @@
+ ####
+ ####
+ 
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_MER/gkrpt.pl wgs-8.3rc2/src/AS_MER/gkrpt.pl
+--- wgs-8.3rc2-orig/src/AS_MER/gkrpt.pl	2013-08-24 19:10:26.000000000 -0400
++++ wgs-8.3rc2/src/AS_MER/gkrpt.pl	2018-11-01 16:27:03.847924110 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_MER/merTrim-compare-logs.pl wgs-8.3rc2/src/AS_MER/merTrim-compare-logs.pl
+--- wgs-8.3rc2-orig/src/AS_MER/merTrim-compare-logs.pl	2014-12-30 14:54:09.000000000 -0500
++++ wgs-8.3rc2/src/AS_MER/merTrim-compare-logs.pl	2018-11-01 16:27:03.955692115 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_MSG/convert-fasta-to-v2.pl wgs-8.3rc2/src/AS_MSG/convert-fasta-to-v2.pl
+--- wgs-8.3rc2-orig/src/AS_MSG/convert-fasta-to-v2.pl	2013-08-24 19:10:26.000000000 -0400
++++ wgs-8.3rc2/src/AS_MSG/convert-fasta-to-v2.pl	2018-11-01 16:27:03.993391522 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #
+ ###########################################################################
+diff -ruN wgs-8.3rc2-orig/src/AS_MSG/convert-v1-to-v2.pl wgs-8.3rc2/src/AS_MSG/convert-v1-to-v2.pl
+--- wgs-8.3rc2-orig/src/AS_MSG/convert-v1-to-v2.pl	2013-08-24 19:10:26.000000000 -0400
++++ wgs-8.3rc2/src/AS_MSG/convert-v1-to-v2.pl	2018-11-01 16:27:04.084872465 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #
+ ###########################################################################
+diff -ruN wgs-8.3rc2-orig/src/AS_MSG/tracedb-to-frg.pl wgs-8.3rc2/src/AS_MSG/tracedb-to-frg.pl
+--- wgs-8.3rc2-orig/src/AS_MSG/tracedb-to-frg.pl	2014-07-29 21:52:25.000000000 -0400
++++ wgs-8.3rc2/src/AS_MSG/tracedb-to-frg.pl	2018-11-01 16:27:04.118321888 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #
+ ###########################################################################
+diff -ruN wgs-8.3rc2-orig/src/AS_OBT/detect-unsplit-subreads-in-overlaps.pl wgs-8.3rc2/src/AS_OBT/detect-unsplit-subreads-in-overlaps.pl
+--- wgs-8.3rc2-orig/src/AS_OBT/detect-unsplit-subreads-in-overlaps.pl	2014-12-30 14:54:07.000000000 -0500
++++ wgs-8.3rc2/src/AS_OBT/detect-unsplit-subreads-in-overlaps.pl	2018-11-01 16:27:06.141243665 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_OBT/finalTrim-stats.pl wgs-8.3rc2/src/AS_OBT/finalTrim-stats.pl
+--- wgs-8.3rc2-orig/src/AS_OBT/finalTrim-stats.pl	2013-11-05 13:22:19.000000000 -0500
++++ wgs-8.3rc2/src/AS_OBT/finalTrim-stats.pl	2018-11-01 16:27:06.065093687 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_OBT/generate-random-chimeric-fragments.pl wgs-8.3rc2/src/AS_OBT/generate-random-chimeric-fragments.pl
+--- wgs-8.3rc2-orig/src/AS_OBT/generate-random-chimeric-fragments.pl	2013-08-24 19:10:18.000000000 -0400
++++ wgs-8.3rc2/src/AS_OBT/generate-random-chimeric-fragments.pl	2018-11-01 16:27:06.172242129 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ use strict;
+ 
+ #
+diff -ruN wgs-8.3rc2-orig/src/AS_OBT/test-random-chimeric-fragments.pl wgs-8.3rc2/src/AS_OBT/test-random-chimeric-fragments.pl
+--- wgs-8.3rc2-orig/src/AS_OBT/test-random-chimeric-fragments.pl	2013-08-24 19:10:18.000000000 -0400
++++ wgs-8.3rc2/src/AS_OBT/test-random-chimeric-fragments.pl	2018-11-01 16:27:06.207149788 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ use strict;
+ 
+ #
+diff -ruN wgs-8.3rc2-orig/src/AS_OVS/analyze-true-vs-test.pl wgs-8.3rc2/src/AS_OVS/analyze-true-vs-test.pl
+--- wgs-8.3rc2-orig/src/AS_OVS/analyze-true-vs-test.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_OVS/analyze-true-vs-test.pl	2018-11-01 16:27:09.438926606 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_OVS/check-ordered-reads-for-missed-overlaps.pl wgs-8.3rc2/src/AS_OVS/check-ordered-reads-for-missed-overlaps.pl
+--- wgs-8.3rc2-orig/src/AS_OVS/check-ordered-reads-for-missed-overlaps.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_OVS/check-ordered-reads-for-missed-overlaps.pl	2018-11-01 16:27:09.376419053 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  Analyzes a single overlapStore, reports reads that have a gap in overlap.  Assumes reads are ordered in
+ #  reference order.
+diff -ruN wgs-8.3rc2-orig/src/AS_OVS/filterTrue.pl wgs-8.3rc2/src/AS_OVS/filterTrue.pl
+--- wgs-8.3rc2-orig/src/AS_OVS/filterTrue.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_OVS/filterTrue.pl	2018-11-01 16:27:09.107065266 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_OVS/find-missed-true-overlaps.pl wgs-8.3rc2/src/AS_OVS/find-missed-true-overlaps.pl
+--- wgs-8.3rc2-orig/src/AS_OVS/find-missed-true-overlaps.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_OVS/find-missed-true-overlaps.pl	2018-11-01 16:27:09.315875421 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_OVS/infer-obt-from-genomic-blasr.pl wgs-8.3rc2/src/AS_OVS/infer-obt-from-genomic-blasr.pl
+--- wgs-8.3rc2-orig/src/AS_OVS/infer-obt-from-genomic-blasr.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_OVS/infer-obt-from-genomic-blasr.pl	2018-11-01 16:27:09.619915649 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_OVS/infer-olaps-from-genomic-coords.pl wgs-8.3rc2/src/AS_OVS/infer-olaps-from-genomic-coords.pl
+--- wgs-8.3rc2-orig/src/AS_OVS/infer-olaps-from-genomic-coords.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_OVS/infer-olaps-from-genomic-coords.pl	2018-11-01 16:27:09.014990848 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_OVS/infer-olaps-from-pairwise-blasr.pl wgs-8.3rc2/src/AS_OVS/infer-olaps-from-pairwise-blasr.pl
+--- wgs-8.3rc2-orig/src/AS_OVS/infer-olaps-from-pairwise-blasr.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_OVS/infer-olaps-from-pairwise-blasr.pl	2018-11-01 16:27:09.532059686 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_OVS/infer-olaps-from-pairwise-coords.pl wgs-8.3rc2/src/AS_OVS/infer-olaps-from-pairwise-coords.pl
+--- wgs-8.3rc2-orig/src/AS_OVS/infer-olaps-from-pairwise-coords.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_OVS/infer-olaps-from-pairwise-coords.pl	2018-11-01 16:27:09.075670144 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_OVS/infer-ovl-from-genomic-blasr.pl wgs-8.3rc2/src/AS_OVS/infer-ovl-from-genomic-blasr.pl
+--- wgs-8.3rc2-orig/src/AS_OVS/infer-ovl-from-genomic-blasr.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_OVS/infer-ovl-from-genomic-blasr.pl	2018-11-01 16:27:09.407406816 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_OVS/rewrite-obt-dump-with-names.pl wgs-8.3rc2/src/AS_OVS/rewrite-obt-dump-with-names.pl
+--- wgs-8.3rc2-orig/src/AS_OVS/rewrite-obt-dump-with-names.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_OVS/rewrite-obt-dump-with-names.pl	2018-11-01 16:27:09.225632454 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_OVS/rewrite-overlap-dump-with-names.pl wgs-8.3rc2/src/AS_OVS/rewrite-overlap-dump-with-names.pl
+--- wgs-8.3rc2-orig/src/AS_OVS/rewrite-overlap-dump-with-names.pl	2014-12-30 14:54:08.000000000 -0500
++++ wgs-8.3rc2/src/AS_OVS/rewrite-overlap-dump-with-names.pl	2018-11-01 16:27:09.345489699 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_PL5/caqc.pl wgs-8.3rc2/src/AS_PL5/caqc.pl
+--- wgs-8.3rc2-orig/src/AS_PL5/caqc.pl	2013-08-24 19:10:13.000000000 -0400
++++ wgs-8.3rc2/src/AS_PL5/caqc.pl	2018-11-01 16:27:04.300908674 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ # $Id: caqc.pl 4371 2013-08-01 17:19:47Z brianwalenz $
+ #
+diff -ruN wgs-8.3rc2-orig/src/AS_REF/frg-to-fasta.pl wgs-8.3rc2/src/AS_REF/frg-to-fasta.pl
+--- wgs-8.3rc2-orig/src/AS_REF/frg-to-fasta.pl	2013-08-24 19:10:23.000000000 -0400
++++ wgs-8.3rc2/src/AS_REF/frg-to-fasta.pl	2018-11-01 16:27:05.993898345 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/asmQC/asmToAGP.pl wgs-8.3rc2/src/AS_RUN/asmQC/asmToAGP.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/asmQC/asmToAGP.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/asmQC/asmToAGP.pl	2018-11-01 16:27:06.786035295 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use FindBin;
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/asmQC/asmToFasta.pl wgs-8.3rc2/src/AS_RUN/asmQC/asmToFasta.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/asmQC/asmToFasta.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/asmQC/asmToFasta.pl	2018-11-01 16:27:06.390707295 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use XML::Parser;
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/asmQC/ca2ace.pl wgs-8.3rc2/src/AS_RUN/asmQC/ca2ace.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/asmQC/ca2ace.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/asmQC/ca2ace.pl	2018-11-01 16:27:06.691132470 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ 
+ # $Id: ca2ace.pl 4371 2013-08-01 17:19:47Z brianwalenz $
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/asmQC/caqc-diff.pl wgs-8.3rc2/src/AS_RUN/asmQC/caqc-diff.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/asmQC/caqc-diff.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/asmQC/caqc-diff.pl	2018-11-01 16:27:06.845190157 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  A basic (for now) script to diff to qc files.  In the near future,
+ #  this will be extended to decide if things changed significantly or
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/asmQC/caqc.pl wgs-8.3rc2/src/AS_RUN/asmQC/caqc.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/asmQC/caqc.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/asmQC/caqc.pl	2018-11-01 16:27:06.755932559 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ # $Id: caqc.pl 4371 2013-08-01 17:19:47Z brianwalenz $
+ #
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/asmQC/compare-qc.pl wgs-8.3rc2/src/AS_RUN/asmQC/compare-qc.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/asmQC/compare-qc.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/asmQC/compare-qc.pl	2018-11-01 16:27:06.816007411 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #  Hack to read two qc files on the command line and report
+ #  if they differ meaningfully.
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/asmQC/compare-trim-against-map.pl wgs-8.3rc2/src/AS_RUN/asmQC/compare-trim-against-map.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/asmQC/compare-trim-against-map.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/asmQC/compare-trim-against-map.pl	2018-11-01 16:27:06.357483196 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/asmQC/find-chimeric-contigs.pl wgs-8.3rc2/src/AS_RUN/asmQC/find-chimeric-contigs.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/asmQC/find-chimeric-contigs.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/asmQC/find-chimeric-contigs.pl	2018-11-01 16:27:06.539620846 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/asmQC/find-chimeric-reads.pl wgs-8.3rc2/src/AS_RUN/asmQC/find-chimeric-reads.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/asmQC/find-chimeric-reads.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/asmQC/find-chimeric-reads.pl	2018-11-01 16:27:06.720845161 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/asmQC/mergeqc.pl wgs-8.3rc2/src/AS_RUN/asmQC/mergeqc.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/asmQC/mergeqc.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/asmQC/mergeqc.pl	2018-11-01 16:27:06.421342056 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/get-commit-logs.pl wgs-8.3rc2/src/AS_RUN/get-commit-logs.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/get-commit-logs.pl	2013-08-24 19:10:13.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/get-commit-logs.pl	2018-11-01 16:27:06.995840912 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #
+ # A file with all the (recent) commits to the source tree.  Annotated
+ # with the time when any tags were placed, search for TAG: or BRANCH:
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/replaceIIDwithName-overlapDump.pl wgs-8.3rc2/src/AS_RUN/replaceIIDwithName-overlapDump.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/replaceIIDwithName-overlapDump.pl	2013-09-25 09:24:51.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/replaceIIDwithName-overlapDump.pl	2018-11-01 16:27:08.338001971 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/replaceUIDwithName-fastq.pl wgs-8.3rc2/src/AS_RUN/replaceUIDwithName-fastq.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/replaceUIDwithName-fastq.pl	2014-12-30 14:54:07.000000000 -0500
++++ wgs-8.3rc2/src/AS_RUN/replaceUIDwithName-fastq.pl	2018-11-01 16:27:07.091244369 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/replaceUIDwithName-posmap.pl wgs-8.3rc2/src/AS_RUN/replaceUIDwithName-posmap.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/replaceUIDwithName-posmap.pl	2014-12-30 14:54:07.000000000 -0500
++++ wgs-8.3rc2/src/AS_RUN/replaceUIDwithName-posmap.pl	2018-11-01 16:27:08.489133976 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/sanity/build-all-kmer-revisions.pl wgs-8.3rc2/src/AS_RUN/sanity/build-all-kmer-revisions.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/sanity/build-all-kmer-revisions.pl	2014-12-30 14:54:07.000000000 -0500
++++ wgs-8.3rc2/src/AS_RUN/sanity/build-all-kmer-revisions.pl	2018-11-01 16:27:08.038586280 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/sanity/build-all-wgs-revisions.pl wgs-8.3rc2/src/AS_RUN/sanity/build-all-wgs-revisions.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/sanity/build-all-wgs-revisions.pl	2014-12-30 14:54:07.000000000 -0500
++++ wgs-8.3rc2/src/AS_RUN/sanity/build-all-wgs-revisions.pl	2018-11-01 16:27:07.738774670 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #
+ #  Checkout and tar up src for each commit.
+ #
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/sanity/compile-all-wgs-revisions.pl wgs-8.3rc2/src/AS_RUN/sanity/compile-all-wgs-revisions.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/sanity/compile-all-wgs-revisions.pl	2014-12-30 14:54:07.000000000 -0500
++++ wgs-8.3rc2/src/AS_RUN/sanity/compile-all-wgs-revisions.pl	2018-11-01 16:27:07.155431854 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/sanity/sanity-all-done.pl wgs-8.3rc2/src/AS_RUN/sanity/sanity-all-done.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/sanity/sanity-all-done.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/sanity/sanity-all-done.pl	2018-11-01 16:27:07.388974263 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use MIME::QuotedPrint;
+ use MIME::Base64;
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/sanity/sanity-asm-done.pl wgs-8.3rc2/src/AS_RUN/sanity/sanity-asm-done.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/sanity/sanity-asm-done.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/sanity/sanity-asm-done.pl	2018-11-01 16:27:07.288667261 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if (scalar(@ARGV) != 3) {
+     die "wrong args.\n";
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/sanity/sanity-get-next-date.pl wgs-8.3rc2/src/AS_RUN/sanity/sanity-get-next-date.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/sanity/sanity-get-next-date.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/sanity/sanity-get-next-date.pl	2018-11-01 16:27:07.938433304 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use Time::Local;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/sanity/sanity-merge-qc.pl wgs-8.3rc2/src/AS_RUN/sanity/sanity-merge-qc.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/sanity/sanity-merge-qc.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/sanity/sanity-merge-qc.pl	2018-11-01 16:27:07.238798362 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/sanity/sanity.pl wgs-8.3rc2/src/AS_RUN/sanity/sanity.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/sanity/sanity.pl	2014-12-30 14:54:07.000000000 -0500
++++ wgs-8.3rc2/src/AS_RUN/sanity/sanity.pl	2018-11-01 16:27:07.890130725 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use Config;  #  for @signame
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/sanity/sanity-purge-old.pl wgs-8.3rc2/src/AS_RUN/sanity/sanity-purge-old.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/sanity/sanity-purge-old.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/sanity/sanity-purge-old.pl	2018-11-01 16:27:07.489026441 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_RUN/sanity/sanity-update-reference.pl wgs-8.3rc2/src/AS_RUN/sanity/sanity-update-reference.pl
+--- wgs-8.3rc2-orig/src/AS_RUN/sanity/sanity-update-reference.pl	2013-08-24 19:10:14.000000000 -0400
++++ wgs-8.3rc2/src/AS_RUN/sanity/sanity-update-reference.pl	2018-11-01 16:27:07.538539820 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN wgs-8.3rc2-orig/src/AS_TER/posmap-to-gff3.pl wgs-8.3rc2/src/AS_TER/posmap-to-gff3.pl
+--- wgs-8.3rc2-orig/src/AS_TER/posmap-to-gff3.pl	2014-12-30 14:54:09.000000000 -0500
++++ wgs-8.3rc2/src/AS_TER/posmap-to-gff3.pl	2018-11-01 16:27:05.478441315 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
