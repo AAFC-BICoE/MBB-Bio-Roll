@@ -1,0 +1,9 @@
+diff -ruN mafft-7.407-with-extensions-orig/core/seekquencer_premafft.tmpl mafft-7.407-with-extensions/core/seekquencer_premafft.tmpl
+--- mafft-7.407-with-extensions-orig/core/seekquencer_premafft.tmpl	2018-11-02 15:33:24.310133966 -0400
++++ mafft-7.407-with-extensions/core/seekquencer_premafft.tmpl	2018-11-02 15:33:39.088035342 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ ####################################################################################
+ # Author:  KM Amada (kmamada@ifrec.osaka-u.ac.jp)
