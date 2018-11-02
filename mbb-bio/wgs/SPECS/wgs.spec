@@ -11,11 +11,11 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	%{name}-%{version}.tar.bz2
-Prefix: 	/opt/bio
-Group: 		Applications/BioInformatics/Assembler
+Prefix: 	%{installroot}
+Group: 		Bioinformatics/Assembler
 AutoReq:	yes
 Url:            http://wgs-assembler.sourceforge.net
-Packager: 	Alex MacLean <alex.maclean@agr.gc.ca>
+Packager: 	Tim Forbes <timothy.forbes@canada.ca>
 Patch0:		env-perl.patch
 Patch1:		bin-tcsh.patch
 

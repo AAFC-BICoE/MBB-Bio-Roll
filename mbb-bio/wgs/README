@@ -4,6 +4,7 @@ In summary, the procedure is to extract the wgs source tarball to two distinct d
 
 The procedure for patching the source code is (roughly):
 
+## update for env perl
 cd SOURCES
 tar xf wgs-8.3rc2.tar.bz2
 mv wgs-8.3rc2/ wgs-8.3rc2-orig/
@@ -15,6 +16,7 @@ cd ..
 diff -ruN wgs-8.3rc2-orig/ wgs-8.3rc2/ > env-perl.patch
 rm -fr wgs-8.3rc2*/
 
+## update for tcsh
 cd SOURCES
 tar xf wgs-8.3rc2.tar.bz2
 mv wgs-8.3rc2/ wgs-8.3rc2-orig/
