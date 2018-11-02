@@ -1,0 +1,12 @@
+diff -ruN IMAGE_version2.4-orig/contig_length_fastq.pl IMAGE_version2.4/contig_length_fastq.pl
+--- IMAGE_version2.4-orig/contig_length_fastq.pl	2018-11-02 14:30:43.696121414 -0400
++++ IMAGE_version2.4/contig_length_fastq.pl	2018-11-02 14:30:57.223793931 -0400
+@@ -2,9 +2,5 @@
+ use strict;
+-use lib qw(/nfs/team81/jit/repository/pathogen/user/jit );
+-use strict;
+-use AssemblyTools;
+-
+ 
+ my $largest = 0;
+ my $contig = '';

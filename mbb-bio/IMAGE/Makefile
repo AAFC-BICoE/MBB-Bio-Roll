@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=IMAGE-2.33-4.spec
+SPEC=IMAGE.spec
 
 .PHONY: clean
 

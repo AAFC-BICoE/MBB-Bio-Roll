@@ -1,0 +1,189 @@
+diff -ruN IMAGE_version2.4-orig/01_prepare_new_read_placed.pl IMAGE_version2.4/01_prepare_new_read_placed.pl
+--- IMAGE_version2.4-orig/01_prepare_new_read_placed.pl	2018-10-30 14:45:00.851938478 -0400
++++ IMAGE_version2.4/01_prepare_new_read_placed.pl	2018-10-30 14:45:47.329423973 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ #
+ #	30_walk_stage1.pl
+ #	Local assemblies of velvet
+diff -ruN IMAGE_version2.4-orig/02_prepare_new_contigs_fa.pl IMAGE_version2.4/02_prepare_new_contigs_fa.pl
+--- IMAGE_version2.4-orig/02_prepare_new_contigs_fa.pl	2018-10-30 14:45:00.772547669 -0400
++++ IMAGE_version2.4/02_prepare_new_contigs_fa.pl	2018-10-30 14:45:47.359737598 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ #
+ #	30_walk_stage1.pl
+ #	Local assemblies of velvet
+diff -ruN IMAGE_version2.4-orig/10_20_bam_and_gather.pl IMAGE_version2.4/10_20_bam_and_gather.pl
+--- IMAGE_version2.4-orig/10_20_bam_and_gather.pl	2018-10-30 14:45:00.607204693 -0400
++++ IMAGE_version2.4/10_20_bam_and_gather.pl	2018-10-30 14:45:47.386876183 -0400
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl -w
++#! /usr/bin/env perl
+ #
+ #
+ # Copyright (C) 2009 by Pathogene Group, Sanger Center
+diff -ruN IMAGE_version2.4-orig/10_20_smalt_and_gather.pl IMAGE_version2.4/10_20_smalt_and_gather.pl
+--- IMAGE_version2.4-orig/10_20_smalt_and_gather.pl	2018-10-30 14:45:00.622869036 -0400
++++ IMAGE_version2.4/10_20_smalt_and_gather.pl	2018-10-30 14:45:47.415882705 -0400
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl -w
++#! /usr/bin/env perl
+ #
+ #
+ # Copyright (C) 2009 by Pathogene Group, Sanger Center
+diff -ruN IMAGE_version2.4-orig/30_walk_stage1_v2.pl IMAGE_version2.4/30_walk_stage1_v2.pl
+--- IMAGE_version2.4-orig/30_walk_stage1_v2.pl	2018-10-30 14:45:00.638042443 -0400
++++ IMAGE_version2.4/30_walk_stage1_v2.pl	2018-10-30 14:45:47.476039462 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ #
+ #	30_walk_stage1.pl
+ #	Local assemblies of velvet
+diff -ruN IMAGE_version2.4-orig/40_walk_stage2_v2.pl IMAGE_version2.4/40_walk_stage2_v2.pl
+--- IMAGE_version2.4-orig/40_walk_stage2_v2.pl	2018-10-30 14:45:00.899591045 -0400
++++ IMAGE_version2.4/40_walk_stage2_v2.pl	2018-10-30 14:45:47.504186004 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ #
+ #	40_walk_stage2.pl
+ #	Parse the ssaha output of velvet contig to reference
+diff -ruN IMAGE_version2.4-orig/454Prepare_readplacedfile.pl IMAGE_version2.4/454Prepare_readplacedfile.pl
+--- IMAGE_version2.4-orig/454Prepare_readplacedfile.pl	2018-10-30 14:45:01.010167386 -0400
++++ IMAGE_version2.4/454Prepare_readplacedfile.pl	2018-10-30 14:45:47.531293648 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ use strict;
+ 
+ 
+diff -ruN IMAGE_version2.4-orig/50_walk_stage3_v2.pl IMAGE_version2.4/50_walk_stage3_v2.pl
+--- IMAGE_version2.4-orig/50_walk_stage3_v2.pl	2018-10-30 14:45:00.867237388 -0400
++++ IMAGE_version2.4/50_walk_stage3_v2.pl	2018-10-30 14:45:47.563076579 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #
+ #	generating a concensus sequence after deciding which solexa contigs to merge
+ #	walk_stage3 stand alone version
+diff -ruN IMAGE_version2.4-orig/60_new_iteration_raw.pl IMAGE_version2.4/60_new_iteration_raw.pl
+--- IMAGE_version2.4-orig/60_new_iteration_raw.pl	2018-10-30 14:45:00.788119602 -0400
++++ IMAGE_version2.4/60_new_iteration_raw.pl	2018-10-30 14:45:47.592760490 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #
+ #	to incorporate the information from velvet contig (in .afg)
+ #		to original ace file (which has been converted in .afg)
+diff -ruN IMAGE_version2.4-orig/99_retrieve_gap_info_v2.pl IMAGE_version2.4/99_retrieve_gap_info_v2.pl
+--- IMAGE_version2.4-orig/99_retrieve_gap_info_v2.pl	2018-10-30 14:45:00.931511625 -0400
++++ IMAGE_version2.4/99_retrieve_gap_info_v2.pl	2018-10-30 14:45:47.620039370 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ #
+ #	30_walk_stage1.pl
+ #	Local assemblies of velvet
+diff -ruN IMAGE_version2.4-orig/check_velvet_contig.pl IMAGE_version2.4/check_velvet_contig.pl
+--- IMAGE_version2.4-orig/check_velvet_contig.pl	2018-10-30 14:45:01.100088501 -0400
++++ IMAGE_version2.4/check_velvet_contig.pl	2018-10-30 14:45:47.647040807 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ #
+ #	check Ns and change the name of the contig.fa
+ #	if the label says N, the length of the corresponding sequence is (N+k-1) 
+diff -ruN IMAGE_version2.4-orig/contig_length_fasta.pl IMAGE_version2.4/contig_length_fasta.pl
+--- IMAGE_version2.4-orig/contig_length_fasta.pl	2018-10-30 14:45:01.084989628 -0400
++++ IMAGE_version2.4/contig_length_fasta.pl	2018-10-30 14:45:47.673443369 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ use strict;
+ 
+ 
+diff -ruN IMAGE_version2.4-orig/contig_length_fastq.pl IMAGE_version2.4/contig_length_fastq.pl
+--- IMAGE_version2.4-orig/contig_length_fastq.pl	2018-10-30 14:45:00.884045657 -0400
++++ IMAGE_version2.4/contig_length_fastq.pl	2018-10-30 14:45:47.701634132 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ use strict;
+ use lib qw(/nfs/team81/jit/repository/pathogen/user/jit );
+ use strict;
+diff -ruN IMAGE_version2.4-orig/contigs2scaffolds.pl IMAGE_version2.4/contigs2scaffolds.pl
+--- IMAGE_version2.4-orig/contigs2scaffolds.pl	2018-10-30 14:45:00.528099979 -0400
++++ IMAGE_version2.4/contigs2scaffolds.pl	2018-10-30 14:45:47.729128324 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ use strict;
+ 
+ 
+diff -ruN IMAGE_version2.4-orig/contig_to_supercontig_exclude_min_len.pl IMAGE_version2.4/contig_to_supercontig_exclude_min_len.pl
+--- IMAGE_version2.4-orig/contig_to_supercontig_exclude_min_len.pl	2018-10-30 14:45:00.915238282 -0400
++++ IMAGE_version2.4/contig_to_supercontig_exclude_min_len.pl	2018-10-30 14:45:47.761266989 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ use strict;
+ 
+ 
+diff -ruN IMAGE_version2.4-orig/fasta2singleLine.pl IMAGE_version2.4/fasta2singleLine.pl
+--- IMAGE_version2.4-orig/fasta2singleLine.pl	2018-10-30 14:45:00.946637893 -0400
++++ IMAGE_version2.4/fasta2singleLine.pl	2018-10-30 14:45:47.787049067 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ # Martin Hunt 02/10/08
+ # mh12@sanger.ac.uk
+diff -ruN IMAGE_version2.4-orig/get_fasta_containNs_toIMAGE_format.pl IMAGE_version2.4/get_fasta_containNs_toIMAGE_format.pl
+--- IMAGE_version2.4-orig/get_fasta_containNs_toIMAGE_format.pl	2018-10-30 14:45:00.591382443 -0400
++++ IMAGE_version2.4/get_fasta_containNs_toIMAGE_format.pl	2018-10-30 14:45:47.813205444 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ use strict;
+ 
+ 
+diff -ruN IMAGE_version2.4-orig/image.pl IMAGE_version2.4/image.pl
+--- IMAGE_version2.4-orig/image.pl	2018-10-30 14:45:01.069418749 -0400
++++ IMAGE_version2.4/image.pl	2018-10-30 14:45:47.838104246 -0400
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl -w
++#! /usr/bin/env perl
+ #
+ #
+ # Copyright (C) 2009 by Pathogene Group, Sanger Center
+diff -ruN IMAGE_version2.4-orig/image_run_summary.pl IMAGE_version2.4/image_run_summary.pl
+--- IMAGE_version2.4-orig/image_run_summary.pl	2018-10-30 14:45:00.962102568 -0400
++++ IMAGE_version2.4/image_run_summary.pl	2018-10-30 14:45:47.863859718 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #
+ #	to incorporate the information from velvet contig (in .afg)
+ #		to original ace file (which has been converted in .afg)
+diff -ruN IMAGE_version2.4-orig/restartIMAGE.pl IMAGE_version2.4/restartIMAGE.pl
+--- IMAGE_version2.4-orig/restartIMAGE.pl	2018-10-30 14:45:00.575636136 -0400
++++ IMAGE_version2.4/restartIMAGE.pl	2018-10-30 14:45:47.890241259 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #
+ 
+ #	author: jit
+diff -ruN IMAGE_version2.4-orig/retrieve_Illumina_contigs_v2.pl IMAGE_version2.4/retrieve_Illumina_contigs_v2.pl
+--- IMAGE_version2.4-orig/retrieve_Illumina_contigs_v2.pl	2018-10-30 14:45:00.560185133 -0400
++++ IMAGE_version2.4/retrieve_Illumina_contigs_v2.pl	2018-10-30 14:45:47.917036548 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #
+ #	to incorporate the information from velvet contig (in .afg)
+ #		to original ace file (which has been converted in .afg)

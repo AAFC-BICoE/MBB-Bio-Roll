@@ -1,0 +1,24 @@
+diff -ruN IMAGE_version2.4-orig/image.pl IMAGE_version2.4/image.pl
+--- IMAGE_version2.4-orig/image.pl	2018-10-30 14:45:01.069418749 -0400
++++ IMAGE_version2.4/image.pl	2018-10-30 14:55:26.274074192 -0400
+@@ -24,7 +24,7 @@
+ my $path = '' ; 
+ if ($0 =~ /(\S+)\/image.pl/ ) {
+ 	#print "The path is $1\n" ; 	
+-	$path = $1 ; 
++	$path = "$1/../scripts" ; 
+ }
+ 
+ #my $IMAGE_ver = '1' ;
+diff -ruN IMAGE_version2.4-orig/image_run_summary.pl IMAGE_version2.4/image_run_summary.pl
+--- IMAGE_version2.4-orig/image_run_summary.pl	2018-10-30 14:45:00.962102568 -0400
++++ IMAGE_version2.4/image_run_summary.pl	2018-10-30 14:56:22.696098434 -0400
+@@ -14,7 +14,7 @@
+ my $path = '' ; 
+ if ($0 =~ /(\S+)\/image_run_summary.pl/ ) {
+ 	#print "The path is $1\n" ; 	
+-	$path = $1 ; 
++	$path = "$1/../scripts" ; 
+ }
+ 
+ 
