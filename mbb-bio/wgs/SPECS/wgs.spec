@@ -11,7 +11,7 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	%{name}-%{version}.tar.bz2
-Prefix: 	%{installroot}
+Prefix: 	/opt/bio
 Group: 		Bioinformatics/Assembler
 AutoReq:	yes
 Url:            http://wgs-assembler.sourceforge.net
