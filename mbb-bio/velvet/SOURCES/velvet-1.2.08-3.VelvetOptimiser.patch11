@@ -1,9 +1,0 @@
-diff -Naur VelvetOptimiser/VelvetOptimiser.pl VelvetOptimiser2/VelvetOptimiser.pl
---- velvet/contrib/VelvetOptimiser-2.2.4/VelvetOptimiser.pl	2013-04-22 15:45:56.795043975 -0400
-+++ velvet/contrib/VelvetOptimiser-2.2.4/VelvetOptimiser.pl	2013-04-22 15:58:00.978043412 -0400
-@@ -1,4 +1,4 @@
--#!/usr/bin/perl
-+#!/usr/bin/env perl
- #
- #       VelvetOptimiser.pl
- #

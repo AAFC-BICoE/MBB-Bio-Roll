@@ -1,0 +1,17 @@
+diff -Naur extractContigReads/extractContigReads.pl extractContigReads2/extractContigReads.pl
+--- velvet/contrib/extractContigReads/extractContigReads.pl	2013-04-22 15:35:39.999167042 -0400
++++ velvet/contrib/extractContigReads/extractContigReads.pl	2013-04-22 15:51:06.422044103 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ ##
+ ##       extractContigReads.pl
+ ##
+@@ -30,6 +30,7 @@
+ ##
+ ######################################################################
+ 
++use warnings;
+ use strict;
+ 
+ my $usage = "$0 <contig number> <directory>";

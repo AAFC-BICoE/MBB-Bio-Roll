@@ -1,0 +1,9 @@
+diff -Naur fasta2agp/fasta2agp.pl fasta2agp2/fasta2agp.pl
+--- velvet/contrib/fasta2agp/fasta2agp.pl	2013-04-22 15:36:42.152166943 -0400
++++ velvet/contrib/fasta2agp/fasta2agp.pl	2013-04-22 15:51:34.151048428 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ ### david.studholme@tsl.ac.uk
+ 

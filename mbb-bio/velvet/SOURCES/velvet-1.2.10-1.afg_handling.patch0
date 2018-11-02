@@ -1,0 +1,35 @@
+diff -Naur afg_handling/asmbly_splitter.pl afg_handling2/asmbly_splitter.pl
+--- velvet/contrib/afg_handling/asmbly_splitter.pl	2013-04-22 15:31:58.539167325 -0400
++++ velvet/contrib/afg_handling/asmbly_splitter.pl	2013-04-22 15:47:32.196045992 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ #
+ #       asmbly_splitter2.pl
+ #
+@@ -35,6 +35,8 @@
+ #
+ # Modified by Daniel Zerbino to allow for scaffolding and to preserve read
+ # information
++
++use warnings;
+ use strict;
+ 
+ my $usage = "Usage: $0 <contig number> <afg file>\n";
+diff -Naur afg_handling/snp_view.pl afg_handling2/snp_view.pl
+--- velvet/contrib/afg_handling/snp_view.pl	2013-04-22 15:31:58.539167325 -0400
++++ velvet/contrib/afg_handling/snp_view.pl	2013-04-22 15:47:57.624042407 -0400
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ #
+ #   snp_view.pl
+ #       
+@@ -41,6 +41,7 @@
+ # Modified by Daniel Zerbino (Aug 28 2009) to display reverse strand reads in the 
+ # snp_view_reads file and to better handle the display of snps near the end of contigs
+ 
++use warnings;
+ use strict;
+ use List::Util qw[min max];
+ 
