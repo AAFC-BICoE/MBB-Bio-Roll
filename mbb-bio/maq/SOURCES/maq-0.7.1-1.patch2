@@ -1,8 +1,0 @@
---- maq-0.7.1/scripts/maq_eval.pl	2013-01-21 15:48:19.527118187 -0500
-+++ maq-0.7.1/scripts/maq_eval2.pl	2013-01-21 15:53:36.427146831 -0500
-@@ -1,4 +1,4 @@
--#!/usr/bin/perl -w
-+#!/usr/bin/env perl
- 
- # Author: lh3
- 
