@@ -2,18 +2,21 @@
 
 ##define _topdir	 	/home/rpmbuild/rpms/saps
 %define name		saps
+%define src_name	saps.sspa
 %define release		2	
 %define version 	1996
+%define buildroots	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/%{name}
+%define _prefix		%{installroot}
 
 BuildRoot:	%{buildroot}
 Summary: 	SAPS is a Statistical Analysis of Protein Sequences.
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source: 	%{name}.sspa.tar.gz
+Source: 	%{src_name}.tar.gz
 Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
-Prefix: 	/opt/bio
+Prefix: 	%{_prefix}
 Group: 		Development/Tools
 License:        GNU GPL
 URL:		http://brendelgroup.org/bioinformatics2go/
@@ -38,28 +41,29 @@ below under its section title.
 
 %build
 cd src
-make
+make -j`nproc`
 
 %install
 mkdir -p %{buildroot}%{installroot}
 cp -r * %{buildroot}%{installroot}
 rm -r %{buildroot}%{installroot}/src
-rm %{buildroot}%{installroot}/saps.1
-rm %{buildroot}%{installroot}/sspa.1
 
 %files
 %defattr(755,root,root,755)
-%{installroot}
+%dir %{installroot}
+%{installroot}/bin
 %defattr(644,root,root,755)
 %{installroot}/include
-%{installroot}/README
-%{installroot}/RECA_ECOLI
-%{installroot}/sspa.doc
+%doc %{installroot}/README
+%doc %{installroot}/sspa.doc
+%doc %{installroot}/saps.doc
+%doc %{installroot}/saps.1
+%doc %{installroot}/sspa.1
 %{installroot}/testdnapro
 %{installroot}/testout_dflag
 %{installroot}/testpro
+%{installroot}/RECA_ECOLI
 %{installroot}/RECA_BACSU
-%{installroot}/saps.doc
 %{installroot}/sspaout
 %{installroot}/testout
 %{installroot}/testout_dna
