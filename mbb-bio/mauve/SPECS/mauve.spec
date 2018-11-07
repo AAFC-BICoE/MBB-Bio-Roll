@@ -1,10 +1,9 @@
-# This is a  spec file for mauve
-
 ### define _topdir	 	/home/rpmbuild/rpms/mauve
 %define name		mauve
 %define release		1
 %define version 	2.3.1
 %define installroot 	/opt/bio/%{name}
+%define _prefix		%{installroot}
 
 BuildRoot:	%{buildroot}
 Summary: 	Mauve is a Multiple Genome Alignment.
@@ -13,10 +12,10 @@ Version: 	%{version}
 Release: 	%{release}
 Source: 	%{name}_linux_%{version}.tar.gz
 Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
-URL:            http://asap.ahabs.wisc.edu/mauve/
-Prefix: 	/opt/bio
-Group: 		Development/Tools
-License:        GPL|http://asap.ahabs.wisc.edu/mauve/download.php	
+URL:            http://asap.ahabs.wisc.edu/mauve
+Prefix: 	%{_prefix}
+Group: 		Bioinformatics/Alignment
+License:        GPL
 AutoReq:	yes
 
 %description
@@ -32,7 +31,7 @@ genomes can be aligned in under a minute, while a group of 9 divergent
 Enterobacterial genomes can be aligned in a few hours.
 
 %prep 
-%setup -q -n mauve_2.3.1
+%setup -q -n %{name}_%{version}
 
 %build
 
@@ -43,10 +42,16 @@ cp -r ext/ linux-x64/  %{buildroot}%{installroot}
 
 %files
 %defattr(644,root,root,755)
-%{installroot}
+%dir %{_prefix}
+%doc README
+%doc COPYING
+%doc ChangeLog.html
+%doc mauve_user_guide.pdf
+%{_prefix}/ext
+%{_prefix}/Mauve.jar
 %defattr(755,root,root,755)
-%{installroot}/Mauve
-%{installroot}/mauveAligner
-%{installroot}/progressiveMauve
-%{installroot}/linux-x64/progressiveMauve
-%{installroot}/linux-x64/mauveAligner
+%{_prefix}/Mauve
+%{_prefix}/mauveAligner
+%{_prefix}/progressiveMauve
+%{_prefix}/linux-x64/progressiveMauve
+%{_prefix}/linux-x64/mauveAligner

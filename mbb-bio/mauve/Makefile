@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=mauve-2.3.1.spec
+SPEC=mauve.spec
 
 .PHONY: clean
 
