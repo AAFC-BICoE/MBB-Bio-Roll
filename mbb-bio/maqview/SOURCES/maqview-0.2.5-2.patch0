@@ -1,8 +1,0 @@
---- maqview/maqindex_socket.pl	2013-01-22 14:35:00.602134021 -0500
-+++ maqview/maqindex_socket2.pl	2013-01-22 14:35:43.623639808 -0500
-@@ -1,4 +1,4 @@
--#!/usr/bin/perl -w
-+#!/usr/bin/env perl
- 
- use strict;
- use warnings;
