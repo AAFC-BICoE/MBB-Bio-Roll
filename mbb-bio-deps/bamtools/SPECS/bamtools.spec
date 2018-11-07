@@ -1,8 +1,9 @@
-### define _topdir	 	/home/rpmbuild/rpms/bamtools
 %define name		bamtools
 %define release		1
 %define version 	2.4.1
-%define installroot /opt/bio/%{name}
+%define installroot	/opt/bio/%{name}
+%define _prefix		%{installroot}
+%define _libdir		%{_prefix}/lib
 
 BuildRoot:	%{buildroot}
 Summary:	BamTools provides both a programmer's API and an end-user's toolkit for BAM files.
@@ -11,9 +12,9 @@ Version: 	%{version}
 Release: 	%{release}
 Source: 	%{name}-%{version}.tar.gz
 URL:		https://github.com/pezmaster31/bamtools 
-Prefix: 	/opt/bio
-Group: 		Development/Libraries
-License:        MIT License
+Prefix: 	%{_prefix}
+Group: 		Bioinformatics/Alignment
+License:        MIT
 AutoReq:	yes
 
 %description
@@ -25,22 +26,21 @@ BamTools is a project that provides both a C++ API and a command-line toolkit fo
 %build
 mkdir build 
 cd build
-cmake ..
-make -pipe --jobs=`nproc` 
+cmake -DCMAKE_INSTALL_PREFIX=%{_prefix} -DCMAKE_INSTALL_RPATH=%{_libdir}/bamtools ..
+make -pipe --jobs=`nproc`
 
 %install
-mkdir -p %{buildroot}%{installroot}
-cp -R bin %{buildroot}%{installroot}
-strip bin/*
-cp -R lib %{buildroot}%{installroot}
-cp -R include %{buildroot}%{installroot}
-
-
+cd build
+make install DESTDIR=%{buildroot}
 
 %files
 %defattr(644,root,root,755)
-%{installroot}
+%dir %{_prefix}
+%doc README
+%doc LICENSE
+%{_prefix}/include
 %defattr(755,root,root,755)
-%{installroot}/bin
+%{_libdir}
+%{_bindir}
 
 
