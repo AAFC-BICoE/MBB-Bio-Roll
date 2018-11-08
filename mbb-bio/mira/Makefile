@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=mira-3.4.0.1-2.spec
+SPEC=mira.spec
 
 .PHONY: clean
 

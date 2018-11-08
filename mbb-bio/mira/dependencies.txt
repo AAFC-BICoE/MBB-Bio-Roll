@@ -1,3 +1,0 @@
-Requires Boost version > 1.35
-Requires Expat-devel
-Requires gperftools (available from epel distribution)
