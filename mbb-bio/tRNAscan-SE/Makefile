@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=tRNAscan-SE-1.31-2.spec
+SPEC=tRNAscan-SE.spec
 
 .PHONY: clean
 
