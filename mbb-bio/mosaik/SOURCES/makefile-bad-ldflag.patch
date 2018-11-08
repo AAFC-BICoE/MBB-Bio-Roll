@@ -1,0 +1,12 @@
+diff -ruN MOSAIK-2.2.3-source-orig/Makefile MOSAIK-2.2.3-source/Makefile
+--- MOSAIK-2.2.3-source-orig/Makefile	2018-11-08 12:23:24.963797702 -0500
++++ MOSAIK-2.2.3-source/Makefile	2018-11-08 12:23:46.450264515 -0500
+@@ -27,7 +27,7 @@
+ CXXFLAGS += $(FLAGS)
+ export CFLAGS
+ export CXXFLAGS
+-export LDFLAGS = -Wl
++export LDFLAGS
+ export CXX ?= g++
+ 
+ # define our platform

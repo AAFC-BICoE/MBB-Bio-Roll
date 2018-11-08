@@ -1,14 +1,8 @@
-# This is a  spec file for mosaik
-# Note: the following rpm  packages should be installed:
-# zlib-static-1.2.3-27.el6.x86_64.rpm
-# glibc-static
-
-%define debug_package %{nil}
-
 %define name		MOSAIK
 %define release		1
-%define version 	2.1.33
+%define version 	2.2.3
 %define installroot 	/opt/bio/%{name}
+%define _prefix		%{installroot}
 
 BuildRoot:	%{buildroot}
 Summary: 	MOSAIK is a reference-guided assembler
@@ -16,11 +10,12 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	%{name}-%{version}-source.tar
+Patch0:		makefile-bad-ldflag.patch
 Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
 URL:            http://code.google.com/p/mosaik-aligner/
-Prefix: 	/opt/bio
-Group: 		Development/Tools
-License:        MIT
+Prefix: 	%{_prefix}
+Group: 		Bioinformatics/Assembler
+License:        GPLv2
 AutoReq:	yes
 
 %description
@@ -40,15 +35,18 @@ producing assembly files (phrap ace and GigaBayes gig formats) which can be
 viewed with utilities such as consed or EagleView. 
 
 %prep
-%setup -q -n MOSAIK-2.1.33-source
+%setup -q -n %{name}-%{version}-source
+%patch0 -p 1
 
 %build
-make
+make -j`nproc`
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}
-cp -r ../bin $RPM_BUILD_ROOT%{installroot}
+mkdir -p %{buildroot}%{_bindir}
+mv ../bin/* %{buildroot}%{_bindir}
 
 %files
-%defattr(755,root,root)
-%{installroot}
+%defattr(644,root,rooti,755)
+%dir %{_prefix}
+%defattr(755,root,root,755)
+%{_bindir}

@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=mosaik-2.1.33-1.spec
+SPEC=mosaik.spec
 
 .PHONY: clean
 
