@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=MEGAN_5_10.spec
+SPEC=MEGAN5.spec
 
 .PHONY: clean
 
@@ -11,5 +11,6 @@ $(FOLDERS):
 RPMS:
 	mkdir $@
 	rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC}
+
 clean:
 	rm -rf RPMS SRPMS BUILD BUILDROOT
