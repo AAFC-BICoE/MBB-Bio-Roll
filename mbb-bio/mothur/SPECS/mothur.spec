@@ -1,11 +1,9 @@
-### define _topdir	 	/home/rpmbuild/rpms/mothur
 %define name		mothur
 %define release		1
-%define version 	1.38.1.1
+%define version 	1.40.5
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/mothur
-%define boost_inc	/opt/bio/lib/boost/include
-%define boost_lib	/opt/bio/lib/boost/lib
+%define	_prefix		%{installroot}
 
 BuildRoot:		%{buildroot}
 Summary: 		The mothur metagenomics analysis package
@@ -14,12 +12,14 @@ URL:			http://www.mothur.org/
 Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
-Source: 		%{name}-%{version}.tar.gz
+Source: 		%{name}-v%{version}.tar.gz
 Packager:		Iyad Kandalaft <iyad.kandalaft@agr.gc.ca>
-Prefix: 		/opt/bio
-Group: 			Development/Tools
-BuildRequires:		boost-devel
-BuildRequires:		boost-iostreams
+Prefix: 		%{_prefix}
+Group: 			Bioinformatics/Metagenomics
+
+BuildRequires:		opt-boost-devel
+BuildRequires:		opt-boost-iostreams
+Requires:		opt-boost-iostreams
 AutoReq:		yes
 
 %description
@@ -29,13 +29,19 @@ The goal of mothur is to have a single resource to analyze molecular data that i
 %setup -q 
 
 %build
-make -j$(nproc) BOOST_INCLUDE_DIR=%{boost_inc} BOOST_LIBRARY_DIR=%{boost_lib}
+
+BOOST_INCLUDE=$(dirname $(dirname $(rpm -ql opt-boost-devel | grep 'any.hpp$' | head -n 1)))
+BOOST_LIB=$(dirname $(rpm -ql opt-boost-iostreams | grep 'libboost_iostreams.so' | head -n 1))
+export LD_RUN_PATH=$BOOST_LIB
+make -j$(nproc) BOOST_INCLUDE_DIR=$BOOST_INCLUDE BOOST_LIBRARY_DIR=$BOOST_LIB USEREADLINE=no 
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}
-cp mothur uchime $RPM_BUILD_ROOT%{installroot}
+mkdir -p %{buildroot}%{_bindir}
+mv mothur uchime %{buildroot}%{_bindir}
 
 %files
+%defattr(644,root,root,755)
+%dir %{_prefix}
+%doc LICENSE.md
 %defattr(755,root,root,755)
-%{installroot}/mothur
-%{installroot}/uchime
+%{_bindir}
