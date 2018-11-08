@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=mcl-14-137.spec
+SPEC=mcl.spec
 
 .PHONY: clean
 
@@ -11,8 +11,6 @@ $(FOLDERS):
 RPMS:
 	mkdir $@
 	rpmbuild --define '_topdir $(shell pwd)' -bb --clean SPECS/${SPEC}
-	rpm -qplv ./RPMS/x86_64/*.rpm 
 
 clean:
 	rm -rf RPMS SRPMS BUILD BUILDROOT
-
