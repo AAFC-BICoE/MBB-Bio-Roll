@@ -5,12 +5,14 @@
 %define src_version	5_11_3
 %define installroot	/opt/bio/%{name}
 %define _prefix		%{installroot}
+%define __jar_repack	%{nil}
 
 Summary:	MEGAN5 is a program that allows optimized analysis of large metagenomic datasets.
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Source:		%{src_name}_unix_%{src_version}.sh 
+Source0:	%{src_name}_unix_%{src_version}.sh 
+Source1:	AAFC_license.txt 
 License:	Free academic use but not open source
 Packager:	Xie Qiu <xie.qiu@agr.gc.ca>
 Group:		Bioinformatics/Metagenomics
@@ -28,22 +30,14 @@ Metagenomics is the analysis of the genomic sequences from a usually uncultured 
 Fragments of DNA from an metagenomics sample, such as ocean waters or soil, are compared against databases of known DNA sequences using BLAST or another sequence comparison tool to assemble the segments into discrete comparable sequences. MEGAN is then used to compare the resulting sequences with gene sequences from GenBank in NCBI. The program was used to investigate the DNA of a mammoth recovered from the Siberian permafrost and Sargasso Sea data set.
 
 %prep
-cp ../SOURCES/AAFC_license.txt  ../SOURCES/%{src_name}_unix_%{src_version}.sh .  
-#%setup -n %{name}-%{version}
+cp %{SOURCE0} .  
 
 %build
 
 %install
 printf "o\n1\n%{buildroot}%{_prefix}\n1,2\nn\n5\n128000\nn" | sh %{src_name}_unix_%{src_version}.sh -c 
-#cp -r class  $RPM_BUILD_ROOT%{installroot}/
-#cp -r jars  $RPM_BUILD_ROOT%{installroot}/
-#cp -r tools  $RPM_BUILD_ROOT%{installroot}/
-#cp MEGAN  $RPM_BUILD_ROOT%{installroot}/
-#cp MEGAN.vmoptions  $RPM_BUILD_ROOT%{installroot}/
-#cp manual.pdf  $RPM_BUILD_ROOT%{installroot}/
-#cp AAFC_license.txt $RPM_BUILD_ROOT%{installroot}/
-#cp -r .install4j $RPM_BUILD_ROOT%{installroot}/
-rm -rf %{buildroot}%{_prefix}/.install4j
+cp %{SOURCE1} %{buildroot}%{_prefix}
+rm %{buildroot}%{_prefix}/.install4j/{*.log,response.varfile,install.prop}
 echo -e "
 MEGAN is provided for academic use only.  Please refer to the license for your specific use case.
 
@@ -55,25 +49,17 @@ xvfb-run --auto-servernum --server-num=1 MEGAN -L %{installroot}/AAFC_license.tx
 
 The default maximum memory allowed for MEGAN is set to be 128GB. You can allow for less or more memory to make MEGAN run more optimally by changing the settings in MEGAN.vmoptions to do so." > %{buildroot}%{_prefix}/README
 
-#cd $RPM_BUILD_ROOT%{installroot}/
-#mkdir bin
-#mv MEGAN bin
-#mv .install4j bin
-#mv class bin
-#mv jars bin
-#mv tools bin
-
 %files
 %defattr(644,root,root,755)
 %dir %{_prefix}
-%doc License.txt
-%doc manual.pdf
+%doc %{_prefix}/License.txt
+%doc %{_prefix}/manual.pdf
 %{_prefix}/README
 %{_prefix}/class
 %{_prefix}/jars
 %{_prefix}/tools
 %{_prefix}/MEGAN.vmoptions
-# %defattr(-,root,root,755)
-# %{_prefix}/.install4j
+%{_prefix}/.install4j
+%{_prefix}/AAFC_license.txt
 %defattr(755,root,root,755)
 %{_prefix}/MEGAN
