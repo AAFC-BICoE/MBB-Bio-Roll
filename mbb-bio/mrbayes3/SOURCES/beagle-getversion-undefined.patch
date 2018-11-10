@@ -1,0 +1,12 @@
+diff -ruN mrbayes-3.2.6-orig/src/mbbeagle.c mrbayes-3.2.6/src/mbbeagle.c
+--- mrbayes-3.2.6-orig/src/mbbeagle.c	2018-11-09 13:39:31.586703252 -0500
++++ mrbayes-3.2.6/src/mbbeagle.c	2018-11-09 13:40:23.536594462 -0500
+@@ -432,7 +432,7 @@
+         BeaglePrintFlags(beagleResources->list[i].supportFlags);
+         MrBayesPrint ("\n\n");
+         }
+-    MrBayesPrint ("%s   BEAGLE vesion: %s\n", spacer, beagleGetVersion());
++    MrBayesPrint ("%s   BEAGLE vesion: %s\n", spacer, "1");
+ }
+ 
+ 

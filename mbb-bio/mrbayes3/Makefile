@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=mrbayes-3.spec 
+SPEC=mrbayes3.spec 
 
 .PHONY: clean
 
@@ -11,6 +11,6 @@ $(FOLDERS):
 RPMS:
 	mkdir $@
 	rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC}
-	rpm -qplv ./RPMS/x86_64/*.rpm 
+
 clean:
 	rm -rf RPMS SRPMS BUILD BUILDROOT
