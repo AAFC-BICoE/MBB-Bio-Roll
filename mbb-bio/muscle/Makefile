@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=muscle.3.8.31-1.spec
+SPEC=muscle.spec
 
 .PHONY: clean
 
