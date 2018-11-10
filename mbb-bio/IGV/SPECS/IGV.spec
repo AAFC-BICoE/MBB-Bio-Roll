@@ -12,7 +12,7 @@ License: 		LGPL
 Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
-Source0: 		%{name}-v%{version}.tar.gz
+Source0: 		https://github.com/igvteam/%{src_name}/archive/v%{version}.tar.gz
 Source1: 		javafx.tar.gz
 Prefix: 		%{installroot}
 URL:			http://www.broadinstitute.org/igv/
