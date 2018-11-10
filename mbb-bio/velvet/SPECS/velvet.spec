@@ -10,6 +10,7 @@
 %define		buildroot       %{_topdir}/%{name}-%{version}-root
 %define		installroot /opt/bio/%{name}
 %define		_prefix	%{installroot}
+%define		_libdir %{_prefix}/lib
 
 BuildRoot:	%{buildroot}
 Summary: 	velvet is a genome assembler
@@ -18,23 +19,36 @@ Version: 	%{version}
 Release: 	%{release}
 Packager:	Christopher Lewis (lewisct@agr.gc.ca)
 Source: 	%{src_name}_%{version}.tgz
-Patch0:         %{name}-%{version}-%{release}.afg_handling.patch0
-Patch1:         %{name}-%{version}-%{release}.AssemblyAssembler.patch1
-Patch2:         %{name}-%{version}-%{release}.columbus_scripts.patch2
-Patch3:         %{name}-%{version}-%{release}.estimate-exp_cov.patch3
-Patch4:         %{name}-%{version}-%{release}.extractContigReads.patch4
-Patch5:         %{name}-%{version}-%{release}.fasta2agp.patch5
-Patch6:         %{name}-%{version}-%{release}.MetaVelvet.patch6
-Patch7:         %{name}-%{version}-%{release}.observed-insert-length.patch7
-Patch8:         %{name}-%{version}-%{release}.select_paired.patch8
-Patch9:         %{name}-%{version}-%{release}.show_repeats.patch9
-Patch10:         %{name}-%{version}-%{release}.shuffleSequences_fasta.patch10
-Patch11:         %{name}-%{version}-%{release}.VelvetOptimiser.patch11
+Patch0:        	env-perl.patch 
+Patch1:       	perl-libdir.patch 
 URL:            http://www.ebi.ac.uk/~zerbino/velvet/
 Prefix: 	/opt/bio
 Group: 		Development/Tools
 License:        GPL-3|http://www.ebi.ac.uk/~zerbino/velvet/
 AutoReq:	yes
+
+%global __requires_exclude ^perl
+%global __provides_exclude ^perl
+
+Requires:	opt-perl(Bio::DB::Fasta)
+Requires:	opt-perl(Bio::Perl)
+Requires:	opt-perl(Bio::PrimarySeq)
+Requires:	opt-perl(Bio::SeqIO)
+Requires:	opt-perl(Bio::Tools::GFF)
+Requires:	opt-perl(Carp)
+Requires:	opt-perl(Cwd)
+Requires:	opt-perl(Data::Dumper)
+Requires:	opt-perl(FindBin)
+Requires:	opt-perl(Getopt::Long)
+Requires:	opt-perl(List::Util)
+Requires:	opt-perl(POSIX)
+Requires:	opt-perl(Safe)
+Requires:	opt-perl(Storable)
+Requires:	opt-perl(lib)
+Requires:	opt-perl(strict)
+Requires:	opt-perl(threads)
+Requires:	opt-perl(threads::shared)
+Requires:	opt-perl(warnings)
 
 %description
 Velvet is a de novo multithreaded genomic assembler specially designed for
@@ -48,73 +62,53 @@ repeated areas between contigs.
 
 %prep
 %setup -q -n %{src_name}_%{version}
-%patch -P 0 -p1
-%patch -P 1 -p1
-%patch -P 2 -p1
-%patch -P 3 -p1
-%patch -P 4 -p1
-%patch -P 5 -p1
-%patch -P 6 -p1
-%patch -P 7 -p1
-%patch -P 8 -p1
-%patch -P 9 -p1
-%patch -P 10 -p1
-%patch -P 11 -p1
+%patch0 -p 1
+%patch1 -p 1
 
 %build
-make --jobs=`nproc` 'MAXKMERLENGTH=31' 'CATEGORIES=5'
-cp velvetg Velvetg_31 
-cp velveth Velveth_31 
-make clean
-make --jobs=`nproc` 'MAXKMERLENGTH=63' 'CATEGORIES=5'
-cp velvetg Velvetg_63 
-cp velveth Velveth_63 
-make clean
-make --jobs=`nproc` 'MAXKMERLENGTH=127' 'CATEGORIES=5'
-cp velvetg Velvetg_127
-cp velveth Velveth_127
-make clean
-make --jobs=`nproc` 'MAXKMERLENGTH=145' 'CATEGORIES=5'
-cp velvetg Velvetg_145
-cp velveth Velveth_145
-make clean
-make --jobs=`nproc` 'MAXKMERLENGTH=195' 'CATEGORIES=5'
-cp velvetg Velvetg_195
-cp velveth Velveth_195
-make clean
-make --jobs=`nproc` 'MAXKMERLENGTH=245' 'CATEGORIES=5'
-cp velvetg Velvetg_245
-cp velveth Velveth_245
-make clean
+for i in {31,61,91,121,151,181,211,241,271,301}; do
+	make --jobs=`nproc` MAXKMERLENGTH=$i CATEGORIES=5
+	cp velvetg Velvetg_$i
+	cp velveth Velveth_$i 
+	make clean
+done
 
 rename Velvet velvet Velvet*_*
 
-#cd contrib/MetaVelvet-1.2.01
-#make
-
 %install
-mkdir -p %{buildroot}%{installroot}
-strip velvet*
-cp velveth_* velvetg_* update_velvet.sh %{buildroot}%{installroot}
-cp -r contrib %{buildroot}%{installroot}
-rm %{buildroot}%{installroot}/contrib/shuffleSequences_fasta/kseq.h
-rm %{buildroot}%{installroot}/contrib/shuffleSequences_fasta/shuffleSeqs-fast.c
-rm -r %{buildroot}%{installroot}/contrib/solaris
-rm  %{buildroot}%{installroot}/contrib/MetaVelvet-v0.3.1/Makefile
-rm -r %{buildroot}%{installroot}/contrib/MetaVelvet-v0.3.1/src
-rm %{buildroot}%{installroot}/contrib/MetaVelvet-1.2.01/Makefile
-rm -r %{buildroot}%{installroot}/contrib/MetaVelvet-1.2.01/Apps
-rm -r %{buildroot}%{installroot}/contrib/MetaVelvet-1.2.01/Common
-rm -r %{buildroot}%{installroot}/contrib/MetaVelvet-1.2.01/ISGraph
-rm -r %{buildroot}%{installroot}/contrib/MetaVelvet-1.2.01/Peak
-rm -r %{buildroot}%{installroot}/contrib/MetaVelvet-1.2.01/Utils
-rm -r %{buildroot}%{installroot}/contrib/MetaVelvet-1.2.01/Velvet-1.1.06
-rm -r %{buildroot}%{installroot}/contrib/MetaVelvet-1.2.01/VelvetAPI
-rm -r %{buildroot}%{installroot}/contrib
+mkdir -p %{buildroot}%{_bindir}
+strip velvet{g,h}_*
+mv velveth_* velvetg_* %{buildroot}%{_bindir}
+
+pushd %{buildroot}%{_bindir}
+ln -s velveth_91 velveth
+ln -s velvetg_91 velvetg
+popd
+
+cd contrib
+cp afg_handling/*.pl %{buildroot}%{_bindir}
+cp AssemblyAssembler*/*.py %{buildroot}%{_bindir}
+cp columbus_scripts/*.pl %{buildroot}%{_bindir}
+cp estimate-exp_cov/*.pl %{buildroot}%{_bindir}
+cp extractContigReads/*.pl %{buildroot}%{_bindir}
+cp fasta2agp/*.pl %{buildroot}%{_bindir}
+cp observed-insert-length.pl/*.pl %{buildroot}%{_bindir}
+cp select_paired/*.pl %{buildroot}%{_bindir}
+cp show_repeats/*.pl %{buildroot}%{_bindir}
+cp shuffleSequences_fasta/*.{pl,py,sh} %{buildroot}%{_bindir}
+cp VelvetOptimiser-*/*.pl %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_libdir}/VelvetOpt
+cp -r VelvetOptimiser*/VelvetOpt %{buildroot}%{_libdir}
+
 
 %files
-%defattr(755,root,root,755)
-%{installroot}
 %defattr(644,root,root,755)
+%dir %{_prefix}
+%doc CREDITS.txt
+%doc LICENSE.txt
+%doc Manual.pdf
+%defattr(755,root,root,755)
+%{_libdir}
+%{_bindir}
 
-
+%post

@@ -1,0 +1,240 @@
+diff -ruN velvet_1.2.10-orig/contrib/afg_handling/asmbly_splitter.pl velvet_1.2.10-patched/contrib/afg_handling/asmbly_splitter.pl
+--- velvet_1.2.10-orig/contrib/afg_handling/asmbly_splitter.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/afg_handling/asmbly_splitter.pl	2018-11-10 14:06:37.809185325 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ #
+ #       asmbly_splitter2.pl
+ #
+@@ -35,6 +35,8 @@
+ #
+ # Modified by Daniel Zerbino to allow for scaffolding and to preserve read
+ # information
++
++use warnings;
+ use strict;
+ 
+ my $usage = "Usage: $0 <contig number> <afg file>\n";
+diff -ruN velvet_1.2.10-orig/contrib/afg_handling/snp_view.pl velvet_1.2.10-patched/contrib/afg_handling/snp_view.pl
+--- velvet_1.2.10-orig/contrib/afg_handling/snp_view.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/afg_handling/snp_view.pl	2018-11-10 14:06:37.834908492 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ #
+ #   snp_view.pl
+ #       
+@@ -41,6 +41,7 @@
+ # Modified by Daniel Zerbino (Aug 28 2009) to display reverse strand reads in the 
+ # snp_view_reads file and to better handle the display of snps near the end of contigs
+ 
++use warnings;
+ use strict;
+ use List::Util qw[min max];
+ 
+diff -ruN velvet_1.2.10-orig/contrib/AssemblyAssembler1.3/AssemblyAssembler1.3.py velvet_1.2.10-patched/contrib/AssemblyAssembler1.3/AssemblyAssembler1.3.py
+--- velvet_1.2.10-orig/contrib/AssemblyAssembler1.3/AssemblyAssembler1.3.py	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/AssemblyAssembler1.3/AssemblyAssembler1.3.py	2018-11-10 14:06:37.865397219 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/env python
+ #
+ #       AssemblyAssembler.pl
+ #
+diff -ruN velvet_1.2.10-orig/contrib/columbus_scripts/enlarge_exons.pl velvet_1.2.10-patched/contrib/columbus_scripts/enlarge_exons.pl
+--- velvet_1.2.10-orig/contrib/columbus_scripts/enlarge_exons.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/columbus_scripts/enlarge_exons.pl	2018-11-10 14:06:37.897104855 -0500
+@@ -1,5 +1,6 @@
+-#!/usr/bin/perl -W
++#!/usr/bin/env perl
+ 
++use warnings;
+ use strict;
+ use Bio::Perl;
+ use Bio::Tools::GFF;
+diff -ruN velvet_1.2.10-orig/contrib/columbus_scripts/gff2fasta.pl velvet_1.2.10-patched/contrib/columbus_scripts/gff2fasta.pl
+--- velvet_1.2.10-orig/contrib/columbus_scripts/gff2fasta.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/columbus_scripts/gff2fasta.pl	2018-11-10 14:06:37.922950859 -0500
+@@ -1,5 +1,6 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ 
++use warnings;
+ use strict;
+ use Bio::Perl;
+ use Bio::Tools::GFF;
+diff -ruN velvet_1.2.10-orig/contrib/columbus_scripts/merge_gtf_exons.pl velvet_1.2.10-patched/contrib/columbus_scripts/merge_gtf_exons.pl
+--- velvet_1.2.10-orig/contrib/columbus_scripts/merge_gtf_exons.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/columbus_scripts/merge_gtf_exons.pl	2018-11-10 14:06:37.948346565 -0500
+@@ -1,5 +1,6 @@
+-#!/usr/bin/perl -W
++#!/usr/bin/env perl
+ 
++use warnings;
+ use strict;
+ use Bio::Perl;
+ use Bio::Tools::GFF;
+diff -ruN velvet_1.2.10-orig/contrib/estimate-exp_cov/velvet-estimate-exp_cov.pl velvet_1.2.10-patched/contrib/estimate-exp_cov/velvet-estimate-exp_cov.pl
+--- velvet_1.2.10-orig/contrib/estimate-exp_cov/velvet-estimate-exp_cov.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/estimate-exp_cov/velvet-estimate-exp_cov.pl	2018-11-10 14:06:37.979048349 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ 
+ #    velvet-estimate-exp_cov.pl             
+ #
+@@ -20,6 +20,7 @@
+ #    You should have received a copy of the GNU General Public License
+ #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
++use warnings;
+ use strict;
+ use List::Util qw(max);
+ 
+diff -ruN velvet_1.2.10-orig/contrib/extractContigReads/extractContigReads.pl velvet_1.2.10-patched/contrib/extractContigReads/extractContigReads.pl
+--- velvet_1.2.10-orig/contrib/extractContigReads/extractContigReads.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/extractContigReads/extractContigReads.pl	2018-11-10 14:06:38.009420020 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ ##
+ ##       extractContigReads.pl
+ ##
+@@ -30,6 +30,7 @@
+ ##
+ ######################################################################
+ 
++use warnings;
+ use strict;
+ 
+ my $usage = "$0 <contig number> <directory>";
+diff -ruN velvet_1.2.10-orig/contrib/fasta2agp/fasta2agp.pl velvet_1.2.10-patched/contrib/fasta2agp/fasta2agp.pl
+--- velvet_1.2.10-orig/contrib/fasta2agp/fasta2agp.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/fasta2agp/fasta2agp.pl	2018-11-10 14:06:38.039485454 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ ### david.studholme@tsl.ac.uk
+ 
+diff -ruN velvet_1.2.10-orig/contrib/MetaVelvet-v0.3.1/scriptEstimatedCovMulti.py velvet_1.2.10-patched/contrib/MetaVelvet-v0.3.1/scriptEstimatedCovMulti.py
+--- velvet_1.2.10-orig/contrib/MetaVelvet-v0.3.1/scriptEstimatedCovMulti.py	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/MetaVelvet-v0.3.1/scriptEstimatedCovMulti.py	2018-11-10 14:06:38.070320790 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python2.5
++#!/usr/bin/env python
+ # -*- coding: utf-8 -*-
+ 
+ import sys
+diff -ruN velvet_1.2.10-orig/contrib/MetaVelvet-v0.3.1/shuffleAndConvertSequences_fastq2fasta.py velvet_1.2.10-patched/contrib/MetaVelvet-v0.3.1/shuffleAndConvertSequences_fastq2fasta.py
+--- velvet_1.2.10-orig/contrib/MetaVelvet-v0.3.1/shuffleAndConvertSequences_fastq2fasta.py	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/MetaVelvet-v0.3.1/shuffleAndConvertSequences_fastq2fasta.py	2018-11-10 14:06:38.097118251 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python2.5
++#!/usr/bin/env python
+ # -*- coding: utf-8 -*-
+ 
+ import sys
+diff -ruN velvet_1.2.10-orig/contrib/MetaVelvet-v0.3.1/shuffleSequences_fasta.pl velvet_1.2.10-patched/contrib/MetaVelvet-v0.3.1/shuffleSequences_fasta.pl
+--- velvet_1.2.10-orig/contrib/MetaVelvet-v0.3.1/shuffleSequences_fasta.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/MetaVelvet-v0.3.1/shuffleSequences_fasta.pl	2018-11-10 14:06:38.122894511 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if (!@ARGV) {
+ 	print "Usage: $0 forward_reads.fa reverse_reaads.fa outfile.fa\n";
+diff -ruN velvet_1.2.10-orig/contrib/MetaVelvet-v0.3.1/shuffleSequences_fastq.pl velvet_1.2.10-patched/contrib/MetaVelvet-v0.3.1/shuffleSequences_fastq.pl
+--- velvet_1.2.10-orig/contrib/MetaVelvet-v0.3.1/shuffleSequences_fastq.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/MetaVelvet-v0.3.1/shuffleSequences_fastq.pl	2018-11-10 14:06:38.148441723 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ $filenameA = $ARGV[0];
+ $filenameB = $ARGV[1];
+diff -ruN velvet_1.2.10-orig/contrib/observed-insert-length.pl/observed-insert-length.pl velvet_1.2.10-patched/contrib/observed-insert-length.pl/observed-insert-length.pl
+--- velvet_1.2.10-orig/contrib/observed-insert-length.pl/observed-insert-length.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/observed-insert-length.pl/observed-insert-length.pl	2018-11-10 14:06:38.179330627 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ 
+ #    observed-insert-length.pl             
+ #
+@@ -21,6 +21,8 @@
+ #    You should have received a copy of the GNU General Public License
+ #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ ################################################################################
++
++use warnings;
+ use strict;
+ use List::Util qw(max);
+ 
+diff -ruN velvet_1.2.10-orig/contrib/select_paired/select_paired.pl velvet_1.2.10-patched/contrib/select_paired/select_paired.pl
+--- velvet_1.2.10-orig/contrib/select_paired/select_paired.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/select_paired/select_paired.pl	2018-11-10 14:06:38.209800427 -0500
+@@ -1,7 +1,8 @@
+-#!/usr/local/bin/perl -w
++#!/usr/bin/env perl
+ # Konrad Paszkiewicz, University of Exeter UK.
+ # k.h.paszkiewicz@exeter.ac.uk
+ 
++use warnings;
+ use strict;
+ 
+ my $usage = "This script is designed to be used after filtering paired-end
+diff -ruN velvet_1.2.10-orig/contrib/show_repeats/show_repeats.pl velvet_1.2.10-patched/contrib/show_repeats/show_repeats.pl
+--- velvet_1.2.10-orig/contrib/show_repeats/show_repeats.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/show_repeats/show_repeats.pl	2018-11-10 14:06:38.239956166 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl
+ 
+ #    show_repeats.pl             
+ #
+@@ -20,6 +20,7 @@
+ #    You should have received a copy of the GNU General Public License
+ #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
++use warnings;
+ use strict;
+ use List::Util qw(max);
+ 
+diff -ruN velvet_1.2.10-orig/contrib/shuffleSequences_fasta/shuffleSequences_fasta.pl velvet_1.2.10-patched/contrib/shuffleSequences_fasta/shuffleSequences_fasta.pl
+--- velvet_1.2.10-orig/contrib/shuffleSequences_fasta/shuffleSequences_fasta.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/shuffleSequences_fasta/shuffleSequences_fasta.pl	2018-11-10 14:06:38.270085032 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ if (!@ARGV) {
+ 	print "Usage: $0 forward_reads.fa reverse_reaads.fa outfile.fa\n";
+diff -ruN velvet_1.2.10-orig/contrib/shuffleSequences_fasta/shuffleSequences_fasta.py velvet_1.2.10-patched/contrib/shuffleSequences_fasta/shuffleSequences_fasta.py
+--- velvet_1.2.10-orig/contrib/shuffleSequences_fasta/shuffleSequences_fasta.py	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/shuffleSequences_fasta/shuffleSequences_fasta.py	2018-11-10 14:06:38.299983643 -0500
+@@ -1,3 +1,5 @@
++#!/usr/bin/env python
++
+ import sys
+ from Bio import SeqIO
+ def interleave(iter1, iter2) :
+diff -ruN velvet_1.2.10-orig/contrib/shuffleSequences_fasta/shuffleSequences_fastq.pl velvet_1.2.10-patched/contrib/shuffleSequences_fasta/shuffleSequences_fastq.pl
+--- velvet_1.2.10-orig/contrib/shuffleSequences_fasta/shuffleSequences_fastq.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/shuffleSequences_fasta/shuffleSequences_fastq.pl	2018-11-10 14:06:38.326048121 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ $filenameA = $ARGV[0];
+ $filenameB = $ARGV[1];
+diff -ruN velvet_1.2.10-orig/contrib/VelvetOptimiser-2.2.4/VelvetOptimiser.pl velvet_1.2.10-patched/contrib/VelvetOptimiser-2.2.4/VelvetOptimiser.pl
+--- velvet_1.2.10-orig/contrib/VelvetOptimiser-2.2.4/VelvetOptimiser.pl	2013-10-17 12:03:39.000000000 -0400
++++ velvet_1.2.10-patched/contrib/VelvetOptimiser-2.2.4/VelvetOptimiser.pl	2018-11-10 14:06:38.357374168 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #
+ #       VelvetOptimiser.pl
+ #
