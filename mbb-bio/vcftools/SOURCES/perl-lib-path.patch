@@ -1,0 +1,306 @@
+diff -ruN vcftools-0.1.16-orig/src/perl/fill-aa vcftools-0.1.16/src/perl/fill-aa
+--- vcftools-0.1.16-orig/src/perl/fill-aa	2018-11-06 10:26:18.477237907 -0500
++++ vcftools-0.1.16/src/perl/fill-aa	2018-11-06 10:26:54.887461810 -0500
+@@ -9,9 +9,9 @@
+ use strict;
+ use warnings;
+ use Carp;
+-use Vcf;
+ use FindBin;
+-use lib "$FindBin::Bin";
++use lib "$FindBin::Bin/../lib";
++use Vcf;
+ use FaSlice;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/fill-an-ac vcftools-0.1.16/src/perl/fill-an-ac
+--- vcftools-0.1.16-orig/src/perl/fill-an-ac	2018-11-06 10:26:18.659279237 -0500
++++ vcftools-0.1.16/src/perl/fill-an-ac	2018-11-06 10:27:17.496551215 -0500
+@@ -3,6 +3,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/fill-fs vcftools-0.1.16/src/perl/fill-fs
+--- vcftools-0.1.16-orig/src/perl/fill-fs	2018-11-06 10:26:18.857416046 -0500
++++ vcftools-0.1.16/src/perl/fill-fs	2018-11-06 10:27:24.253928312 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ use FaSlice;
+ 
+diff -ruN vcftools-0.1.16-orig/src/perl/fill-ref-md5 vcftools-0.1.16/src/perl/fill-ref-md5
+--- vcftools-0.1.16-orig/src/perl/fill-ref-md5	2018-11-06 10:26:18.517117435 -0500
++++ vcftools-0.1.16/src/perl/fill-ref-md5	2018-11-06 10:27:34.862031608 -0500
+@@ -3,6 +3,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use IPC::Open2;
+ use Vcf;
+ 
+diff -ruN vcftools-0.1.16-orig/src/perl/tab-to-vcf vcftools-0.1.16/src/perl/tab-to-vcf
+--- vcftools-0.1.16-orig/src/perl/tab-to-vcf	2018-11-06 10:26:18.909760558 -0500
++++ vcftools-0.1.16/src/perl/tab-to-vcf	2018-11-06 10:27:42.672343881 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ use FaSlice;
+ 
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-annotate vcftools-0.1.16/src/perl/vcf-annotate
+--- vcftools-0.1.16-orig/src/perl/vcf-annotate	2018-11-06 10:26:18.817974304 -0500
++++ vcftools-0.1.16/src/perl/vcf-annotate	2018-11-06 10:27:53.411336814 -0500
+@@ -5,6 +5,8 @@
+ 
+ use strict;
+ use warnings;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Carp;
+ use Vcf;
+ 
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-compare vcftools-0.1.16/src/perl/vcf-compare
+--- vcftools-0.1.16-orig/src/perl/vcf-compare	2018-11-06 10:26:18.490728187 -0500
++++ vcftools-0.1.16/src/perl/vcf-compare	2018-11-06 10:28:08.389487729 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ use FaSlice;
+ 
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-concat vcftools-0.1.16/src/perl/vcf-concat
+--- vcftools-0.1.16-orig/src/perl/vcf-concat	2018-11-06 10:26:18.896721429 -0500
++++ vcftools-0.1.16/src/perl/vcf-concat	2018-11-06 10:28:41.329535633 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-consensus vcftools-0.1.16/src/perl/vcf-consensus
+--- vcftools-0.1.16-orig/src/perl/vcf-consensus	2018-11-06 10:26:18.464243342 -0500
++++ vcftools-0.1.16/src/perl/vcf-consensus	2018-11-06 10:28:46.924366339 -0500
+@@ -3,6 +3,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-contrast vcftools-0.1.16/src/perl/vcf-contrast
+--- vcftools-0.1.16-orig/src/perl/vcf-contrast	2018-11-06 10:26:18.450611159 -0500
++++ vcftools-0.1.16/src/perl/vcf-contrast	2018-11-06 10:28:52.909734619 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-convert vcftools-0.1.16/src/perl/vcf-convert
+--- vcftools-0.1.16-orig/src/perl/vcf-convert	2018-11-06 10:26:18.844308504 -0500
++++ vcftools-0.1.16/src/perl/vcf-convert	2018-11-06 10:29:02.480346090 -0500
+@@ -3,9 +3,9 @@
+ use strict;
+ use warnings;
+ use Carp;
+-use Vcf;
+ use FindBin;
+-use lib "$FindBin::Bin";
++use lib "$FindBin::Bin/../lib";
++use Vcf;
+ use FaSlice;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-fix-newlines vcftools-0.1.16/src/perl/vcf-fix-newlines
+--- vcftools-0.1.16-orig/src/perl/vcf-fix-newlines	2018-11-06 10:26:18.629835318 -0500
++++ vcftools-0.1.16/src/perl/vcf-fix-newlines	2018-11-06 10:29:09.729417994 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ 
+ my $opts = parse_params();
+ fix_file($opts);
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-fix-ploidy vcftools-0.1.16/src/perl/vcf-fix-ploidy
+--- vcftools-0.1.16-orig/src/perl/vcf-fix-ploidy	2018-11-06 10:26:18.672742565 -0500
++++ vcftools-0.1.16/src/perl/vcf-fix-ploidy	2018-11-06 10:29:14.089827942 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-haplotypes vcftools-0.1.16/src/perl/vcf-haplotypes
+--- vcftools-0.1.16-orig/src/perl/vcf-haplotypes	2018-11-06 10:26:18.766232343 -0500
++++ vcftools-0.1.16/src/perl/vcf-haplotypes	2018-11-06 10:29:19.348002358 -0500
+@@ -6,6 +6,8 @@
+ use warnings;
+ #no warnings "experimental::smartmatch";
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ 
+ 
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-indel-stats vcftools-0.1.16/src/perl/vcf-indel-stats
+--- vcftools-0.1.16-orig/src/perl/vcf-indel-stats	2018-11-06 10:26:18.544209981 -0500
++++ vcftools-0.1.16/src/perl/vcf-indel-stats	2018-11-06 10:29:22.560341216 -0500
+@@ -3,6 +3,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-isec vcftools-0.1.16/src/perl/vcf-isec
+--- vcftools-0.1.16-orig/src/perl/vcf-isec	2018-11-06 10:26:18.804998211 -0500
++++ vcftools-0.1.16/src/perl/vcf-isec	2018-11-06 10:29:25.963095540 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-merge vcftools-0.1.16/src/perl/vcf-merge
+--- vcftools-0.1.16-orig/src/perl/vcf-merge	2018-11-06 10:26:18.739940256 -0500
++++ vcftools-0.1.16/src/perl/vcf-merge	2018-11-06 10:29:29.703001498 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-phased-join vcftools-0.1.16/src/perl/vcf-phased-join
+--- vcftools-0.1.16-orig/src/perl/vcf-phased-join	2018-11-06 10:26:18.699149523 -0500
++++ vcftools-0.1.16/src/perl/vcf-phased-join	2018-11-06 10:29:33.935412790 -0500
+@@ -3,6 +3,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-query vcftools-0.1.16/src/perl/vcf-query
+--- vcftools-0.1.16-orig/src/perl/vcf-query	2018-11-06 10:26:18.753144624 -0500
++++ vcftools-0.1.16/src/perl/vcf-query	2018-11-06 10:29:38.395365130 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-sort vcftools-0.1.16/src/perl/vcf-sort
+--- vcftools-0.1.16-orig/src/perl/vcf-sort	2018-11-06 10:26:18.726638279 -0500
++++ vcftools-0.1.16/src/perl/vcf-sort	2018-11-06 10:29:52.652237004 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ 
+ my $opts = parse_params();
+ sort_vcf($opts);
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-stats vcftools-0.1.16/src/perl/vcf-stats
+--- vcftools-0.1.16-orig/src/perl/vcf-stats	2018-11-06 10:26:18.686053598 -0500
++++ vcftools-0.1.16/src/perl/vcf-stats	2018-11-06 10:30:48.572990960 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use VcfStats;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-subset vcftools-0.1.16/src/perl/vcf-subset
+--- vcftools-0.1.16-orig/src/perl/vcf-subset	2018-11-06 10:26:18.570292198 -0500
++++ vcftools-0.1.16/src/perl/vcf-subset	2018-11-06 10:30:55.279400873 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-to-tab vcftools-0.1.16/src/perl/vcf-to-tab
+--- vcftools-0.1.16-orig/src/perl/vcf-to-tab	2018-11-06 10:26:18.779286753 -0500
++++ vcftools-0.1.16/src/perl/vcf-to-tab	2018-11-06 10:30:59.653967716 -0500
+@@ -3,6 +3,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ 
+ my $opts = parse_params();
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-tstv vcftools-0.1.16/src/perl/vcf-tstv
+--- vcftools-0.1.16-orig/src/perl/vcf-tstv	2018-11-06 10:26:18.883658538 -0500
++++ vcftools-0.1.16/src/perl/vcf-tstv	2018-11-06 10:31:04.281742582 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ 
+ my $opts = parse_params();
+ calc_tstv();
+diff -ruN vcftools-0.1.16-orig/src/perl/vcf-validator vcftools-0.1.16/src/perl/vcf-validator
+--- vcftools-0.1.16-orig/src/perl/vcf-validator	2018-11-06 10:26:18.557347900 -0500
++++ vcftools-0.1.16/src/perl/vcf-validator	2018-11-06 10:31:09.134042287 -0500
+@@ -6,6 +6,8 @@
+ use strict;
+ use warnings;
+ use Carp;
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Vcf;
+ use IPC::Open3 'open3';
+ use IO::Select;

@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=vcftools-0.1.9-1.spec
+SPEC=vcftools.spec
 
 .PHONY: clean
 
