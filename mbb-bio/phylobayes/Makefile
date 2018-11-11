@@ -10,7 +10,7 @@ $(FOLDERS):
 
 RPMS:
 	mkdir $@
-	#rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC}
+	rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC}
 
 clean:
 	rm -rf RPMS SRPMS BUILD BUILDROOT
