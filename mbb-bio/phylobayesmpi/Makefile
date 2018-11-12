@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=phylobayesmpi-1.4e-1.spec
+SPEC=phylobayesmpi.spec
 
 .PHONY: clean
 
