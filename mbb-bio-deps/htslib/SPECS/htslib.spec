@@ -3,7 +3,7 @@
 %define release		1
 %define version		1.9
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
-%define installroot	/opt/bio/lib/%{name}
+%define installroot	/opt/bio/lib/%{src_name}
 %define _prefix		%{installroot}
 %define _libdir 	%{_prefix}/lib
 
