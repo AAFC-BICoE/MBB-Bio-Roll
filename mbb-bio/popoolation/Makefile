@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=popoolation-1.2.2-1.spec
+SPEC=popoolation.spec
 
 .PHONY: clean
 

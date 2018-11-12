@@ -1,0 +1,317 @@
+diff -ruN popoolation_1.2.2-orig/basic-pipeline/convert-fastq.pl popoolation_1.2.2/basic-pipeline/convert-fastq.pl
+--- popoolation_1.2.2-orig/basic-pipeline/convert-fastq.pl	2018-11-12 14:25:04.413369905 -0500
++++ popoolation_1.2.2/basic-pipeline/convert-fastq.pl	2018-11-12 14:45:04.344213067 -0500
+@@ -3,8 +3,8 @@
+ use warnings;
+ use Pod::Usage;
+ use Getopt::Long;
+-use FindBin qw($RealBin);
+-use lib "$RealBin/../Modules";
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use BasicUtility;
+ 
+ 
+@@ -88,8 +88,8 @@
+     package Utility;
+     use strict;
+     use warnings;
+-    use FindBin qw($RealBin);
+-    use lib "$RealBin/../Modules";
++    use FindBin;
++    use lib "$FindBin::Bin/../lib";
+     use BasicUtility;
+     
+     
+diff -ruN popoolation_1.2.2-orig/basic-pipeline/filter-pileup-by-gtf.pl popoolation_1.2.2/basic-pipeline/filter-pileup-by-gtf.pl
+--- popoolation_1.2.2-orig/basic-pipeline/filter-pileup-by-gtf.pl	2018-11-12 14:25:04.427040811 -0500
++++ popoolation_1.2.2/basic-pipeline/filter-pileup-by-gtf.pl	2018-11-12 14:45:04.371400251 -0500
+@@ -3,8 +3,8 @@
+ use Data::Dumper;
+ use Getopt::Long;
+ use Pod::Usage;
+-use FindBin qw($RealBin);
+-use lib "$RealBin/../Modules";
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Pileup;
+ 
+ our $verbose=1;
+diff -ruN popoolation_1.2.2-orig/basic-pipeline/identify-genomic-indel-regions.pl popoolation_1.2.2/basic-pipeline/identify-genomic-indel-regions.pl
+--- popoolation_1.2.2-orig/basic-pipeline/identify-genomic-indel-regions.pl	2018-11-12 14:25:04.355035151 -0500
++++ popoolation_1.2.2/basic-pipeline/identify-genomic-indel-regions.pl	2018-11-12 14:45:04.398704139 -0500
+@@ -3,8 +3,8 @@
+ use Data::Dumper;
+ use Getopt::Long;
+ use Pod::Usage;
+-use FindBin qw($RealBin);
+-use lib "$RealBin/../Modules";
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ our $verbose=1;
+ 
+ my $input="";
+@@ -200,8 +200,8 @@
+     package IndelTest;
+     use strict;
+     use warnings;
+-    use FindBin qw($RealBin);
+-    use lib "$RealBin/../Modules";
++    use FindBin;
++    use lib "$FindBin::Bin/../lib";
+     use Test;
+     
+     sub runTests
+diff -ruN popoolation_1.2.2-orig/basic-pipeline/mask-sam-indelregions.pl popoolation_1.2.2/basic-pipeline/mask-sam-indelregions.pl
+--- popoolation_1.2.2-orig/basic-pipeline/mask-sam-indelregions.pl	2018-11-12 14:25:04.386337965 -0500
++++ popoolation_1.2.2/basic-pipeline/mask-sam-indelregions.pl	2018-11-12 14:45:04.425193628 -0500
+@@ -5,8 +5,8 @@
+ use Data::Dumper;
+ use Getopt::Long;
+ use Pod::Usage;
+-use FindBin qw($RealBin);
+-use lib "$RealBin/../Modules";
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ 
+ 
+ our $verbose=1;
+@@ -181,8 +181,8 @@
+     package MaskTest;
+     use strict;
+     use warnings;
+-    use FindBin qw($RealBin);
+-    use lib "$RealBin/../Modules";
++    use FindBin;
++    use lib "$FindBin::Bin/../lib";
+     use Test;
+ 
+     sub run_Tests
+diff -ruN popoolation_1.2.2-orig/basic-pipeline/subsample-pileup.pl popoolation_1.2.2/basic-pipeline/subsample-pileup.pl
+--- popoolation_1.2.2-orig/basic-pipeline/subsample-pileup.pl	2018-11-12 14:25:04.400077898 -0500
++++ popoolation_1.2.2/basic-pipeline/subsample-pileup.pl	2018-11-12 14:45:04.451983287 -0500
+@@ -3,8 +3,8 @@
+ use Data::Dumper;
+ use Getopt::Long;
+ use Pod::Usage;
+-use FindBin qw($RealBin);
+-use lib "$RealBin/../Modules";
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Pileup;
+ 
+ our $verbose=1;
+diff -ruN popoolation_1.2.2-orig/basic-pipeline/trim-fastq.pl popoolation_1.2.2/basic-pipeline/trim-fastq.pl
+--- popoolation_1.2.2-orig/basic-pipeline/trim-fastq.pl	2018-11-12 14:25:04.372757126 -0500
++++ popoolation_1.2.2/basic-pipeline/trim-fastq.pl	2018-11-12 14:45:04.484898509 -0500
+@@ -3,8 +3,8 @@
+ use warnings;
+ use Pod::Usage;
+ use Getopt::Long;
+-use FindBin qw($RealBin);
+-use lib "$RealBin/../Modules";
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Pileup;
+ 
+ 
+@@ -640,8 +640,8 @@
+     package TestTrim;
+     use strict;
+     use warnings;
+-    use FindBin qw($RealBin);
+-    use lib "$RealBin/../Modules";
++    use FindBin;
++    use lib "$FindBin::Bin/../lib";
+     use Pileup;
+     use Test;
+ 
+diff -ruN popoolation_1.2.2-orig/mauve-parser.pl popoolation_1.2.2/mauve-parser.pl
+--- popoolation_1.2.2-orig/mauve-parser.pl	2018-11-12 14:25:04.722346759 -0500
++++ popoolation_1.2.2/mauve-parser.pl	2018-11-12 14:34:41.481760140 -0500
+@@ -2,8 +2,8 @@
+ use warnings;
+ use Pod::Usage;
+ use Getopt::Long;
+-use FindBin qw($RealBin);
+-use lib "$RealBin/Modules";
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use BasicUtility;
+ 
+ my $output="";
+diff -ruN popoolation_1.2.2-orig/syn-nonsyn/create-syn-nonsynmatrix.pl popoolation_1.2.2/syn-nonsyn/create-syn-nonsynmatrix.pl
+--- popoolation_1.2.2-orig/syn-nonsyn/create-syn-nonsynmatrix.pl	2018-11-12 14:25:04.234795297 -0500
++++ popoolation_1.2.2/syn-nonsyn/create-syn-nonsynmatrix.pl	2018-11-12 14:45:56.296212135 -0500
+@@ -3,8 +3,8 @@
+ use warnings;
+ use Getopt::Long;
+ use Pod::Usage;
+-use FindBin qw($RealBin);
+-use lib "$RealBin/../Modules";
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use SynNonSyn;
+ 
+ 
+diff -ruN popoolation_1.2.2-orig/syn-nonsyn/Syn-nonsyn-at-position.pl popoolation_1.2.2/syn-nonsyn/Syn-nonsyn-at-position.pl
+--- popoolation_1.2.2-orig/syn-nonsyn/Syn-nonsyn-at-position.pl	2018-11-12 14:25:04.274132821 -0500
++++ popoolation_1.2.2/syn-nonsyn/Syn-nonsyn-at-position.pl	2018-11-12 14:45:56.326130088 -0500
+@@ -5,8 +5,8 @@
+     use Data::Dumper;
+     use Getopt::Long;
+     use Pod::Usage;
+-    use FindBin qw($RealBin);
+-    use lib "$RealBin/../Modules";
++    use FindBin;
++    use lib "$FindBin::Bin/../lib";
+     use VarianceExactCorrection;
+     use VarianceUncorrected;
+     use Pileup;
+@@ -214,8 +214,8 @@
+     package Utility;
+     use strict;
+     use warnings;
+-    use FindBin qw($RealBin);
+-    use lib "$RealBin/../Modules";
++    use FindBin;
++    use lib "$FindBin::Bin/../lib";
+     use VarianceExactCorrection;
+     use VarianceUncorrected;
+     use Test;
+@@ -322,8 +322,8 @@
+     package SynGeneTest;
+     use strict;
+     use warnings;
+-    use FindBin qw($RealBin);
+-    use lib "$RealBin/../Modules";
++    use FindBin;
++    use lib "$FindBin::Bin/../lib";
+     use Test;
+     use Test::TSynNonSyn;
+     use Test::PileupParser;
+diff -ruN popoolation_1.2.2-orig/syn-nonsyn/Syn-nonsyn-sliding.pl popoolation_1.2.2/syn-nonsyn/Syn-nonsyn-sliding.pl
+--- popoolation_1.2.2-orig/syn-nonsyn/Syn-nonsyn-sliding.pl	2018-11-12 14:25:04.287943251 -0500
++++ popoolation_1.2.2/syn-nonsyn/Syn-nonsyn-sliding.pl	2018-11-12 14:45:56.355585559 -0500
+@@ -5,8 +5,8 @@
+     use Data::Dumper;
+     use Getopt::Long;
+     use Pod::Usage;
+-    use FindBin qw($RealBin);
+-    use lib "$RealBin/../Modules";
++    use FindBin;
++    use lib "$FindBin::Bin/../lib";
+     use VarianceExactCorrection;
+     use Pileup;
+     use PileupTripletSlider;
+@@ -187,8 +187,8 @@
+     package Utility;
+     use strict;
+     use warnings;
+-    use FindBin qw($RealBin);
+-    use lib "$RealBin/../Modules";
++    use FindBin;
++    use lib "$FindBin::Bin/../lib";
+     use VarianceExactCorrection;
+     use VarianceUncorrected;
+     use Test;
+@@ -290,8 +290,8 @@
+     package SynTest;
+     use strict;
+     use warnings;
+-    use FindBin qw($RealBin);
+-    use lib "$RealBin/../Modules";
++    use FindBin;
++    use lib "$FindBin::Bin/../lib";
+     use Test;
+     use Test::TSynNonSyn;
+     use Test::PileupParser;
+diff -ruN popoolation_1.2.2-orig/Variance-at-position.pl popoolation_1.2.2/Variance-at-position.pl
+--- popoolation_1.2.2-orig/Variance-at-position.pl	2018-11-12 14:25:04.158884422 -0500
++++ popoolation_1.2.2/Variance-at-position.pl	2018-11-12 14:39:53.323854548 -0500
+@@ -3,8 +3,8 @@
+ use Data::Dumper;
+ use Getopt::Long;
+ use Pod::Usage;
+-use FindBin qw($RealBin);
+-use lib "$RealBin/Modules";
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use FormatSNP;
+ use VarianceExactCorrection;
+ use VarianceUncorrected;
+@@ -374,8 +374,8 @@
+     package VarTest;
+     use strict;
+     use warnings;
+-    use FindBin qw($RealBin);
+-    use lib "$RealBin/Modules";
++    use FindBin;
++    use lib "$FindBin::Bin/../lib";
+     use Test::Variance;
+     use Test::TClassicalVariance;
+     use Test::PileupParser;
+diff -ruN popoolation_1.2.2-orig/Variance-sliding.pl popoolation_1.2.2/Variance-sliding.pl
+--- popoolation_1.2.2-orig/Variance-sliding.pl	2018-11-12 14:25:04.319364008 -0500
++++ popoolation_1.2.2/Variance-sliding.pl	2018-11-12 14:40:42.673430476 -0500
+@@ -3,8 +3,8 @@
+ use Data::Dumper;
+ use Getopt::Long;
+ use Pod::Usage;
+-use FindBin qw($RealBin);
+-use lib "$RealBin/Modules";
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use VarianceExactCorrection;
+ use VarianceUncorrected;
+ use FormatSNP;
+@@ -224,8 +224,8 @@
+     use warnings;
+     use strict;
+     package PileupSlider;
+-    use FindBin qw($RealBin);
+-    use lib "$RealBin/Modules";
++    use FindBin;
++    use lib "$FindBin::Bin/../lib";
+     use Pileup;
+     sub new
+     {
+@@ -378,8 +378,8 @@
+     package VarTest;
+     use strict;
+     use warnings;
+-    use FindBin qw($RealBin);
+-    use lib "$RealBin/Modules";
++    use FindBin;
++    use lib "$FindBin::Bin/../lib";
+     use VarianceExactCorrection;
+     use Test::Variance;
+     use Test::TClassicalVariance;
+diff -ruN popoolation_1.2.2-orig/VarSliding2Flybase.pl popoolation_1.2.2/VarSliding2Flybase.pl
+--- popoolation_1.2.2-orig/VarSliding2Flybase.pl	2018-11-12 14:25:04.174970336 -0500
++++ popoolation_1.2.2/VarSliding2Flybase.pl	2018-11-12 14:36:26.002131456 -0500
+@@ -3,8 +3,8 @@
+ use warnings;
+ use File::Spec;
+ use File::Path;
+-use FindBin qw($RealBin);
+-use lib "$RealBin/Modules";
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Getopt::Long;
+ use Pod::Usage;
+ 
+diff -ruN popoolation_1.2.2-orig/VarSliding2Wiggle.pl popoolation_1.2.2/VarSliding2Wiggle.pl
+--- popoolation_1.2.2-orig/VarSliding2Wiggle.pl	2018-11-12 14:25:04.190149637 -0500
++++ popoolation_1.2.2/VarSliding2Wiggle.pl	2018-11-12 14:36:56.847946316 -0500
+@@ -3,8 +3,8 @@
+ use warnings;
+ use File::Spec;
+ use File::Path;
+-use FindBin qw($RealBin);
+-use lib "$RealBin/Modules";
++use FindBin;
++use lib "$FindBin::Bin/../lib";
+ use Getopt::Long;
+ use Pod::Usage;
+ 
