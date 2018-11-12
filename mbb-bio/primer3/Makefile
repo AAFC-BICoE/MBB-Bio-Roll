@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=primer3-2.3.4.spec
+SPEC=primer3.spec
 
 .PHONY: clean
 
