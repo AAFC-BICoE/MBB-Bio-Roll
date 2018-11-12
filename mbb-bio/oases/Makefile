@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=oases.0.2.08-1.spec
+SPEC=oases.spec
 
 .PHONY: clean
 
