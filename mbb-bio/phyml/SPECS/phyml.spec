@@ -1,22 +1,20 @@
-# This is a sample spec file for wget
-
-### define _topdir	 	/home/rpmbuild/rpms/phyml
 %define name		phyml
 %define release		1
-%define version 	20120412
-%define buildroot	 %{_topdir}/%{name}-%{version}-root
+%define version 	3.3.20180621
+%define buildroot	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/%{name}
+%define _prefix		%{installroot}
 
 BuildRoot:		%{buildroot}
 Summary: 		Phylogenetic estimation using Maximum Likelihood
-License: 		GNU GPL
+License: 		GPL
 URL:			http://code.google.com/p/phyml/
 Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
-Source: 		%{name}-%{version}.tar.gz
-Prefix: 		/opt/bio
-Group: 			Development/Tools
+Source: 		%{name}-v%{version}.tar.gz
+Prefix: 		%{_prefix}
+Group: 			Bioinformatics/Phylogenetics	
 AutoReq:		yes
 
 %description
@@ -24,21 +22,29 @@ PhyML is a software that estimates maximum likelihood phylogenies from alignment
 
 %prep
 %setup -q 
-mkdir mpi 
-cp -r AUTHORS COPYING ChangeLog INSTALL Makefile.am Makefile.in NEWS README aclocal.m4 bin config.guess config.h.in config.sub configure configure.ac depcomp doc examples install-sh ltmain.sh missing src mpi 
+%setup -q -D -T -a 0
+mv %{name}-%{version} phyml-mpi
 
 %build
-./configure --prefix /opt/bio/phyml 
-make
-cd mpi 
-./configure --prefix /opt/bio/phyml --enable-mpi 
-make
+./autogen.sh
+# BEAGLE build seems to have compile errors
+#BEAGLE_PC=$(dirname $(rpm -ql opt-beagle-lib | grep 'hmsbeagle-1.pc$' | head -n 1))
+#PKG_CONFIG_PATH=$BEAGLE_PC:$PKG_CONFIG_PATH ./configure --prefix %{_prefix}
+
+./configure --enable-phyml --prefix=%{_prefix}
+make -j`nproc`
+pushd phyml-mpi
+./configure --enable-mpi --enable-phyml --prefix=%{_prefix}
+make -j
 
 %install
-make install prefix=$RPM_BUILD_ROOT%{installroot} 
-cd mpi 
-make install prefix=$RPM_BUILD_ROOT%{installroot} 
+make install DESTDIR=%{buildroot}
+pushd phyml-mpi
+make install DESTDIR=%{buildroot}
 
 %files
-%defattr(755,root,root)
-%{installroot}
+%defattr(644,root,root,755)
+%dir %{_prefix}
+%doc doc/phyml-manual.pdf
+%defattr(755,root,root,755)
+%{_bindir}

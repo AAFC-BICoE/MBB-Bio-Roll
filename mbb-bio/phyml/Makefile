@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=phyml-20120412-1.spec
+SPEC=phyml.spec
 
 .PHONY: clean
 
