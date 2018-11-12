@@ -1,23 +1,26 @@
-# This is a  spec file for pindel
-
-### define _topdir	 	/home/rpmbuild/rpms/pindel
 %define name		pindel
 %define release		1
-%define version 	024t
+%define version 	0.2.5b8
 %define installroot 	/opt/bio/%{name}
+%define _prefix		%{installroot}
 
 BuildRoot:	%{buildroot}
 Summary: 	pindel is a pattern growth approach to detect indels and structural variations.
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source: 	%{name}%{version}.tar.gz
-Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
+Source: 	https://github.com/genome/pindel/archive/v%{version}.tar.gz
+Packager:	Iyad Kandalaft <iyad.kandalaft@canada.ca>
 URL:            https://trac.nbic.nl/pindel/
-Prefix: 	/opt/bio
-Group: 		Development/Tools
+Prefix: 	%{_prefix}
+Group: 		Bioinformatics/Indels	
 License:        GNU GPL
 AutoReq:	yes
+
+BuildRequires:	opt-htslib
+Requires:	opt-htslib
+
+%global __requires_exclude ^libhts.so.2
 
 %description
 Pindel is a pattern growth approach to detect indels and structural variations.
@@ -27,15 +30,21 @@ resolution from next-gen sequence data. It uses a pattern growth approach to
 identify the breakpoints of these variants from paired-end short reads. 
 
 %prep
-%setup -q -n pindel024t
+%setup -q -n %{name}-%{version}
 
 %build
+HTSLIB_LIBDIR=$(dirname $(rpm -ql opt-htslib | grep libhts.so | head -n1 ))
+HTSLIB_PREFIX=$(rpm -q --queryformat '%{instprefixes}' opt-htslib)
+LDFLAGS=-L$HTSLIB_LIBDIR ./INSTALL $HTSLIB_PREFIX
 
 %install
-mkdir -p %{buildroot}%{installroot}
-./INSTALL $PWD/samtools
-cp pindel pindel2vcf sam2pindel %{buildroot}%{installroot}
+mkdir -p %{buildroot}%{_bindir}
+cp pindel pindel2vcf sam2pindel %{buildroot}%{_bindir}
 
 %files
-%defattr(755,root,root)
-%{installroot}
+%defattr(644,root,root,755)
+%dir %{_prefix}
+%doc COPYING.txt
+%doc README.md
+%defattr(755,root,root,755)
+%{_bindir}

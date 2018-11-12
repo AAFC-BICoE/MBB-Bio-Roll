@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=pindel-0.2.4-1.spec
+SPEC=pindel.spec
 
 .PHONY: clean
 
@@ -10,6 +10,7 @@ $(FOLDERS):
 
 RPMS:
 	mkdir $@
+	spectool -C SOURCES -g SPECS/${SPEC}
 	rpmbuild --define '_topdir $(shell pwd)'  -bb --clean SPECS/${SPEC}
 
 clean:
