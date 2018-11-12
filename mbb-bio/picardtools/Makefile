@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=picard-tools-1.77-1.spec
+SPEC=picard-tools.spec
 
 .PHONY: clean
 
