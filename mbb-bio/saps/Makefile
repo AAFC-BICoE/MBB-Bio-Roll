@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=saps-1996-2.spec
+SPEC=saps.spec
 
 .PHONY: clean
 

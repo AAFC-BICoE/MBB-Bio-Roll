@@ -1,15 +1,16 @@
-# This is a  spec file for saps
+%define __brp_python_hardlink %{nil}
 
 ##define _topdir	 	/home/rpmbuild/rpms/saps
 %define name		saps
 %define src_name	saps.sspa
 %define release		2	
 %define version 	1996
-%define buildroots	%{_topdir}/%{name}-%{version}-root
+%define buildroot	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/%{name}
 %define _prefix		%{installroot}
 
 BuildRoot:	%{buildroot}
+Prefix:		%{_prefix}
 Summary: 	SAPS is a Statistical Analysis of Protein Sequences.
 Name: 		%{name}
 Version: 	%{version}
@@ -18,7 +19,7 @@ Source: 	%{src_name}.tar.gz
 Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
 Prefix: 	%{_prefix}
 Group: 		Development/Tools
-License:        GNU GPL
+License:	GNU GPL
 URL:		http://brendelgroup.org/bioinformatics2go/
 AutoReq:	yes
 
@@ -44,26 +45,22 @@ cd src
 make -j`nproc`
 
 %install
-mkdir -p %{buildroot}%{installroot}
+mkdir -p %{buildroot}%{_docdir}/man/man1
+mv saps.1 sspa.1 %{buildroot}%{_docdir}/man/man1
+mv README sspa.doc saps.doc %{buildroot}%{_docdir}
+
 cp -r * %{buildroot}%{installroot}
 rm -r %{buildroot}%{installroot}/src
+rm -r %{buildroot}%{installroot}/include
 
 %files
 %defattr(755,root,root,755)
-%dir %{installroot}
-%{installroot}/bin
+%dir %{_prefix}
+%{_bindir}
 %defattr(644,root,root,755)
-%{installroot}/include
-%doc %{installroot}/README
-%doc %{installroot}/sspa.doc
-%doc %{installroot}/saps.doc
-%doc %{installroot}/saps.1
-%doc %{installroot}/sspa.1
-%{installroot}/testdnapro
-%{installroot}/testout_dflag
-%{installroot}/testpro
-%{installroot}/RECA_ECOLI
-%{installroot}/RECA_BACSU
-%{installroot}/sspaout
-%{installroot}/testout
-%{installroot}/testout_dna
+%docdir %{_docdir}/man/man1
+%{_docdir}/man/man1
+%doc %{_docdir}/README
+%doc %{_docdir}/sspa.doc
+%doc %{_docdir}/saps.doc
+
