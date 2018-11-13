@@ -5,6 +5,7 @@
 %define buildroot	%{_topdir}/%{name}-%{version}-root
 %define installroot	/opt/bio/%{name}
 %define _prefix		%{installroot}
+%define _libdir		%{_prefix}/lib
 
 BuildRoot:		%{buildroot}
 Summary:		SAM (Sequence Alignment/Map) format for storing large nucleotide sequence alignments
@@ -64,9 +65,9 @@ make install DESTDIR=%{buildroot} prefix=%{installroot}
 %dir %{installroot}
 %doc AUTHORS
 %doc NEWS 
-%{installroot}/include
-%{installroot}/lib
-%{installroot}/share
+%{_includedir}
+%{_datadir}
 %defattr(755,root,root,755)
-%{installroot}/bin
+%{_libdir}
+%{_bindir}
 
