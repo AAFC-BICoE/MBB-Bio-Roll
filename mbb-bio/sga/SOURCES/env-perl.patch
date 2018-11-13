@@ -1,0 +1,90 @@
+diff -ruN sga-master-orig/src/bin/sga-asqg2dot.pl sga-master/src/bin/sga-asqg2dot.pl
+--- sga-master-orig/src/bin/sga-asqg2dot.pl	2015-01-29 16:02:41.000000000 -0500
++++ sga-master/src/bin/sga-asqg2dot.pl	2018-11-07 16:46:01.921473645 -0500
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use Getopt::Long;
+diff -ruN sga-master-orig/src/bin/sga-bam2de.pl sga-master/src/bin/sga-bam2de.pl
+--- sga-master-orig/src/bin/sga-bam2de.pl	2015-01-29 16:02:41.000000000 -0500
++++ sga-master/src/bin/sga-bam2de.pl	2018-11-07 16:46:02.160425452 -0500
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use Getopt::Long;
+diff -ruN sga-master-orig/src/bin/sga-beetl-index.pl sga-master/src/bin/sga-beetl-index.pl
+--- sga-master-orig/src/bin/sga-beetl-index.pl	2015-01-29 16:02:41.000000000 -0500
++++ sga-master/src/bin/sga-beetl-index.pl	2018-11-07 16:46:02.070761814 -0500
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/usr/bin/env perl
+ # Run Illumina's BEETL BWT builder on a set of sequence reads
+ # and convert the output to sga's index format.
+ use strict;
+diff -ruN sga-master-orig/src/bin/sga-call-variants.pl sga-master/src/bin/sga-call-variants.pl
+--- sga-master-orig/src/bin/sga-call-variants.pl	2015-01-29 16:02:41.000000000 -0500
++++ sga-master/src/bin/sga-call-variants.pl	2018-11-07 16:46:02.010809911 -0500
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use Getopt::Long;
+diff -ruN sga-master-orig/src/bin/sga-deinterleave.pl sga-master/src/bin/sga-deinterleave.pl
+--- sga-master-orig/src/bin/sga-deinterleave.pl	2015-01-29 16:02:41.000000000 -0500
++++ sga-master/src/bin/sga-deinterleave.pl	2018-11-07 16:46:01.980758688 -0500
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/usr/bin/env perl
+ #
+ # sga-deinterleave.pl READS OUT1 OUT2
+ #
+diff -ruN sga-master-orig/src/bin/sga-diffCalls.pl sga-master/src/bin/sga-diffCalls.pl
+--- sga-master-orig/src/bin/sga-diffCalls.pl	2015-01-29 16:02:41.000000000 -0500
++++ sga-master/src/bin/sga-diffCalls.pl	2018-11-07 16:46:02.129789799 -0500
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ use Getopt::Long;
+diff -ruN sga-master-orig/src/bin/sga-mergeDriver.pl sga-master/src/bin/sga-mergeDriver.pl
+--- sga-master-orig/src/bin/sga-mergeDriver.pl	2015-01-29 16:02:41.000000000 -0500
++++ sga-master/src/bin/sga-mergeDriver.pl	2018-11-07 16:46:02.040063541 -0500
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/usr/bin/env perl
+ 
+ # Merge driver - make commands for merging BWTs together
+ 
+diff -ruN sga-master-orig/src/bin/sga-popcat.pl sga-master/src/bin/sga-popcat.pl
+--- sga-master-orig/src/bin/sga-popcat.pl	2015-01-29 16:02:41.000000000 -0500
++++ sga-master/src/bin/sga-popcat.pl	2018-11-07 16:46:01.891448080 -0500
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/usr/bin/env perl
+ # Cat a set of fasta/fastq files together and build an index of read index -> original file
+ 
+ use strict;
+diff -ruN sga-master-orig/src/bin/sga-rename.pl sga-master/src/bin/sga-rename.pl
+--- sga-master-orig/src/bin/sga-rename.pl	2015-01-29 16:02:41.000000000 -0500
++++ sga-master/src/bin/sga-rename.pl	2018-11-07 16:46:01.950927770 -0500
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/usr/bin/env perl
+ #
+ # Rename the sga index files for the given set of reads
+ #
+diff -ruN sga-master-orig/src/bin/sga-vcf-dedup.pl sga-master/src/bin/sga-vcf-dedup.pl
+--- sga-master-orig/src/bin/sga-vcf-dedup.pl	2015-01-29 16:02:41.000000000 -0500
++++ sga-master/src/bin/sga-vcf-dedup.pl	2018-11-07 16:46:02.100073685 -0500
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl
++#!/usr/bin/env perl
+ use strict;
+ # Remove duplicated entries from a VCF file
+ 

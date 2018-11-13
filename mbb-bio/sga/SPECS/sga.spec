@@ -1,34 +1,33 @@
 ### %define _topdir           /home/rpmbuild/work/MBB-Bio-Roll/mbb-bio/sga
-%define name              sga
-%define release		13         
-%define version         0.10  
-%define installroot       /opt/bio/%{name}
+%define name		sga
+%define release		15         
+%define version		0.10  
+%define src_name	%{name}-%{version}.%{release}.tar.gz
+%define installroot	/opt/bio/%{name}
+%define _prefix		%{installroot}
+%define buildroot	%{_topdir}/%{name}-%{version}-root
 
-Summary:   SGA is a genome assembler
-Name:      %{name}
-Version:   %{version}
-Release:   %{release}
-Source:    master.zip
-License:   GPLv3
-Packager:  Xie Qiu <xie.qiu@agr.gc.ca>
-Group:     Development/Tools
-#BuildRoot: %{buildroot}
-Prefix:    /opt/bio
-Vendor:    Jared Simpson (js18@sanger.ac.uk)
-Url:       https://github.com/jts/sga/
-AutoReq:   no
-Requires:  sparsehash, bamtools, zlib, opt-perl-BioPerl
-Patch0:    Makefile.am.patch
-Patch1:    sga-asqg2dot.pl.patch
-Patch2:    sga-bam2de.pl.patch
-Patch3:    sga-beetl-index.pl.patch
-Patch4:    sga-deinterleave.pl.patch
-Patch5:    sga-diffCalls.pl.patch
-Patch6:    sga-mergeDriver.pl.patch
-Patch7:    sga-popcat.pl.patch
-Patch8:    sga-rename.pl.patch
-Patch9:	   sga-call-variants.pl.patch
-Patch10:   sga-vcf-dedup.pl.patch
+Summary:		SGA is a genome assembler
+Name:			%{name}
+Version:		%{version}
+Release:		%{release}
+Source:			%{src_name}
+License:		GPLv3
+Packager:		Wilson Hodgson <wilson.hodgson@canada.ca>
+Group:			Development/Tools
+BuildRoot:		%{buildroot}
+Prefix:			%{_prefix}
+Vendor:			Jared Simpson (js18@sanger.ac.uk)
+Url:			https://github.com/jts/sga/
+AutoReq:		no
+
+BuildRequires:		opt-sparsehash
+BuildRequires:		bamtools
+BuildRequires:		jemalloc
+BuildRequires:		zlib
+BuildRequires:		opt-perl-BioPerl
+Patch0:			Makefile.am.patch
+Patch1:			env-perl.patch
 
 %description
 SGA - String Graph Assembler is a de novo genome assembler based on the concept
@@ -37,35 +36,33 @@ is achieved by using a compressed representation of DNA sequence reads.
 
 
 %prep
-%setup -q -n sga-master/src
+%setup -q -n %{name}-%{version}.%{release}/src
 %patch -P 0
-%patch -P 1
-%patch -P 2
-%patch -P 3
-%patch -P 4
-%patch -P 5
-%patch -P 6
-%patch -P 7
-%patch -P 8
-%patch -P 9
-%patch -P 10
+%patch -P 1 -p2
 
 %build
+JEMAL_CONFIG=$(rpm -ql jemalloc | grep 'jemalloc/lib$' | head -n1)
+SPHASH_CONFIG=$(rpm -ql opt-sparsehash | grep 'sparsehash$' | head -n1)
+BAM_CONFIG=$(rpm -ql bamtools | grep 'bamtools$' | head -n1)
+
 ./autogen.sh
-./configure --with-sparsehash=/opt/bio/sparsehash --with-bamtools=/opt/bio/bamtools --with-jemalloc=/opt/bio/lib/jemalloc/lib/ --prefix=%{installroot}
-make -j
+./configure --with-sparsehash=$SPHASH_CONFIG --with-bamtools=$BAM_CONFIG --with-jemalloc=$JEMAL_CONFIG --prefix=%{_prefix}
+make -j`nproc`
 
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}
-make install prefix=$RPM_BUILD_ROOT%{installroot} 
+mkdir -p %{buildroot}%{installroot}
+make install DESTDIR=%{buildroot}
 
-# %%clean
-#echo NOOP
+mkdir -p %{buildroot}%{_docdir}
+cd ..
+mv README.md index.html %{buildroot}%{_docdir}
 
 %files
 %defattr(644,root,root,755)
-%{installroot}
+%dir %{_prefix}
+%docdir %{_docdir}
+%{_docdir}
 %defattr(755,root,root,755)
-%{installroot}/bin
+%{_bindir}
 
