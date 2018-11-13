@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=RAxML-7.3.1-1.spec
+SPEC=RAxML.spec
 
 .PHONY: clean
 
