@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=seqtk-4612adf23b-1.spec
+SPEC=seqtk.spec
 
 .PHONY: clean
 
