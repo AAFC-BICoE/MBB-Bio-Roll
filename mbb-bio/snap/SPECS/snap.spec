@@ -1,24 +1,32 @@
-# This is a  spec file for mauve
-
 ### define _topdir	 	/home/rpmbuild/rpms/snap
 
-%define name		snap
-%define release		1
-%define version 	2013.02.16
+%define name 		snap
+%define release 	1
+%define version 	2013.11.29
 %define installroot 	/opt/bio/%{name}
+%define _prefix 	%{installroot}
 
-BuildRoot:	%{buildroot}
+BuildRoot: 	%{buildroot}
 Summary: 	(Semi-HMM-based Nucleic Acid Parser) gene prediction tool
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	%{name}-%{version}.tar.gz
-Packager:	Newton,Glen <glen.newton@agr.gc.ca>
-URL:            http://korflab.ucdavis.edu/Software/snap-2013-02-16.tar.gz
-Prefix: 	/opt/bio
+Patch0:		env-perl.patch
+Packager: 	Newton,Glen <glen.newton@agr.gc.ca>
+URL: 		http://korflab.ucdavis.edu/Software/snap-2013-02-16.tar.gz
+Prefix: 	%{_prefix}
 Group: 		Development/Tools
-License:        GPL|http://korflab.ucdavis.edu/Software/snap-2013-02-16.tar.gz|Specified in the contents of the package
-AutoReq:	yes
+License: 	GPL|http://korflab.ucdavis.edu/Software/snap-2013-02-16.tar.gz|Specified in the contents of the package
+AutoReq: 	yes
+
+Requires:	opt-perl(Getopt::Std)
+Requires:	opt-perl(sigtrap)
+Requires:	opt-perl(strict)
+Requires:	opt-perl(vars)
+Requires:	opt-perl(warnings)
+
+%global __requires_exclude ^perl 
 
 %description
 SNAP is a general purpose gene finding program suitable for both eukaryotic
@@ -32,11 +40,13 @@ Needs Zoe in PATH
 
 %prep 
 
-%setup -c -q -n snap-2013.02.16
+%setup -c -q -n %{name}-%{version}/%{name}
+
+%patch -P 0 
 
 %build
-cd snap
-make
+cd %{name}
+make -j`nproc`
 
 %install
 mkdir -p %{buildroot}%{installroot}
@@ -48,9 +58,18 @@ cp snap/Zoe/blosum62 %{buildroot}%{installroot}/Zoe/
 
 %files
 %defattr(644,root,root,755)
+%dir %{installroot}
 %{installroot}
 %defattr(755,root,root,755)
-
+%{installroot}/exonpairs
+%{installroot}/fathom
+%{installroot}/forge
+%{installroot}/hmm-assembler.pl
+%{installroot}/patch-hmm.pl
+%{installroot}/snap
+%{installroot}/hmm-info
+%{installroot}/zff2gff3.pl
+%{installroot}/Zoe/zoe-loop
 
 %changelog
 * Tue Apr  2 2013 glen newton <newtong@onottr624241.agr.gc.ca> - 16-1

@@ -1,0 +1,45 @@
+diff -ruN snap-orig/cds-trainer.pl snap/cds-trainer.pl
+--- snap-orig/cds-trainer.pl	2013-02-16 11:20:50.000000000 -0500
++++ snap/cds-trainer.pl	2018-11-13 14:42:39.783174700 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ use strict; use warnings;
+ use IK;
+ use FAlite;
+diff -ruN snap-orig/hmm-assembler.pl snap/hmm-assembler.pl
+--- snap-orig/hmm-assembler.pl	2013-02-16 11:20:50.000000000 -0500
++++ snap/hmm-assembler.pl	2018-11-13 14:42:39.936244997 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ $| =1;
+ use strict;
+ use warnings;
+diff -ruN snap-orig/noncoding-trainer.pl snap/noncoding-trainer.pl
+--- snap-orig/noncoding-trainer.pl	2013-02-16 11:20:50.000000000 -0500
++++ snap/noncoding-trainer.pl	2018-11-13 14:42:39.846065301 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ use strict; use warnings;
+ use IK;
+ use FAlite;
+diff -ruN snap-orig/patch-hmm.pl snap/patch-hmm.pl
+--- snap-orig/patch-hmm.pl	2013-02-16 11:20:50.000000000 -0500
++++ snap/patch-hmm.pl	2018-11-13 14:42:39.816706605 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ use strict; use warnings;
+ 
+ die "usage: $0 <hmm> <model> <model> <etc>" unless @ARGV > 1;
+diff -ruN snap-orig/zff2gff3.pl snap/zff2gff3.pl
+--- snap-orig/zff2gff3.pl	2013-02-16 11:20:50.000000000 -0500
++++ snap/zff2gff3.pl	2018-11-13 14:42:39.753600877 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ use strict; use warnings;
+ 
+ my %Feature = (

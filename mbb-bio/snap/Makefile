@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=snap-2013.02.16-1.spec
+SPEC=snap.spec
 
 .PHONY: clean
 
