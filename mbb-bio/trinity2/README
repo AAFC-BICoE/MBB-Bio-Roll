@@ -1,0 +1,19 @@
+Trinity is a Perl-related project and therefore needs particular care for inclusion on the Biocluster.
+
+In summary, the procedure is to extract the source tarball to two distinct directories. Sed commands execute in one of the directories, making changes to perl source files. A patch file is then constructed by comparing the contents of files in the unchanged (orig) directory with the modified files in the other directory. The -orig directory is deleted.
+
+The procedure for patching the source code is (roughly):
+
+## update for env perl
+cd SOURCES
+tar zxf Trinity-v2.8.4.tar.gz
+mv trinityrnaseq-Trinity-v2.8.4/ trinityrnaseq-Trinity-v2.8.4-orig/
+tar zxf Trinity-v2.8.4.tar.gz
+cd trinityrnaseq-Trinity-v2.8.4/
+find ./ -type f -name '*.p?' -exec sed -i -e 's@#!/usr/local/bin/perl -w@#!/usr/bin/env perl@' {} \;
+find ./ -type f -name '*.p?' -exec sed -i -e 's@#!/usr/local/bin/perl@#!/usr/bin/env perl@' {} \;
+cd ..
+diff -ruN trinityrnaseq-Trinity-v2.8.4-orig/ trinityrnaseq-Trinity-v2.8.4/  > env-perl.patch
+rm -fr wgs-8.3rc2*/
+
+

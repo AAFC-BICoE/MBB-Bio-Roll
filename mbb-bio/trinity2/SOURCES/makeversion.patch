@@ -1,0 +1,18 @@
+diff -ruN trinityrnaseq-Trinity-v2.8.4-orig/Chrysalis/CMakeLists.txt trinityrnaseq-Trinity-v2.8.4/Chrysalis/CMakeLists.txt
+--- trinityrnaseq-Trinity-v2.8.4-orig/Chrysalis/CMakeLists.txt	2018-09-12 06:08:03.000000000 -0400
++++ trinityrnaseq-Trinity-v2.8.4/Chrysalis/CMakeLists.txt	2018-11-09 15:38:13.550800161 -0500
+@@ -1,4 +1,4 @@
+-cmake_minimum_required (VERSION 3.1)
++cmake_minimum_required (VERSION 2.8.12.2)
+ find_program(CMAKE_C_COMPILER NAMES $ENV{CC} gcc PATHS ENV PATH NO_DEFAULT_PATH})
+ find_program(CMAKE_CXX_COMPILER NAMES $ENV{CXX} g++ PATHS ENV PATH NO_DEFAULT_PATH})
+ 
+diff -ruN trinityrnaseq-Trinity-v2.8.4-orig/Inchworm/CMakeLists.txt trinityrnaseq-Trinity-v2.8.4/Inchworm/CMakeLists.txt
+--- trinityrnaseq-Trinity-v2.8.4-orig/Inchworm/CMakeLists.txt	2018-09-12 06:08:03.000000000 -0400
++++ trinityrnaseq-Trinity-v2.8.4/Inchworm/CMakeLists.txt	2018-11-09 15:37:40.545928952 -0500
+@@ -1,4 +1,4 @@
+-cmake_minimum_required (VERSION 3.1)
++cmake_minimum_required (VERSION 2.8.12.2)
+ find_program(CMAKE_C_COMPILER NAMES $ENV{CC} gcc PATHS ENV PATH NO_DEFAULT_PATH})
+ find_program(CMAKE_CXX_COMPILER NAMES $ENV{CXX} g++ PATHS ENV PATH NO_DEFAULT_PATH})
+ 
