@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=ray.1.7.spec
+SPEC=ray.spec
 
 .PHONY: clean
 
