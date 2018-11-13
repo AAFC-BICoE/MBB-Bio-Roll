@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=rapidNJ-2.1.0-1.spec
+SPEC=rapidNJ.spec
 
 .PHONY: clean
 

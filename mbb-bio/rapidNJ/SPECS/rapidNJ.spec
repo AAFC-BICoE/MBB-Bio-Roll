@@ -1,22 +1,19 @@
-# 
-### define _topdir	 	/home/rpmbuild/rpms/rapidNJ
-%define srcName		rapidnj
 %define name		rapidNJ
 %define release		1
-%define version 	2.1.0 
+%define version 	2.3.2 
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/%{name}
-
+%define _prefix		%{installroot}
 
 BuildRoot:		%{buildroot}
 Summary: 		rapidNJ 
-License: 		GPL 
+License: 		GPLv2
 Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
-Source: 		%{srcName}-src-%{version}.zip
-Prefix: 		/opt/bio
-Group: 			Development/Tools
+Source: 		%{name}-v%{version}.tar.gz
+Prefix: 		%{_prefix}
+Group: 			Bioinformatics/Phylohenetics
 AutoReq:		yes
 
 %description
@@ -29,12 +26,15 @@ other state-of-the-art neighbour-joining implementations.
 %setup -qn %{name}
 
 %build
-make 
+make -j`nproc`
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}
-cp bin/* $RPM_BUILD_ROOT%{installroot}
+mkdir -p %{buildroot}%{_bindir}
+cp bin/* %{buildroot}%{_bindir}
 
 %files
-%defattr(755,root,root)
-%{installroot}
+%defattr(644,root,root,755)
+%dir %{_prefix}
+%doc README
+%defattr(755,root,root,755)
+%{_bindir}
