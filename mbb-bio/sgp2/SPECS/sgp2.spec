@@ -1,24 +1,31 @@
-# This is a  spec file for sgp2
-
 ### define _topdir	 	/home/rpmbuild/rpms/sgp2
 %define name		sgp2
 %define release		1
 %define version 	v1.1.May_8_2012
 %define installroot 	/opt/bio/%{name}
+%define _prefix		%{installroot}
+%define buildroot	%{_topdir}/%{name}-%{version}-root
 
-BuildRoot:	%{buildroot}
-Summary: 	sgp2 is a program to predict genes by comparing anonymous genomic sequences from two different species.
-Name: 		%{name}
-Version: 	%{version}
-Release: 	%{release}
-Source: 	%{name}_%{version}.tar.gz
-Patch0:         %{name}_%{version}.patch0
-Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
-URL:            http://genome.crg.es/software/sgp2/index.html
-Prefix: 	/opt/bio
-Group: 		Development/Tools
-License:        GPL-2|ftp://genome.crg.es/pub/software/sgp2/sgp2_v1.1.May_8_2012.tar.gz|Specified in the contents of the package
-AutoReq:	yes
+BuildRoot:		%{buildroot}
+Summary:		sgp2 is a program to predict genes by comparing anonymous genomic sequences from two different species.
+Name: 			%{name}
+Version:		%{version}
+Release:		%{release}
+Source:			%{name}_%{version}.tar.gz
+Patch0:			%{name}_%{version}.patch0
+Packager:		Zaky Adam <zaky.adam@grc.gc.ca>
+URL:			http://genome.crg.es/software/sgp2/index.html
+Prefix:			%{_prefix}
+Group:			Development/Tools
+License:		GPL-2|ftp://genome.crg.es/pub/software/sgp2/sgp2_v1.1.May_8_2012.tar.gz|Specified in the contents of the package
+AutoReq:		yes
+
+Requires:		opt-perl(Benchmark)
+Requires:		opt-perl(Getopt::Long)
+Requires:		opt-perl(strict)
+Requires:		opt-perl(warnings)
+
+%global __requires_exclude ^perl
 
 %description
 sgp2 is a program to predict genes by comparing anonymous genomic sequences from
@@ -36,28 +43,27 @@ predicted exons, the gene structure is assembled (eventually multiple genes in
 both strands) maximizing the sum of the scores of the assembled exons. 
 
 %prep
-%setup -q -n sgp2
+%setup -q -n %{name}
 %patch -P 0 -p1
 
 %build
-make
-pwd
+make -j`nproc`
 patch -p1 < /home/rpmbuild/rpms/sgp2/SOURCES/sgp2_v1.1.May_8_2012.patch1
 patch -p1 < /home/rpmbuild/rpms/sgp2/SOURCES/sgp2_v1.1.May_8_2012.patch2
 
 %install
-mkdir -p %{buildroot}%{installroot}
-cp --parent -r bin/* param/* samples/* %{buildroot}%{installroot}
-cp --parent src/parseblast.pl src/sgp2.pl %{buildroot}%{installroot}
-cp --parent -r src/geneid/bin/* src/geneid/param/* src/geneid/samples/*  %{buildroot}%{installroot}
+mkdir -p %{buildroot}%{_docdir}
+mkdir -p %{buildroot}%{_bindir}
+
+cp README %{buildroot}%{_docdir}
+
+make install INSTALLDIR=%{buildroot}/%{_bindir}
 
 %files
 %defattr(644,root,root,755)
-%{installroot}
+%dir %{_prefix}
+%docdir %{_docdir}
+%{_docdir}
 %defattr(755,root,root,755)
-%{installroot}/bin
-%{installroot}/param
-%{installroot}/src/parseblast.pl
-%{installroot}/src/sgp2.pl
-%{installroot}/src/geneid/bin
+%{_bindir}
 

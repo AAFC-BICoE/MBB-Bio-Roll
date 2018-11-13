@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=sgp2-1.1.spec
+SPEC=sgp2.spec
 
 .PHONY: clean
 
