@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=sigoli-1.1-1.spec
+SPEC=sigoli.spec
 
 .PHONY: clean
 
