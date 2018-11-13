@@ -4,20 +4,22 @@
 
 %define name		smalt
 %define release		1
-%define version 	0.7.3
-%define installroot 	/opt/bio/%{name}
+%define version		0.7.4
+%define installroot	/opt/bio/%{name}
+%define _prefix		%{installroot}
+%define _mandir		%{_docdir}/man
 
 BuildRoot:	%{buildroot}
-Summary: 	SMALT efficiently aligns DNA sequencing reads with a reference genome.
-Name: 		%{name}
-Version: 	%{version}
-Release: 	%{release}
-Source: 	%{name}-%{version}.tgz
+Summary:	SMALT efficiently aligns DNA sequencing reads with a reference genome.
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Source:		%{name}-%{version}.tgz
 Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
-URL:            http://www.sanger.ac.uk/resources/software/smalt/
-Prefix: 	/opt/bio
+URL:		http://www.sanger.ac.uk/resources/software/smalt/
+Prefix: 	%{_prefix}
 Group: 		Development/Tools
-License:        GNU GPL
+License:	GNU GPL
 AutoReq:	yes
 
 %description
@@ -35,13 +37,15 @@ supported including paired-end sequencing reads.
 
 %install
 mkdir -p %{buildroot}%{installroot}
-mkdir -p %{buildroot}/usr/man/man1
+mkdir -p %{buildroot}%{_mandir}/man1
 
-cp smalt_x86_64 %{buildroot}%{installroot}
-cp smalt.1 %{buildroot}/usr/man/man1
+cp %{name}_x86_64 %{buildroot}%{installroot}
+cp %{name}.1 %{buildroot}%{_mandir}/man1
 
 %files
-%defattr(755,root,root)
-%doc
-/usr/man/man1/smalt.1.gz
+%defattr(755,root,root,755)
 %{installroot}
+%defattr(644,root,root,755)
+%doc
+%{_docdir}
+
