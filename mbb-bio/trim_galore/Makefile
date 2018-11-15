@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=trim_galore_0.3.3.spec
+SPEC=trim_galore.spec
 
 .PHONY: clean
 
