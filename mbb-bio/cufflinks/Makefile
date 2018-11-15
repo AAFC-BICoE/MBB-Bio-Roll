@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=cufflinks-2.0.2-2.spec
+SPEC=cufflinks.spec
 
 .PHONY: clean
 
