@@ -1,11 +1,8 @@
-# This is a  spec file for abacas
-
-### define _topdir	 	/home/rpmbuild/rpms/abacas
 %define name		abacas
 %define release		1
 %define version 	1.3.1
 %define installroot 	/opt/bio/%{name}
-
+%define _prefix		%{installroot}
 BuildRoot:	%{buildroot}
 Summary:	ABACAS is intended to rapidly contiguate (align, order, orientate), visualize and design primers to close gaps on assembled contigs based on a reference sequence. 
 Name: 		%{name}
@@ -19,7 +16,7 @@ Prefix: 	/opt/bio
 Group: 		Development/Tools
 License:        GPLv2
 Requires: 	opt-perl(Getopt::Std)
-Requires:	opt-opt-perl(POSIX) 
+Requires:	opt-perl(POSIX) 
 Requires:	opt-perl(strict) 
 Requires:	opt-perl(warnings)
 
@@ -47,9 +44,11 @@ mv abacas.1.3.1.pl abacas
 chmod 755 abacas
 
 %install
-mkdir -p %{buildroot}%{installroot}
-cp abacas %{buildroot}%{installroot}
+mkdir -p %{buildroot}%{_bindir}
+cp abacas %{buildroot}%{_bindir}
 
 %files
-%defattr(755,root,root)
-%{installroot}
+%defattr(644,root,root,755)
+%dir %{_prefix}
+%defattr(755,root,root,755)
+%{_bindir}
