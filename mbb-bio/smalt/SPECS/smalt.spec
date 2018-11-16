@@ -44,7 +44,7 @@ cp %{name}.1 %{buildroot}%{_mandir}/man1
 
 %files
 %defattr(755,root,root,755)
-%{installroot}
+%{_prefix}
 %defattr(644,root,root,755)
 %doc
 %{_docdir}
