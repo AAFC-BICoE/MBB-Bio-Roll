@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=transdecoder-16-1.spec
+SPEC=transdecoder.spec
 
 .PHONY: clean
 

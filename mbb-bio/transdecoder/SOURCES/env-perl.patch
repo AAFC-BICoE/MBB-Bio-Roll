@@ -1,0 +1,36 @@
+diff -ruN TransDecoder-TransDecoder-v5.5.0-orig/PerlLib/Fasta_reader.pm TransDecoder-TransDecoder-v5.5.0/PerlLib/Fasta_reader.pm
+--- TransDecoder-TransDecoder-v5.5.0-orig/PerlLib/Fasta_reader.pm	2018-10-22 08:45:08.000000000 -0400
++++ TransDecoder-TransDecoder-v5.5.0/PerlLib/Fasta_reader.pm	2018-11-16 11:21:13.303560862 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl -w
++#!/usr/bin/env perl
+ 
+ # lightweight fasta reader capabilities:
+ package Fasta_reader;
+diff -ruN TransDecoder-TransDecoder-v5.5.0-orig/PerlLib/GFF3_utils2.pm TransDecoder-TransDecoder-v5.5.0/PerlLib/GFF3_utils2.pm
+--- TransDecoder-TransDecoder-v5.5.0-orig/PerlLib/GFF3_utils2.pm	2018-10-22 08:45:08.000000000 -0400
++++ TransDecoder-TransDecoder-v5.5.0/PerlLib/GFF3_utils2.pm	2018-11-16 11:21:13.570195866 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ package main;
+ our $SEE;
+diff -ruN TransDecoder-TransDecoder-v5.5.0-orig/PerlLib/Longest_orf.pm TransDecoder-TransDecoder-v5.5.0/PerlLib/Longest_orf.pm
+--- TransDecoder-TransDecoder-v5.5.0-orig/PerlLib/Longest_orf.pm	2018-10-22 08:45:08.000000000 -0400
++++ TransDecoder-TransDecoder-v5.5.0/PerlLib/Longest_orf.pm	2018-11-16 11:21:13.243409646 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ package main;
+ our $SEE; 
+diff -ruN TransDecoder-TransDecoder-v5.5.0-orig/PerlLib/overlapping_nucs.ph TransDecoder-TransDecoder-v5.5.0/PerlLib/overlapping_nucs.ph
+--- TransDecoder-TransDecoder-v5.5.0-orig/PerlLib/overlapping_nucs.ph	2018-10-22 08:45:08.000000000 -0400
++++ TransDecoder-TransDecoder-v5.5.0/PerlLib/overlapping_nucs.ph	2018-11-16 11:21:13.539872542 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/env perl
+ 
+ ####
+ sub nucs_in_common {
