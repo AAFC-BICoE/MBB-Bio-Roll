@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=SOAPdenovo-Trans-1.03-1.spec
+SPEC=SOAPdenovo-Trans.spec
 
 .PHONY: clean
 

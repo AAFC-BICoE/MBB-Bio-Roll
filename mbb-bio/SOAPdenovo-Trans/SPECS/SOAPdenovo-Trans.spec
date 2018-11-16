@@ -1,20 +1,19 @@
-# This is a sample spec file for wget
-
 ### define _topdir	 	/home/rpmbuild/rpms/SOAPdenovo-Trans
 %define name		SOAPdenovo-Trans
 %define release		1
 %define version 	v1.03
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/%{name}
+%define buildroot 	%{_topdir}/%{name}-%{version}-root
+%define installroot 	/opt/bio/%{name}
+%define _prefix		%{installroot}
 
-BuildRoot:	%{buildroot}
+BuildRoot:		%{buildroot}
 License: 		GPL v3
 Summary: 		SOAPdenovo-Trans
 Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
 Source: 		%{name}-src-%{version}.tar.gz
-Prefix: 		/opt/bio
+Prefix: 		%{_prefix}
 Group: 			Development/Tools
 AutoReq:		yes
 
@@ -39,10 +38,11 @@ cp  ../LICENSE $RPM_BUILD_ROOT%{installroot}/
 
 %files
 %defattr(755,root,root)
-%{installroot}/bin/SOAPdenovo-Trans-127mer
-%{installroot}/bin/SOAPdenovo-Trans-31mer
+%{_bindir}/SOAPdenovo-Trans-127mer
+%{_bindir}/SOAPdenovo-Trans-31mer
 
 %defattr(644,root,root)
-%{installroot}/MANUAL
-%{installroot}/VERSION
-%{installroot}/LICENSE
+%doc %{_prefix}/MANUAL
+%doc %{_prefix}/VERSION
+%doc %{_prefix}/LICENSE
+
