@@ -1,0 +1,16 @@
+added new patch with Tim Forbes' procedure for patching perl files for shebang paths
+
+	cd SOURCES
+	unzip -q snpEff_latest_core.zip
+	mv snpEff/ snpEff-orig/
+	unzip -q snpEff_latest_core.zip
+	cd snpEff/
+
+	### the following command was added to the process in order to remove a whitespace from the shebang path
+	find ./ -type f -name '*.pl' -exec sed -i -e 's/\s\(\/usr\/bin\/perl\)/\1/' {} \;
+	find ./ -type f -name '*.pl' -exec sed -i -e 's/#!\/usr\/bin\/perl/#!\/usr\/bin\/env perl/' {} \;
+	find ./ -type f -name '*.pl' -exec sed -i -e 's/#!\/usr\/local\/bin\/perl/#!\/usr\/bin\/env perl/' {} \;
+	cd ..
+	diff -ruN snpEff-orig snpEff > env-perl.patch
+	rm -fr snpEff*/
+

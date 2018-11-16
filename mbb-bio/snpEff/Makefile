@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=snpEff-3.2-1.spec
+SPEC=snpEff.spec
 
 .PHONY: clean
 

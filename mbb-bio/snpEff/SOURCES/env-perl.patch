@@ -1,0 +1,332 @@
+diff -ruN snpEff-orig/scripts/bedEffOnePerLine.pl snpEff/scripts/bedEffOnePerLine.pl
+--- snpEff-orig/scripts/bedEffOnePerLine.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/bedEffOnePerLine.pl	2018-11-15 16:50:56.594684321 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #-------------------------------------------------------------------------------
+ #
+diff -ruN snpEff-orig/scripts/cgShore.pl snpEff/scripts/cgShore.pl
+--- snpEff-orig/scripts/cgShore.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/cgShore.pl	2018-11-15 16:50:56.622292492 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #-------------------------------------------------------------------------------
+ #
+diff -ruN snpEff-orig/scripts/db.pl snpEff/scripts/db.pl
+--- snpEff-orig/scripts/db.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/db.pl	2018-11-15 16:50:56.796633305 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #-------------------------------------------------------------------------------
+ #
+diff -ruN snpEff-orig/scripts/extractSequences.pl snpEff/scripts/extractSequences.pl
+--- snpEff-orig/scripts/extractSequences.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/extractSequences.pl	2018-11-15 16:50:56.650181322 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #-------------------------------------------------------------------------------
+ # Extract fasta sequences matching names
+diff -ruN snpEff-orig/scripts/fasta2tab.pl snpEff/scripts/fasta2tab.pl
+--- snpEff-orig/scripts/fasta2tab.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/fasta2tab.pl	2018-11-15 16:50:57.169551269 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #------------------------------------------------------------------------------
+ # Transform a fasta file to a TXT (tab-separated) table
+diff -ruN snpEff-orig/scripts/fastaSample.pl snpEff/scripts/fastaSample.pl
+--- snpEff-orig/scripts/fastaSample.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/fastaSample.pl	2018-11-15 16:50:56.766898683 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #---
+ # Initialize parameters
+diff -ruN snpEff-orig/scripts/fastaSplit.pl snpEff/scripts/fastaSplit.pl
+--- snpEff-orig/scripts/fastaSplit.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/fastaSplit.pl	2018-11-15 16:50:57.457671559 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #------------------------------------------------------------------------------
+ # Split a fasta file (create one file per sequence)
+diff -ruN snpEff-orig/scripts/fastqSplit.pl snpEff/scripts/fastqSplit.pl
+--- snpEff-orig/scripts/fastqSplit.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/fastqSplit.pl	2018-11-15 16:50:57.399022852 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #------------------------------------------------------------------------------
+ # Split a fastq file into N sequences per file
+diff -ruN snpEff-orig/scripts/gffRemovePhase.pl snpEff/scripts/gffRemovePhase.pl
+--- snpEff-orig/scripts/gffRemovePhase.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/gffRemovePhase.pl	2018-11-15 16:50:57.429113839 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ while ( $l = <STDIN> ) {
+ 	chomp $l;
+diff -ruN snpEff-orig/scripts/join.pl snpEff/scripts/join.pl
+--- snpEff-orig/scripts/join.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/join.pl	2018-11-15 16:50:56.967826256 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #------------------------------------------------------------------------------
+ #
+diff -ruN snpEff-orig/scripts/joinSnpEff.pl snpEff/scripts/joinSnpEff.pl
+--- snpEff-orig/scripts/joinSnpEff.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/joinSnpEff.pl	2018-11-15 16:50:57.314561232 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #------------------------------------------------------------------------------
+ #
+diff -ruN snpEff-orig/scripts/nextProt_filter.pl snpEff/scripts/nextProt_filter.pl
+--- snpEff-orig/scripts/nextProt_filter.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/nextProt_filter.pl	2018-11-15 16:50:56.449279375 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #-------------------------------------------------------------------------------
+ #
+diff -ruN snpEff-orig/scripts/plotHistogram.pl snpEff/scripts/plotHistogram.pl
+--- snpEff-orig/scripts/plotHistogram.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/plotHistogram.pl	2018-11-15 16:50:56.507241386 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #-------------------------------------------------------------------------------
+ #
+ # Plot a histogram (using R) 
+diff -ruN snpEff-orig/scripts/plotLabel.pl snpEff/scripts/plotLabel.pl
+--- snpEff-orig/scripts/plotLabel.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/plotLabel.pl	2018-11-15 16:50:57.084033591 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #-------------------------------------------------------------------------------
+ #
+ # Plot (using R) 
+diff -ruN snpEff-orig/scripts/plotMA.pl snpEff/scripts/plotMA.pl
+--- snpEff-orig/scripts/plotMA.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/plotMA.pl	2018-11-15 16:50:57.026067454 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #-------------------------------------------------------------------------------
+ #
+ # Create an MA-plot
+diff -ruN snpEff-orig/scripts/plot.pl snpEff/scripts/plot.pl
+--- snpEff-orig/scripts/plot.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/plot.pl	2018-11-15 16:50:57.113342181 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #-------------------------------------------------------------------------------
+ #
+ # Plot (using R) 
+diff -ruN snpEff-orig/scripts/plotQQ.pl snpEff/scripts/plotQQ.pl
+--- snpEff-orig/scripts/plotQQ.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/plotQQ.pl	2018-11-15 16:50:56.939544532 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #-------------------------------------------------------------------------------
+ #
+ # Plot a QQ plot (using R) 
+diff -ruN snpEff-orig/scripts/plotQQsubsample.pl snpEff/scripts/plotQQsubsample.pl
+--- snpEff-orig/scripts/plotQQsubsample.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/plotQQsubsample.pl	2018-11-15 16:50:56.536143185 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #-------------------------------------------------------------------------------
+ #
+ # Plot a QQ plot (using R) 
+diff -ruN snpEff-orig/scripts/plotSmoothScatter.pl snpEff/scripts/plotSmoothScatter.pl
+--- snpEff-orig/scripts/plotSmoothScatter.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/plotSmoothScatter.pl	2018-11-15 16:50:57.197945340 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #-------------------------------------------------------------------------------
+ #
+ # Plot a smooth scatter plot
+diff -ruN snpEff-orig/scripts/plotXY.pl snpEff/scripts/plotXY.pl
+--- snpEff-orig/scripts/plotXY.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/plotXY.pl	2018-11-15 16:50:57.055320746 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ #-------------------------------------------------------------------------------
+ #
+ # Plot (using R) 
+diff -ruN snpEff-orig/scripts/queue.pl snpEff/scripts/queue.pl
+--- snpEff-orig/scripts/queue.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/queue.pl	2018-11-15 16:50:57.285416458 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #-------------------------------------------------------------------------------
+ # Simple queue management program
+diff -ruN snpEff-orig/scripts/sam2fastq.pl snpEff/scripts/sam2fastq.pl
+--- snpEff-orig/scripts/sam2fastq.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/sam2fastq.pl	2018-11-15 16:50:56.882798344 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #-------------------------------------------------------------------------------
+ # Convert from SAM to FASTQ
+diff -ruN snpEff-orig/scripts/snpSift_filter_sample_to_number.pl snpEff/scripts/snpSift_filter_sample_to_number.pl
+--- snpEff-orig/scripts/snpSift_filter_sample_to_number.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/snpSift_filter_sample_to_number.pl	2018-11-15 16:50:56.825913130 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #-------------------------------------------------------------------------------
+ #
+diff -ruN snpEff-orig/scripts/splitChr.pl snpEff/scripts/splitChr.pl
+--- snpEff-orig/scripts/splitChr.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/splitChr.pl	2018-11-15 16:50:56.911088188 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #-------------------------------------------------------------------------------
+ # Split a tab-separated (or space-separated) file based on the
+diff -ruN snpEff-orig/scripts/statsNum.pl snpEff/scripts/statsNum.pl
+--- snpEff-orig/scripts/statsNum.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/statsNum.pl	2018-11-15 16:50:57.255954095 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ $sum = 0;
+ 
+diff -ruN snpEff-orig/scripts/swapCols.pl snpEff/scripts/swapCols.pl
+--- snpEff-orig/scripts/swapCols.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/swapCols.pl	2018-11-15 16:50:57.343279821 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ die "Usage: cat file.txt | swapCols.pl $#ARGV cols1 cols2\nColumns are coma separated list of one-base column indexes\n" if $#ARGV < 1;
+ 
+diff -ruN snpEff-orig/scripts/transpose.pl snpEff/scripts/transpose.pl
+--- snpEff-orig/scripts/transpose.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/transpose.pl	2018-11-15 16:50:57.228016329 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ 
+ use strict;
+diff -ruN snpEff-orig/scripts/txt2fa.pl snpEff/scripts/txt2fa.pl
+--- snpEff-orig/scripts/txt2fa.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/txt2fa.pl	2018-11-15 16:50:57.371156764 -0500
+@@ -1,3 +1,3 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ for( $i=1 ; $l = <STDIN> ; $i++ ) { print ">id_$i\n$l"; }
+diff -ruN snpEff-orig/scripts/uniqCount.pl snpEff/scripts/uniqCount.pl
+--- snpEff-orig/scripts/uniqCount.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/uniqCount.pl	2018-11-15 16:50:56.707124066 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ while( $l = <STDIN> ) {
+ 	chomp $l;
+diff -ruN snpEff-orig/scripts/uniqCut.pl snpEff/scripts/uniqCut.pl
+--- snpEff-orig/scripts/uniqCut.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/uniqCut.pl	2018-11-15 16:50:56.735812619 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ use strict;
+ 
+diff -ruN snpEff-orig/scripts/vcfBareBones.pl snpEff/scripts/vcfBareBones.pl
+--- snpEff-orig/scripts/vcfBareBones.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/vcfBareBones.pl	2018-11-15 16:50:56.478613198 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ while( $l = <STDIN> ) {
+ 	chomp $l;
+diff -ruN snpEff-orig/scripts/vcfEffOnePerLine.pl snpEff/scripts/vcfEffOnePerLine.pl
+--- snpEff-orig/scripts/vcfEffOnePerLine.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/vcfEffOnePerLine.pl	2018-11-15 16:50:56.678491682 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #-------------------------------------------------------------------------------
+ #
+diff -ruN snpEff-orig/scripts/vcfFilterSamples.pl snpEff/scripts/vcfFilterSamples.pl
+--- snpEff-orig/scripts/vcfFilterSamples.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/vcfFilterSamples.pl	2018-11-15 16:50:56.996454835 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #-------------------------------------------------------------------------------
+ #
+diff -ruN snpEff-orig/scripts/vcfInfoOnePerLine.pl snpEff/scripts/vcfInfoOnePerLine.pl
+--- snpEff-orig/scripts/vcfInfoOnePerLine.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/vcfInfoOnePerLine.pl	2018-11-15 16:50:56.419700975 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ # Split VCF into several lines
+ # Show one info field per line
+diff -ruN snpEff-orig/scripts/vcfOnlyAlts.pl snpEff/scripts/vcfOnlyAlts.pl
+--- snpEff-orig/scripts/vcfOnlyAlts.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/vcfOnlyAlts.pl	2018-11-15 16:50:57.141491407 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ while( $l = <STDIN> ) {
+ 
+diff -ruN snpEff-orig/scripts/vcfReduceGenotypes.pl snpEff/scripts/vcfReduceGenotypes.pl
+--- snpEff-orig/scripts/vcfReduceGenotypes.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/vcfReduceGenotypes.pl	2018-11-15 16:50:56.563895229 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ while( $l = <STDIN> ) { 
+ 	if( $l =~ /^#/ ) { print $l; }
+diff -ruN snpEff-orig/scripts/wigSplit.pl snpEff/scripts/wigSplit.pl
+--- snpEff-orig/scripts/wigSplit.pl	2017-11-24 10:19:15.000000000 -0500
++++ snpEff/scripts/wigSplit.pl	2018-11-15 16:50:56.854720029 -0500
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/bin/env perl
+ 
+ #-------------------------------------------------------------------------------
+ #
