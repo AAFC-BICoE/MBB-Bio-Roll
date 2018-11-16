@@ -1,21 +1,21 @@
-# This is a sample spec file for wget
-
 ### define _topdir	 	/home/rpmbuild/rpms/SOAPdenovo
 %define name		SOAPdenovo2
 %define release		3
-%define version 	r240
-%define vc_version	r240
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/%{name}
+%define version 	r241
+%define vc_version	r241
+%define buildroot 	%{_topdir}/%{name}-%{version}-root
+%define installroot 	/opt/bio/%{name}
+%define _prefix		%{installroot}
 
-BuildRoot:	%{buildroot}
+BuildRoot:		%{buildroot}
 License: 		GPL v3
 Summary: 		SOAPdenovo2
 Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
 Source: 		%{name}-src-%{vc_version}.tgz
-Prefix: 		/opt/bio
+Prefix: 		%{_prefix}
+URL:			https://github.com/aquaskyline/SOAPdenovo2
 Group: 			Development/Tools
 AutoReq:		yes
 
@@ -31,16 +31,10 @@ coverage and length in scaffold construction, improves gap closing, and
 optimizes for large genome.
 
 %prep
-%setup -qn %{name}-src-%{vc_version}
+%setup -qn %{name}-%{vc_version}
 
 %build
-make
-# cd sparsePregraph
-# make
-# make 127mer=1
-# cd ../standardPregraph
-# make
-# make 127mer=1
+make -j`nproc`
 
 %install
 mkdir -p $RPM_BUILD_ROOT%{installroot}
@@ -48,21 +42,14 @@ cp SOAPdenovo-63mer  $RPM_BUILD_ROOT%{installroot}/SOAPdenovo2-63mer
 cp SOAPdenovo-127mer $RPM_BUILD_ROOT%{installroot}/SOAPdenovo2-127mer
 cp LICENSE $RPM_BUILD_ROOT%{installroot}/LICENSE
 cp VERSION $RPM_BUILD_ROOT%{installroot}/VERSION
-cp MANUAL $RPM_BUILD_ROOT%{installroot}/MANUAL
-#cp sparsePregraph/pregraph_sparse_63mer.v1.0.3 $RPM_BUILD_ROOT%{installroot}
-#cp sparsePregraph/pregraph_sparse_127mer.v1.0.3 $RPM_BUILD_ROOT%{installroot}
+cp README.md $RPM_BUILD_ROOT%{installroot}/README.md
 
 %files
 %defattr(755,root,root)
-%{installroot}/SOAPdenovo2-63mer
-%{installroot}/SOAPdenovo2-127mer
+%{_prefix}/SOAPdenovo2-63mer
+%{_prefix}/SOAPdenovo2-127mer
 %defattr(644,root,root)
-%{installroot}/LICENSE
-%{installroot}/VERSION
-%{installroot}/MANUAL
+%doc %{_prefix}/LICENSE
+%doc %{_prefix}/VERSION
+%doc %{_prefix}/README.md
 
-
-# %files sparse
-# %defattr(755,root,root)
-# %{installroot}/pregraph_sparse_63mer.v1.0.3
-# %{installroot}/pregraph_sparse_127mer.v1.0.3
