@@ -1,8 +1,0 @@
---- SSPACE-BASIC-2.0_linux-x86_64/SSPACE_Basic_v2.0.pl		2013-03-04 12:03:35.293124906 -0500
-+++ SSPACE-BASIC-2.0_linux-x86_64/SSPACE_Basic_v2.0_2.pl	2013-03-04 12:25:57.551071070 -0500
-@@ -1,4 +1,4 @@
--#!/usr/bin/perl
-+#!/usr/bin/env perl
- 
- #AUTHOR
- # Marten Boetzer and Walter Pirovano (c) 2010

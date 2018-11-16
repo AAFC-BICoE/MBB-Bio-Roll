@@ -2,25 +2,45 @@
 %global debug_package %{nil}
 ### define _topdir	 	/home/rpmbuild/rpms/SSPACE
 %define name		SSPACE
+%define src_name	%{name}-BASIC
 %define release		2
-%define version 	2.0
+%define version 	2.1.1
 %define installroot 	/opt/bio/%{name}
+%define _prefix		%{installroot}
+%define buildroot	%{_topdir}/%{name}-%{version}-root
 
 BuildRoot:	%{buildroot}
 Summary: 	SSPACE is a stand-alone program for scaffolding pre-assembled contigs using paired-read data.
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source: 	%{name}-BASIC-%{version}_linux-x86_64.zip
-Patch0:         %{name}-%{version}-%{release}.patch0
-Patch1:         %{name}-%{version}-%{release}.bin.patch1
-Patch2:         %{name}-%{version}-%{release}.tools.patch2
+Source: 	%{name}-BASIC-%{version}.tar.gz
+Patch0: 	%{name}-%{version}-%{release}.patch0
+Patch1: 	%{name}-%{version}-%{release}.bin.patch1
+Patch2: 	 %{name}-%{version}-%{release}.tools.patch2
 Packager:	Zaky Adam <zaky.adam@grc.gc.ca>
-Prefix: 	/opt/bio
-URL:		http://www.baseclear.com/landingpages/basetools-a-wide-range-of-bioinformatics-solutions/sspacev12/
+Prefix: 	%{_prefix}
+URL:		https://github.com/nsoranzo/sspace_basic
 Group: 		Development/Tools
-License:        GNU GPL
+License:	GNU GPL-2.0
 AutoReq:	yes
+
+Provides:	perl(DotLib)
+
+Requires:	perl(DotLib)
+Requires:	opt-perl(Exporter)
+Requires:	opt-perl(File::Basename)
+Requires:	opt-perl(File::Path)
+Requires:	opt-perl(FindBin)
+Requires:	opt-perl(Getopt::Std)
+Requires:	opt-perl(Storable)
+Requires:	opt-perl(lib)
+Requires:	opt-perl(strict)
+Requires:	opt-perl(threads)
+Requires:	opt-perl(vars)
+Requires:	opt-perl(warnings)
+
+%global __requires_exclude ^perl
 
 %description
 SSPACE is a stand-alone program for scaffolding pre-assembled contigs using
@@ -36,7 +56,7 @@ been published in the high-impact journal Bioinformatics (2011, vol. 27(4), pag.
 578-9), but the method is also frequently cited in other papers.
 
 %prep
-%setup -q -n SSPACE-BASIC-2.0_linux-x86_64
+%setup -q -n sspace_basic-%{version}
 %patch -P 0 -p1
 %patch -P 1 -p1
 %patch -P 2 -p1
@@ -45,14 +65,14 @@ been published in the high-impact journal Bioinformatics (2011, vol. 27(4), pag.
 
 %install
 mkdir -p %{buildroot}%{installroot}
-cp -r bin bowtie dotlib tools %{buildroot}%{installroot}
+cp -r bin dotlib tools %{buildroot}%{installroot}
 cp SSPACE_Basic_v2.0.pl README %{buildroot}%{installroot}
 
 %files
 %defattr(755,root,root)
-%{installroot}
+%{_prefix}
 %defattr(644,root,root)
-%{installroot}/README
-%{installroot}/tools/TQS.readme
-%{installroot}/tools/TRIMMING_PAIRED_READS.README
-%{installroot}/bowtie/VERSION
+%{_prefix}/README
+%{_prefix}/tools/TQS.readme
+%{_prefix}/tools/TRIMMING_PAIRED_READS.README
+

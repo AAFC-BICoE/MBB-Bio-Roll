@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=SSPACE-2.0-2.spec
+SPEC=SSPACE.spec
 
 .PHONY: clean
 
