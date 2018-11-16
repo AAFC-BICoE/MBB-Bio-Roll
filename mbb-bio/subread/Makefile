@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=subread-1.4.5.spec
+SPEC=subread.spec
 
 .PHONY: clean
 
