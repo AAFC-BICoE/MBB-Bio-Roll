@@ -58,18 +58,18 @@ cp snap/Zoe/blosum62 %{buildroot}%{installroot}/Zoe/
 
 %files
 %defattr(644,root,root,755)
-%dir %{installroot}
-%{installroot}
+%dir %{_prefix}
+%{_prefix}
 %defattr(755,root,root,755)
-%{installroot}/exonpairs
-%{installroot}/fathom
-%{installroot}/forge
-%{installroot}/hmm-assembler.pl
-%{installroot}/patch-hmm.pl
-%{installroot}/snap
-%{installroot}/hmm-info
-%{installroot}/zff2gff3.pl
-%{installroot}/Zoe/zoe-loop
+%{_prefix}/exonpairs
+%{_prefix}/fathom
+%{_prefix}/forge
+%{_prefix}/hmm-assembler.pl
+%{_prefix}/patch-hmm.pl
+%{_prefix}/snap
+%{_prefix}/hmm-info
+%{_prefix}/zff2gff3.pl
+%{_prefix}/Zoe/zoe-loop
 
 %changelog
 * Tue Apr  2 2013 glen newton <newtong@onottr624241.agr.gc.ca> - 16-1
