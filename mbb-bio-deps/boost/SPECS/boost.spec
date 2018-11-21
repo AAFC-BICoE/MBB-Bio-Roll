@@ -1,59 +1,52 @@
-# This is a  spec file for boost
-# Note: the following rpm packages are supposed to be installed before
-# installing boost:
-# bzip2-1.0.5-7.el6_0.x86_64.rpm 
-# bzip2-devel-1.0.5-7.el6_0.x86_64.rpm
-# bzip2-libs-1.0.5-7.el6_0.x86_64.rpm
-
-### define _topdir	 	/home/rpmbuild/rpms/boost
 %define name		opt-boost
-%define release		3
+%define release		1
 %define version 	1.68.0
 %define installroot 	/opt/bio/lib/boost
-%define _libdir		%{installroot}/lib
-%define _includedir	%{installroot}/include
+%define _prefix		%{installroot}
+%define _libdir		%{_prefix}/lib
 %define sonamever	1.68.0
 %define sourcedir	%(echo "boost_%{version}" | perl -pe 's/\\./_/g')
 
 BuildRoot:	%{buildroot}
-Summary: 	boost is C++ library
-Name: 		%{name}
-Version: 	%{version}
-Release: 	%{release}
-Source: 	%{sourcedir}.tar.bz2
-Prefix: 	%{installroot}
-Group: 		Development/Tools
-License:        Boost Software License - Version 1.0
+Summary:	boost is C++ library
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Source:		%{sourcedir}.tar.bz2
+Prefix:		%{installroot}
+Group:		Development/Tools
+License:	Boost Software License - Version 1.0
 AutoReq:	yes
-Requires: opt-boost-atomic = %{sonamever}
-Requires: opt-boost-chrono  = %{sonamever}
-Requires: opt-boost-container = %{sonamever}
-Requires: opt-boost-context = %{sonamever}
-Requires: opt-boost-contract = %{sonamever}
-Requires: opt-boost-coroutine = %{sonamever}
-Requires: opt-boost-date-time = %{sonamever}
-Requires: opt-boost-filesystem = %{sonamever}
-Requires: opt-boost-graph = %{sonamever}
-Requires: opt-boost-iostreams = %{sonamever}
-Requires: opt-boost-locale = %{sonamever}
-Requires: opt-boost-log = %{sonamever}
-Requires: opt-boost-math = %{sonamever}
-Requires: opt-boost-program-options = %{sonamever}
-Requires: opt-boost-python = %{sonamever}
-Requires: opt-boost-random = %{sonamever}
-Requires: opt-boost-regex = %{sonamever}
-Requires: opt-boost-serialization = %{sonamever}
-Requires: opt-boost-signals = %{sonamever}
-Requires: opt-boost-system = %{sonamever}
-Requires: opt-boost-stacktrace = %{sonamever}
-Requires: opt-boost-test = %{sonamever}
-Requires: opt-boost-thread = %{sonamever}
-Requires: opt-boost-timer = %{sonamever}
-Requires: opt-boost-type_erasure = %{sonamever}
-Requires: opt-boost-wave = %{sonamever}
-Requires: opt-boost-devel = %{sonamever}
-Requires: opt-boost-static = %{sonamever}
-Requires: opt-boost-doc = %{sonamever}
+Requires:	 opt-boost-atomic = %{sonamever}
+Requires:	 opt-boost-chrono  = %{sonamever}
+Requires:	 opt-boost-container = %{sonamever}
+Requires:	 opt-boost-context = %{sonamever}
+Requires:	 opt-boost-contract = %{sonamever}
+Requires:	 opt-boost-coroutine = %{sonamever}
+Requires:	 opt-boost-date-time = %{sonamever}
+Requires:	 opt-boost-filesystem = %{sonamever}
+Requires:	 opt-boost-graph = %{sonamever}
+Requires:	 opt-boost-iostreams = %{sonamever}
+Requires:	 opt-boost-locale = %{sonamever}
+Requires:	 opt-boost-log = %{sonamever}
+Requires:	 opt-boost-math = %{sonamever}
+Requires:	 opt-boost-numpy = %{sonamever}
+Requires:	 opt-boost-program-options = %{sonamever}
+Requires:	 opt-boost-python = %{sonamever}
+Requires:	 opt-boost-random = %{sonamever}
+Requires:	 opt-boost-regex = %{sonamever}
+Requires:	 opt-boost-serialization = %{sonamever}
+Requires:	 opt-boost-signals = %{sonamever}
+Requires:	 opt-boost-system = %{sonamever}
+Requires:	 opt-boost-stacktrace = %{sonamever}
+Requires:	 opt-boost-test = %{sonamever}
+Requires:	 opt-boost-thread = %{sonamever}
+Requires:	 opt-boost-timer = %{sonamever}
+Requires:	 opt-boost-type_erasure = %{sonamever}
+Requires:	 opt-boost-wave = %{sonamever}
+Requires:	 opt-boost-devel = %{sonamever}
+Requires:	 opt-boost-static = %{sonamever}
+Requires:	 opt-boost-doc = %{sonamever}
 Provides:	boost = %{version}-%{release}
 URL:		http://www.boost.org/
 
@@ -193,6 +186,16 @@ This package is a stub that used to contain runtime component of boost
 math library.  Now that boost math library is header-only, this
 package is empty.  It's kept around only so that during yum-assisted
 update, old libraries from boost-math package aren't left around.
+
+%package numpy
+Summary: Stub that used to contain boost numpy library
+Group: System Environment/Libraries
+Provides: boost-numpy = %{version}-%{release}
+
+
+%description numpy
+
+Runtime support for Boost.numpy.
 
 %package program-options
 Summary:  Runtime component of boost program_options library
@@ -370,16 +373,16 @@ web page (http://www.boost.org/doc/libs/1_40_0).
 
 %build
 mkdir -p %{buildroot}%{installroot}
-./bootstrap.sh --prefix=%{buildroot}%{installroot}
-./bjam -j 24 --prefix=%{buildroot}%{installroot} 
+
+export LD_RUN_PATH="%{_libdir}"
+
+./bootstrap.sh --prefix=%{_prefix}
+./b2 -j 24 --prefix=%{_prefix}
 
 %install
-./bjam install -j 24 --prefix=%{buildroot}%{installroot}
+./b2 -j 24 variant=release --prefix=%{buildroot}%{_prefix} install
 
-#%files
-#%defattr(-,root,root)
 
-#%{installroot}
 %files
 
 %dir %attr(0755, root, root) %{_libdir}
@@ -387,147 +390,163 @@ mkdir -p %{buildroot}%{installroot}
 %dir %attr(0755, root, root) %{_includedir}/boost 
 
 %files atomic
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
 %{_libdir}/libboost_atomic.so.%{sonamever}
 
 %files chrono
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/libboost_chrono*.so.%{sonamever}
 
 %files container
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
 %{_libdir}/libboost_container.so.%{sonamever}
 
 %files context
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
 %{_libdir}/libboost_context.so.%{sonamever}
 
 %files contract
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
 %{_libdir}/libboost_contract.so.%{sonamever}
 
 %files coroutine
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
 %{_libdir}/libboost_coroutine.so.%{sonamever}
 
 %files date-time
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/libboost_date_time*.so.%{sonamever}
 
 %files filesystem
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/libboost_filesystem*.so.%{sonamever}
 
 %files graph
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/libboost_graph.so.%{sonamever}
-#%{_libdir}/libboost_graph-mt.so.%{sonamever}
 
 %files iostreams
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/libboost_iostreams*.so.%{sonamever}
 
 %files locale
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/libboost_locale*.so.%{sonamever}
 
 %files log
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/libboost_log*.so.%{sonamever}
 
 %files math
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
 %{_libdir}/libboost_math*.so.%{sonamever}
 
-%files test
+%files numpy
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
+%{_libdir}/libboost_numpy*.so.%{sonamever}
+
+%files test
+%doc LICENSE_1_0.txt
+%defattr(755, root, root, 755)
 %{_libdir}/libboost_prg_exec_monitor*.so.%{sonamever}
 %{_libdir}/libboost_unit_test_framework*.so.%{sonamever}
 
 %files program-options
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
+
 %{_libdir}/libboost_program_options*.so.%{sonamever}
 
 %files python
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
+
 %{_libdir}/libboost_python*.so.%{sonamever}
 
 %files random 
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 
 %{_libdir}/libboost_random*.so.%{sonamever}
+
 %files regex
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
+
 %{_libdir}/libboost_regex*.so.%{sonamever}
 
 %files serialization
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/libboost_serialization*.so.%{sonamever}
 %{_libdir}/libboost_wserialization*.so.%{sonamever}
 
 %files signals
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
+
 %{_libdir}/libboost_signals*.so.%{sonamever}
 
 %files system
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/libboost_system*.so.%{sonamever}
 
 %files stacktrace
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/libboost_stacktrace*.so.%{sonamever}
 
 %files thread
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/libboost_thread*.so.%{sonamever}
 
 %files timer
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/libboost_timer*.so.%{sonamever}
 
 %files type_erasure
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/libboost_type_erasure*.so.%{sonamever}
 
 %files wave
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
+
 %{_libdir}/libboost_wave*.so.%{sonamever}
 
 %files doc
+%doc LICENSE_1_0.txt
 #%defattr(-, root, root, -)
 #%doc %{boost_docdir}/*
-#%doc %{installroot}/doc/* 
+#%doc %{_prefix}/doc/* 
 
 %files devel
+%doc LICENSE_1_0.txt
 %defattr(755, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/libboost_*.so
 %{_includedir}/boost
 #%{_datadir}/%{name}-%{version}
 #%{_libdir}/boost/Boost*.cmake
 
 %files static
+%doc LICENSE_1_0.txt
 %defattr(644, root, root, 755)
-#%doc LICENSE_1_0.txt
 %{_libdir}/*.a
 
