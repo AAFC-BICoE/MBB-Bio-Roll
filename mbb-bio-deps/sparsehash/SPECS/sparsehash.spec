@@ -4,6 +4,8 @@
 %define version 	2.0.2
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/lib/%{src_name}
+%define _prefix		%{installroot}
+%define _libdir		%{_prefix}/lib
 
 BuildRoot:		%{buildroot}
 Summary: 		An extremely memory-efficient hash_map implementation
@@ -27,12 +29,20 @@ They also contain code to serialize and unserialize from disk.
 
 %build
 #./configure --prefix=%{Prefix}/gdal
-./configure --prefix=%{installroot}
-make prefix=%{installroot}
+./configure --prefix=%{_prefix}
+make -j`nproc`
 
 %install
-make install prefix=$RPM_BUILD_ROOT%{installroot}
+make install DESTDIR=%{buildroot} 
+mv %{buildroot}%{_prefix}/share/doc/%{src_name}-%{version} %{buildroot}%{_docdir}/%{name}-%{version}
 
 %files
+%defattr(644,root,root,755)
+%dir %{_prefix}
+%doc AUTHORS
+%doc ChangeLog
+%doc COPYING
+%doc NEWS
+%{_includedir}
 %defattr(755,root,root,755)
-%{installroot}
+%{_libdir}
