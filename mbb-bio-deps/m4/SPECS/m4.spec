@@ -1,8 +1,10 @@
 %define name		opt-m4	
+%define src_name	m4
 %define release		1
 %define version 	1.4.17
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/gnu-tools
+%define buildroot 	%{_topdir}/%{name}-%{version}-root
+%define installroot 	/opt/bio/gnu-tools
+%define _prefix		%{installroot}
 
 BuildRoot:	%{buildroot}
 Summary: 	The GNU macro processor
@@ -10,8 +12,8 @@ License:    	GPLv3+
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
-Source: 	m4-%{version}.tar.gz
-Prefix: 	/opt/bio
+Source: 	%{src_name}-%{version}.tar.gz
+Prefix: 	%{_prefix}
 Group: 		Development/Tools
 URL:		http://www.gnu.org/software/m4
 AutoReqProv:	yes
@@ -37,14 +39,15 @@ Install m4 if you need a macro processor.
 %setup -q -n m4-%{version}
 
 %build
-./configure --prefix=%{installroot}
-make -j`nproc` PREFIX=%{installroot}
+./configure --prefix=%{_prefix}
+make -j`nproc`
 
 %install
 make install DESTDIR=%{buildroot}
 
 %files
-%{installroot}/share/info/m4*
-%{installroot}/share/man/man1/m4*
+%defattr(644,root,root,755)
+%{_infodir}/m4*
+%{_mandir}/man1/m4*
 %defattr(755,root,root,755)
-%{installroot}/bin/m4
+%{_bindir}/m4
