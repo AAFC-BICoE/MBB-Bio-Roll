@@ -18,6 +18,8 @@ Group: 			Bioinformatics/Alignment
 AutoReq:		yes
 Url:			http://samtools.sourceforge.net/
 
+%global __requires_exclude ^perl
+
 Requires:	opt-perl(Carp)
 Requires:	opt-perl(Data::Dumper)
 Requires:	opt-perl(File::Spec)
@@ -27,8 +29,6 @@ Requires:	opt-perl(List::Util)
 Requires:	opt-perl(constant)
 Requires:	opt-perl(strict)
 Requires:	opt-perl(warnings)
-
-%global __requires_exclude ^perl
 
 %description
 SAM (Sequence Alignment/Map) format is a generic format for storing large
@@ -48,24 +48,21 @@ make -j `nproc`
 make -j `nproc` razip 
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}/bin
-mkdir -p $RPM_BUILD_ROOT%{installroot}/include/bam
-mkdir -p $RPM_BUILD_ROOT%{installroot}/lib
-mkdir -p $RPM_BUILD_ROOT%{installroot}/perl
-cp samtools razip bcftools/bcftools $RPM_BUILD_ROOT%{installroot}/bin
-cp *.h $RPM_BUILD_ROOT%{installroot}/include/bam
-cp *.a $RPM_BUILD_ROOT%{installroot}/lib
-cp ./misc/*.pl $RPM_BUILD_ROOT%{installroot}/bin
-
+mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_includedir}/bam
+mkdir -p %{buildroot}%{_libdir}
+cp samtools razip bcftools/bcftools %{buildroot}%{_bindir}
+cp *.h %{buildroot}%{_includedir}/bam
+cp *.a %{buildroot}%{_libdir}
+cp ./misc/*.pl %{buildroot}%{_bindir}
 
 %files
 %defattr(644,root,root,755)
-%dir %{installroot}
-%{installroot}/include
-%{installroot}/lib
+%dir %{_prefix}
+%doc AUTHORS
+%doc COPYING
+%doc NEWS
+%{_includedir}
 %defattr(755,root,root,755)
-%{installroot}/bin
-#%{installroot}/samtools
-#%{installroot}/bcftools
-#%{installroot}/razip 
-#%{installroot}/perl 
+%{_libdir}
+%{_bindir}
