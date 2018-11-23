@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=Eigen-3.1.1.spec
+SPEC=eigen.spec
 
 .PHONY: clean
 

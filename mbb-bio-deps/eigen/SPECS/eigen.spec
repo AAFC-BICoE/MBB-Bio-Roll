@@ -13,7 +13,7 @@ Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
 Source: 		%{src_name}-v%{version}.tar.gz
-Prefix: 		%{installroot}
+Prefix: 		%{_prefix}
 Group: 			Development/Tools
 URL:			http://eigen.tuxfamily.org/index.php?title=Main_Page
 AutoReq:		yes
@@ -26,14 +26,17 @@ Eigen is a C++ template library for linear algebra: matrices, vectors, numerical
 
 %build
 mkdir build && cd build
-cmake ../ -DCMAKE_INSTALL_PREFIX=%{installroot} -DINCLUDE_INSTALL_DIR=%{installroot}/include -DCMAKE_BUILD_TYPE=Release
+cmake ../ -DCMAKE_INSTALL_PREFIX=%{_prefix} -DINCLUDE_INSTALL_DIR=%{_includedir} -DCMAKE_BUILD_TYPE=Release
 make -j`nproc`
-
 
 %install
 cd build
 make install DESTDIR=%{buildroot}
 
 %files
-%defattr(644, root, root, 755) 
-%{installroot}
+%defattr(644,root,root,755) 
+%dir %{_prefix}
+%doc COPYING.*
+%{_includedir}
+%{_datadir}
+%defattr(755,root,root,755)
