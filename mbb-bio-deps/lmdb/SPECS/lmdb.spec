@@ -1,4 +1,3 @@
-### define _topdir	 	/home/rpmbuild/rpms/beagle-lib
 %define name		opt-lmdb
 %define	src_name	lmdb
 %define release		1
@@ -6,7 +5,7 @@
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/lib/%{src_name}
 %define	_prefix		%{installroot}
-
+%define _libdir		%{_prefix}/lib
 
 BuildRoot:		%{buildroot}
 Summary: 		MLightning Memory-Mapped Database Manager
@@ -39,15 +38,19 @@ memory map, requiring no page cache layer of its own.
 make -j `nproc` # %{?_smp_mflags} V=1 SOVERSION=%{version} CFLAGS="%{optflags}"
 
 %install
-make install DESTDIR="%{buildroot}" prefix=%{installroot}
+make install DESTDIR="%{buildroot}" prefix=%{_prefix}
+
+%clean
+rm -rf %{src_name}-LMDB_%{version}
 
 %files
-%defattr(-,root,root)
+%defattr(644,root,root,755)
 %doc CHANGES
 %doc COPYRIGHT
 %doc LICENSE
-%dir %{installroot}
-%{_bindir}
+%dir %{_prefix}
 %doc %{_mandir}
-%_includedir
-%{installroot}/lib
+%{_includedir}
+%defattr(755,root,root,755)
+%{_bindir}
+%{_libdir}
