@@ -1,11 +1,11 @@
-%define debug_package %{nil}
-
 %define name		opt-bison
 %define src_name	bison
 %define release		1
 %define version 	3.1
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/gnu-tools
+%define _prefix		%{installroot}
+%define _libdir		%{_prefix}/lib
 
 BuildRoot:		%{buildroot}
 Summary: 		Bison is a general-purpose parser generator that converts an annotated context-free grammar into a deterministic LR or generalized LR parser employing LALR parser tables.
@@ -14,7 +14,7 @@ Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
 Source: 		%{src_name}-%{version}.tar.gz 
-Prefix: 		%{installroot}
+Prefix: 		%{_prefix}
 Group: 			Development/Tools
 AutoReq:		yes
 Packager:		Iyad Kandalaft <iyad.kandalaft@canada.ca>
@@ -32,25 +32,28 @@ used in simple desk calculators to complex programming languages.
 %setup -q -n %{src_name}-%{version}
 
 %build
-./configure --prefix=%{installroot}
+./configure --prefix=%{_prefix}
 make -pipe --jobs=`nproc` 
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}
-make install prefix=$RPM_BUILD_ROOT%{installroot}
-strip $RPM_BUILD_ROOT%{installroot}/bin/bison
-
+mkdir -p %{buildroot}%{_prefix}
+make install DESTDIR=%{buildroot}
+strip %{buildroot}%{_prefix}/bin/bison
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS
+%doc ChangeLog
+%doc COPYING
 %{installroot}/lib/liby.a
-%{installroot}/share/bison/*
-%{installroot}/share/info/bison.info
-%{installroot}/share/man/man1/*
-%{installroot}/share/locale/*/LC_MESSAGES/*
-%{installroot}/share/doc/*
-%{installroot}/share/aclocal/bison-i18n.m4
+%{_datadir}/bison/*
+%{_datadir}/info/bison.info
+%{_datadir}/aclocal/bison-i18n.m4
+%{_datadir}/locale/*/LC_MESSAGES/*
+%{_docdir}/*
+%{_mandir}/man1/*
 %defattr(755,root,root,755)
-%{installroot}/bin/bison
-%{installroot}/bin/yacc
+%{_libdir}/liby.a
+%{_bindir}/bison
+%{_bindir}/yacc
 
