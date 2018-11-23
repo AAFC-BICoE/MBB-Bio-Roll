@@ -1,8 +1,9 @@
 %define name		opt-make
 %define release		1
 %define version 	4.2.1
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/gnu-tools
+%define buildroot 	%{_topdir}/%{name}-%{version}-root
+%define installroot 	/opt/bio/gnu-tools
+%define _prefix		%{installroot}
 
 BuildRoot:	%{buildroot}
 Summary: 	The GNU macro processor
@@ -11,7 +12,7 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	make-%{version}.tar.gz
-Prefix: 	/opt/bio
+Prefix: 	%{_prefix}
 Group: 		Development/Tools
 URL:		http://www.gnu.org/software/make
 AutoReqProv:	yes
@@ -35,16 +36,17 @@ makefile.
 %setup -q -n make-%{version}
 
 %build
-./configure --prefix=%{installroot}
-make -j`nproc` PREFIX=%{installroot}
+./configure --prefix=%{_prefix}
+make -j`nproc`
 
 %install
 make install DESTDIR=%{buildroot}
 
 %files
-%{installroot}/include/*
-%{installroot}/share/info/make*
-%{installroot}/share/locale/*/*/make.mo
-%{installroot}/share/man/man1/make.1
+%defattr(644,root,root,755)
+%{_includedir}/*
+%{_infodir}/make*
+%{_datadir}/locale/*/*/make.mo
+%{_mandir}/man1/make.1
 %defattr(755,root,root,755)
-%{installroot}/bin/make
+%{_bindir}/make
