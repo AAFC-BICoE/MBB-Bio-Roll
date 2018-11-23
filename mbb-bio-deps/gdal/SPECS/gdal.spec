@@ -1,12 +1,11 @@
-# This is a sample spec file for wget
-%define debug_package %{nil}
-
 %define name		opt-gdal
 %define src_name	gdal
 %define release		1
 %define version 	1.11.5
 %define buildroot	%{_topdir}/%{name}-%{version}-root
 %define installroot	/opt/bio/lib/%{src_name}
+%define	_prefix		%{installroot}
+%define _libdir		%{_prefix}/lib
 
 BuildRoot:		%{buildroot}
 Summary: 		GDAL - Geospatial Data Abstraction Library 
@@ -16,7 +15,7 @@ Version: 		%{version}
 Release: 		%{release}
 Source: 		%{src_name}-%{version}.tar.gz
 Packager:		Glen Newton <glen.newton@agr.gc.ca>
-Prefix: 		%{installroot}
+Prefix: 		%{_prefix}
 Group: 			Development/Libraries/GIS
 URL:			http://www.gdal.org/
 AutoReq:		yes
@@ -35,17 +34,18 @@ release.
 %setup -q -n %{src_name}-%{version}
 
 %build
-./configure --prefix=%{installroot}
-make -pipe --jobs=`nproc` prefix=%{installroot}
+./configure --prefix=%{_prefix}
+make -pipe --jobs=`nproc`
 
 %install
-make install prefix=$RPM_BUILD_ROOT%{installroot}
+make install DESTDIR=%{buildroot}
 
 %files
 %defattr(644,root,root,755)
-%dir %{installroot}
-%{installroot}/include
-%{installroot}/lib
-%{installroot}/share
+%dir %{_prefix}
+%doc LICENSE.TXT
+%{_includedir}
+%{_datadir}
 %defattr(755,root,root,755)
-%{installroot}/bin
+%{_libdir}
+%{_bindir}
