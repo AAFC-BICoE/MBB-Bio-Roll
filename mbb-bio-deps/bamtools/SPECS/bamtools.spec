@@ -38,9 +38,7 @@ make install DESTDIR=%{buildroot}
 %dir %{_prefix}
 %doc README
 %doc LICENSE
-%{_prefix}/include
+%{_includedir}
 %defattr(755,root,root,755)
 %{_libdir}
 %{_bindir}
-
-
