@@ -2,8 +2,10 @@
 %define src_name	zlib
 %define release		1
 %define version 	1.2.11
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/lib/%{src_name}
+%define buildroot	%{_topdir}/%{name}-%{version}-root
+%define installroot	/opt/bio/lib/%{src_name}
+%define _prefix		%{installroot}
+%define _libdir		%{_prefix}/lib
 
 Summary: 	The compression and decompression library
 Name: 		%{name}
@@ -11,7 +13,7 @@ Version: 	%{version}
 Release: 	%{release}
 License: 	MIT
 Source: 	%{src_name}-%{version}.tar.gz
-Prefix: 	/opt/bio/lib/%{src_name}
+Prefix: 	%{_prefix}
 Group: 		System Environment/Libraries
 URL: 		http://www.zlib.net/
 AutoReqProv:	yes
@@ -44,7 +46,7 @@ decompression library.
 %setup -q -n %{src_name}-%{version}
 
 %build
-./configure --prefix=%{installroot}
+./configure --prefix=%{_prefix}
 make --jobs=`nproc`
 
 %check
@@ -54,18 +56,23 @@ make test
 make install DESTDIR=%{buildroot}
 
 %files
+%defattr(644,root,root,755)
 %doc README ChangeLog FAQ
+%defattr(755,root,root,755)
 %{prefix}/lib/libz.so.*
 
 %files devel
+%defattr(644,root,root,755)
 %doc README doc/algorithm.txt test/example.c
-%{prefix}/include/zlib.h
-%{prefix}/include/zconf.h
-%{prefix}/lib/libz.so
-%{prefix}/lib/pkgconfig/zlib.pc
-%{prefix}/share/man/man3/zlib.3*
+%{_includedir}/zlib.h
+%{_includedir}/zconf.h
+%{_mandir}/man3/zlib.3*
+%{_libdir}/pkgconfig/zlib.pc
+%defattr(755,root,root,755)
+%{_libdir}/libz.so
 
 %files static
 %doc README
-%{prefix}/lib/libz.a
+%defattr(755,root,root,755)
+%{_libdir}/libz.a
 
