@@ -1,11 +1,11 @@
-%define debug_package %{nil}
-### define _topdir	 	/home/rpmbuild/rpms/%{name}
 %define name		opt-geos
 %define src_name	geos
 %define release		1
 %define version 	3.4.3
 %define buildroot	%{_topdir}/%{name}-%{version}-root
 %define installroot	/opt/bio/lib/%{src_name}
+%define _prefix		%{installroot}
+%define _libdir		%{_prefix}/lib
 
 BuildRoot:		%{buildroot}
 Summary: 		GEOS (Geometry Engine - Open Source)
@@ -14,7 +14,7 @@ Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
 Source: 		%{src_name}-%{version}.tar.bz2
-Prefix: 		/opt/bio
+Prefix: 		%{_prefix}
 Group: 			Development/Libraries/GIS
 URL:			http://trac.osgeo.org/geos/
 AutoReq:		yes
@@ -37,14 +37,18 @@ Capabilities Include:
 %setup -q -n %{src_name}-%{version}
 
 %build
-./configure --prefix=/opt/bio/gdal
-make  --jobs=`nproc` prefix=%{installroot}
+./configure --prefix=%{_prefix}
+make  --jobs=`nproc`
 
 %install
-make install prefix=$RPM_BUILD_ROOT%{installroot}
+make install DESTDIR=%{buildroot}
 
 %files
 %defattr(644,root,root,755)
-%{installroot}
+%dir %{_prefix}
+%doc COPYING
+%doc AUTHORS
+%{_includedir}
 %defattr(755,root,root,755)
-%{installroot}/bin
+%{_libdir}
+%{_bindir}
