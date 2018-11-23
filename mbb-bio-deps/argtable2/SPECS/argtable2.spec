@@ -1,12 +1,11 @@
-# This is a sample spec file for wget
-
-### define _topdir	 	/home/rpmbuild/rpms/%{name}
 %define name		opt-argtable2
 %define src_name	argtable2
 %define release		1
 %define version 	13
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/lib/%{src_name}
+%define _prefix		%{installroot}
+%define _libdir		%{_prefix}/lib
 
 BuildRoot:	%{buildroot}
 Summary: 	Argtable is an ANSI C command line parser.
@@ -37,13 +36,19 @@ textual description of the command line syntax.
 %setup -q -n %{src_name}-%{version}
 
 %build
-./configure --prefix=%{installroot}
-make prefix=%{installroot}
+./configure --prefix=%{_prefix}
+make prefix=%{_prefix}
 
 %install
-make install prefix=$RPM_BUILD_ROOT%{installroot}
-#find $RPM_BUILD_ROOT%{installroot} -type f -exec sed -i 's|/root/rpms/amos/amos-3.1.0-root/|/|g' {} \;
+make install DESTDIR=%{buildroot}
 
 %files
+%defattr(644,root,root,755)
+%dir %{_prefix}
+%doc AUTHORS
+%doc ChangeLog
+%doc COPYING
+%{_includedir}
+%{_datadir}
 %defattr(755,root,root,755)
-%{installroot}
+%{_libdir}
