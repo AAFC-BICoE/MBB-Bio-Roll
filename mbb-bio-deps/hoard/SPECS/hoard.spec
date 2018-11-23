@@ -1,11 +1,10 @@
-# This is a  spec file for The Hoard Memory Allocator
-
-### define _topdir	 	/home/rpmbuild/rpms/hoard
 %define name		opt-hoard
 %define src_name	hoard
 %define release		1
 %define version 	3.12
 %define installroot	/opt/bio/lib/%{src_name}
+%define _prefix		%{installroot}
+%define _libdir		%{_prefix}/lib
 
 BuildRoot:	%{buildroot}
 Summary:	hoard is The Hoard memory allocator
@@ -37,9 +36,18 @@ cd src
 make -j 4 Linux-gcc-x86_64
 
 %install
-mkdir -p    %{buildroot}%{installroot}
-cp src/libhoard.so %{buildroot}%{installroot}
+mkdir -p  %{buildroot}%{_libdir}
+cd src
+# PREFIX must be set to _libdir because Makefile is custom
+make Linux-gcc-x86_64-install PREFIX=%{buildroot}%{_libdir}
+cp -r include %{buildroot}%{_includedir}
 
 %files
-%defattr(755,root,root)
-%{installroot}
+%defattr(644,root,root,755)
+%dir %{_prefix}
+%doc COPYING
+%doc AUTHORS
+%doc README.md
+%{_includedir}
+%defattr(755,root,root,755)
+%{_libdir}
