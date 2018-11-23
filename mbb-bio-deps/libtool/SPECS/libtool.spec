@@ -1,8 +1,10 @@
 %define name		opt-libtool
 %define release		1
 %define version 	2.4.6
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/gnu-tools
+%define buildroot 	%{_topdir}/%{name}-%{version}-root
+%define installroot 	/opt/bio/gnu-tools
+%define _prefix		%{installroot}
+%define	_libdir		%{_prefix}/lib
 
 BuildRoot:	%{buildroot}
 Summary: 	The GNU Portable Library Tool
@@ -11,11 +13,12 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	libtool-%{version}.tar.gz
-Prefix: 	%{installroot}
+Prefix: 	%{_prefix}
 Group: 		Development/Tools
 URL:		http://www.gnu.org/software/m4
 AutoReqProv:	yes
 Packager:	Iyad Kandalaft <iyad.kandalaft@canada.ca>
+
 Provides:	libtool
 
 BuildRequires: autoconf, automake, texinfo
@@ -69,31 +72,31 @@ Static libraries and header files for development with ltdl.
 %setup -n libtool-%{version} -q
 
 %build
-./configure --prefix=%{installroot}
-make PREFIX=%{installroot}
+./configure --prefix=%{_prefix}
+make -j
 
 %install
 make install DESTDIR=%{buildroot}
 
 %files
 %defattr(-,root,root)
-%{installroot}/share/info/libtool.info*
-%{installroot}/share/man/man1/libtool.1*
-%{installroot}/share/man/man1/libtoolize.1*
-%{installroot}/bin/libtool
-%{installroot}/bin/libtoolize
-%{installroot}/share/aclocal/*.m4
-%exclude %{installroot}/share/libtool/libltdl
-%{installroot}/share/libtool
+%{_infodir}/libtool.info*
+%{_mandir}/man1/libtool.1*
+%{_mandir}/man1/libtoolize.1*
+%{_bindir}/libtool
+%{_bindir}/libtoolize
+%{_datadir}/aclocal/*.m4
+%exclude %{_datadir}/libtool/libltdl
+%{_datadir}/libtool/
 
 %files ltdl
 %defattr(-,root,root)
 %doc libltdl/COPYING.LIB
-%{installroot}/lib/*
+%{_libdir}/*
 
 %files ltdl-devel
 %defattr(-,root,root)
 %doc libltdl/README
-%{installroot}/share/libtool/libltdl
-%{installroot}/include/ltdl.h
-%{installroot}/include/libltdl
+%{_datadir}/libtool/libltdl
+%{_includedir}/ltdl.h
+%{_includedir}/libltdl
