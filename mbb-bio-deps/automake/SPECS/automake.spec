@@ -1,18 +1,18 @@
 %define name		opt-automake
 %define release		1
 %define version 	1.16.1
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/gnu-tools
+%define buildroot	%{_topdir}/%{name}-%{version}-root
+%define installroot	/opt/bio/gnu-tools
+%define _prefix		%{installroot}
 
 BuildRoot:	%{buildroot}
 Summary: 	A GNU tool for automatically creating Makefiles
-# docs ~> GFDL, sources ~> GPLv2+, mkinstalldirs ~> PD and install-sh ~> MIT
 License:    	GPLv2+ and GFDL and Public Domain and MIT
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	automake-%{version}.tar.gz
-Prefix: 	%{installroot}
+Prefix: 	%{_prefix}
 Group: 		Development/Tools
 URL:		http://www.gnu.org/software/automake
 AutoProv:	yes
@@ -67,21 +67,22 @@ Makefiles.
 
 %prep
 %setup -q -n automake-%{version}
-#autoreconf -iv
 
 %build
-./configure --prefix=%{installroot} PERL=/opt/perl/bin/perl
-make PREFIX=%{installroot}
+./configure --prefix=%{_prefix} PERL=/opt/perl/bin/perl
+make
 
 %install
 export PERL5LIB=%{buildroot}
 make install DESTDIR=%{buildroot}
 
 %files
-%{installroot}/share/aclocal*
-%{installroot}/share/automake*
-%{installroot}/share/doc/automake*
-%{installroot}/share/info/automake*
-%{installroot}/share/man/man1/*
+%defattr(644,root,root,755)
+%doc 
+%{_datadir}/aclocal*
+%{_datadir}/automake*
+%{_docdir}/automake*
+%{_datadir}/info/automake*
+%{_mandir}/man1/*
 %defattr(755,root,root,755)
-%{installroot}/bin/*
+%{_bindir}/*
