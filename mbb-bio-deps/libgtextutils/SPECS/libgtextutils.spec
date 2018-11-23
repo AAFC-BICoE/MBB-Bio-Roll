@@ -1,4 +1,3 @@
-### define _topdir	 	/home/rpmbuild/rpms/beagle-lib
 %define name		opt-libgtextutils
 %define src_name	libgtextutils
 %define release		1
@@ -6,6 +5,7 @@
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/lib/%{src_name}
 %define	_prefix		%{installroot}
+%define _libdir		%{_prefix}/lib
 
 BuildRoot:		%{buildroot}
 Summary: 		Gordon's Text utils Library
@@ -14,7 +14,7 @@ Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
 Source:         	%{src_name}-v%{version}.tar.gz
-Prefix: 		%{installroot}
+Prefix: 		%{_prefix}
 Group:          	Libraries/Text Manipulation
 AutoReq:		yes
 Url:			https://github.com/agordon/libgtextutils
@@ -32,14 +32,15 @@ Gordon's Text utils Library used within fastx
 make -j `nproc`
 
 %install
-make install DESTDIR="%{buildroot}"
+make install DESTDIR=%{buildroot}
 
 %files
 %defattr(644,root,root,755)
+%dir %{_prefix}
 %doc AUTHORS
 %doc COPYING
 %doc ChangeLog
-%dir %{installroot}
-%{installroot}/lib
-%{installroot}/include
-%{installroot}/share
+%{_includedir}
+%{_datadir}
+%defattr(755,root,root,755)
+%{_libdir}
