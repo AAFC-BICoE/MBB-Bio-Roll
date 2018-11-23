@@ -72,10 +72,6 @@ developing programs which use the libcurl library. It contains the API
 documentation of the library, too.
 
 %prep
-#echo %{_prefix}
-#echo %{_mandir}
-#echo %{_libdir}
-#exit 1
 %setup -q -n %{src_name}-%{version}
 
 %build
