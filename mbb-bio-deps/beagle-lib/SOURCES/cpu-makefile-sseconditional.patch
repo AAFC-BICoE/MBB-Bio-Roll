@@ -1,0 +1,22 @@
+diff -ruN beagle-lib-beagle_release_1_1-orig/libhmsbeagle/CPU/Makefile.am beagle-lib-beagle_release_1_1/libhmsbeagle/CPU/Makefile.am
+--- beagle-lib-beagle_release_1_1-orig/libhmsbeagle/CPU/Makefile.am	2018-11-09 09:33:28.993522548 -0500
++++ beagle-lib-beagle_release_1_1/libhmsbeagle/CPU/Makefile.am	2018-11-09 09:34:01.277079448 -0500
+@@ -19,7 +19,8 @@
+ #
+ # CPU plugin with custom SSE code
+ #
+-if HAVE_SSE2
++#HAVE_SSE@ is not defined in configure.ac
++#if HAVE_SSE2
+ libhmsbeagle_cpu_sse_la_SOURCES = $(BEAGLE_CPU_COMMON) \
+                     SSEDefinitions.h BeagleCPU4StateSSEImpl.hpp BeagleCPU4StateSSEImpl.h \
+                     BeagleCPUSSEImpl.hpp BeagleCPUSSEImpl.h \
+@@ -27,7 +28,7 @@
+ 
+ libhmsbeagle_cpu_sse_la_CXXFLAGS = $(AM_CXXFLAGS)
+ libhmsbeagle_cpu_sse_la_LDFLAGS= -version-info $(GENERIC_LIBRARY_VERSION)
+-endif
++#endif
+ 
+ #
+ # CPU plugin with OpenMP parallel threads
