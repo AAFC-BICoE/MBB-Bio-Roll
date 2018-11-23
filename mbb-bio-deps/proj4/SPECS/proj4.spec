@@ -1,13 +1,11 @@
-# This is a sample spec file for wget
-%define debug_package %{nil}
-
-### define _topdir	 	/home/rpmbuild/rpms/%{name}
-%define name			opt-proj4
-%define src_name		proj.4
-%define release			1
-%define version 		4.9.3
-%define buildroot 		%{_topdir}/%{name}-%{version}-root
-%define installroot 		/opt/bio/%{src_name}
+%define name		opt-proj4
+%define src_name	proj.4
+%define release		1
+%define version 	4.9.3
+%define buildroot 	%{_topdir}/%{name}-%{version}-root
+%define installroot 	/opt/bio/%{src_name}
+%define _prefix		%{installroot}
+%define _libdir		%{_prefix}/lib
 
 BuildRoot:		%{buildroot}
 Summary: 		PROJ.4 Cartographic Projections library
@@ -30,14 +28,22 @@ PROJ.4 is a library for performing conversions between cartographic projections.
 
 %build
 ./autogen.sh
-./configure --prefix=%{installroot}
-make prefix=%{installroot}
+./configure --prefix=%{_prefix}
+make -j`nproc`
 
 %install
-make install prefix=$RPM_BUILD_ROOT%{installroot}
+make install DESTDIR=%{buildroot}
 
 %files
 %defattr(644,root,root,755)
-%{installroot}
+%dir %{_prefix}
+%doc AUTHORS
+%doc ChangeLog
+%doc COPYING
+%doc NEWS
+%{_includedir}
+%{_datadir}/proj/
+%{_mandir}
 %defattr(755,root,root,) 
-%{installroot}/bin/*
+%{_libdir}
+%{_bindir}
