@@ -1,8 +1,9 @@
 %define name		opt-pkgconfig
 %define release		1
 %define version 	0.29.1
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/gnu-tools
+%define buildroot	%{_topdir}/%{name}-%{version}-root
+%define installroot	/opt/bio/gnu-tools
+%define _prefix		%{installroot}
 
 BuildRoot:	%{buildroot}
 Summary: 	A tool for determining compilation options
@@ -11,7 +12,7 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	pkg-config-%{version}.tar.gz
-Prefix: 	%{installroot}
+Prefix: 	%{_prefix}
 Group: 		Development/Tools
 URL:		http://pkgconfig.freedesktop.org
 AutoReqProv:	yes
@@ -29,15 +30,16 @@ compiler and linker flags.
 %setup -q -n pkg-config-%{version}
 
 %build
-./configure --prefix=%{installroot} --with-install-glib --with-pc-path=%{installroot}/share/pkgconfig
-make -j`nproc` PREFIX=%{installroot}
+./configure --prefix=%{_prefix} --with-install-glib --with-pc-path=%{_prefix}/share/pkgconfig
+make -j`nproc`
 
 %install
 make install DESTDIR=%{buildroot}
 
 %files
-%{installroot}/share/aclocal/pkg.m4
-%{installroot}/share/doc/pkg-config/
-%{installroot}/share/man/man1/pkg-config.1
+%defattr(644,root,root,755)
+%{_datadir}/aclocal/pkg.m4
+%{_docdir}/pkg-config/
+%{_mandir}/man1/pkg-config.1
 %defattr(755,root,root,755)
-%{installroot}/bin/*
+%{_prefix}/bin/*
