@@ -1,4 +1,3 @@
-### define _topdir	 	/home/rpmbuild/rpms/ncl
 %define debug_package	%{nil}
 %define name		opt-ncl
 %define src_name	ncl
@@ -6,16 +5,17 @@
 %define version 	2.1.18
 %define buildroot	%{_topdir}/%{name}-%{version}-root
 %define installroot 	/opt/bio/lib/%{src_name}
+%define _prefix		%{installroot}
+%define _libdir		%{_prefix}/lib
 
 BuildRoot:		%{buildroot}
 Summary: 		NEXUS Class Library (NCL)
-License: 		GPL2
+License: 		GPLv2
 Name: 			%{name}
 Version: 		%{version}
 Release: 		%{release}
 Source: 		%{src_name}-%{version}.tar.gz
-#Patch:			%{name}.%{version}.patch
-Prefix: 		%{installroot}
+Prefix: 		%{_prefix}
 Group: 			Development/Tools
 AutoReq:		yes
 Url: http://ncl.sourceforge.net/
@@ -29,20 +29,19 @@ molecular evolution.
 %setup -q -n %{src_name}-%{version}
 
 %build
-./configure --prefix=%{installroot}
-make -pipe --jobs=`nproc` prefix=%{installroot}
+./configure --prefix=%{_prefix}
+make -pipe --jobs=`nproc`
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}
-#make install DESTDIR=$RPM_BUILD_ROOT
-#make install prefix=%{installroot}
-make install prefix=$RPM_BUILD_ROOT%{installroot}
-strip $RPM_BUILD_ROOT%{installroot}/bin/*
-
+mkdir -p %{buildroot}%{_prefix}
+make install DESTDIR=%{buildroot}
 
 %files
 %defattr(644,root,root,755)
-%{installroot}/include
-%{installroot}/lib
+%doc AUTHORS
+%doc COPYING
+%doc NEWS
+%{_includedir}
 %defattr(755,root,root,755)
-%{installroot}/bin
+%{_libdir}
+%{_bindir}
