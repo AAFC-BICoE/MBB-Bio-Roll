@@ -2,8 +2,9 @@
 %define src_name	autoconf
 %define release		1
 %define version 	2.69
-%define buildroot %{_topdir}/%{name}-%{version}-root
-%define installroot /opt/bio/gnu-tools
+%define buildroot	%{_topdir}/%{name}-%{version}-root
+%define installroot	/opt/bio/gnu-tools
+%define _prefix		%{installroot}
 
 BuildRoot:	%{buildroot}
 Summary: 	A GNU tool for automatically configuring source code
@@ -12,7 +13,7 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	autoconf-%{version}.tar.gz
-Prefix: 	%{installroot}
+Prefix: 	%{_prefix}
 Group: 		Development/Tools
 URL:		http://www.gnu.org/software/autoconf/autoconf.html	
 AutoReq:	no
@@ -56,8 +57,6 @@ Requires:	rpmlib(FileDigests) <= 4.6.0-1
 Requires:	rpmlib(PayloadFilesHavePrefix) <= 4.0-1
 Requires:	rpmlib(PayloadIsXz) <= 5.2-1
 
-
-
 # filter out bogus perl(Autom4te*) dependencies
 %global __requires_exclude %{?__requires_exclude:%__requires_exclude|}^perl\\(Autom4te::
 %global __provides_exclude %{?__provides_exclude:%__provides_exclude|}^perl\\(Autom4te::
@@ -82,19 +81,21 @@ their use.
 %setup -q -n autoconf-%{version} PERL=/opt/perl/bin/perl
 
 %build
-./configure --prefix=%{installroot}
+./configure --prefix=%{_prefix}
 # Not parallel safe - do not use -j`nproc`
-M4=/opt/bio/gnu-tools/bin/m4 make PREFIX=%{installroot}
+M4=/opt/bio/gnu-tools/bin/m4 
 
 %install
 make install DESTDIR=%{buildroot}
 mkdir -p %{buildroot}/share
 
 %files
-%{installroot}/share/autoconf
-%{installroot}/share/emacs/site-lisp/autoconf*
-%{installroot}/share/info/autoconf.info
-%{installroot}/share/info/standards.info
-%{installroot}/share/man/man1/*
+%defattr(644,root,root,755)
+%{_datadir}/autoconf
+%{_datadir}/emacs/site-lisp/autotest-mode.el*
+%{_datadir}/emacs/site-lisp/autoconf*
+%{_datadir}/info/autoconf.info
+%{_datadir}/info/standards.info
+%{_mandir}/man1/*
 %defattr(755,root,root,755)
-%{installroot}/bin/*
+%{_bindir}/*
