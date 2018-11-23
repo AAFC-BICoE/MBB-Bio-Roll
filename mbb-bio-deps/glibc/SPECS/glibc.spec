@@ -3,6 +3,8 @@
 %define release     	1
 %define version     	2.24
 %define installroot 	/opt/bio/lib/%{src_name}
+%define _prefix		%{installroot}
+%define _libdir		%{_prefix}/lib
 
 Summary:        The GNU C Library is the standard system C library for all GNU systems, and is an important part of what makes up a GNU system.  
 License: 	GPLv2
@@ -10,7 +12,7 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	%{src_name}-%{version}.tar.bz2
-Prefix: 	/opt/bio/lib
+Prefix: 	%{_prefix}
 Group:          Development/Libraries	
 AutoReq:	yes
 Url:            https://www.gnu.org/software/libc
@@ -47,18 +49,22 @@ Linux system will not function.
 BUILDDIR=%{name}-build
 mkdir $BUILDDIR
 pushd $BUILDDIR
-export LD_RUN_PATH=%{installroot}/lib:$LD_RUN_PATH
-../configure --prefix=%{installroot}
-make -j`nproc`
-popd
+export LD_RUN_PATH=%{_prefix}/lib:$LD_RUN_PATH
+../configure --prefix=%{_prefix}
+make -j`nproc` -pipe
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}
-make install install_root=$RPM_BUILD_ROOT -C %{name}-build
+mkdir -p %{buildroot}%{_prefix}
+make install DESTDIR=%{buildroot} -C %{name}-build
 
 %files
 %defattr(644,root,root,755)
-%{installroot}
+%dir %{_prefix}
+%doc COPYING*
+%{_includedir}
+%{_datadir}
 %defattr(755,root,root,755)
-%{installroot}/bin
-%{installroot}/lib
+%{_libdir}
+%{_libexecdir}
+%{_bindir}
+%{_sbindir}
