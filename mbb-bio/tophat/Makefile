@@ -1,5 +1,5 @@
 FOLDERS=BUILD SRPMS
-SPEC=tophat-2.0.5-1.spec
+SPEC=tophat.spec
 
 .PHONY: clean
 
