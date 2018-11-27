@@ -3,7 +3,7 @@
 ### define _topdir	 	/home/rpmbuild/rpms/SSPACE
 %define name		SSPACE
 %define src_name	%{name}-BASIC
-%define release		2
+%define release		1
 %define version 	2.1.1
 %define installroot 	/opt/bio/%{name}
 %define _prefix		%{installroot}
@@ -64,9 +64,9 @@ been published in the high-impact journal Bioinformatics (2011, vol. 27(4), pag.
 %build
 
 %install
-mkdir -p %{buildroot}%{installroot}
-cp -r bin dotlib tools %{buildroot}%{installroot}
-cp SSPACE_Basic_v2.0.pl README %{buildroot}%{installroot}
+mkdir -p %{buildroot}%{_prefix}
+cp -r bin dotlib tools %{buildroot}%{_prefix}
+cp SSPACE_Basic_v2.0.pl README %{buildroot}%{_prefix}
 
 %files
 %defattr(755,root,root)
