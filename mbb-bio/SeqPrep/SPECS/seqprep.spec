@@ -33,10 +33,10 @@ SeqPrep is a program to merge paired end Illumina reads that are overlapping int
 make PREFIX=%{_prefix} -j`nproc`
 
 %install
-mkdir -p %{buildroot}%{installroot}
+mkdir -p %{buildroot}%{_prefix}
 mkdir -p %{buildroot}%{_docdir}
 
-make install HOME=%{buildroot}%{installroot}
+make install HOME=%{buildroot}%{_prefix}
 cp README.md %{buildroot}%{_docdir}
 
 %files 
