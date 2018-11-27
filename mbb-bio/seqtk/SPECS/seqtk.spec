@@ -30,8 +30,8 @@ Seqtk is a fast and lightweight tool for processing sequences in the FASTA or FA
 make -j`nproc`
 
 %install
-mkdir -p %{buildroot}%{installroot}
-cp seqtk %{buildroot}%{installroot}
+mkdir -p %{buildroot}%{_prefix}
+cp seqtk %{buildroot}%{_prefix}
 
 %clean
 rm -rf %{buildroot}
