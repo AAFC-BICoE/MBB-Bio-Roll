@@ -29,12 +29,12 @@ make
 make 127mer=1
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}/bin
-cp ../SOAPdenovo-Trans-127mer  $RPM_BUILD_ROOT%{installroot}/bin
-cp ../SOAPdenovo-Trans-31mer  $RPM_BUILD_ROOT%{installroot}/bin
-cp ../MANUAL $RPM_BUILD_ROOT%{installroot}/
-cp  ../VERSION $RPM_BUILD_ROOT%{installroot}/
-cp  ../LICENSE $RPM_BUILD_ROOT%{installroot}/
+mkdir -p $RPM_BUILD_ROOT%{_prefix}/bin
+cp ../SOAPdenovo-Trans-127mer  $RPM_BUILD_ROOT%{_prefix}/bin
+cp ../SOAPdenovo-Trans-31mer  $RPM_BUILD_ROOT%{_prefix}/bin
+cp ../MANUAL $RPM_BUILD_ROOT%{_prefix}/
+cp  ../VERSION $RPM_BUILD_ROOT%{_prefix}/
+cp  ../LICENSE $RPM_BUILD_ROOT%{_prefix}/
 
 %files
 %defattr(755,root,root)
