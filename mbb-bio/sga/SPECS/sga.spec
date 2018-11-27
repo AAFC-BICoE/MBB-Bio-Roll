@@ -1,8 +1,8 @@
 ### %define _topdir           /home/rpmbuild/work/MBB-Bio-Roll/mbb-bio/sga
 %define name		sga
-%define release		15         
-%define version		0.10  
-%define src_name	%{name}-%{version}.%{release}.tar.gz
+%define release		1
+%define version		0.10.15
+%define src_name	%{name}-%{version}.tar.gz
 %define installroot	/opt/bio/%{name}
 %define _prefix		%{installroot}
 %define buildroot	%{_topdir}/%{name}-%{version}-root
@@ -36,7 +36,7 @@ is achieved by using a compressed representation of DNA sequence reads.
 
 
 %prep
-%setup -q -n %{name}-%{version}.%{release}/src
+%setup -q -n %{name}-%{version}/src
 %patch -P 0
 %patch -P 1 -p2
 
@@ -51,7 +51,7 @@ make -j`nproc`
 
 
 %install
-mkdir -p %{buildroot}%{installroot}
+mkdir -p %{buildroot}%{_prefix}
 make install DESTDIR=%{buildroot}
 
 mkdir -p %{buildroot}%{_docdir}
