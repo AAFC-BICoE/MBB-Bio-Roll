@@ -67,15 +67,15 @@ precision of the STAR mapping strategy.
 
 %build
 cd source
-make -pie --jobs=`nproc` prefix=%{installroot} STARlong
-make -pie --jobs=`nproc` prefix=%{installroot} STAR
+make -pie --jobs=`nproc` prefix=%{_prefix} STARlong
+make -pie --jobs=`nproc` prefix=%{_prefix} STAR
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}/bin
-cp source/STAR source/STARlong $RPM_BUILD_ROOT%{installroot}/bin
-cp -r doc $RPM_BUILD_ROOT%{installroot}/
-cp -r STAR-Fusion-0.1.1/STAR-Fusion STAR-Fusion-0.1.1/lib  $RPM_BUILD_ROOT%{installroot}/bin
-cp -r STAR-Fusion-0.1.1/{resources,test}  $RPM_BUILD_ROOT%{installroot}/
+mkdir -p $RPM_BUILD_ROOT%{_prefix}/bin
+cp source/STAR source/STARlong $RPM_BUILD_ROOT%{_prefix}/bin
+cp -r doc $RPM_BUILD_ROOT%{_prefix}/
+cp -r STAR-Fusion-0.1.1/STAR-Fusion STAR-Fusion-0.1.1/lib  $RPM_BUILD_ROOT%{_prefix}/bin
+cp -r STAR-Fusion-0.1.1/{resources,test}  $RPM_BUILD_ROOT%{_prefix}/
 
 
 %files
