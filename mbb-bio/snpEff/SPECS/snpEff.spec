@@ -41,10 +41,10 @@ genomic datasets in order to find the most significant variants.
 %build
 
 %install
-mkdir -p %{buildroot}%{installroot}
-cp -r * %{buildroot}%{installroot}
-rm -r %{buildroot}%{installroot}/galaxy
-rm -r %{buildroot}%{installroot}/examples
+mkdir -p %{buildroot}%{_prefix}
+cp -r * %{buildroot}%{_prefix}
+rm -r %{buildroot}%{_prefix}/galaxy
+rm -r %{buildroot}%{_prefix}/examples
 
 %files
 %defattr(755,root,root,755)
