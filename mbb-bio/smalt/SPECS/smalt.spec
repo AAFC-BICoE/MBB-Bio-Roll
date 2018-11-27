@@ -36,10 +36,10 @@ supported including paired-end sequencing reads.
 %build
 
 %install
-mkdir -p %{buildroot}%{installroot}
+mkdir -p %{buildroot}%{_prefix}
 mkdir -p %{buildroot}%{_mandir}/man1
 
-cp %{name}_x86_64 %{buildroot}%{installroot}
+cp %{name}_x86_64 %{buildroot}%{_prefix}
 cp %{name}.1 %{buildroot}%{_mandir}/man1
 
 %files
