@@ -49,9 +49,9 @@ mkdir -p %{buildroot}%{_docdir}/man/man1
 mv saps.1 sspa.1 %{buildroot}%{_docdir}/man/man1
 mv README sspa.doc saps.doc %{buildroot}%{_docdir}
 
-cp -r * %{buildroot}%{installroot}
-rm -r %{buildroot}%{installroot}/src
-rm -r %{buildroot}%{installroot}/include
+cp -r * %{buildroot}%{_prefix}
+rm -r %{buildroot}%{_prefix}/src
+rm -r %{buildroot}%{_prefix}/include
 
 %files
 %defattr(755,root,root,755)
