@@ -1,6 +1,6 @@
 ### define _topdir	 	/home/rpmbuild/rpms/SOAPdenovo
 %define name		SOAPdenovo2
-%define release		3
+%define release		1
 %define version 	r241
 %define vc_version	r241
 %define buildroot 	%{_topdir}/%{name}-%{version}-root
@@ -37,12 +37,12 @@ optimizes for large genome.
 make -j`nproc`
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}
-cp SOAPdenovo-63mer  $RPM_BUILD_ROOT%{installroot}/SOAPdenovo2-63mer
-cp SOAPdenovo-127mer $RPM_BUILD_ROOT%{installroot}/SOAPdenovo2-127mer
-cp LICENSE $RPM_BUILD_ROOT%{installroot}/LICENSE
-cp VERSION $RPM_BUILD_ROOT%{installroot}/VERSION
-cp README.md $RPM_BUILD_ROOT%{installroot}/README.md
+mkdir -p $RPM_BUILD_ROOT%{_prefix}
+cp SOAPdenovo-63mer  $RPM_BUILD_ROOT%{_prefix}/SOAPdenovo2-63mer
+cp SOAPdenovo-127mer $RPM_BUILD_ROOT%{_prefix}/SOAPdenovo2-127mer
+cp LICENSE $RPM_BUILD_ROOT%{_prefix}/LICENSE
+cp VERSION $RPM_BUILD_ROOT%{_prefix}/VERSION
+cp README.md $RPM_BUILD_ROOT%{_prefix}/README.md
 
 %files
 %defattr(755,root,root)
