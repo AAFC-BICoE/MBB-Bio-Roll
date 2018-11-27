@@ -47,8 +47,8 @@ cd src
 make -f Makefile.Linux prefix=%{_prefix} -j`nproc`
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}
-cp -r annotation bin doc LICENSE  README.txt $RPM_BUILD_ROOT%{installroot}
+mkdir -p $RPM_BUILD_ROOT%{_prefix}
+cp -r annotation bin doc LICENSE  README.txt $RPM_BUILD_ROOT%{_prefix}
 
 %files
 %defattr(755,root,root,755)
