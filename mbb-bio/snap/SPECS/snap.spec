@@ -49,12 +49,13 @@ cd %{name}
 make -j`nproc`
 
 %install
-mkdir -p %{buildroot}%{installroot}
-cp snap/LICENSE snap/exonpairs snap/fathom snap/forge snap/hmm-assembler.pl snap/hmm-info snap/patch-hmm.pl snap/snap snap/zff2gff3.pl %{buildroot}%{installroot}
-cp -r snap/DNA/ snap/HMM/ %{buildroot}%{installroot}
-mkdir -p %{buildroot}%{installroot}/Zoe
-cp snap/Zoe/zoe-loop %{buildroot}%{installroot}/Zoe/
-cp snap/Zoe/blosum62 %{buildroot}%{installroot}/Zoe/
+mkdir -p %{buildroot}%{_prefix}
+cp snap/LICENSE snap/exonpairs snap/fathom snap/forge snap/hmm-assembler.pl snap/hmm-info snap/patch-hmm.pl snap/snap snap/zff2gff3.pl %{buildroot}%{_prefix}
+cp -r snap/DNA/ snap/HMM/ %{buildroot}%{_prefix}
+
+mkdir -p %{buildroot}%{_prefix}/Zoe
+cp snap/Zoe/zoe-loop %{buildroot}%{_prefix}/Zoe/
+cp snap/Zoe/blosum62 %{buildroot}%{_prefix}/Zoe/
 
 %files
 %defattr(644,root,root,755)
