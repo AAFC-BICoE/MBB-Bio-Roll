@@ -35,7 +35,7 @@ unique oligos, given a directory of FASTA-formatted sequences.
 make -j`nproc`
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}
+mkdir -p $RPM_BUILD_ROOT%{_prefix}
 cp -r b $RPM_BUILD_ROOT%{_bindir}
 
 %files
