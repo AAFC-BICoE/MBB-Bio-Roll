@@ -52,7 +52,7 @@ SPHASH_CONFIG=$(rpm -ql opt-sparsehash | grep 'sparsehash/include$' | head -n1)
 make -j`nproc`
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{installroot}
+mkdir -p $RPM_BUILD_ROOT%{_prefix}
 make install DESTDIR=$RPM_BUILD_ROOT
 
 
