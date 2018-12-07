@@ -5,5 +5,5 @@ SRPMS
 BUILD
 BUILDROOT
 *.rpm
-
-
+mbb-bio-deps/opt-perl-modules/SOURCES/*
+mbb-bio-deps/opt-python-modules/SOURCES/*
