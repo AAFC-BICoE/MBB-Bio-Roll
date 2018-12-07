@@ -30,7 +30,7 @@ sighandler()
 	exit 0
 }
 
-unset PERL5LIB
+export PERL5LIB=.
 MYPATH="`( cd \"$MY_PATH\" && pwd )`"
 # Ensure that perl builds use default values when prompting for user input
 export PERL_MM_USE_DEFAULT=1
@@ -39,7 +39,7 @@ module load opt-perl
 trap 'sighandler' QUIT
 trap 'sighandler' INT
 
-	echo $WORKDIR
+echo $WORKDIR
 if [ -z "${WORKDIR}" ]; then 
 	WORKDIR=/home/rpmbuild/rpmbuild
 fi
@@ -108,7 +108,7 @@ do
 		## Create the SPEC file for this RPM. Try twice. It's perl, don't ask why
 		retries=2
 		for i in `seq 1 $retries`; do	
-			/usr/bin/yes | /opt/perl/bin/cpantorpm  $buildflags --add-require "opt-perl" --install-base /opt/perl --prefix opt-perl- --packager Rocks --spec-only $modperl
+			/usr/bin/yes | /opt/perl/bin/cpantorpm $buildflags --add-require "opt-perl" --install-base /opt/perl --prefix opt-perl- --packager Rocks --spec-only $modperl
 			if [ $? -eq 0 ]; then break; fi
 		done
 		if [ $? -ne 0 ]; then code=$?; cleanup; exit $code; fi
