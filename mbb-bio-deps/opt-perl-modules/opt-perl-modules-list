@@ -1,4 +1,5 @@
 App::CPANtoRPM {--NO-TESTS}
+Test::Simple {%files\\n%perl_sitelib/*}
 DBI
 Algorithm::Munkres
 Apache::DBI
@@ -78,7 +79,6 @@ Specio
 Scope::Guard
 Importer
 Sub::Info
-Test::Simple {%files\\n%perl_sitelib/*}
 Term::Table
 Test2::Suite
 Test2::Plugin::NoWarnings
@@ -183,10 +183,12 @@ Bio::Perl BioPerl
 Bio::ASN1::EntrezGene {%files\\n%defattr(-,root,root,-)\\n%perl_sitelib/Bio/ASN1\\n/opt/perl/man/man3/Bio::ASN1*}
 Bio::DB::BioDB BioPerl-DB {--NO-TESTS}
 Bio::Tools::EUtilities Bio-EUtilities
-#Sys::Info #Needed by bowtie/scripts
-#Sys::Info::Base #Needed by Bowtie/scripts
+Sys::Info::Base
+Unix::Processors
+Test::Sys::Info
+Sys::Info::Driver::Linux {--NO-TESTS}
+Sys::Info {--NO-TESTS}
 Text::NSP
-#Image::Magick PerlMagick
 Config::General
 Font::TTF
 Math::Bezier
