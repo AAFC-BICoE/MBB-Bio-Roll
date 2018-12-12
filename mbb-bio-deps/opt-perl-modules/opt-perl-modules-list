@@ -203,3 +203,8 @@ Text::Format
 Curses
 Term::ReadKey TermReadKey
 Curses::UI
+DBIx::DBSchema {--NO-TESTS} {-n}
+DBIx::DBStag {--NO-TESTS}
+GO::Utils go-perl {--NO-TESTS} {-n}
+GO::AppHandle go-db-perl {--vers:0.04} {--NO-TESTS}
+
